@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Верстка «NEW_PROJECT_NAME»</title>
+</head>
+
+<body>
+	<div class="rootpage">
+		<h1>Верстка «NEW_PROJECT_NAME»</h1>
+		<div class="rootpage__pages section">
+			<h2>Готовые страницы:</h2>
+			<ol class="rootpage__list">
+				<li><a target="_blank" href="home.html">Главная</a></li>
+				<li><a target="_blank" href="blog.html">Блог</a></li>
+				<li><a target="_blank" href="about.html">О нас</a></li>
+				<li><a target="_blank" href="home.html">...</a></li>
+			</ol>
+		</div>
+		<div class="rootpage__info rootpage-info section">
+			<h2>
+				Описание и особенности проекта:
+			</h2>
+			<p class="rootpage-info__text">Описание проекта ... Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+				Repellat nemo animi ducimus eligendi possimus! Qui natus, a saepe quod accusamus delectus, ex adipisci id
+				dolorum et totam provident officiis. Animi maiores aspernatur hic ratione laborum blanditiis necessitatibus
+				ab sint magnam inventore autem facere sed nisi illo eos ducimus laboriosam recusandae, aperiam obcaecati
+				laudantium quidem. Iste, molestiae accusamus iure debitis consequatur provident rerum nostrum accusantium
+				aliquam non molestias enim ex nam nihil sapiente hic eos quo unde veniam vero velit qui tempore facere!
+				Tempora tenetur aliquid debitis deleniti doloribus deserunt quod facere a quam dolor? Assumenda quam
+				</p>
+		</div>
+		<div class="rootpage__footer section">
+			<div class="rootpage__tnx">
+				<h2>Спасибо за заказ!</h2>
+				<p>Буду рад (а) хорошему отзыву. Обращайтесь еще!</p>
+			</div>
+			<div class="rootpage__contacts">
+				<h2>Мои контакты:</h2>
+				<p>Почта: <a href="mailto:prazhenik.dev@gmail.com">prazhenik.dev@gmail.com</a></p>
+				<p>Телефон: <a href="tel:+380680971971">+38 068 0 971 971</a></p>
+				<p>Соц. сеть: <a href="">ссылка на соц. сеть</a></p>
+			</div>
+		</div>
+
+	</div>
+</body>
+<style>
+	@charset "UTF-8";
+	@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
+
+	*,
+	*::before,
+	*::after {
+		padding: 0px;
+		margin: 0px;
+		border: 0px;
+		box-sizing: border-box;
+
+	}
+
+	html,
+	body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		min-width: 320px;
+		width: 100%;
+		color: #fff;
+		background-color: rgb(50, 50, 50);
+	}
+
+	body {
+		font-family: Montserrat;
+		font-size: 100%;
+		line-height: 1;
+		font-size: 1rem;
+	}
+
+	a {
+		text-decoration: underline;
+		color: #ebe691;
+		padding: 10px;
+		border-radius: 5px;
+	}
+
+
+	a:visited {
+		text-decoration: underline;
+		color: #aaa768;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+
+	ul li {
+		list-style: none;
+
+	}
+
+	img {
+		vertical-align: top;
+	}
+
+	.wrapper {
+		width: 100%;
+		min-height: 100%;
+		overflow: hidden;
+	}
+
+	.rootpage {
+		padding: 30px;
+	}
+
+	@media (max-width: 767px) {
+		.rootpage {
+			padding: 30px 15px;
+		}
+	}
+
+	h1 {
+		color: #ebe691;
+		font-size: 2.5rem;
+		margin: 0px 0px 1.25rem 0px;
+	}
+
+	@media (max-width: 767px) {
+		h1 {
+			font-size: 1.85rem;
+			margin: 0px 0px 1.25rem 0px;
+		}
+	}
+
+	h2 {
+		color: #ebe691;
+		font-size: 1.25rem;
+		margin: 0px 0px 1rem 0px;
+	}
+
+	@media (max-width: 767px) {
+		h2 {
+			font-size: 1.125rem;
+			margin: 0px 0px 1rem 0px;
+		}
+	}
+
+	.section {
+		padding: 20px 0;
+	}
+
+	.rootpage-info__text {
+		text-align: justify;
+		line-height: 1.4;
+	}
+
+	.rootpage__list {
+		margin: 1.75rem 0px 0 1.25rem;
+	}
+
+	.rootpage__list li:not(:last-child) {
+		margin: 0px 0px 30px 0px;
+	}
+
+	.rootpage__footer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		align-items: start;
+
+	}
+
+	.rootpage__contacts,
+	.rootpage__tnx {
+		display: flex;
+		flex: 1 0 380px;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		line-height: 140%;
+		height: 150px;
+		padding: 20px 40px;
+	}
+
+
+	.rootpage__contacts {
+		background: #fa3c02;
+	}
+
+	.rootpage__contacts a {
+		color: #ebe691;
+	}
+
+	.rootpage__tnx {
+		line-height: 1.2;
+	}
+</style>
+
+</html>
