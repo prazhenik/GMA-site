@@ -4,6 +4,9 @@
 .button {
 	display: inline-flex;
 	padding: 0px 0px;
+
+
+
 	@media (any-hover: hover) {
 		&:hover {
 		}
@@ -22,12 +25,52 @@
 	justify-content: center;
 	width: auto;
 	overflow: hidden;
-	background: linear-gradient(90.35deg, #2563eb 0.36%, #d946ef 201.02%);
-	@include adaptiveValue("min-height", 50, 40);
-	@include adaptiveValue("padding-left", 25, 15);
-	@include adaptiveValue("padding-right", 25, 15);
+	background: $background-color-button;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+	color: $text-color-btn;
+	border-radius: 10px;
+	@include adaptiveValue("width", 500, 400);
+	@include adaptiveValue("min-height", 80, 50);
+	&_popup {
+		width: rem(400);
+	}
+&::after{
+	content:'';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: calc(100% - 4px);
+	height: calc(100% - 4px);
+	border: 3px solid $border-color-button;
+	margin: 2px;
+	border-radius: 10px;
+}
+& span {
+	position: absolute;
+	background: #fff;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	border-radius: 50%;
+	animation: animate .5s linear infinite;
+}
+
+@keyframes animate {
+	0% {
+		width: 0;
+		height: 0;
+		opacity: .4;
+	}
+	100% {
+		width: 600px;
+		height: 600px;
+		opacity: 0;
+	}
+	
+}
+
 	@media (any-hover: hover) {
 		&:hover {
+
 		}
 	}
 }

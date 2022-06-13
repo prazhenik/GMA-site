@@ -5,6 +5,10 @@
 //----------------------BURGER MENU ACTIVE-------------------------
 
 .menu {
+	display: flex;
+	flex: 1 0 auto;
+	justify-content: center;
+	//flex-direction: column;
 	@media (max-width: $mobile) {
 		order: 3;
 	}
@@ -24,7 +28,7 @@
 			&._active {
 				border-right: 2px solid;
 				border-left: 2px solid;
-				border-color: $mainBorderColor;
+				//border-color: $mainBorderColor;
 				transition: all 0.3s ease;
 				z-index: 100;
 				& span {
@@ -74,8 +78,8 @@
 			left: -100%;
 			width: 100%;
 			height: 100%;
-			color: $mainTextColor;
-			background: $mainBackgroundColor;
+			color: $text-color-links;
+			background: $background-color-menu;
 			backdrop-filter: blur(20px);
 			transition: left 0.5s ease;
 			overflow: auto;
@@ -90,7 +94,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-evenly;
-		@include adaptiveValue("column-gap", 60, 30, 1170, 767, 1);
+		@include adaptiveValue("column-gap", 60, 30, 1920, 1200, 1);
 		row-gap: rem(10);
 		padding: rem(10) rem(0);
 		@media (max-width: $mobile) {
@@ -101,7 +105,10 @@
 	}
 
 	&__item {
-		padding: rem(5) rem(0);
+		display: inline-block;
+		font-size: 0; //устраняет скачек контента при смене fontsize на ховере
+		text-align: center; //устраняет скачек контента при смене fontsize на ховере
+		padding: rem(5);
 		line-height: math.div(65, 65);
 		@media (max-width: $mobile) {
 			padding: rem(10);
@@ -116,32 +123,24 @@
 
 	&__link {
 		display: inline-block;
+		font-size: $font-size-major; //устраняет скачек контента при смене fontsize на ховере
+		transition: font-weight 0.1s ease;
+		&:hover,
+		&:active,
+		&.active {
+			font-weight:700;
+			transition: font-weight 0.1s ease;
+		}
+		&::after{
+			display: block; //устраняет скачек контента при смене fontsize на ховере
+			content: attr(title); //устраняет скачек контента при смене fontsize на ховере
+			font-weight: 700; //устраняет скачек контента при смене fontsize на ховере
+			height: 0; //устраняет скачек контента при смене fontsize на ховере
+			overflow: hidden; //устраняет скачек контента при смене fontsize на ховере
+			visibility: hidden; //устраняет скачек контента при смене fontsize на ховере
+	  }
 		@media (max-width: $mobile) {
 			@include adaptiveValue("font-size", 65, 40);
-			transition: all 0.5s ease;
-			position: relative;
-
-			&:hover,
-			&:active {
-				color: $mainTextColor;
-				transition: color 0.5s ease;
-			}
-			&:after {
-				content: "";
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				display: block;
-				@include adaptiveValue("height", 4, 2);
-				width: 0%;
-				background: $mainBackgroundColor;
-				transition: all 0.5s ease;
-			}
-			&:hover:after,
-			&:active:after {
-				width: 100%;
-				transition: width 0.5s ease;
-			}
 		}
 	}
 }

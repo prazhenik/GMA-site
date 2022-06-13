@@ -17,42 +17,16 @@
 @import "fonts/icons";
 
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
-$fontFamily: "DMSans";
-$fontSize: rem(16); // где 14(px) - размер шрифта по умолчанию из макета
-$fontWeight: 400;
-$letterSpacing: 0.02;
 
-//===================================== ▼ ▼ ▼ ОСНОВНЫЕ ЦВЕТА ▼ ▼ ▼===============================================
-// цвета шрифтов
-$mainTextColor: rgba(255, 255, 255, 1); // Цвет шрифта по умолчанию
-$textColor2: rgba(255, 255, 255, 0.8); //footer
-//$textColor3: rgba(255, 255, 255, 1); //футер меню
-// $textColor4: rgba(220, 220, 220, 0.6);
-// $textColor5: rgba(0, 160, 255, 1);
-//$textColor5: ;
-
-// цвета фонов
-$mainBackgroundColor: rgba(0, 0, 0, 1); //Цвет фона по умолчанию
-// $backgroundColor2: rgba(0, 0, 0, 0.7); // overlays _lock
-// $backgroundColor3: rgba(0, 0, 0, 0.3);
-// $backgroundColor4: rgba(220, 220, 220, 1);
-// $backgroundColor5: rgba(220, 220, 220, 0.3);
-// $backgroundColor6: rgba(0, 160, 255, 1);
-
-// цвета границ
-$mainBorderColor: rgba(255, 255, 255, 0.08); //Цвет границ по умолчанию
-//$borderColor2: rgba(255, 255, 255, .08);
-// $borderColor3: rgba(0, 0, 0, 1);
-// $borderColor4: rgba(0, 160, 255, 1);
-//$borderColor5: ;
 
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
 // Минимальная ширина страницы
-$minWidth: 280;
+$minWidth: 320;
 // Ширина полотна (макета)
-$maxWidth: 1440;
+$maxWidth: 1920;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
-$maxWidthContainer: 1170;
+$maxWidthContainer: 0;
+$innerWidthContainer: 1400; // контейнер для внутреннего контента
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
 $containerPadding: 30;
@@ -71,6 +45,8 @@ $mobileSmall: em(576.98); // Телефоны S padding: 15px
 // 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
 $responsiveType: 1;
 
+
+@import "base/root.scss";
 // Обнуление и общие параметры ========================================================
 @import "base/null.scss";
 
@@ -82,9 +58,11 @@ $responsiveType: 1;
 Например header__container, main__container и т.д.
 Снипет (HTML): cnt
 */
+
+
 @if ($responsiveType==1) {
 	// Отзывчивая
-	[class*="__container"] {
+	[class*="__outerContainer"] {
 		@if ($maxWidthContainer>0) {
 			max-width: rem($maxWidthContainer);
 			box-sizing: content-box;
@@ -94,9 +72,16 @@ $responsiveType: 1;
 			padding: 0 rem(math.div($containerPadding, 2));
 		}
 	}
+	[class*="__innerContainer"] {
+		@if ($innerWidthContainer>0) {
+			max-width: rem($innerWidthContainer);
+			box-sizing: content-box;
+			margin: 0 auto;
+		}
+	}
 } @else {
 	// По брейк-поинтам
-	[class*="__container"] {
+	[class*="__outerContainer"] {
 		margin: 0 auto;
 		@if ($maxWidthContainer>0) {
 			max-width: rem($maxWidthContainer);
@@ -126,25 +111,40 @@ $responsiveType: 1;
 			}
 		}
 	}
+	[class*="__innerContainer"] {
+		@if ($innerWidthContainer>0) {
+			max-width: rem($innerWidthContainer);
+			box-sizing: content-box;
+			margin: 0 auto;
+		}
+	}
 }
 
-// ._container-lg {
-// 	position: relative;
-// 	margin: 0 auto;
-// 	width: 100%;
-// 	max-width: 100%;
-// 	padding: 0 3%;
-// }
+
 
 //==================================== ▼ ▼ ▼ ГЛОБАЛЬНЫЕ СТИЛИ ▼ ▼ ▼==========================================
 $scrollbarWidth: 16px; //ширина скроллбара браузера для коррекции
 $overlayZindex: 149; //индекс глобального оверлея
+
+html {
+	height: calc(var(--vh, 1vh) * 100);
+	width: 100vw;
+	position: fixed;
+	overflow: hidden;
+}
+
 
 // html.lock .wrapper {
 // 	pointer-events: none;
 // }
 
 body {
+	height: calc(var(--vh, 1vh) * 100);
+	width: 100vw;
+	position: fixed;
+	overflow: hidden;
+	min-height: 100vh;
+	min-height: -webkit-fill-available;
 	// universal overlay
 	&::after {
 		content: "";
@@ -186,8 +186,7 @@ body {
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
-	background: #111827;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	background: $background-color-major;
 	position: relative;
 
 	// Прижимаем footer

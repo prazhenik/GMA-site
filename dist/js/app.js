@@ -14,7 +14,7 @@
             document.documentElement.classList.add(className);
         }));
     }
-    let functions_isMobile = {
+    let isMobile = {
         Android: function() {
             return navigator.userAgent.match(/Android/i);
         },
@@ -31,11 +31,11 @@
             return navigator.userAgent.match(/IEMobile/i);
         },
         any: function() {
-            return functions_isMobile.Android() || functions_isMobile.BlackBerry() || functions_isMobile.iOS() || functions_isMobile.Opera() || functions_isMobile.Windows();
+            return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
         }
     };
     function addTouchClass() {
-        if (functions_isMobile.any()) document.documentElement.classList.add("touch");
+        if (isMobile.any()) document.documentElement.classList.add("touch");
     }
     function addLoadedClass() {
         window.addEventListener("load", (function() {
@@ -49,7 +49,7 @@
     }
     function fullVHfix() {
         const fullScreens = document.querySelectorAll("[data-fullscreen]");
-        if (fullScreens.length && functions_isMobile.any()) {
+        if (fullScreens.length && isMobile.any()) {
             window.addEventListener("resize", fixHeight);
             function fixHeight() {
                 let vh = .01 * window.innerHeight;
@@ -682,23 +682,20 @@
             }));
         }
     }), 0);
-    window.onload = function() {
-        let body = document.querySelector("body");
-        let preloader = document.getElementById("preloader");
-        body.classList.add("_preloader");
-        preloader.classList.add("_hide-preloader");
-        setInterval((function() {
-            preloader.classList.add("_preloader-hidden");
-            preloader.classList.remove("_hide-preloader");
-            body.classList.remove("_preloader");
-        }), 1e3);
-    };
-    autosize(document.querySelectorAll("textarea"));
-    if (!isMobile.any()) VanillaTilt.init(document.querySelectorAll(".btn"), {
-        max: 15,
-        speed: 300,
-        glare: true
-    });
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach((button => {
+        button.addEventListener("click", (function(e) {
+            let x = e.clientX - e.target.offsetLeft;
+            let y = e.clientY - e.target.offsetTop;
+            let ripples = document.createElement("span");
+            ripples.style.left = x + "px";
+            ripples.style.top = y + "px";
+            this.appendChild(ripples);
+            setTimeout((() => {
+                ripples.remove();
+            }), 500);
+        }));
+    }));
     window["FLS"] = true;
     isWebp();
     addTouchClass();

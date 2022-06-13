@@ -1,5 +1,7 @@
 //актуализирован 17/02/22 13.56
 
+
+
 * {
 	padding: 0px;
 	margin: 0px;
@@ -19,9 +21,7 @@ a:focus,
 a:active {
 	// outline: none;
 }
-html {
-	height: 100%;
-}
+
 
 html,
 body {
@@ -30,25 +30,27 @@ body {
 	height: 100%;
 }
 body {
-	color: $mainTextColor;
-	background-color: $mainBackgroundColor;
+	color: $text-color-major;
+	background-color:  $background-color-major;
 	line-height: 1;
-	font-family: $fontFamily;
-	font-size: $fontSize;
-	font-weight: $fontWeight;
-	letter-spacing: $letterSpacing + em;
+	font-family: $font-family-major;
+	font-size: $font-size-major;
+	font-weight: $font-weight-major;
+	letter-spacing: $letter-spacing-major;
+	font-style: $font-style;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	min-height: 100%;
+	
 }
 input,
 button,
 textarea {
-	font-family: $fontFamily;
+	font-family: inherit;
 	font-size: inherit;
+	font-weight: inherit;
 	vertical-align: middle;
 	background-color: inherit;
 }

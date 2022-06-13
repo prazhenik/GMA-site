@@ -1,22 +1,149 @@
 // актуализирован 05/02/22 20.56
 
+.header {
+
+	// .header__content
+	&__content {
+		display: flex;
+		align-items: center;
+		column-gap: rem(60);
+		height: $header-height;
+	}
+	// .header__logo
+	&__logo img{
+		max-height: rem(60)
+	}
+	// .header__menu
+	&__menu {
+	}
+	// .header__links
+	&__links {
+	}
+}
+.menu {
+	// .menu__icon
+	&__icon {
+	}
+	// .menu__body
+	&__body {
+	}
+	// .menu__list
+	&__list {
+	}
+	// .menu__item
+	&__item {
+	}
+	// .menu__link
+	&__link {
+	}
+}
+.icon-menu {
+}
+.header-links {
+
+	// .header-links__list
+	&__list {
+
+	}
+	// .header-links__item
+
+	// .header-links__insta
+	&__insta {
+	}
+	// .header-links__lang
+	&__lang {
+		color: $text-color-secondary;
+	}
+}
+
+.header {
+	// .header__links
+	&__links {
+		display: flex;
+		gap: rem(3);
+		flex-wrap: nowrap;
+		flex: 0 0 auto;
+	}
+	
+}
+.header-links {
+	border-radius: 10px;
+	overflow: hidden;
+
+	// .header-links__list
+	&__list {
+		background-color: $background-color-other-1;
+		padding: rem(0) rem(5);
+	}
+	// .header-links__item
+	&__item {
+		display: inline-block;
+		width: rem(60);
+		text-align: center;
+
+		@media (any-hover: hover){
+			&:hover a{
+				transform: scale(1.1);
+				transition: transform .1s ease;
+			}
+		}
+		& svg, path {
+			width: rem(30);
+			height: rem(30);
+			fill: $text-color-secondary;
+			vertical-align: middle;
+			margin-top: rem(-5);
+			
+		}
+		// .header-links__item_fb
+		&_fb:hover path {
+
+		}
+		// .header-links__item_insta
+		&_insta:hover path{
+
+		}
+	}
+		// .header-links__item_lang
+	&__lang {
+		display: inline-block;
+		width: rem(60);
+		text-align: center;
+		text-transform: uppercase;
+		background-color: $background-color-other-2;
+		overflow: hidden;
+		@media (any-hover: hover){
+			&:hover a{
+				transform: scale(1.1);
+				transition: transform .1s ease;
+			}
+		}
+		
+	}
+}
+
+.header-links a {
+		display: inline-block;
+		line-height: rem(50);
+		text-align: center;
+		transition: transform .2s ease;
+}
+/*
+
 //====================================================================================================
 .header {
 	&__container {
 	}
 
 	&__content {
-		display: flex;
-		align-items: center;
-		column-gap: rem(60);
-		@include adaptiveValue("height", 120, 60);
+
 		@media (max-width: $mobile) {
 			column-gap: rem(30);
 		}
 	}
 
 	&__logo {
-		flex: 1 1 auto;
+		//flex: 1 1 auto;
 	}
 
 	&__menu {
@@ -45,3 +172,4 @@
 }
 
 //====================================================================================================
+*/

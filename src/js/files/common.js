@@ -46,7 +46,7 @@
 
 
 
-
+/*
 //preloader
 window.onload = function () {
 	let body = document.querySelector("body");
@@ -61,7 +61,7 @@ window.onload = function () {
 		//body_lock_remove();
 	}, 1000);
 }
-
+*/
 //------------------------------------LazyLoad----------------------------------------------------
 // var lazyLoadInstance = new LazyLoad({
 // 	// Your custom settings go here
@@ -124,7 +124,7 @@ window.onload = function () {
 
 
 //------------------------------------textarea autosize----------------------------------------------------
-autosize(document.querySelectorAll('textarea'));
+/*autosize(document.querySelectorAll('textarea'));
 
 if (!isMobile.any()) {
 	VanillaTilt.init(document.querySelectorAll(".btn"), {
@@ -132,4 +132,23 @@ if (!isMobile.any()) {
 		speed: 300,
 		glare: true
 	});
-}
+}*/
+
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+	button.addEventListener('click', function (e) {
+		let x = e.clientX - e.target.offsetLeft;
+		let y = e.clientY - e.target.offsetTop;
+
+		let ripples = document.createElement('span');
+		ripples.style.left = x + 'px';
+		ripples.style.top = y + 'px';
+		this.appendChild(ripples);
+
+		setTimeout(() => {
+			ripples.remove()
+		}, 500)
+	})
+})
+
