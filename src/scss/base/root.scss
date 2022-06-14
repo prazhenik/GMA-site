@@ -15,8 +15,8 @@ $font-size-main-title: rem(60); //main title font size (hero)
 $font-size-section-title: rem(38); //section title font size
 //$font-size-section-subtitle: rem(25); //section subtitle font size
 
-$font-size-menu-links-pc: rem(22); //header menu links on pc @media font size
-$font-size-menu-links-mobile: rem(18);  //header (burger) menu links on mobile @media font size
+$font-size-menu-links-pc: 22; //header menu links on pc @media font size
+$font-size-menu-links-mob: 18;  //header (burger) menu links on mobile @media font size
 
 $font-size-btn-text: rem(24); //botton text font size
 $font-size-links-text:  rem(24); //links text font size
@@ -63,15 +63,20 @@ $border-color-major: rgba(255, 255, 255, 1); //Цвет границ по умо
 $border-color-button: rgba(255, 255, 255, 1);
 $border-color-other-1:  linear-gradient(to right, rgba(255,255,255,1), rgba(55,83,111,.4)); //forms outlines
 $border-color-other-2: rgba(0, 0, 0, 1); //popup outline
-$borderColor4: rgba(63, 150, 82, 1);
+$border-color-other-3: rgba(63, 150, 82, 1);
 //$borderColor5: ;
 
 
 //================================== blockSizes roots ================================== 
 
 
-	$header-height: rem(80);
-	$footer-height: rem(300);
+	$header-height-pc: 80;
+	$header-height-mob: 60;
+
+	$footer-height-pc: 300;
+	$footer-height-mob: 100;
+
+
 	$menu-width: rem(70);
 
 

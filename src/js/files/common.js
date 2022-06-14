@@ -108,12 +108,12 @@ window.onload = function () {
 // 		}
 // 	});
 
-// 	//закрытие при нажатии по єкрану
-// 	document.addEventListener("click", function (e) {
-// 		if (!e.target.closest(".subscribe__icon")) {
-// 			socials_close(e.target.closest('.subscribe'));
-// 		}
-// 	});
+	//закрытие при нажатии по єкрану
+	// document.addEventListener("click", function (e) {
+	// 	if (!e.target.closest(".subscribe__icon")) {
+	// 		socials_close(e.target.closest('.subscribe'));
+	// 	}
+	// });
 // 	//закрытие при начале скрола
 // 	document.addEventListener("scroll", function () {
 // 		if (subscribeIcon.classList.contains("_active")) {
@@ -135,7 +135,7 @@ if (!isMobile.any()) {
 }*/
 
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('btn');
 buttons.forEach(button => {
 	button.addEventListener('click', function (e) {
 		let x = e.clientX - e.target.offsetLeft;

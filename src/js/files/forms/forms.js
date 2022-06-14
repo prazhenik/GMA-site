@@ -51,7 +51,7 @@ export function formFieldsInit(options = { viewPass: false }) {
 	});
 	document.body.addEventListener("focusout", function (e) {
 		const targetElement = e.target;
-		console.log(e.target.hasAttribute('data-validate'));
+		//console.log(e.target.hasAttribute('data-validate'));
 		if ((targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA')) {
 			if (targetElement.dataset.placeholder) {
 				targetElement.placeholder = targetElement.dataset.placeholder;

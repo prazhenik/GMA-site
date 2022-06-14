@@ -96,11 +96,15 @@
             }), delay);
         }
     };
-    let iconMenu = document.querySelector(".menu__icon");
-    let menuBody = document.querySelector(".menu__body");
+    const iconMenu = document.querySelector(".menu__icon");
+    const menuBody = document.querySelector(".menu__body");
+    document.querySelectorAll(".menu__link");
     function menuInit() {
         if (document.querySelector(".icon-menu")) document.addEventListener("click", (function(e) {
             if (bodyLockStatus && e.target.closest(".icon-menu")) {
+                bodyLockToggle();
+                menuToggle();
+            } else if (document.documentElement.classList.contains("menu-open") && !e.target.closest(".menu__body")) {
                 bodyLockToggle();
                 menuToggle();
             }
@@ -124,16 +128,6 @@
     document.addEventListener("keydown", (function(e) {
         if ("Escape" === e.code && document.documentElement.classList.contains("menu-open")) menuClose();
     }));
-    const menuLinks = document.querySelectorAll(".menu__link");
-    if (menuLinks.length > 0) {
-        menuLinks.forEach((menuLink => {
-            menuLink.addEventListener("click", onMenuLinkClick);
-        }));
-        function onMenuLinkClick(e) {
-            e.target;
-            setTimeout(menuClose, 500);
-        }
-    }
     function FLS(message) {
         setTimeout((() => {
             if (window.FLS) console.log(message);
@@ -433,7 +427,6 @@
         }));
         document.body.addEventListener("focusout", (function(e) {
             const targetElement = e.target;
-            console.log(e.target.hasAttribute("data-validate"));
             if ("INPUT" === targetElement.tagName || "TEXTAREA" === targetElement.tagName) {
                 if (targetElement.dataset.placeholder) targetElement.placeholder = targetElement.dataset.placeholder;
                 if (!targetElement.hasAttribute("data-no-focus-classes")) {
@@ -682,7 +675,7 @@
             }));
         }
     }), 0);
-    const buttons = document.querySelectorAll("button");
+    const buttons = document.querySelectorAll("btn");
     buttons.forEach((button => {
         button.addEventListener("click", (function(e) {
             let x = e.clientX - e.target.offsetLeft;
