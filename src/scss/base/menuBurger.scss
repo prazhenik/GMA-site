@@ -15,7 +15,7 @@
 		display: none;
 		position: relative;
 		@include adaptiveValue("width",50 ,40, 768, 320, 1 );
-		@include adaptiveValue("height",30 ,20, 768, 320, 1 );
+		@include adaptiveValue("height",35 ,25, 768, 320, 1 );
 		cursor: pointer;
 		transition: all 0.3s ease;
 		@media (max-width: rem(1200)) {

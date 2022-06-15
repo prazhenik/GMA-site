@@ -1,3 +1,105 @@
-//====================================================================================================
+.footer {
 
-//====================================================================================================
+
+	// .footer__innerContainer
+	&__innerContainer {
+	}
+	// .footer__content
+	&__content {
+		display: flex;
+		align-items: center;
+		// height: 100%;
+		@include adaptiveValue("height",$footer-height-pc ,$footer-height-mob, 768, 320, 1 );
+		padding: rem(20) rem(0);
+		
+	}
+	&__rows {
+		width: 100%;
+		//display: flex;
+		// flex: 1 1 auto;
+		//flex-direction: column;
+		font-weight: 700;
+		//justify-content: space-between;
+
+	}
+	// .footer__row
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		column-gap: rem(30);
+		row-gap: rem(10);
+		flex-wrap: wrap;
+		
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom",70 ,25, 768, 320, 1 );
+		}
+		// .footer__row_top
+		&_top {
+			@include adaptiveValue("font-size",22 ,16, 1920, 320, 1 );
+		}
+		// .footer__row_bottom
+		&_bottom {
+			font-size: rem(16);
+			@include adaptiveValue("font-size",16 ,12, 768, 320, 1  );
+			& a {
+				text-decoration: underline;
+			}
+		}
+	}
+	// .footer__policies
+	&__policies {
+
+	}
+	// .footer__logo
+	&__logo {
+		flex: 0 0 auto;
+		//margin-bottom:  rem(20);
+	}
+	// .footer__policy
+	&__policy {
+		text-decoration: underline;
+	}
+	// .footer__addresses
+	.footer {
+		// .footer__addresses
+		&__addresses, &__policies   {
+			display: flex;
+			flex-direction: column;
+
+			justify-content: space-between;
+			row-gap: rem(10);
+			@media (max-width:$mobileSmall){
+				width: 100%;
+			}
+			
+
+		}
+}
+.addresses {
+	padding-top:  rem(15);
+	text-align: end;
+	@media (max-width:$mobileSmall){
+		text-align: start;
+	}
+		// .addresses__item
+		&__item {
+			& a {
+				text-decoration: underline;
+			}
+		}
+		// .addresses__tel
+		&__tel {
+		}
+		// .addresses__location
+		&__location {
+		}
+		// .addresses__mail
+		&__mail {
+		}
+}
+
+}
+.site-logo {
+
+}
+

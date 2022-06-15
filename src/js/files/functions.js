@@ -442,7 +442,7 @@ export function menuInit() {
 			if (bodyLockStatus && e.target.closest('.icon-menu')) {
 				bodyLockToggle();
 				menuToggle();
-			} else if (document.documentElement.classList.contains('menu-open') && !e.target.closest('.menu__body')) {
+			} else if (document.documentElement.classList.contains('menu-open') && !e.target.closest('.menu__body') || document.documentElement.classList.contains('menu-open') && e.target.closest('.menu__link')) {
 				bodyLockToggle();
 				menuToggle();
 			}
