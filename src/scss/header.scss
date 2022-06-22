@@ -1,7 +1,12 @@
 // актуализирован 05/02/22 20.56
 
 .header {
-
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+	background-color: $background-color-major;
 	// .header__content
 	&__content {
 		display: flex;
@@ -9,6 +14,7 @@
 		justify-content: space-between;
 		@include adaptiveValue("column-gap",30 , 10, 768, 320, 1);
 		@include adaptiveValue("height",$header-height-pc ,$header-height-mob, 768, 320, 1 );
+
 		@media (max-width:$tablet){
 		}
 	}

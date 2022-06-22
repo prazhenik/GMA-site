@@ -130,7 +130,6 @@ html {
 	//height: calc(var(--vh, 1vh) * 100);
 //	width: 100vw;
 	//position: fixed;
-	overflow: hidden;
 }
 
 
@@ -140,9 +139,8 @@ html {
 
 body {
 	//height: calc(var(--vh, 1vh) * 100);
-	width: 100vw;
+	//width: 100vw;
 	//position: fixed;
-	overflow: hidden;
 	//min-height: 100vh;
 	//min-height: -webkit-fill-available;
 	// universal overlay

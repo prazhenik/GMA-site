@@ -135,7 +135,7 @@
 			overflow: hidden; //устраняет скачек контента при смене fontsize на ховере
 			visibility: hidden; //устраняет скачек контента при смене fontsize на ховере
 	  }
-		@media (max-width: rem(1200)) {
+	  		@media (max-width: rem(1200)) {
 			//@include adaptiveValue("font-size", 30, 20, 1200, 320, 1 );
 			font-size: rem(30);
 		}

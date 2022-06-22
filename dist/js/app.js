@@ -689,6 +689,29 @@
             }), 500);
         }));
     }));
+    const vidItem = document.querySelector(".hero__video video");
+    const offer = document.querySelector(".offer__title");
+    const playBtnPc = document.querySelector("._video-play-pc");
+    const playBtnMob = document.querySelector("._video-play-mob");
+    const play = function() {
+        vidItem.play();
+        vidItem.style.filter = "grayscale(0) opacity(1)";
+        offer.style.opacity = "0";
+        offer.style.visability = "hidden";
+    };
+    const pause = function() {
+        vidItem.pause();
+        vidItem.style.filter = "grayscale(1) opacity(.4)";
+        offer.style.opacity = "1";
+        offer.style.visability = "visible";
+    };
+    if ((window.onload || playBtnPc) && !isMobile.any()) {
+        playBtnPc.addEventListener("mouseenter", play);
+        playBtnPc.addEventListener("mouseleave", pause);
+    } else if ((window.onload || playBtnMob) && isMobile.any()) {
+        playBtnMob.addEventListener("mouseenter", play);
+        playBtnMob.addEventListener("mouseleave", pause);
+    }
     window["FLS"] = true;
     isWebp();
     addTouchClass();

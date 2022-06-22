@@ -1,5 +1,7 @@
 // функции конкретного проекта
 
+import { isMobile } from "./functions.js";
+
 //прокрутка к топ при обновлении страницы
 // window.onbeforeunload = function () {
 // 	window.scrollTo(0, 0);
@@ -108,12 +110,12 @@ window.onload = function () {
 // 		}
 // 	});
 
-	//закрытие при нажатии по єкрану
-	// document.addEventListener("click", function (e) {
-	// 	if (!e.target.closest(".subscribe__icon")) {
-	// 		socials_close(e.target.closest('.subscribe'));
-	// 	}
-	// });
+//закрытие при нажатии по єкрану
+// document.addEventListener("click", function (e) {
+// 	if (!e.target.closest(".subscribe__icon")) {
+// 		socials_close(e.target.closest('.subscribe'));
+// 	}
+// });
 // 	//закрытие при начале скрола
 // 	document.addEventListener("scroll", function () {
 // 		if (subscribeIcon.classList.contains("_active")) {
@@ -152,3 +154,44 @@ buttons.forEach(button => {
 	})
 })
 
+
+const vidItem = document.querySelector('.hero__video video');
+const offer = document.querySelector('.offer__title');
+const playBtnPc = document.querySelector('._video-play-pc');
+const playBtnMob = document.querySelector('._video-play-mob');
+
+const play = function () {
+	vidItem.play();
+	vidItem.style.filter = "grayscale(0) opacity(1)"
+	offer.style.opacity = "0"
+	offer.style.visability = "hidden"
+}
+
+const pause = function () {
+	vidItem.pause();
+	vidItem.style.filter = "grayscale(1) opacity(.4)"
+	offer.style.opacity = "1"
+	offer.style.visability = "visible"
+}
+
+if ((window.onload || playBtnPc) && !isMobile.any()) {
+	playBtnPc.addEventListener('mouseenter', play);
+	playBtnPc.addEventListener('mouseleave', pause);
+} else if ((window.onload || playBtnMob) && isMobile.any()){
+	playBtnMob.addEventListener('mouseenter', play);
+	playBtnMob.addEventListener('mouseleave', pause);
+}
+
+
+
+/*
+vid.addEventListener('mouseenter', function () {
+	vid.play();
+	vid.style.filter = "grayscale(0)"
+});
+
+vid.addEventListener('mouseleave', function () {
+	vid.pause();
+	vid.style.filter = "grayscale(1)"
+});
+*/

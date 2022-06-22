@@ -1,14 +1,13 @@
-.page-title {
+._page-title {
 	display: inline-block;
 	font-style: normal;
 	font-weight: 700;
 	line-height: 125%;
-	@include adaptiveValue("font-size", 60, 30);
-	@media (max-width: $mobile) {
-	}
+	@include adaptiveValue("font-size", 60, 30, 992, 320, 1);
+	color: $text-color-secondary;
 }
 
-.section__title {
+._section-title {
 	font-style: italic;
 	font-weight: 700;
 	line-height: 125%;
@@ -17,7 +16,9 @@
 	}
 }
 
-.popup__title {
+
+
+._popup-title {
 	font-style: italic;
 	font-weight: 700;
 	line-height: 125%;
