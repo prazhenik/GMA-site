@@ -1,10 +1,32 @@
 ._page-title {
 	display: inline-block;
 	font-style: normal;
-	font-weight: 700;
+	font-weight: 600;
 	line-height: 125%;
 	@include adaptiveValue("font-size", 60, 30, 992, 320, 1);
 	color: $text-color-secondary;
+	text-transform: uppercase;
+	&:not(:last-child) {
+		margin-bottom:  rem(50);
+		@media (max-width:$mobile){
+			margin-bottom:  rem(30);  
+		}
+	}
+}
+
+._page-subtitle {
+	display: inline-block;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 125%;
+	@include adaptiveValue("font-size", 24, 16, 992, 320, 1);
+	color: $text-color-secondary;
+	&:not(:last-child) {
+		margin-bottom:  rem(70);
+		@media (max-width:$mobile){
+			margin-bottom:  rem(40);  
+		}
+	}
 }
 
 ._section-title {

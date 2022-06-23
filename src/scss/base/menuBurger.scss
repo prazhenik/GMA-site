@@ -15,9 +15,9 @@
 		display: none;
 		position: relative;
 		@include adaptiveValue("width",50 ,40, 768, 320, 1 );
-		@include adaptiveValue("height",35 ,25, 768, 320, 1 );
+		@include adaptiveValue("height",35 ,20, 768, 320, 1 );
 		cursor: pointer;
-		transition: all 0.3s ease;
+		transition: all 0.2s ease;
 		@media (max-width: rem(1200)) {
 			display: block;
 			order: 3;
@@ -43,8 +43,8 @@
 			content: "";
 			display: inline;
 			position: absolute;
-			height: rem(3);
-			transition: all 0.5s ease ;
+			height: rem(2);
+			transition: all 0.2s ease ;
 			background: $background-color-other-1;
 			width: 100%;
 			left: 0;
@@ -79,7 +79,7 @@
 			color: $text-color-links;
 			background: $background-color-menu;
 			backdrop-filter: blur(20px);
-			transition: transform 0.5s ease;
+			transition: transform 0.2s ease;
 			overflow: auto;
 			z-index: 99;
 			border-left: $border-color-other-3 3px solid;

@@ -37,28 +37,9 @@
 	&_popup {
 		width: rem(400);
 	}
-& span {
-	position: absolute;
-	background: #fff;
-	transform: translate(-50%, -50%);
-	pointer-events: none;
-	border-radius: 50%;
-	animation: animate .5s linear infinite;
-}
 
-@keyframes animate {
-	0% {
-		width: 0;
-		height: 0;
-		opacity: .4;
-	}
-	100% {
-		width: 600px;
-		height: 600px;
-		opacity: 0;
-	}
-	
-}
+
+
 
 	@media (any-hover: hover) {
 		&:hover {

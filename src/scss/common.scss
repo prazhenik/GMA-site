@@ -9,3 +9,16 @@
 	from { opacity: 1; }
 	to { opacity: 0; }
 }
+
+@keyframes ripplesAnimate {
+	0% {
+		width: 0;
+		height: 0;
+		opacity: .5;
+	}
+	100% {
+		width: 600px;
+		height: 600px;
+		opacity: 0;
+	}
+}
