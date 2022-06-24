@@ -711,7 +711,7 @@
     };
     const pause = function() {
         vidItem.pause();
-        vidItem.style.filter = "grayscale(.5) brightness(.7)";
+        vidItem.style.filter = "grayscale(.7) brightness(.7)";
         offerTitle.style.opacity = "1";
         offerSubitle.style.opacity = "1";
         playIcon.style.display = "inline-block";

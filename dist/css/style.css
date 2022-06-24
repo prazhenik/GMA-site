@@ -430,6 +430,7 @@ input::placeholder {
   line-height: 125%;
   color: rgb(255, 255, 255);
   text-transform: uppercase;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 @supports (font-size: clamp( 1.875rem , 0.9821428571rem  +  4.4642857143vw , 3.75rem )) {
@@ -456,6 +457,7 @@ input::placeholder {
   font-weight: 500;
   line-height: 125%;
   color: rgb(255, 255, 255);
+  text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.8);
 }
 
 @supports (font-size: clamp( 1rem , 0.7619047619rem  +  1.1904761905vw , 1.5rem )) {
@@ -973,6 +975,43 @@ input::placeholder {
      object-fit: contain;
 }
 
+@supports (padding-top: clamp( 3.125rem , 1.2731481481rem  +  9.2592592593vw , 9.375rem )) {
+  section:not(:first-child) {
+    padding-top: clamp( 3.125rem , 1.2731481481rem  +  9.2592592593vw , 9.375rem );
+  }
+}
+
+@supports not (padding-top: clamp( 3.125rem , 1.2731481481rem  +  9.2592592593vw , 9.375rem )) {
+  section:not(:first-child) {
+    padding-top: calc(
+			3.125rem + 6.25 * (100vw - 20rem) / 67.5
+		);
+  }
+}
+
+@supports (padding-bottom: clamp( 3.125rem , 1.2731481481rem  +  9.2592592593vw , 9.375rem )) {
+  section:not(:first-child) {
+    padding-bottom: clamp( 3.125rem , 1.2731481481rem  +  9.2592592593vw , 9.375rem );
+  }
+}
+
+@supports not (padding-bottom: clamp( 3.125rem , 1.2731481481rem  +  9.2592592593vw , 9.375rem )) {
+  section:not(:first-child) {
+    padding-bottom: calc(
+			3.125rem + 6.25 * (100vw - 20rem) / 67.5
+		);
+  }
+}
+
+section:nth-child(even) {
+  background: url("../img/contentImgs/pattern.webp") center center/cover no-repeat;
+}
+
+section:nth-child(odd) {
+  background-color: rgb(27, 58, 119);
+  color: rgb(255, 255, 255);
+}
+
 @-webkit-keyframes opacity_fadeIn {
   from {
     opacity: 0;
@@ -1439,8 +1478,8 @@ input::placeholder {
           transform: translate(-50%, -50%);
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-filter: grayscale(0.5) brightness(0.7);
-          filter: grayscale(0.5) brightness(0.7);
+  -webkit-filter: grayscale(0.7) brightness(0.7);
+          filter: grayscale(0.7) brightness(0.7);
   -webkit-backdrop-filter: blur(100);
           backdrop-filter: blur(100);
   -webkit-transition: -webkit-filter 1.5s ease;

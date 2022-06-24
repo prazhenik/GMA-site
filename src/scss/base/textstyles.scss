@@ -6,6 +6,7 @@
 	@include adaptiveValue("font-size", 60, 30, 992, 320, 1);
 	color: $text-color-secondary;
 	text-transform: uppercase;
+	text-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
 	&:not(:last-child) {
 		margin-bottom:  rem(50);
 		@media (max-width:$mobile){
@@ -21,6 +22,7 @@
 	line-height: 125%;
 	@include adaptiveValue("font-size", 24, 16, 992, 320, 1);
 	color: $text-color-secondary;
+	text-shadow: 0px 0px 7px rgba(0, 0, 0, .8);
 	&:not(:last-child) {
 		margin-bottom:  rem(70);
 		@media (max-width:$mobile){

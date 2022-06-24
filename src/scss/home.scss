@@ -19,7 +19,7 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			object-fit: cover;
-			filter: grayscale(.5) brightness(.7);
+			filter: grayscale(.7) brightness(.7);
 			backdrop-filter: blur(100);
 			transition: filter 1.5s ease;
 		}
