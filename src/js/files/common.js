@@ -183,17 +183,19 @@ const pauseIcon = document.querySelector('.controls__pause');
 
 const play = function () {
 	vidItem.play();
-	vidItem.style.filter = "grayscale(0)  brightness(.8)"
-	offerTitle.style.opacity = ".3"
-	offerSubitle.style.opacity = ".3"
+	vidItem.style.filter = "grayscale(0)  brightness(1)"
+	offerTitle.style.opacity = "0"
+	offerSubitle.style.opacity = "0"
 	playIcon.style.display = "none"
 	pauseIcon.style.display = "inline-block"
 	playIcon.classList.add('played')
 }
 
+
+
 const pause = function () {
 	vidItem.pause();
-	vidItem.style.filter = "grayscale(.8) brightness(.6) opacity(.8)"
+	vidItem.style.filter = "grayscale(.5) brightness(.7)"
 	offerTitle.style.opacity = "1"
 	offerSubitle.style.opacity = "1"
 	playIcon.style.display = "inline-block"
@@ -205,7 +207,7 @@ if ((window.onload || playBtnPc) && !isMobile.any()) {
 	playBtnPc.addEventListener('mouseleave', pause);
 } else if ((window.onload || playBtnMob) && isMobile.any()) {
 	playBtnMob.addEventListener('click', () => {
-		if(!playIcon.classList.contains('played')) {
+		if (!playIcon.classList.contains('played')) {
 			play();
 		} else {
 			pause()

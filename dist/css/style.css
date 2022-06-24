@@ -550,8 +550,9 @@ input::placeholder {
           box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
   color: rgb(255, 255, 255);
   border-radius: 10px;
-  border: 2px solid rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
   padding: 0rem 1.25rem;
+  font-weight: 600;
 }
 
 @supports (width: clamp( 17.5rem , 14.75rem  +  13.75vw , 31.25rem )) {
@@ -1438,8 +1439,8 @@ input::placeholder {
           transform: translate(-50%, -50%);
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-filter: grayscale(0.8) brightness(0.6) opacity(0.8);
-          filter: grayscale(0.8) brightness(0.6) opacity(0.8);
+  -webkit-filter: grayscale(0.5) brightness(0.7);
+          filter: grayscale(0.5) brightness(0.7);
   -webkit-backdrop-filter: blur(100);
           backdrop-filter: blur(100);
   -webkit-transition: -webkit-filter 1.5s ease;
@@ -1476,9 +1477,9 @@ input::placeholder {
 .offer__title,
 .offer__subtitle {
   opacity: 1;
-  -webkit-transition: opacity 1.5s ease;
-  -o-transition: opacity 1.5s ease;
-  transition: opacity 1.5s ease;
+  -webkit-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  transition: opacity 1s ease;
 }
 
 .offer__buttons {
@@ -1563,10 +1564,7 @@ input::placeholder {
 .controls__box {
   position: relative;
   border-radius: 10px;
-  border: rgb(255, 255, 255) 2px solid;
-  -webkit-transition: border 0.2s ease;
-  -o-transition: border 0.2s ease;
-  transition: border 0.2s ease;
+  border: rgb(255, 255, 255) 1px solid;
   display: inline-block;
 }
 
@@ -1821,6 +1819,16 @@ input::placeholder {
 
   .popup__content_callback {
     width: 85%;
+  }
+
+  .offer {
+    text-align: center;
+  }
+
+  .offer__buttons {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .controls {

@@ -19,7 +19,7 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			object-fit: cover;
-			filter: grayscale(.8) brightness(.6) opacity(.8) ;
+			filter: grayscale(.5) brightness(.7);
 			backdrop-filter: blur(100);
 			transition: filter 1.5s ease;
 		}
@@ -62,13 +62,13 @@
 	padding: rem(50) rem(0);
 	width: 100%;
 	@media (max-width:$mobile){
-		//text-align: center; 
+		text-align: center; 
 	}
 	// .offer__title
 	&__title,
 	&__subtitle {
 		opacity: 1;
-		transition: opacity 1.5s ease;
+		transition: opacity 1s ease;
 	}
 
 	&__buttons {
@@ -76,6 +76,9 @@
 		flex-wrap: wrap;
 		column-gap: rem(15);
 		row-gap: rem(40);
+		@media (max-width:$mobile){
+			 justify-content: center; 
+		}
 	}
 
 	// .offer__button
@@ -160,8 +163,7 @@
 		@include adaptiveValue("width", 80, 50);
 		@include adaptiveValue("height", 80, 50);
 		border-radius: 10px;
-		border: $border-color-button 2px solid;
-		transition: border .2s ease;
+		border: $border-color-button 1px solid;
 		display: inline-block;
 		@media (any-hover: hover){
 			&:hover{
