@@ -181,8 +181,9 @@ const playBtnMob = document.querySelector('._video-play-mob');
 const playIcon = document.querySelector('.controls__play');
 const pauseIcon = document.querySelector('.controls__pause');
 
-const play = function () {
+const play = () => {
 	vidItem.play();
+	vidItem.style.transition = "filter 1.5s ease"
 	vidItem.style.filter = "grayscale(0)  brightness(1)"
 	offerTitle.style.opacity = "0"
 	offerSubitle.style.opacity = "0"
@@ -193,7 +194,7 @@ const play = function () {
 
 
 
-const pause = function () {
+const pause = () => {
 	vidItem.pause();
 	vidItem.style.filter = "grayscale(.7) brightness(.7)"
 	offerTitle.style.opacity = "1"
@@ -202,10 +203,10 @@ const pause = function () {
 	pauseIcon.style.display = "none"
 }
 
-if ((window.onload || playBtnPc) && !isMobile.any()) {
+if (((window.onload || playBtnPc) && vidItem) && !isMobile.any()) {
 	playBtnPc.addEventListener('mouseenter', play);
 	playBtnPc.addEventListener('mouseleave', pause);
-} else if ((window.onload || playBtnMob) && isMobile.any()) {
+} else if (((window.onload || playBtnMob) && vidItem) && isMobile.any()) {
 	playBtnMob.addEventListener('click', () => {
 		if (!playIcon.classList.contains('played')) {
 			play();
@@ -214,7 +215,6 @@ if ((window.onload || playBtnPc) && !isMobile.any()) {
 			playIcon.classList.remove('played')
 		}
 	});
-	//playBtnMob.addEventListener('mouseleave', pause);
 }
 
 

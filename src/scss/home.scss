@@ -4,7 +4,16 @@
 
 .hero {
 	position: relative;
-	background-color: $background-color-major ;
+	&:before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: url('@img/contentImgs/cover_hero.jpg') center center / cover no-repeat;
+		filter: grayscale(.7) brightness(.7) contrast(.9);
+	}
 	// .hero__video
 	&__video {
 		position: absolute;
@@ -20,8 +29,7 @@
 			transform: translate(-50%, -50%);
 			object-fit: cover;
 			filter: grayscale(.7) brightness(.7);
-			backdrop-filter: blur(100);
-			transition: filter 1.5s ease;
+			
 		}
 	}
 	// .hero__outerContainer
@@ -95,58 +103,6 @@
 	}
 }
 
-
-
-
-
-
-//@at-root-----------------------------------
-/*
-.hero {
-	width: 100%;
-	height: 100%;
-
-	
-
-	&__outerContainer{
-	}
-	// .hero__content
-	&__content {
-		width: 100%;
-
-	}
-
-	&__video {
-
-
-	}
-
-	// .hero__offer
-	&__offer {
-
-		//margin: rem(250) rem(0);
-	}
-	// .hero__title
-	&__title {
-
-	}
-	// .hero__button
-	.hero-bottons__cta {
-		display: inline-block;
-	}
-}
-
-.hero-bottons {
-	position: relative;
-	display: flex;
-	flex-wrap: wrap;
-	column-gap: rem(20);
-	row-gap: rem(20);
-	@media (max-width: $mobile) {
-		justify-content: center;
-	}
-}
-*/
 .controls {
 	display: none;
 	@media (any-hover: hover){
@@ -224,7 +180,66 @@
 	}
 }
 
-.video__box {
+.algorithm {
+	// .algorithm__title
+	&__title {
+	}
+	// .algorithm__steps
+	&__steps {
+	}
+}
 
+.steps {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(rem(280), 1fr));
+	//flex-wrap: wrap;
+	gap: rem(30);
+	&:not(:last-child) {
+		margin-bottom:  rem(150);
+	}
+	// .step__item
+	&__item {
+		display: flex;
+		flex: 1 1 20%;
+		height: rem(100%);
+		min-height: rem(200);
+		background-color: $background-color-menu;
+		box-shadow: -5px -5px 10px #FFFFFF, 5px 5px 10px rgba(174, 174, 192, 0.4);
+		border-radius: 10px;
+		text-align: center;
+		padding: rem(50) rem(15);
+	}
+	// .step__card
+	&__card {
+		display: flex;
+		flex-direction: column;
+	}
+	// .step__name
+	&__name {
+		font-family: $font-family-other-1;
+		font-weight: 400;
+		@include adaptiveValue("font-size", 26 , 20, 1200, 320, 1 );
+		line-height: math.div(40 ,26 );
+		text-transform: uppercase;
+		color: $text-color-major;
+		margin-bottom:  rem(30);
+	}
+	// .step__desc
+	&__desc {
+		display: flex;
+		flex-direction: column;
+		flex: 1 0 auto;
+		justify-content: center;
+		@include adaptiveValue("font-size", 22, 18,1200, 320, 1 );
+		line-height: math.div(30,22 );
+		letter-spacing: -0.5px;
+		& .cont {
+		}
+	}
+}
+
+.algorithm__button {
+	display: block;
+	text-align: center;
 }
 
