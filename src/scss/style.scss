@@ -78,6 +78,9 @@ $responsiveType: 1;
 			box-sizing: content-box;
 			margin: 0 auto;
 		}
+		@if ($containerPadding>0) {
+			padding: 0 rem(math.div($containerPadding, 2));
+		}
 	}
 } @else {
 	// По брейк-поинтам
@@ -117,6 +120,9 @@ $responsiveType: 1;
 			box-sizing: content-box;
 			margin: 0 auto;
 		}
+		@if ($containerPadding>0) {
+			padding: 0 rem(math.div($containerPadding, 2));
+		}
 	}
 }
 
@@ -130,6 +136,8 @@ html {
 	//height: calc(var(--vh, 1vh) * 100);
 //	width: 100vw;
 	//position: fixed;
+	// Сайт загружен
+
 }
 
 
@@ -146,15 +154,15 @@ body {
 	// universal overlay
 	&::after {
 		content: "";
-		background-color: rgba(0, 0, 0, 0.5);
-		backdrop-filter: blur(20px);
+		background-color: rgba(0, 0, 0, 0.4);
+		backdrop-filter: blur(10px);
 		position: fixed;
 		width: 100%;
 		height: 100%;
 		top: 0;
 		left: 0;
 		opacity: 0;
-		transition: all 0.5s ease 0s;
+		//transition: all 0.2s ease;
 		pointer-events: none;
 		z-index: $overlayZindex;
 	}
@@ -162,20 +170,14 @@ body {
 	&._preloader {
 		overflow: hidden;
 	}
-	.lock.loaded & {
+	.lock.loaded:not(.touch) & {
 		overflow: hidden;
 		touch-action: none;
+		padding-right: calc($scrollbarWidth + 1px) !important; // общая коррекция контента на скролл при модалке/меню
+		& header {
+			padding-right: calc( $scrollbarWidth + 1px) !important; // коррекция хедера на скролл при модалке/меню если header position fixed ил relative
+		}
 	}
-	// Сайт загружен
-	// &.loaded.lock {
-	//padding-right: calc($scrollbarWidth - 0.5px) !important; // общая коррекция контента на скролл при модалке/меню
-	// 	& header,
-	// 	.__popup-link {
-	// 		padding-right: calc(
-	// 			$scrollbarWidth - 0.5px
-	// 		) !important; // коррекция хедера на скролл при модалке/меню если header position fixed ил relative
-	// 	}
-	// }
 }
 // Оболочка =======================================================================
 .wrapper {

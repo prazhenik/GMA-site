@@ -1,8 +1,8 @@
 // Заголовки, общие БЄМ блоки и проче...
 section{
 	&:not(:first-child) {
-		@include adaptiveValue("padding-top", 150 , 50, 1400, 320, 1);
-		@include adaptiveValue("padding-bottom", 150 , 50, 1400, 320, 1);
+		@include adaptiveValue("padding-top", 150 , 80, 1200, 320, 1);
+		@include adaptiveValue("padding-bottom", 150 , 80, 1200, 320, 1);
 	}
 	&:nth-child(even){
 		background: url('@img/contentImgs/pattern.webp') center center / cover no-repeat;

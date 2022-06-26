@@ -1,4 +1,5 @@
 //актуализирован 22/04/22 11.55
+//актуализирован 26/06/22 1850 - скрипт дефолтных попапов
 
 // Модуль попапов
 // (c) Фрилансер по жизни, Хмурый Кот
@@ -124,10 +125,10 @@ class Popup {
 					if (!this.isOpen) this.lastFocusEl = buttonOpen;
 					this.targetOpen.selector = `${this._dataValue}`;
 					this._selectorOpen = true;
-					this.open();
+					setTimeout(() => this.open(), 500);// таймаут перед после нажатие кнопки перед открытием
 					return;
 
-				} else this.popupLogging(`Ой ой, не заполнен атрибут у ${buttonOpen.classList}`);
+				} else this.popupLogging(`Не заполнен атрибут у ${buttonOpen.classList}`);
 
 				return;
 			}
@@ -354,7 +355,7 @@ class Popup {
 	}
 	// Функция вывода в консоль
 	popupLogging(message) {
-		this.options.logging ? FLS(`[Попапос]: ${message}`) : null;
+		this.options.logging ? FLS(`[Попап]: ${message}`) : null;
 	}
 }
 // Запускаем и добавляем в объект модулей

@@ -47,7 +47,8 @@
 			<div class="header__outerContainer">
 				<div class="header__content">
 					<div class="header__logo site-logo">
-						<a href="/home.html"></a>
+						<a class="site-logo__dark" href="/home.html"></a>
+						<a class="site-logo__lite" href="/home.html"></a>
 					</div>
 					<div class="header__menu menu">
 						<button type="button" class="menu__icon icon-menu"><span></span></button>
@@ -155,7 +156,8 @@
 		</footer>
 
 	</div>
-	<!-- актуализирован 06/02/22 17.12 -->
+	<!-- актуализиван 06/02/22 17.12 -->
+	<!-- актуализиван 26/06/22 1850 - разметка дефолтного попапа -->
 
 	<!---------------------------------simple popup-------------------------------->
 	<!-- 
@@ -171,30 +173,32 @@
 -->
 
 	<!---------------------------------popup with forms-------------------------------->
-	<div id="callback" aria-hidden="true" class="popup">
+	<div id="callback" aria-hidden="true" class="popup popup_callback">
 		<div class="popup__wrapper">
-			<div class="popup__content popup__content_callback">
-				<button data-close type="button" class="popup__close popup__close_callback">
-					<svg class="close-icon" width="30" height="30" viewBox="0 0 14 14" fill="red">
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M13.7071 0.292893C14.0976 0.683417 14.0976 1.31658 13.7071 1.70711L1.70711 13.7071C1.31658 14.0976 0.683417 14.0976 0.292893 13.7071C-0.0976311 13.3166 -0.0976311 12.6834 0.292893 12.2929L12.2929 0.292893C12.6834 -0.0976311 13.3166 -0.0976311 13.7071 0.292893Z" fill="red" />
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L13.7071 12.2929C14.0976 12.6834 14.0976 13.3166 13.7071 13.7071C13.3166 14.0976 12.6834 14.0976 12.2929 13.7071L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z" fill="red" />
+			<div data-watch data-watch-threshold="0.2" class="popup__content">
+				<h2 class="popup__title _section-title">Форма <span>связи</span></h2>
+				<h2 class="popup__subtitle">Пожалуйста, укажите Ваше имя и номер телефона для <span>бесплатной</span>
+					консультации. Вы также можете предварительно кратко указать суть вопроса.</h2>
+				<button data-close type="button" class="popup__close">
+					<svg x="0px" y="0px" width="30" height="30" viewBox="0 0 122.878 122.88" enable-background="new 0 0 122.878 122.88">
+						<g>
+							<path d="M1.426,8.313c-1.901-1.901-1.901-4.984,0-6.886c1.901-1.902,4.984-1.902,6.886,0l53.127,53.127l53.127-53.127 c1.901-1.902,4.984-1.902,6.887,0c1.901,1.901,1.901,4.985,0,6.886L68.324,61.439l53.128,53.128c1.901,1.901,1.901,4.984,0,6.886 c-1.902,1.902-4.985,1.902-6.887,0L61.438,68.326L8.312,121.453c-1.901,1.902-4.984,1.902-6.886,0 c-1.901-1.901-1.901-4.984,0-6.886l53.127-53.128L1.426,8.313L1.426,8.313z" />
+						</g>
 					</svg>
 				</button>
-				<form action="sendmail.php" data-ajax="true" method="POST" class="form popup__form form-callback">
-					<h3 class="form-callback__title">TITLE</h3>
-					<div class="form-callback__item inputs__item">
-						<input id="formName" autocomplete="off" type="text" name="form[name]" data-required="text" data-error="Invalid character or data not entered" data-value="Your name*" placeholder="Your name*" class="form-callback__input input _text _req">
+				<form action="sendmail.php" data-ajax="true" method="POST" class="popup__form form form_callback">
+					<div class="form__item">
+						<input id="form-callback-name" autocomplete="off" type="text" name="form[name]" data-required="text" data-error="Invalid character or data not entered" placeholder="Ваше имя*" class="form__input _text _req">
 					</div>
-					<div class="form-callback__item inputs__item">
-						<input id="formEmail" autocomplete="off" type="text" name="form[email]" data-required="email" data-error="Incorrect e-mail address" placeholder="example@ex.com" data-value="E-mail*" class="form-callback__input input _email _req">
+					<div class="form__item">
+						<input id="form-callback-phone" autocomplete="off" type="tel" name="form[phone]" data-required="phone" data-error="Enter your phone number without spaces, starting with '+'" placeholder="Ваш номер телефона*" class="form__input _phone _req">
 					</div>
-					<div class="form-callback__item inputs__item">
-						<input id="formPhone" autocomplete="off" type="tel" name="form[phone]" data-required="phone" data-error="Enter your phone number without spaces, starting with '+'" placeholder="" data-value="Your phone*" class="form-callback__input input _phone _req">
+					<div class="form__item">
+						<textarea id="form-callback-textarea" autocomplete="off" name="form[textarea]" data-error="Please write your message" placeholder="Ваш вопрос (не обязательно):" class="form__textarea _req"></textarea>
 					</div>
-					<div class="form-callback__item inputs__item">
-						<textarea id="имя блока-textarea" autocomplete="off" name="form[textarea]" data-error="Please write your message" placeholder="" data-value="Message*" class="имя блока__textarea _req"></textarea>
+					<div class="form__submit form__submit_callback">
+						<button type="submit" class="btn">Отправить</button>
 					</div>
-					<button type="submit" class="form__submit form-callback__submit btn">SUBMIT</button>
 				</form>
 			</div>
 		</div>

@@ -29,6 +29,7 @@ data-goto-error - прокрутить страницу к ошибке
 export function formFieldsInit(options = { viewPass: false }) {
 	// Если включено, добавляем функционал "скрыть плейсходлер при фокусе"
 	const formFields = document.querySelectorAll('input[placeholder],textarea[placeholder]');
+	console.log(formFields);
 	if (formFields.length) {
 		formFields.forEach(formField => {
 			if (!formField.hasAttribute('data-placeholder-nohide')) {

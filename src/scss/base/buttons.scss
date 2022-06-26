@@ -4,9 +4,6 @@
 .button {
 	display: inline-flex;
 	padding: 0px 0px;
-
-
-
 	@media (any-hover: hover) {
 		&:hover {
 		}
@@ -33,15 +30,21 @@
 	@include adaptiveValue("width", 500, 280);
 	@include adaptiveValue("min-height", 80, 50);
 	padding: rem(0) rem(20);
-	@include adaptiveValue("font-size", 24, 18);
+	@include adaptiveValue("font-size", 24, 14);
 	font-weight: 600;
+	text-transform: uppercase;
+	line-height: math.div(1 , 1);
 	&_popup {
 		width: rem(400);
 	}
-
-
-
-
+	& span .ripple {
+		position: absolute;
+		background: #fff;
+		transform: translate(-50%, -50%);
+		pointer-events: none;
+		border-radius: 50%;
+		animation: ripplesAnimate .5s linear;
+	}
 	@media (any-hover: hover) {
 		&:hover {
 

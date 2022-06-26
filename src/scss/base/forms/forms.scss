@@ -1,42 +1,8 @@
 //актуализирован 05/02/22 20.56
+//актуализирован 26/06/22 1845 - стили дефолтной формы
 
-//<FORM>
-// Снипет (HTML): form
-
-.form {
-	display: grid;
-	row-gap: 20px;
-	&__item {
-		position: relative;
-	}
-	&__submit {
-		margin: rem(25) rem(0) rem(0) rem(0);
-	}
-	&__error {
-		position: absolute;
-		@include adaptiveValue("font-size", 10, 7);
-		@include adaptiveValue("bottom", -15, -10);
-		right: 0;
-		z-index: 2;
-		color: rgba(255, 255, 255, 1);
-	}
-}
-.form-callback {
-	&__input {
-	}
-
-	&__textarea {
-	}
-
-	&__submit {
-	}
-}
 
 //</FORM>
-
-// <BUTTONS>
-// Снипет (HTML): btn
-// @import "button";
 
 // <INPUTS>
 // Снипет (HTML): inp
@@ -69,3 +35,46 @@
 // <CALENDAR>
 // Снипет (HTML):
 // @import "datepicker";
+
+
+//<FORM>
+// Снипет (HTML): form
+
+//-------------------general form properties-------------------
+
+.form {
+	&__error {
+		position: absolute;
+		font-weight: 400;
+		@include adaptiveValue("font-size", 12, 8);
+		@include adaptiveValue("bottom", -15, -10);
+		right: 0;
+		z-index: 2;
+		color: rgba(255, 255, 255, 1);
+	}
+	// .form__title
+	&__title {
+	}
+	// .form__item
+	&__item {
+		position: relative;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom",30 ,15 );
+		}
+	}
+	// .form__input
+	&__input {
+	}
+	// .form__textarea
+	&__textarea {
+	}
+	// .form__submit
+	&__submit button {
+		width: 100%;
+	}
+}
+
+//-------------------custom form properties-------------------
+
+//popup form 
+

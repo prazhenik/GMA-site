@@ -160,14 +160,14 @@ buttons.forEach(button => {
 		let x = e.clientX - rect.left;
 		let y = e.clientY - rect.top;
 
-		let ripples = document.createElement('span');
+		let ripples = document.createElement('span.ripple');
 
 		ripples.style.left = x + 'px';
 		ripples.style.top = y + 'px';
 		this.appendChild(ripples);
 
 		setTimeout(() => {
-			ripples.remove()
+			//ripples.remove()
 		}, 500)
 	})
 })

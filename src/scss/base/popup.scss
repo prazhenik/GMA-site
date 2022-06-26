@@ -1,72 +1,68 @@
 // актуализирован 09/02/22 10.12
+//актуализирован 26/06/22 1845 - дефолтные стили попапа
 
+//-------------------general popup properties-------------------
 .popup {
 	position: fixed;
 	top: 0;
 	left: 0;
 	bottom: 0;
 	right: 0;
-	padding: 30px 10px;
+	padding: 30px 15px;
 	transition: visibility 0.5s ease 0s;
 	visibility: hidden;
 	pointer-events: none;
+	// .popup__wrapper
 	&__wrapper {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		align-items: center;
 		min-height: 100%;
 		flex: 1 1 auto;
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 	}
-
+	// .popup__content
 	&__content {
-		display: flex;
-		flex-direction: column;
 		text-align: center;
-		justify-content: center;
 		position: relative;
 		visibility: hidden;
+		overflow: hidden;
 		transform: scale(0);
 		transition: visibility 0.5s ease 0s scale 0.5s ease 0s;
 		width: 100%;
+		max-width: rem($popup-maxwhidth);
+		background: $popup-background-color;
+		border-radius: rem($popup-border-radius);
+		border: 2px solid $border-color-major;
+		@include adaptiveValue("padding-top", 70, 40, 1200, 320, 1);
+		@include adaptiveValue("padding-bottom", 70, 40, 1200, 320, 1);
+		@include adaptiveValue("padding-left", 50, 10, 1200, 320, 1);
+		@include adaptiveValue("padding-right", 50, 10, 1200, 320, 1);
+		text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+		@media (max-width: $mobile) {
+			//width: 90%;
+		}
 		&.lock & {
 			visibility: visible;
 			transition: visibility 0.5s ease 0s scale 0.5s ease 0s;
 		}
-		&_callback {
-			max-width: rem(500);
-			background: #050e24;
-			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-			border-radius: 10px;
-			border: 2px solid rgba(199, 199, 199, 0.7);
-			@include adaptiveValue("padding-top", 70, 50);
-			@include adaptiveValue("padding-bottom", 70, 20);
-			@include adaptiveValue("padding-left", 50, 10);
-			@include adaptiveValue("padding-right", 50, 10);
-			text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-			@media (max-width: $mobile) {
-				width: 85%;
-			}
-		}
 	}
-
+	// .popup__close
 	&__close {
 		padding: 10px;
 		position: absolute;
 		cursor: pointer;
 		outline: none;
 		margin: 0;
-		&:focus svg {
-			fill: red;
+		top: 0;
+		right: 0;
+		background-color: transparent;
+		& svg {
+			fill: $background-color-major;
 		}
 		line-height: 1;
 		&_callback {
-			top: 0;
-			right: 0;
-			background-color: transparent;
+
 		}
 		& svg {
 			transition: all 0.3s ease;
@@ -77,15 +73,26 @@
 			}
 		}
 	}
-
 	&__title {
-		&_callback {
+		opacity: 1;
+		color: $text-color-secondary;
+		@include adaptiveValue("margin-bottom", 50, 40, 1200, 320, 1);
+		&::after{
+			transform: translate(0%, 0);
 		}
 	}
-
-	&__form {
-		//styles in scss/base/forms
+	&__subtitle {
+		color: $text-color-secondary;
+		@include adaptiveValue("margin-bottom", 30, 20, 1200, 320, 1);
+		@include adaptiveValue("font-size",16, 12, 1200, 320, 1);
+		line-height: math.div(20 ,16 );
 	}
+	// .popup__form
+	&__form {
+		//form styles in /forms/forms.scss
+		//input styles in /forms/input.scss
+	}
+
 }
 
 .popup-show body:after {
@@ -104,3 +111,29 @@
 		transition: visibility 0.5s ease 0s scale 0.5s ease 0s;
 	}
 }
+
+
+
+//-------------------custom popup properties-------------------
+
+//callback
+
+.popup_callback {
+	.popup {
+		// .popup__wrapper
+		&__wrapper {
+		}
+		// .popup__content
+		&__content {
+			background: linear-gradient(137.02deg, #0F254F 16.01%, #1B3A77 74.93%);
+		}
+		// .popup__close
+		&__close svg {
+		}
+		// .popup__form
+		&__form {
+		}
+	}
+}
+
+

@@ -36,7 +36,7 @@
 	font-style: italic;
 	line-height: 125%;
 	display: inline-block;
-	@include adaptiveValue("margin-bottom", 150 , 50, 1400, 320, 1);
+	@include adaptiveValue("margin-bottom", 150 , 80, 1200, 320, 1);
 	@include adaptiveValue("font-size", 38, 20);
 	opacity: 0;
 	transition: opacity 1s ease;
@@ -59,12 +59,12 @@
 	}
 }
 
-section._watcher-view ._section-title{
+._watcher-view ._section-title{
 	transition: opacity 1s ease;
 	opacity: 1;
 }
 
-section._watcher-view ._section-title::after {
+._watcher-view ._section-title::after {
 	transform: translate(0, 0);
 	transition: transform 1s ease;
 }

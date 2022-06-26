@@ -45,7 +45,7 @@
 			position: absolute;
 			height: rem(2);
 			transition: all 0.2s ease ;
-			background: $background-color-other-1;
+			background: $background-color-major;
 			width: 100%;
 			left: 0;
 			border-radius: 2px;
@@ -67,6 +67,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		color: $text-color-secondary;
 		@media (max-width: rem(1200)) {
 			position: fixed;
 			justify-content: center;
@@ -76,7 +77,6 @@
 			width: 100%;
 			max-width: rem(360);
 			height: 100%;
-			color: $text-color-links;
 			background: $background-color-menu;
 			backdrop-filter: blur(20px);
 			transition: transform 0.2s ease;
@@ -120,17 +120,17 @@
 		display: inline-block;
 		@include adaptiveValue("font-size",$font-size-menu-links-pc ,$font-size-menu-links-mob, 1920, 1200, 1 ); //устраняет скачек контента при смене fontsize на ховере
 		line-height: math.div( $font-size-menu-links-pc, $font-size-menu-links-pc);
-		transition: font-weight 0.1s ease;
+		letter-spacing: 0.02em;
+		font-weight: 500;
 		&:hover,
 		&:active,
 		&.active {
-			font-weight:700;
-			transition: font-weight 0.1s ease;
+			font-weight:600;
 		}
 		&::after{
 			display: block; //устраняет скачек контента при смене fontsize на ховере
 			content: attr(title); //устраняет скачек контента при смене fontsize на ховере
-			font-weight: 700; //устраняет скачек контента при смене fontsize на ховере
+			font-weight: 600; //устраняет скачек контента при смене fontsize на ховере
 			height: 0; //устраняет скачек контента при смене fontsize на ховере
 			overflow: hidden; //устраняет скачек контента при смене fontsize на ховере
 			visibility: hidden; //устраняет скачек контента при смене fontsize на ховере
@@ -141,5 +141,13 @@
 		}
 	}
 }
+
+._header-scroll {
+	& .menu__body {
+		
+	}
+}
+
+
 
 //---------------------------- ▲ ▲ ▲ BURGER ▲ ▲ ▲ ------------------------------
