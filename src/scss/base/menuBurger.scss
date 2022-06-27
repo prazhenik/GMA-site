@@ -24,16 +24,20 @@
 			z-index: 100;
 			&._active {
 				transition: all 0.5s ease;
+				
 				& span {
 					opacity: 0;
+					background: $background-color-secondary;
 				}
 				&::before {
 					top: 40%;
 					transform: rotate(-45deg);
+					background: $background-color-secondary;
 				}
 				&::after {
 					top: 40%;
 					transform: rotate(45deg);
+					background: $background-color-secondary;
 				}
 			}
 		}
@@ -68,6 +72,7 @@
 		align-items: center;
 		justify-content: center;
 		color: $text-color-secondary;
+
 		@media (max-width: rem(1200)) {
 			position: fixed;
 			justify-content: center;
@@ -85,6 +90,7 @@
 			border-left: $border-color-other-3 3px solid;
 			&._active {
 				transform: translateX(rem(-360));
+				color: $text-color-major;
 				//max-width: rem(600);
 				//right: 0%;
 			}
@@ -134,8 +140,8 @@
 			height: 0; //устраняет скачек контента при смене fontsize на ховере
 			overflow: hidden; //устраняет скачек контента при смене fontsize на ховере
 			visibility: hidden; //устраняет скачек контента при смене fontsize на ховере
-	  }
-	  		@media (max-width: rem(1200)) {
+		}
+		@media (max-width: rem(1200)) {
 			//@include adaptiveValue("font-size", 30, 20, 1200, 320, 1 );
 			font-size: rem(30);
 		}

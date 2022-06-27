@@ -156,8 +156,11 @@ import "./files/forms/inputmask.js";
 // Сниппет(HTML):
 import './libs/watcher.js'
 
+
+
 // Функции работы скроллом
 import * as flsScroll from "./files/scroll/scroll.js";
+
 
 // Плавная навигация по странице
 flsScroll.pageNavigation();

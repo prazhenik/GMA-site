@@ -143,7 +143,7 @@ if (!isMobile.any()) {
 // });
 
 
-
+//---------------btns ripple animation------------------
 
 const buttons = document.querySelectorAll('.btn');
 
@@ -172,6 +172,7 @@ buttons.forEach(button => {
 	})
 })
 
+//---------------video play------------------
 
 const vidItem = document.querySelector('.hero__video video');
 const offerTitle = document.querySelector('.offer__title');
@@ -217,4 +218,25 @@ if (((window.onload || playBtnPc) && vidItem) && !isMobile.any()) {
 	});
 }
 
+//---------------algorithm cards animation------------------
+/*
+const algorithmCards = document.querySelectorAll('.steps__item');
+const algorithmCardsBox = document.querySelector('.steps ._watcher-view');
+
+console.log(algorithmCards);
+
+
+if (algorithmCardsBox) {
+	console.log('hello');
+	algorithmCards.forEach(card => {
+		
+		setTimeout(showCard, 1000)
+		function showCard() {
+			card.style.opacity = "1";
+			card.style.visability = "visible";
+		}
+	})
+}
+
+*/
 

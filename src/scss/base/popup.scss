@@ -12,6 +12,7 @@
 	transition: visibility 0.5s ease 0s;
 	visibility: hidden;
 	pointer-events: none;
+	overflow: hidden;
 	// .popup__wrapper
 	&__wrapper {
 		display: flex;
@@ -86,6 +87,9 @@
 		@include adaptiveValue("margin-bottom", 30, 20, 1200, 320, 1);
 		@include adaptiveValue("font-size",16, 12, 1200, 320, 1);
 		line-height: math.div(20 ,16 );
+		& span {
+			font-weight: 600;
+		}
 	}
 	// .popup__form
 	&__form {

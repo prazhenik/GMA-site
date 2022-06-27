@@ -33,7 +33,6 @@ $font-style: normal;
 
 //text colors
 $text-color-major: rgba(27, 58, 119, 1); //general document text color
-
 $text-color-secondary: rgba(255, 255, 255, 1);
 
 $text-color-menu: rgba(27, 58, 119, 1); //menu links text color
@@ -51,6 +50,7 @@ $text-color-other-2: rgba(10, 250, 215, 1); //other text color/color hero title 
 
 //bacground colors
 $background-color-major: rgba(240, 240, 240, 1); //Цвет фона по умолчанию
+$background-color-secondary: rgba(27, 58, 119, 1); 
 $background-color-menu: rgba(240, 240, 240, 1); //menu bcg 
 $background-color-overlay-lock: rgba(0, 0, 0, .6); // overlays _lock
 $background-color-button:  linear-gradient(94.29deg, #2B5935 10.72%, #00B428 65.76%, #1E9538 98.53%); //

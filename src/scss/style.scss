@@ -78,9 +78,6 @@ $responsiveType: 1;
 			box-sizing: content-box;
 			margin: 0 auto;
 		}
-		@if ($containerPadding>0) {
-			padding: 0 rem(math.div($containerPadding, 2));
-		}
 	}
 } @else {
 	// По брейк-поинтам
@@ -119,9 +116,6 @@ $responsiveType: 1;
 			max-width: rem($innerWidthContainer);
 			box-sizing: content-box;
 			margin: 0 auto;
-		}
-		@if ($containerPadding>0) {
-			padding: 0 rem(math.div($containerPadding, 2));
 		}
 	}
 }
@@ -165,17 +159,22 @@ body {
 		//transition: all 0.2s ease;
 		pointer-events: none;
 		z-index: $overlayZindex;
+		overflow: hidden;
 	}
 	// Скролл заблокирован
 	&._preloader {
 		overflow: hidden;
 	}
-	.lock.loaded:not(.touch) & {
+
+	// добавить :not(.touch) для отключения на моб устройствах
+	.lock.loaded & {
 		overflow: hidden;
 		touch-action: none;
-		padding-right: calc($scrollbarWidth + 1px) !important; // общая коррекция контента на скролл при модалке/меню
-		& header {
-			padding-right: calc( $scrollbarWidth + 1px) !important; // коррекция хедера на скролл при модалке/меню если header position fixed ил relative
+		&:not(.touch) & {
+			padding-right: calc($scrollbarWidth + 1px) !important; // общая коррекция контента на скролл при модалке/меню
+			& header {
+				padding-right: calc( $scrollbarWidth + 1px) !important; // коррекция хедера на скролл при модалке/меню если header position fixed ил relative
+			}
 		}
 	}
 }
