@@ -25,7 +25,9 @@ export function pageNavigation() {
 				const noHeader = gotoLink.hasAttribute('data-goto-header') ? true : false;
 				const gotoSpeed = gotoLink.dataset.gotoSpeed ? gotoLink.dataset.gotoSpeed : 500;
 				const offsetTop = gotoLink.dataset.gotoTop ? parseInt(gotoLink.dataset.gotoTop) : 0;
-				gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
+				setTimeout(() => {
+					gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
+				}, 300);
 				e.preventDefault();
 			}
 		} else if (e.type === "watcherCallback" && e.detail) {
@@ -46,14 +48,18 @@ export function pageNavigation() {
 						}
 					}
 				}
+
 				if (entry.isIntersecting) {
 					// Видим объект
-					// navigatorActiveItem ? navigatorActiveItem.classList.remove('_navigator-active') : null;
+					navigatorActiveItem ? navigatorActiveItem.classList.remove('_navigator-active') : null;
+
 					navigatorCurrentItem ? navigatorCurrentItem.classList.add('_navigator-active') : null;
+
 				} else {
 					// Не видим объект
 					navigatorCurrentItem ? navigatorCurrentItem.classList.remove('_navigator-active') : null;
 				}
+
 			}
 		}
 	}
@@ -69,6 +75,11 @@ export function pageNavigation() {
 	}
 }
 // Работа с шапкой при скроле
+
+document.addEventListener('loaded', () => {
+	headerScroll()
+})
+
 export function headerScroll() {
 	addWindowScrollEvent = true;
 	const header = document.querySelector('header.header');

@@ -129,7 +129,8 @@
 		}
 		// .popup__content
 		&__content {
-			background: linear-gradient(137.02deg, #0F254F 16.01%, #1B3A77 74.93%);
+			//background: linear-gradient(137.02deg, #0F254F 16.01%, #1B3A77 74.93%);
+			background-color: $background-color-other-1;
 		}
 		// .popup__close
 		&__close svg {

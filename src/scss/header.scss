@@ -69,7 +69,7 @@
 	}
 	// .header-links__lang
 	&__lang {
-		color: $text-color-secondary;
+	
 	}
 }
 
@@ -106,7 +106,6 @@
 	&__item {
 		display: inline-block;
 		@include adaptiveValue("width",50 ,30, 768, 320, 1 );
-		@media (any-hover: hover){
 			@media (any-hover: hover){
 				&:hover {
 					& a{
@@ -115,7 +114,7 @@
 					}
 				}
 			}
-		}
+
 
 		& svg, path {
 			@include adaptiveValue("width",30 ,20, 768, 320, 1 );
@@ -146,6 +145,7 @@
 		border-top-right-radius: 10px;
 		@include adaptiveValue("font-size", $font-size-menu-links-pc ,$font-size-menu-links-mob, 768, 320, 1 );
 		overflow: hidden;
+		color: $text-color-secondary;
 		@media (any-hover: hover){
 			&:hover {
 				background-color: $background-color-other-2;

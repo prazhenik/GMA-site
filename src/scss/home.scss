@@ -11,8 +11,6 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		background: url('@img/contentImgs/cover_hero.jpg') center center / cover no-repeat;
-		filter: grayscale(.7) brightness(.7) contrast(.9);
 	}
 	// .hero__video
 	&__video {
@@ -41,17 +39,11 @@
 	// .hero__content
 	&__content {
 		@include adaptiveValue("padding-top",$header-height-pc ,$header-height-mob, 768, 320, 1 );
-		//height: calc((var(--vh, 1vh) * 100) - rem($header-height-pc));
 		height: calc(var(--vh, 1vh) * 100);
+		min-height: -webkit-fill-available;
 		min-height: 550px;
 		display: flex;
 		align-items: center;
-		@media (max-width:$mobileSmall){
-			//height: calc((var(--vh, 1vh) * 100) - rem($header-height-mob));
-			height: calc(var(--vh, 1vh) * 100);
-			//min-height: 100vh;
-			min-height: -webkit-fill-available;
-		}
 	}
 	// .hero__offer
 	&__offer {

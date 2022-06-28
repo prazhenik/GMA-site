@@ -3,9 +3,9 @@
 import { isMobile } from "./functions.js";
 
 //прокрутка к топ при обновлении страницы
-// window.onbeforeunload = function () {
-// 	window.scrollTo(0, 0);
-// }
+window.onbeforeunload = function () {
+	window.scrollTo(0, 0);
+}
 
 //плавный скролл
 // const smoothLinks = document.querySelectorAll('a[href^="#"]:not(._popup-link)');
@@ -126,22 +126,19 @@ window.onload = function () {
 
 
 //------------------------------------textarea autosize----------------------------------------------------
-/*autosize(document.querySelectorAll('textarea'));
+// autosize(document.querySelectorAll('textarea'));
+
+//------------------------------------VanillaTilt----------------------------------------------------
 
 if (!isMobile.any()) {
 	VanillaTilt.init(document.querySelectorAll(".btn"), {
-		max: 15,
-		speed: 300,
-		glare: true
+		max: 10,
+		speed: 200,
+		glare: true,
+		easing: "cubic-bezier(.03,.98,.52,.99)",
+		"max-glare": .6,
 	});
-}*/
-
-// var elem = document.getElementById('elem');
-
-// document.addEventListener('mousemove', function(event) {
-// 	console.log( event.clientX + ' : ' + event.clientY);
-// });
-
+}
 
 //---------------btns ripple animation------------------
 
@@ -152,22 +149,21 @@ console.log(buttons);
 buttons.forEach(button => {
 	button.addEventListener('click', function (e) {
 
-		console.log(e.target.offsetLeft);
-		console.log(e.target.offsetTop);
-
 		var rect = e.target.getBoundingClientRect(); //Иногда, когда у вас есть вложенные элементы, один из них с прикрепленным к нему событием, может быть запутанным понять, что ваш браузер видит в качестве родителя. Здесь вы можете указать родителя.
 
 		let x = e.clientX - rect.left;
 		let y = e.clientY - rect.top;
 
-		let ripples = document.createElement('span.ripple');
+		let ripples = document.createElement('span');
+
+		ripples.className ='ripple';
 
 		ripples.style.left = x + 'px';
 		ripples.style.top = y + 'px';
 		this.appendChild(ripples);
 
 		setTimeout(() => {
-			//ripples.remove()
+			ripples.remove()
 		}, 500)
 	})
 })
@@ -240,3 +236,26 @@ if (algorithmCardsBox) {
 
 */
 
+//------------------smooth marker underline menu__link----------------------
+/*
+const activLinkMarker = document.querySelector('#marker')
+const menuLink = document.querySelectorAll('.menu__link')
+
+if (!isMobile.any()) {
+	menuLink.forEach(link => {
+
+		link.addEventListener('mouseenter', (e) => {
+
+			let rect = e.target.getBoundingClientRect();
+
+			activLinkMarker.style.top = rect.top + 'px';
+			activLinkMarker.style.width = rect.width + 'px';
+			activLinkMarker.style.left = e.target.offsetLeft + 'px';
+		})
+
+	})
+} else {
+	activLinkMarker.style.display = 'none'
+}
+
+*/

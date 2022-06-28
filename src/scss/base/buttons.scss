@@ -22,11 +22,13 @@
 	justify-content: center;
 	width: auto;
 	overflow: hidden;
-	background: $background-color-button;
-	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+	//background: $background-color-button-active;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 	color: $text-color-btn;
+	//color: $background-color-secondary;
+	//color: $background-color-button-active;
 	border-radius: 10px;
-	border: 1px solid $border-color-button;
+	border: 2px solid $border-color-button;
 	@include adaptiveValue("width", 500, 280);
 	@include adaptiveValue("min-height", 80, 50);
 	padding: rem(0) rem(20);
@@ -34,20 +36,34 @@
 	font-weight: 600;
 	text-transform: uppercase;
 	line-height: math.div(1 , 1);
+	backdrop-filter: blur(15px);
+	background-color: $background-color-other-2;
+	transition: transform .2s ;
+	&_hero {
+		border: 2px solid $background-color-other-2;
+		backdrop-filter: blur(15px);
+		color: $text-color-btn;
+		background-color: transparent;
+	}
 	&_popup {
 		width: rem(400);
 	}
-	& span .ripple {
+	& span.ripple {
 		position: absolute;
-		background: #fff;
+		background: $background-color-major;
 		transform: translate(-50%, -50%);
 		pointer-events: none;
 		border-radius: 50%;
+		width: rem(50);
+		height: rem(50);
 		animation: ripplesAnimate .5s linear;
+		z-index: 52;
 	}
+
 	@media (any-hover: hover) {
 		&:hover {
-
+			transform: scale(1.01);
+			transition: transform .2s ;
 		}
 	}
 }

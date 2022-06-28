@@ -170,11 +170,11 @@ body {
 	.lock.loaded & {
 		overflow: hidden;
 		touch-action: none;
-		&:not(.touch) & {
-			padding-right: calc($scrollbarWidth + 1px) !important; // общая коррекция контента на скролл при модалке/меню
-			& header {
-				padding-right: calc( $scrollbarWidth + 1px) !important; // коррекция хедера на скролл при модалке/меню если header position fixed ил relative
-			}
+	}
+	.lock.loaded:not(.touch) & {
+		padding-right: calc($scrollbarWidth + 0px) !important; // общая коррекция контента на скролл при модалке/меню
+		& header {
+			padding-right: calc( $scrollbarWidth + 0px) !important; // коррекция хедера на скролл при модалке/меню если header position fixed ил relative
 		}
 	}
 }

@@ -443,8 +443,8 @@ export function menuInit() {
 				bodyLockToggle();
 				menuToggle();
 			} else if (document.documentElement.classList.contains('menu-open') && !e.target.closest('.menu__body') || document.documentElement.classList.contains('menu-open') && e.target.closest('.menu__link')) {
-				bodyLockToggle();
-				menuToggle();
+				 bodyLockToggle();
+				setTimeout(menuToggle, 300);
 			}
 		});
 	};
@@ -474,7 +474,7 @@ export function menuClose() {
 
 document.addEventListener('keydown', function (e) {
 	if (e.code === 'Escape' && document.documentElement.classList.contains('menu-open')) {
-		menuClose()
+		menuClose(500)
 	}
 });
 
