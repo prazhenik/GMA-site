@@ -338,6 +338,7 @@
 	// .capability__content
 	&__content {
 		position: relative;
+		font-weight: 400;
 	}
 	// .capability__innerContainer
 	&__innerContainer {
@@ -420,7 +421,13 @@
 	// .capability-offer__text
 	&__text {
 		align-self: center;
-
+		line-height: math.div(36 , 24);
+		text-align: justify;
+		@include adaptiveValue("font-size", 24, 14, 1200, 320, 1 );
+		
+		& span {
+			font-weight: 600;
+		}
 	}
 	// .capability-offer__button
 	&__button {
@@ -471,7 +478,7 @@
 		bottom: rem(15);
 		left: 50%;
 		right: rem(15);
-		filter: drop-shadow(-3px -3px 6px rgb(240, 240, 240)) drop-shadow(5px 5px 8px rgb(117, 117, 136));
+		filter: drop-shadow(-3px -3px 6px rgb(240, 240, 240)) drop-shadow(5px 5px 8px rgb(120, 120, 140));
 		@media (max-width:$mobile){
 			position: initial;
 			width: 100%;

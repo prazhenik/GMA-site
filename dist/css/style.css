@@ -2644,6 +2644,7 @@ section:nth-child(odd) {
 
 .capability__content {
   position: relative;
+  font-weight: 400;
 }
 
 .capability__text p {
@@ -2790,6 +2791,26 @@ section:nth-child(odd) {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+@supports (font-size: clamp( 0.875rem , 0.6477272727rem  +  1.1363636364vw , 1.5rem )) {
+  .capability-offer__text {
+    font-size: clamp( 0.875rem , 0.6477272727rem  +  1.1363636364vw , 1.5rem );
+  }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.6477272727rem  +  1.1363636364vw , 1.5rem )) {
+  .capability-offer__text {
+    font-size: calc(
+			0.875rem + 0.625 * (100vw - 20rem) / 55
+		);
+  }
+}
+
+.capability-offer__text span {
+  font-weight: 600;
 }
 
 .consult {
@@ -2821,8 +2842,8 @@ section:nth-child(odd) {
   bottom: 0.9375rem;
   left: 50%;
   right: 0.9375rem;
-  -webkit-filter: drop-shadow(-3px -3px 6px rgb(240, 240, 240)) drop-shadow(5px 5px 8px rgb(117, 117, 136));
-          filter: drop-shadow(-3px -3px 6px rgb(240, 240, 240)) drop-shadow(5px 5px 8px rgb(117, 117, 136));
+  -webkit-filter: drop-shadow(-3px -3px 6px rgb(240, 240, 240)) drop-shadow(5px 5px 8px rgb(120, 120, 140));
+          filter: drop-shadow(-3px -3px 6px rgb(240, 240, 240)) drop-shadow(5px 5px 8px rgb(120, 120, 140));
 }
 
 .consult__form-block {
