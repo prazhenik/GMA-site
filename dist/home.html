@@ -32,7 +32,7 @@
 	<meta name="theme-color" content="#1B3A77"> <!-- theme color -->
 	<!-- <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png"> -->
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220628212437">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220629173645">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<!-- npm install --save-dev t-scroll<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
@@ -148,14 +148,14 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.1" class="algorithm">
+				<section data-watch data-watch-threshold="0.1" class="algorithm">
 					<div class="algorithm__outerContainer">
+						<div class="algorithm__innerContainer">
+							<h2 class="algorithm__title _section-title">
+								<span>Следуем</span> простому алгоритму
+							</h2>
+						</div>
 						<div class="algorithm__content _section-content">
-							<div class="algorithm__innerContainer">
-								<h2 class="algorithm__title _section-title">
-									<span>Следуем</span> простому алгоритму
-								</h2>
-							</div>
 							<div data-watch-once data-watch data-watch-threshold="0.1" class="algorithm__steps steps">
 								<div class="steps__item">
 									<div class="steps__card">
@@ -214,13 +214,13 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.1" class="capability">
+				<section data-watch data-watch-threshold="0.1" class="capability">
 					<div class="capability__outerContainer">
 						<div class="capability__innerContainer">
+							<h2 class="capability__title _section-title">
+								<span>Знаем</span> как вам помочь
+							</h2>
 							<div class="capability__content _section-content">
-								<h2 class="capability__title _section-title">
-									<span>Знаем</span> как вам помочь
-								</h2>
 								<div class="capability__text">
 									<p>
 										Наши программы разработаны с учетом передового <span>мирового научного и практического
@@ -293,15 +293,54 @@
 				<section data-watch data-watch-threshold="0.2" class="consult">
 					<div class="consult__outerContainer">
 						<div class="consult__innerContainer">
+							<h2 class="consult__title _section-title">
+								<span>Заполните</span> всего два поля
+							</h2>
 							<div class="consult__content _section-content">
-								<h2 class="consult__title _section-title">
-									<span>Заполните</span> всего два поля
-								</h2>
+								<div class="consult__left">
+									<div class="consult__form-block">
+										<p class="consult__proposition">
+											Я лично перезвоню и <span>бесплатно</span> проконсультирую Вас
+										</p>
+										<form id="form-consult" action="sendmail.php" data-ajax="true" method="POST" class="consult__form form form-consult">
+											<div class="form__item">
+												<input id="form-consult-name" autocomplete="off" type="text" name="form[name]" data-required="text" data-error="Invalid character or data not entered" placeholder="Ваше имя*" class="form__input _text _req">
+											</div>
+											<div class="form__item">
+												<input id="form-consult-phone" autocomplete="off" type="tel" name="form[phone]" data-required="phone" data-error="Enter your phone number without spaces, starting with '+'" placeholder="Ваш номер телефона*" class="form__input _phone _req">
+											</div>
+											<div class="form__submit form__submit_consult">
+												<button type="submit" class="btn">Отправить</button>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="consult__right">
+									<div class="consult__photo-block photo-block">
+										<div class="photo-block__photo photo-ibg">
+											<picture><source data-srcset="img/ikarak.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/ikarak.jpg" alt="Irina_Karakurkchi_photo.jpg"></picture>
+										</div>
+										<div class="photo-block__card">
+											<p class="photo-block__name">
+												Ирина Каракуркчи
+											</p>
+											<div class="photo-block__caption">
+												<p class="photo-block__occupation">
+													Практикующий врач
+												</p>
+												<p class="photo-block__position">
+													СЕО и основатель <br>Global Medical Assistance
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
 							</div>
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.2" class="partners">
+				<section data-watch data-watch-threshold="0.2" class="partners">
 					<div class="partners__outerContainer">
 						<div class="partners__innerContainer">
 							<div class="partners__content _section-content">
@@ -312,7 +351,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.2" class="about">
+				<section data-watch data-watch-threshold="0.2" class="about">
 					<div class="about__outerContainer">
 						<div class="about__innerContainer">
 							<div class="about__content _section-content">
@@ -323,7 +362,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.2" class="contacts">
+				<section data-watch data-watch-threshold="0.2" class="contacts">
 					<div class="contacts__outerContainer">
 						<div class="contacts__innerContainer">
 							<div class="contacts__content _section-content">
@@ -362,13 +401,14 @@
 										<a class="addresses__tel" href="tel:+380662223344">+38 (066) 222 33 44</a>
 									</div>
 									<div class="addresses__item">
-										<a class="addresses__mail" href="mailto:medhelp@gma.care?subject=Новый вопрос">medhelp@gma.care </a>
+										<a class="addresses__mail" href="mailto:medhelp@gma.care?subject=Новый вопрос">medhelp@gma.care
+										</a>
 									</div>
 								</div>
 							</div>
 							<div class="footer__row footer__row_bottom">
 								<a href="prazhenik.dev">Сайт разработан | prazhenik.dev </a>
-								<span>GMA.care - 2022 © </span>
+								<span>gma.care - 2022 © </span>
 							</div>
 						</div>
 					</div>
@@ -408,7 +448,7 @@
 						</g>
 					</svg>
 				</button>
-				<form action="sendmail.php" data-ajax="true" method="POST" class="popup__form form form_callback">
+				<form id="form-callback" action="sendmail.php" data-ajax="true" method="POST" class="popup__form form form-callback">
 					<div class="form__item">
 						<input id="form-callback-name" autocomplete="off" type="text" name="form[name]" data-required="text" data-error="Invalid character or data not entered" placeholder="Ваше имя*" class="form__input _text _req">
 					</div>
@@ -427,7 +467,7 @@
 	</div>
 	<!---------------------------------popup whis forms-------------------------------->
 
-	<script src="js/app.min.js?_v=20220628212437"></script>
+	<script src="js/app.min.js?_v=20220629173645"></script>
 
 
 </body>

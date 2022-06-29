@@ -37,9 +37,10 @@
 	line-height: 125%;
 	display: inline-block;
 	@include adaptiveValue("margin-bottom", 150 , 80, 1200, 320, 1);
-	@include adaptiveValue("font-size", 38, 22);
+	@include adaptiveValue("font-size", 46, 24, 1200, 320, 1);
 	opacity: 0;
 	transition: opacity 1s ease;
+	z-index: 1;
 	& span {
 		font-weight: 700;
 	}

@@ -45,7 +45,7 @@
 .form {
 	&__error {
 		position: absolute;
-		font-weight: 400;
+		font-weight: 500;
 		@include adaptiveValue("font-size", 12, 8);
 		@include adaptiveValue("bottom", -15, -10);
 		right: 0;
@@ -78,3 +78,31 @@
 
 //popup form 
 
+
+.form-consult {
+	.form {
+		&__error {
+			color: red;
+		}
+		// .form__title
+		&__title {
+		}
+		// .form__item
+		&__item {
+	
+			&:not(:last-child) {
+				
+			}
+		}
+		// .form__input
+		&__input {
+		}
+		// .form__textarea
+		&__textarea {
+		}
+		// .form__submit
+		&__submit button {
+
+		}
+	}
+}

@@ -10,7 +10,7 @@
 		align-items: center;
 		// height: 100%;
 		@include adaptiveValue("height",$footer-height-pc ,$footer-height-mob, 768, 320, 1 );
-		padding: rem(20) rem(0);
+		padding: rem(50) rem(0);
 		
 	}
 	&__rows {
@@ -18,7 +18,7 @@
 		//display: flex;
 		// flex: 1 1 auto;
 		//flex-direction: column;
-		font-weight: 700;
+		font-weight: 600;
 		//justify-content: space-between;
 
 	}
@@ -27,22 +27,26 @@
 		display: flex;
 		justify-content: space-between;
 		column-gap: rem(30);
-		row-gap: rem(10);
 		flex-wrap: wrap;
-		
+		//align-items: center;
 		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom",70 ,25, 768, 320, 1 );
+			@include adaptiveValue("margin-bottom",70 ,30, 768, 560, 1 );
 		}
 		// .footer__row_top
 		&_top {
-			@include adaptiveValue("font-size",22 ,16, 1920, 320, 1 );
+			@include adaptiveValue("font-size",20 ,14, 1920, 320, 1 );
+			row-gap: rem(20);
 		}
 		// .footer__row_bottom
 		&_bottom {
-			font-size: rem(16);
-			@include adaptiveValue("font-size",16 ,12, 768, 320, 1  );
+			@include adaptiveValue("font-size",14 ,10, 768, 320, 1  );
+			row-gap: rem(10);
+			align-items: center;
 			& a {
 				text-decoration: underline;
+			}
+			& span {
+
 			}
 		}
 	}
@@ -76,7 +80,7 @@
 		}
 }
 .addresses {
-	padding-top:  rem(5);
+	padding-top:  rem(10);
 	text-align: end;
 	@media (max-width:$mobileSmall){
 		text-align: start;

@@ -142,13 +142,14 @@
 										<a class="addresses__tel" href="tel:+380662223344">+38 (066) 222 33 44</a>
 									</div>
 									<div class="addresses__item">
-										<a class="addresses__mail" href="mailto:medhelp@gma.care?subject=Новый вопрос">medhelp@gma.care </a>
+										<a class="addresses__mail" href="mailto:medhelp@gma.care?subject=Новый вопрос">medhelp@gma.care
+										</a>
 									</div>
 								</div>
 							</div>
 							<div class="footer__row footer__row_bottom">
 								<a href="prazhenik.dev">Сайт разработан | prazhenik.dev </a>
-								<span>GMA.care - 2022 © </span>
+								<span>gma.care - 2022 © </span>
 							</div>
 						</div>
 					</div>
@@ -188,7 +189,7 @@
 						</g>
 					</svg>
 				</button>
-				<form action="sendmail.php" data-ajax="true" method="POST" class="popup__form form form_callback">
+				<form id="form-callback" action="sendmail.php" data-ajax="true" method="POST" class="popup__form form form-callback">
 					<div class="form__item">
 						<input id="form-callback-name" autocomplete="off" type="text" name="form[name]" data-required="text" data-error="Invalid character or data not entered" placeholder="Ваше имя*" class="form__input _text _req">
 					</div>

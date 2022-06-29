@@ -17,7 +17,7 @@
 					</div>
 					<div class="hero__outerContainer">
 						<div class="hero__innerContainer">
-							<div class="hero__content _section-content">
+							<div  class="hero__content _section-content">
 								<div class="hero__offer offer">
 									<h1 class="offer__title _page-title">
 										Не теряйте время на медицину прошлого
@@ -58,14 +58,14 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.1" class="algorithm">
+				<section data-watch data-watch-threshold="0.1" class="algorithm">
 					<div class="algorithm__outerContainer">
+						<div class="algorithm__innerContainer">
+							<h2 class="algorithm__title _section-title">
+								<span>Следуем</span> простому алгоритму
+							</h2>
+						</div>
 						<div class="algorithm__content _section-content">
-							<div class="algorithm__innerContainer">
-								<h2 class="algorithm__title _section-title">
-									<span>Следуем</span> простому алгоритму
-								</h2>
-							</div>
 							<div data-watch-once data-watch data-watch-threshold="0.1" class="algorithm__steps steps">
 								<div class="steps__item">
 									<div class="steps__card">
@@ -125,13 +125,13 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.1" class="capability">
+				<section data-watch data-watch-threshold="0.1" class="capability">
 					<div class="capability__outerContainer">
 						<div class="capability__innerContainer">
+							<h2 class="capability__title _section-title">
+								<span>Знаем</span> как вам помочь
+							</h2>
 							<div class="capability__content _section-content">
-								<h2 class="capability__title _section-title">
-									<span>Знаем</span> как вам помочь
-								</h2>
 								<div class="capability__text">
 									<p>
 										Наши программы разработаны с учетом передового <span>мирового научного и практического
@@ -205,15 +205,58 @@
 				<section data-watch data-watch-threshold="0.2" class="consult">
 					<div class="consult__outerContainer">
 						<div class="consult__innerContainer">
+							<h2 class="consult__title _section-title">
+								<span>Заполните</span> всего два поля
+							</h2>
 							<div class="consult__content _section-content">
-								<h2 class="consult__title _section-title">
-									<span>Заполните</span> всего два поля
-								</h2>
+								<div class="consult__left">
+									<div class="consult__form-block">
+										<p class="consult__proposition">
+											Я лично перезвоню и <span>бесплатно</span> проконсультирую Вас
+										</p>
+										<form id="form-consult" action="sendmail.php" data-ajax="true" method="POST" class="consult__form form form-consult">
+											<div class="form__item">
+												<input id="form-consult-name" autocomplete="off" type="text" name="form[name]" data-required="text"
+													data-error="Invalid character or data not entered" placeholder="Ваше имя*"
+													class="form__input _text _req">
+											</div>
+											<div class="form__item">
+												<input id="form-consult-phone" autocomplete="off" type="tel" name="form[phone]" data-required="phone"
+													data-error="Enter your phone number without spaces, starting with '+'" placeholder="Ваш номер телефона*"
+													class="form__input _phone _req">
+											</div>
+											<div class="form__submit form__submit_consult">
+												<button type="submit" class="btn">Отправить</button>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="consult__right">
+									<div class="consult__photo-block photo-block">
+										<div class="photo-block__photo photo-ibg">
+											<img data-src="@img/ikarak.jpg" alt="Irina_Karakurkchi_photo.jpg">
+										</div>
+										<div class="photo-block__card">
+											<p class="photo-block__name">
+												Ирина Каракуркчи
+											</p>
+											<div class="photo-block__caption">
+												<p class="photo-block__occupation">
+													Практикующий врач
+												</p>
+												<p class="photo-block__position">
+													СЕО и основатель <br>Global Medical Assistance
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
 							</div>
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.2" class="partners">
+				<section data-watch data-watch-threshold="0.2" class="partners">
 					<div class="partners__outerContainer">
 						<div class="partners__innerContainer">
 							<div class="partners__content _section-content">
@@ -224,7 +267,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.2" class="about">
+				<section data-watch data-watch-threshold="0.2" class="about">
 					<div class="about__outerContainer">
 						<div class="about__innerContainer">
 							<div class="about__content _section-content">
@@ -235,7 +278,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.2" class="contacts">
+				<section data-watch data-watch-threshold="0.2" class="contacts">
 					<div class="contacts__outerContainer">
 						<div class="contacts__innerContainer">
 							<div class="contacts__content _section-content">

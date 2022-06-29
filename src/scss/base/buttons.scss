@@ -38,7 +38,7 @@
 	line-height: math.div(1 , 1);
 	backdrop-filter: blur(15px);
 	background-color: $background-color-other-2;
-	transition: transform .2s ;
+	animation: breathe 2.5s infinite forwards;
 	&_hero {
 		border: 2px solid $background-color-other-2;
 		backdrop-filter: blur(15px);
@@ -54,16 +54,12 @@
 		transform: translate(-50%, -50%);
 		pointer-events: none;
 		border-radius: 50%;
-		width: rem(50);
-		height: rem(50);
 		animation: ripplesAnimate .5s linear;
-		z-index: 52;
 	}
 
 	@media (any-hover: hover) {
 		&:hover {
-			transform: scale(1.01);
-			transition: transform .2s ;
+			animation: none;
 		}
 	}
 }

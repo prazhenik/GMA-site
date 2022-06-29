@@ -132,7 +132,6 @@
 		line-height: math.div( $font-size-menu-links-pc, $font-size-menu-links-pc);
 		letter-spacing: 0.02em;
 		font-weight: 500;
-		text-shadow: 0px 0px 5px rgba(150, 150, 150, 0.4);
 		transition: opacity .3s ease;
 		&::before{
 			content:'';

@@ -253,6 +253,7 @@
 		counter-increment: steps;
 		overflow: hidden;
 		opacity: 0;
+		cursor: default;
 		&::before{
 			content: counter(steps);
 			position: absolute;
@@ -268,13 +269,19 @@
 			//padding: rem(30) rem(10);
 			//min-height: rem(150);
 		}
+
 	}
 	// .step__card
 	&__card {
 		display: flex;
 		flex-direction: column;
 		position: relative;
-		
+		color: $text-color-major;
+		@media (any-hover: hover){
+			&:hover{
+				animation: shake 5s 0s both ease-in;
+			}
+		}
 	}
 	// .step__numb
 	&__numb {
@@ -301,6 +308,7 @@
 		@include adaptiveValue("font-size", 20, 14,1200, 320, 1 );
 		line-height: math.div(30,22 );
 		letter-spacing: -0.5px;
+		color: $text-color-major;
 		& .cont {
 		}
 	}
@@ -314,16 +322,22 @@
 //-------------------capability----------------------
 
 .capability {
+	position: relative;
+	&::before{
+		content:'';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: url('@img/contentImgs/cover_knowleges.jpg') center center / cover no-repeat;
+		opacity: .3;
+		filter: blur(1px);
+	}
+		
 	// .capability__content
 	&__content {
-		& p {
-			line-height: math.div(36 , 24);
-			text-align: justify;
-			@include adaptiveValue("font-size", 24, 14, 1200, 320, 1 );
-			& span {
-				font-weight: 600;
-			}
-		}
+		position: relative;
 	}
 	// .capability__innerContainer
 	&__innerContainer {
@@ -333,6 +347,14 @@
 	}
 	// .capability__text
 	&__text {
+		& p {
+			line-height: math.div(36 , 24);
+			text-align: justify;
+			@include adaptiveValue("font-size", 24, 14, 1200, 320, 1 );
+			& span {
+				font-weight: 600;
+			}
+		}
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom",80 , 50, 1200, 320, 1 );
 		}
@@ -405,3 +427,161 @@
 	}
 }
 
+//-------------------consult----------------------
+
+.consult {
+	position: relative;
+	// .consult__outerContainer
+	&__outerContainer {
+	}
+	// .consult__innerContainer
+	&__innerContainer {
+	}
+	// .consult__title
+	&__title {
+
+	}
+	// .consult__content
+	&__content {
+		display: flex;
+		flex: 1 0 100%;
+		gap: rem(50);
+		flex-wrap: wrap-reverse;
+		@media (max-width:$mobile){
+			 justify-content: center; 
+		}
+	}
+
+	&__left {
+		width: 50%;
+		padding-right: rem(50);
+		@media (max-width:$mobile){
+			width: 100%;
+			padding-right:  rem(0);
+		}
+		
+	}
+
+	&__right {
+		position: absolute;
+		//
+		max-width: rem(700);
+		max-height: rem(900);
+		top: rem(15);
+		bottom: rem(15);
+		left: 50%;
+		right: rem(15);
+		filter: drop-shadow(-3px -3px 6px rgb(240, 240, 240)) drop-shadow(5px 5px 8px rgb(117, 117, 136));
+		@media (max-width:$mobile){
+			position: initial;
+			width: 100%;
+			height: rem(500);
+			
+		}
+	}
+	// .consult__form-block
+	&__form-block {
+		width: 100%;
+		max-width: rem(500);
+		@media (max-width:$mobile){
+			margin: 0 auto;
+	  }
+	}
+	// .consult__proposition
+	&__proposition {
+		@include adaptiveValue("font-size",24, 16, 1200, 320, 1);
+		line-height: math.div(36 , 24);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 60, 40, 1200, 320,1 );
+		}
+		span {
+			font-weight: 600;
+		}
+	}
+	// .consult__form
+	&__form {
+		
+	}
+	// .consult__photo-block
+	&__photo-block {
+	}
+}
+
+.form {
+	// .form__item
+	&__item {
+	}
+	// .form__input
+	&__input {
+	}
+	// .form__submit
+	&__submit {
+	
+			
+
+		// .form__submit_consult
+		&_consult {
+		}
+	}
+}
+.form-consult {
+
+}
+
+.photo-block {
+	//position: relative;
+			//width: 100%;
+	height: 100%;
+	// .photo-block__photo
+	&__photo {
+		
+		//width: 100%;
+		height: 100%;
+		//z-index: -1;
+		
+		& img {
+			border-radius: 10px;
+		}
+	}
+	// .photo-block__card
+	&__card {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-color: rgba($color: #ffffff, $alpha: .2);
+		backdrop-filter: blur(5px);
+		border-radius: 10px;
+		//margin: 10px;
+		
+	}
+	// .photo-block__name
+	&__name {
+		display: block;
+		padding: rem(20);
+		//line-height: rem(70);
+		background-color:  rgba($color: $background-color-secondary, $alpha: .7) ;
+		color: $text-color-secondary;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+		font-weight: 600;
+		@include adaptiveValue("font-size", 32, 20, 1200, 320, 1);
+
+	}
+
+	&__caption {
+		padding: rem(20);
+		font-weight: 600;
+		@include adaptiveValue("font-size", 22, 14, 1200, 320, 1);
+		line-height: math.div(26 , 22);
+	}
+
+	// .photo-block__occupation
+	&__occupation {
+		&:not(:last-child) {
+			margin-bottom: rem(15);
+		}
+	}
+	// .photo-block__position
+	&__position {
+	}
+}

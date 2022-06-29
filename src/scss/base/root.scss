@@ -22,7 +22,7 @@ $font-size-btn-text: rem(24); //botton text font size
 $font-size-links-text:  rem(24); //links text font size
 
 //font weight
-$font-weight-major: 50; //general document font weight
+$font-weight-major: 500; //general document font weight
 
 //letter spacing
 $letter-spacing-major: 0em; //general document letter spacing
@@ -59,7 +59,7 @@ $background-color-other-1:  rgb(45, 83, 158); // red accents
 $background-color-other-2: rgb(9, 179, 65); // btn hover cover
 
 // border colors
-$border-color-major: rgba(180, 180, 180, 1); //Цвет границ по умолчанию
+$border-color-major: rgba(220, 220, 220, 1); //Цвет границ по умолчанию
 $border-color-button: rgba(255, 255, 255, 1);
 $border-color-other-1:  linear-gradient(to right, rgba(255,255,255,1), rgba(55,83,111,.4)); //forms outlines
 $border-color-other-2: rgba(0, 0, 0, 1); //popup outline
