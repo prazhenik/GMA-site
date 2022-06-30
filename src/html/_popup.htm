@@ -31,23 +31,23 @@
 				</svg>
 			</button>
 			<form id="form-callback" action="sendmail.php" data-ajax="true" method="POST" class="popup__form form form-callback">
-				<div class="form__item">
+				<div class="form__item form__item_input">
 					<input id="form-callback-name" autocomplete="off" type="text" name="form[name]" data-required="text"
 						data-error="Invalid character or data not entered" placeholder="Ваше имя*"
 						class="form__input _text _req">
 				</div>
-				<div class="form__item">
+				<div class="form__item form__item_input">
 					<input id="form-callback-phone" autocomplete="off" type="tel" name="form[phone]" data-required="phone"
 						data-error="Enter your phone number without spaces, starting with '+'" placeholder="Ваш номер телефона*"
 						class="form__input _phone _req">
 				</div>
-				<div class="form__item">
+				<div class="form__item form__item_textarea">
 					<textarea id="form-callback-textarea" autocomplete="off" name="form[textarea]"
 						data-error="Please write your message" placeholder="Ваш вопрос (не обязательно):"
 						class="form__textarea _req"></textarea>
 				</div>
 				<div class="form__submit form__submit_callback">
-					<button type="submit" class="btn">Отправить</button>
+					<button type="submit" class="btn btn_popup">Отправить</button>
 				</div>
 			</form>
 		</div>

@@ -33,7 +33,9 @@ $font-style: normal;
 
 //text colors
 $text-color-major: rgba(27, 58, 119, 1); //general document text color
-$text-color-secondary: rgba(255, 255, 255, 1);
+$text-color-secondary: rgba(230, 230, 230, 1);
+$text-color-accent: rgba(255, 255, 255, 1);
+
 
 $text-color-menu: rgba(27, 58, 119, 1); //menu links text color
 $text-color-menu-active: rgba(255, 255, 255, 1); //active menu links text color
@@ -56,14 +58,14 @@ $background-color-overlay-lock: rgba(0, 0, 0, .6); // overlays _lock
 $background-color-button:  linear-gradient(94.29deg, #2B5935 10.72%, #00B428 65.76%, #1E9538 98.53%); //
 $background-color-button-active: rgba(50, 250, 7, 0.8); // 
 $background-color-other-1:  rgb(45, 83, 158); // red accents
-$background-color-other-2: rgb(9, 179, 65); // btn hover cover
+$background-color-other-2: rgb(10, 180, 65); // btn hover cover
 
 // border colors
 $border-color-major: rgba(220, 220, 220, 1); //Цвет границ по умолчанию
 $border-color-button: rgba(255, 255, 255, 1);
 $border-color-other-1:  linear-gradient(to right, rgba(255,255,255,1), rgba(55,83,111,.4)); //forms outlines
 $border-color-other-2: rgba(0, 0, 0, 1); //popup outline
-$border-color-other-3: rgba(63, 150, 82, 1);
+$border-color-other-3: rgb(10, 180, 65);
 //$borderColor5: ;
 
 
@@ -92,13 +94,14 @@ $popup-background-color: rgba(27, 58, 119, 1);
 
 // default input properties  
 $input-height-pc: 80;
-$input-height-mob: 50;
+$input-height-mob: 60;
 
 $input-border-radius: 10;
 
 $input-padding: 20;
 
-$input-background-color: rgba(255, 255, 255, 0.2);
-$input-background-color-focus: rgba(255, 255, 255, 0.4);
-$input-caret-color:  rgba(255, 255, 255, 1);
-$input-placeholder-color: rgba(255, 255, 255, 1);
+$input-color:  $text-color-major;
+$input-background-color: rgba(230, 230, 230, 1);
+$input-background-color-focus: rgba(255, 255, 255, 1);
+$input-caret-color:  $text-color-major;
+$input-placeholder-color: rgba(120, 120, 120, 1);

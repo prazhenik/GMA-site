@@ -21,6 +21,7 @@ section{
 	&:nth-child(odd){
 		background-color: $background-color-other-1;
 		color: $text-color-secondary;
+		font-weight: 400;
 	}
 }
 

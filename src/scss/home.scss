@@ -184,7 +184,7 @@
 	gap: rem(30);
 	counter-reset: steps;
 	&:not(:last-child) {
-		@include adaptiveValue("margin-bottom",150 ,50, 1200, 320, 1 );
+		@include adaptiveValue("margin-bottom",150, 50, 1200, 320, 1 );
 	}
 	@media (max-width:$mobileSmall){
 		grid-template-columns: repeat(auto-fit, minmax(rem(190), 1fr));
@@ -338,7 +338,7 @@
 	// .capability__content
 	&__content {
 		position: relative;
-		font-weight: 400;
+		
 	}
 	// .capability__innerContainer
 	&__innerContainer {
@@ -352,8 +352,9 @@
 			line-height: math.div(36 , 24);
 			text-align: justify;
 			@include adaptiveValue("font-size", 24, 14, 1200, 320, 1 );
-			& span {
+			span {
 				font-weight: 600;
+				color: $text-color-accent;
 			}
 		}
 		&:not(:last-child) {
@@ -416,17 +417,22 @@
 .capability-offer {
 	display: flex;
 	justify-content: center;
-	gap: rem(50);
+	gap: rem(40);
 	flex-wrap: wrap;
-	// .capability-offer__text
-	&__text {
+
+
+	// .capability-offer__proposition
+	&__proposition {
 		align-self: center;
 		line-height: math.div(36 , 24);
 		text-align: justify;
+		border-left: 2px solid $border-color-other-3;
+		padding-left: rem(20);
 		@include adaptiveValue("font-size", 24, 14, 1200, 320, 1 );
 		
-		& span {
+		span {
 			font-weight: 600;
+			color: $text-color-accent;
 		}
 	}
 	// .capability-offer__button
@@ -483,6 +489,7 @@
 			position: initial;
 			width: 100%;
 			height: rem(500);
+			max-width: rem(500);
 			
 		}
 	}
@@ -490,14 +497,17 @@
 	&__form-block {
 		width: 100%;
 		max-width: rem(500);
+		border-radius: 10px;
 		@media (max-width:$mobile){
 			margin: 0 auto;
 	  }
 	}
 	// .consult__proposition
 	&__proposition {
-		@include adaptiveValue("font-size",24, 16, 1200, 320, 1);
 		line-height: math.div(36 , 24);
+		text-align: justify;
+		font-weight: 600;
+		@include adaptiveValue("font-size", 24, 18, 1200, 320, 1 );
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 60, 40, 1200, 320,1 );
 		}
@@ -592,3 +602,82 @@
 	&__position {
 	}
 }
+
+//-------------------partners----------------------
+
+.partners {
+	// .partners__outerContainer
+	&__outerContainer {
+	}
+	// .partners__innerContainer
+	&__innerContainer {
+	}
+	// .partners__title
+	&__title {
+	}
+	// .partners__content
+	&__content {
+		text-align: justify;
+	}
+	// .partners__text
+	&__text {
+		line-height: math.div(36 , 24);
+		text-align: justify;
+		@include adaptiveValue("font-size", 24, 14, 1200, 320, 1 );
+		font-weight: 400;
+		span {
+			font-weight: 600;
+			color: $text-color-accent;
+		}
+		&:not(:last-child) {
+			margin-bottom:  rem(80);
+		}
+	}
+	// .partners__paragraph
+	&__paragraph {
+		
+		&:not(:last-child) {
+			margin-bottom: rem(50);
+		}
+	}
+	// .partners__form-block
+	&__form-block {
+
+	}
+	// .partners__proposition
+	&__proposition {
+		border-left: 2px solid $border-color-other-3;
+		padding-left: rem(20);
+		line-height: math.div(36 , 24);
+		text-align: justify;
+		@include adaptiveValue("font-size", 24, 14, 1200, 320, 1 );
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 60, 40, 1200, 320,1 );
+		}
+		span {
+			font-weight: 600;
+			color: $text-color-accent;
+		}
+	}
+	// .partners__form
+	&__form {
+	}
+}
+
+.form-partners {
+	// .form__item
+	&__item {
+	}
+	// .form__input
+	&__input {
+	}
+	// .form__submit
+	&__submit {
+		width: 30%;
+		display: inline-block;
+		// .form__submit_partners
+		&_partners {
+		}
+	}
+}
+

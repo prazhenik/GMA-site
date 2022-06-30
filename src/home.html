@@ -17,7 +17,7 @@
 					</div>
 					<div class="hero__outerContainer">
 						<div class="hero__innerContainer">
-							<div  class="hero__content _section-content">
+							<div class="hero__content _section-content">
 								<div class="hero__offer offer">
 									<h1 class="offer__title _page-title">
 										Не теряйте время на медицину прошлого
@@ -186,7 +186,7 @@
 									</div>
 								</div>
 								<div class="capability__offer capability-offer">
-									<div class="capability-offer__text">
+									<div class="capability-offer__proposition">
 										<p>
 											О программах по этим и другим направлениям Вы можете <span>бесплатно
 												проконсультироваться</span> у наших
@@ -212,21 +212,23 @@
 								<div class="consult__left">
 									<div class="consult__form-block">
 										<p class="consult__proposition">
-											Я лично перезвоню и <span>бесплатно</span> проконсультирую Вас
+											Я лично перезвоню и <span>бесплатно</span> проконсультирую Вас!
 										</p>
-										<form id="form-consult" action="sendmail.php" data-ajax="true" method="POST" class="consult__form form form-consult">
-											<div class="form__item">
-												<input id="form-consult-name" autocomplete="off" type="text" name="form[name]" data-required="text"
-													data-error="Invalid character or data not entered" placeholder="Ваше имя*"
-													class="form__input _text _req">
+										<form id="form-consult" action="sendmail.php" data-ajax="true" method="POST"
+											class="consult__form form form-consult">
+											<div class="form__item form__item_input">
+												<input id="form-consult-name" autocomplete="off" type="text" name="form[name]"
+													data-required="text" data-error="Invalid character or data not entered"
+													placeholder="Ваше имя*" class="form__input _text _req">
 											</div>
-											<div class="form__item">
-												<input id="form-consult-phone" autocomplete="off" type="tel" name="form[phone]" data-required="phone"
-													data-error="Enter your phone number without spaces, starting with '+'" placeholder="Ваш номер телефона*"
-													class="form__input _phone _req">
+											<div class="form__item form__item_input">
+												<input id="form-consult-phone" autocomplete="off" type="tel" name="form[phone]"
+													data-required="phone"
+													data-error="Enter your phone number without spaces, starting with '+'"
+													placeholder="Ваш номер телефона*" class="form__input _phone _req">
 											</div>
 											<div class="form__submit form__submit_consult">
-												<button type="submit" class="btn">Отправить</button>
+												<button type="submit" class="btn btn_consult">Отправить</button>
 											</div>
 										</form>
 									</div>
@@ -251,7 +253,6 @@
 										</div>
 									</div>
 								</div>
-
 							</div>
 						</div>
 					</div>
@@ -259,21 +260,50 @@
 				<section data-watch data-watch-threshold="0.2" class="partners">
 					<div class="partners__outerContainer">
 						<div class="partners__innerContainer">
+							<h2 class="partners__title _section-title">
+								<span>Узнайте</span> о наших партнерах
+							</h2>
 							<div class="partners__content _section-content">
-								<h2 class="partners__title _section-title">
-									<span>Узнайте</span> о наших партнерах
-								</h2>
+								<div class="partners__text">
+									<p class="partners__paragraph">
+										Наши партнеры - это ведущие профильные клиники и реабилитационные центры из <span>Греции, Испании, Германии, Франции, Турции, Израиля.</span>  
+									</p>
+									<p class="partners__paragraph">
+										Каждый из них имеет безупречную репутацию, новейшее лечебно-диагностическое оборудование, лабораторную базу, и, самое главное, <span>высококвалифицированный медицинский состав.</span> 
+									</p>
+								</div>
+								<div class="partners__form-block">
+									<p class="partners__proposition">
+										Свяжитесь с нами и наши консультанты дадут наиболее актуальную информацию о партнерах, <span>готовых принять пациента</span> по конкретному направлению.
+									</p>
+									<form id="form-partners" action="sendmail.php" data-ajax="true" method="POST"
+										class="partners__form form form-partners">
+										<div class="form__item form__item-input">
+											<input id="form-partners-name" autocomplete="off" type="text" name="form[name]"
+												data-required="text" data-error="Invalid character or data not entered"
+												placeholder="Ваше имя*" class="form__input _text _req">
+										</div>
+										<div class="form__item form__item-input">
+											<input id="form-partners-phone" autocomplete="off" type="tel" name="form[phone]"
+												data-required="phone"
+												data-error="Enter your phone number without spaces, starting with '+'"
+												placeholder="Ваш номер телефона*" class="form__input _phone _req">
+										</div>
+										<div class="form__submit form__submit_partners">
+											<button type="submit" class="btn btn_partners">Выбрать клинику</button>
+										</div>
+									</form>
+								</div>
 							</div>
 						</div>
-					</div>
 				</section>
 				<section data-watch data-watch-threshold="0.2" class="about">
 					<div class="about__outerContainer">
 						<div class="about__innerContainer">
+							<h2 class="about__title _section-title">
+								<span>Цифры</span> расскажут о нас
+							</h2>
 							<div class="about__content _section-content">
-								<h2 class="about__title _section-title">
-									<span>Цифры</span> расскажут о нас
-								</h2>
 							</div>
 						</div>
 					</div>
@@ -281,10 +311,10 @@
 				<section data-watch data-watch-threshold="0.2" class="contacts">
 					<div class="contacts__outerContainer">
 						<div class="contacts__innerContainer">
+							<h2 class="contacts__title _section-title">
+								<span>Обращайтесь</span>, мы всегда на связи
+							</h2>
 							<div class="contacts__content _section-content">
-								<h2 class="contacts__title _section-title">
-									<span>Обращайтесь</span>, мы всегда на связи
-								</h2>
 							</div>
 						</div>
 					</div>
