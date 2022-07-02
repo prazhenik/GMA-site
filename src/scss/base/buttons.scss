@@ -24,7 +24,7 @@
 	overflow: hidden;
 	//box-shadow: 0px 0px 5px rgba(49, 49, 49, 0.8);
 	color: $text-color-btn;
-	border-radius: 10px;
+	//border-radius: 10px;
 	//border: 2px solid $border-color-button;
 	@include adaptiveValue("width", 500, 280, 1200, 320, 1);
 	@include adaptiveValue("min-height", $button-height-pc, $button-height-mob, 1200, 320, 1);
@@ -39,10 +39,18 @@
 // custom site
 
 .btn {
-	//border: 2px solid $border-color-button;
-	background-color: $background-color-other-2;
+	//border: 1px solid $border-color-button;
+	//background-color: $background-color-other-2;
 	color: $text-color-btn;
 	animation: breathe 2.5s infinite forwards;
+	background-color:  $background-color-other-2;
+	@media (any-hover: hover){
+		&:hover{
+			background-color: $background-color-other-1;
+			border: 1px solid rgba($color: #fff, $alpha: .5);
+		}
+	}
+	/*
 	&::before{
 		content:'';
 		position: absolute;
@@ -58,12 +66,13 @@
 		border-radius: 10px;
 		z-index: -1;
 
-	}
+	}*/
 	&_hero {
-		
-		backdrop-filter: blur(10px);
+		//border: 1px solid $border-color-button;
+		backdrop-filter: blur(5px);
 		color: $text-color-btn;
-		background-color: $background-color-other-2;
+		background-color:  $background-color-other-2;
+
 	}
 
 	&_popup, &_consult, &_partners {

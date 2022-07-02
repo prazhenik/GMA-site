@@ -29,7 +29,7 @@
 	}
 	// .header__logo
 	&__logo {
-
+		
 	}
 	// .header__menu
 	&__menu {
@@ -107,7 +107,7 @@
 	// .header-links__item
 	&__item {
 		display: inline-block;
-		@include adaptiveValue("width",50 ,30, 768, 320, 1 );
+		@include adaptiveValue("width",40 ,30, 768, 320, 1 );
 			@media (any-hover: hover){
 				&:hover {
 					& a{
@@ -163,6 +163,7 @@
 
 .lang {
 	position: relative;
+	background-color: $background-color-other-2;
 		// .lang__present
 		&__present {
 		}
@@ -192,6 +193,7 @@
 	@include adaptiveValue("height",50 ,35, 768, 320, 1 );
 	flex: 0 0 rem(200);
 	max-height: 60px;
+	
 	@media (max-width: rem(1200)){
 		flex: 1 0 auto;
 	}
@@ -223,7 +225,7 @@
 
 	}
 	& .header-links__lang {
-		color: $text-color-links;
+		//color: $text-color-links;
 		.lang {
 				// .lang__present
 				&__present {

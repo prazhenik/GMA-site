@@ -6,7 +6,7 @@
 	@include adaptiveValue("font-size", 60, 26, 1200, 320, 1);
 	color: $text-color-secondary;
 	text-transform: uppercase;
-	text-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
+	//text-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
 	&:not(:last-child) {
 		margin-bottom:  rem(50);
 		@media (max-width:$mobile){
@@ -22,7 +22,7 @@
 	line-height: 125%;
 	@include adaptiveValue("font-size", 24, 16, 1200, 320, 1);
 	color: $text-color-secondary;
-	text-shadow: 0px 0px 7px rgba(0, 0, 0, .8);
+	//text-shadow: 0px 0px 7px rgba(0, 0, 0, .8);
 	&:not(:last-child) {
 		margin-bottom:  rem(70);
 		@media (max-width:$mobile){
@@ -38,10 +38,14 @@
 	@include adaptiveValue("margin-bottom", 150 , 80, 1200, 320, 1);
 	@include adaptiveValue("font-size", 46, 24, 1200, 320, 1);
 	opacity: 0;
-	transition: opacity 1s ease;
+	transition: opacity .5s ease, transform .5s ease;
 	z-index: 1;
+	transform: translateX(-200%);
 	& span {
 		font-weight: 700;
+		color: $background-color-other-2;
+	
+
 	}
 
 	@media (max-width: $mobileSmall) {
@@ -49,9 +53,14 @@
 	}
 }
 
-._watcher-view ._section-title{
-	transition: opacity 1s ease;
-	opacity: 1;
+._watcher-view ._section-title {
+		transform: translateX(0);
+		transition: opacity .5s ease, transform .5s ease;
+		opacity: 1;
+
+	& span{
+
+	}
 }
 
 
