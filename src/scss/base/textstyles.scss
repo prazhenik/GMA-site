@@ -32,7 +32,6 @@
 }
 
 ._section-title {
-	position: relative;
 	font-style: italic;
 	line-height: 125%;
 	display: inline-block;
@@ -44,18 +43,7 @@
 	& span {
 		font-weight: 700;
 	}
-	&::after{
-		content:'';
-		position: absolute;
-		width: 200%;
-		height: 2px;
-		bottom: -5px;
-		right: 0;
-		background-color: $background-color-other-2;
-		border-radius: 5px;
-		transform: translate(-100%, 0);
-		transition: transform 1s ease-in;
-	}
+
 	@media (max-width: $mobileSmall) {
 		//text-align: justify;
 	}
@@ -64,11 +52,6 @@
 ._watcher-view ._section-title{
 	transition: opacity 1s ease;
 	opacity: 1;
-}
-
-._watcher-view ._section-title::after {
-	transform: translate(0, 0);
-	transition: transform 1s ease;
 }
 
 

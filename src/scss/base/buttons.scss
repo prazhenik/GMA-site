@@ -22,7 +22,7 @@
 	justify-content: center;
 	width: auto;
 	overflow: hidden;
-	box-shadow: 0px 0px 5px rgba(49, 49, 49, 0.8);
+	//box-shadow: 0px 0px 5px rgba(49, 49, 49, 0.8);
 	color: $text-color-btn;
 	border-radius: 10px;
 	//border: 2px solid $border-color-button;
@@ -39,25 +39,31 @@
 // custom site
 
 .btn {
+	//border: 2px solid $border-color-button;
 	background-color: $background-color-other-2;
+	color: $text-color-btn;
 	animation: breathe 2.5s infinite forwards;
 	&::before{
 		content:'';
 		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		background: url('@img/contentImgs/pattern.webp') center center / 100% no-repeat;
-		opacity: .8;
-		z-index: -1;
+		width: calc(100% - 10px);
+		height: calc(100% - 10px);
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		//background: url('@img/contentImgs/pattern.webp') center center / 100% no-repeat;
+		//background-color: rgb(62, 170, 59);
+		border: 2px solid $border-color-button;
 		//filter: saturate(0);
+		border-radius: 10px;
+		z-index: -1;
+
 	}
 	&_hero {
-		border: 2px solid $border-color-other-3;
+		
 		backdrop-filter: blur(10px);
 		color: $text-color-btn;
-		background-color: transparent;
+		background-color: $background-color-other-2;
 	}
 
 	&_popup, &_consult, &_partners {
