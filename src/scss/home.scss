@@ -38,7 +38,7 @@
 	}
 	// .hero__content
 	&__content {
-		@include adaptiveValue("padding-top",$header-height-pc ,$header-height-mob, 768, 320, 1 );
+		@include adaptiveValue("padding-top",$header-height-pc ,$header-height-mob, 1200, 320, 1 );
 		height: calc(var(--vh, 1vh) * 100);
 		min-height: -webkit-fill-available;
 		min-height: 550px;
@@ -103,8 +103,8 @@
 	// .controls__box
 	&__box {
 		position: relative;
-		@include adaptiveValue("width", 80, 50);
-		@include adaptiveValue("height", 80, 50);
+		@include adaptiveValue("width", 80, 50, 1200, 320, 1);
+		@include adaptiveValue("height", 80, 50, 1200, 320, 1);
 		border-radius: 10px;
 		border: $border-color-button 1px solid;
 		display: inline-block;
@@ -133,8 +133,8 @@
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -50%);
-			@include adaptiveValue("width", 80, 50);
-			@include adaptiveValue("height", 80, 50);
+			@include adaptiveValue("width", 80, 50, 1200, 320, 1);
+			@include adaptiveValue("height", 80, 50, 1200, 320, 1);
 			//margin-top: rem(-2);
 			pointer-events: none;
 			& path {
@@ -153,8 +153,8 @@
 		transform: translate(-50%, -50%);
 		& svg {
 			position: absolute;
-			@include adaptiveValue("width", 50, 30);
-			@include adaptiveValue("height", 50, 30);
+			@include adaptiveValue("width", 50, 30, 1200, 320, 1);
+			@include adaptiveValue("height", 50, 30, 1200, 320, 1);
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -50%);
@@ -290,7 +290,7 @@
 	// .step__name
 	&__name {
 		font-family: $font-family-other-1;
-		@include adaptiveValue("font-size", 24 , 16, 1200, 320, 1 );
+		@include adaptiveValue("font-size", 22 , 16, 1200, 320, 1 );
 		line-height: math.div(40 ,26 );
 		text-transform: uppercase;
 		color: $text-color-major;
@@ -305,7 +305,7 @@
 		flex-direction: column;
 		flex: 1 0 auto;
 		justify-content: center;
-		@include adaptiveValue("font-size", 20, 14,1200, 320, 1 );
+		@include adaptiveValue("font-size", 18, 14,1200, 320, 1 );
 		line-height: math.div(30,22 );
 		letter-spacing: -0.5px;
 		color: $text-color-major;
@@ -331,8 +331,7 @@
 		top: 0;
 		left: 0;
 		background: url('@img/contentImgs/cover_knowleges.jpg') center center / cover no-repeat;
-		opacity: .3;
-		filter: blur(1px);
+		opacity: .15;
 	}
 		
 	// .capability__content
@@ -349,9 +348,10 @@
 	// .capability__text
 	&__text {
 		& p {
-			line-height: math.div(36 , 24);
+			line-height: math.div(32 , 22);
 			text-align: justify;
-			@include adaptiveValue("font-size", 24, 14, 1200, 320, 1 );
+			//font-weight: 500;
+			@include adaptiveValue("font-size", 22, 14, 1200, 320, 1 );
 			span {
 				font-weight: 600;
 				color: $text-color-accent;
@@ -362,7 +362,7 @@
 		}
 		& p {
 			&:not(:last-child) {
-				@include adaptiveValue("margin-bottom",80 , 50 );
+				@include adaptiveValue("margin-bottom",80 , 50, 1200, 320, 1  );
 			}
 		}
 
@@ -388,7 +388,7 @@
 		max-height: 350px;
 		overflow-y: auto;
 		padding: 10px;
-		border: 1px solid $border-color-major;
+		border: 1px solid $border-color-button;
 		border-radius: 10px;
 	}
 	// .specialties__item
@@ -484,7 +484,7 @@
 		bottom: rem(15);
 		left: 50%;
 		right: rem(15);
-		filter: drop-shadow(-3px -3px 6px rgb(240, 240, 240)) drop-shadow(5px 5px 8px rgb(120, 120, 140));
+		filter: drop-shadow(0px 0px 2px rgb(230, 230, 230)) drop-shadow(3px 3px 7px rgb(150, 150, 150));
 		@media (max-width:$mobile){
 			position: initial;
 			width: 100%;
@@ -576,7 +576,7 @@
 		display: block;
 		padding: rem(20);
 		//line-height: rem(70);
-		background-color:  rgba($color: $background-color-secondary, $alpha: .7) ;
+		background-color:  rgba($color: $background-color-other-1, $alpha: 1) ;
 		color: $text-color-secondary;
 		border-top-right-radius: 10px;
 		border-top-left-radius: 10px;
@@ -606,6 +606,17 @@
 //-------------------partners----------------------
 
 .partners {
+	position: relative;
+	&::before{
+		content:'';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: url('@img/contentImgs/cover_partners.jpg') center center / cover no-repeat;
+		opacity: .15;
+	}
 	// .partners__outerContainer
 	&__outerContainer {
 	}
@@ -617,6 +628,7 @@
 	}
 	// .partners__content
 	&__content {
+		position: relative;
 		text-align: justify;
 	}
 	// .partners__text
@@ -624,7 +636,6 @@
 		line-height: math.div(36 , 24);
 		text-align: justify;
 		@include adaptiveValue("font-size", 24, 14, 1200, 320, 1 );
-		font-weight: 400;
 		span {
 			font-weight: 600;
 			color: $text-color-accent;

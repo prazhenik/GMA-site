@@ -8,20 +8,21 @@ section{
 		position: relative;
 		background-color: $background-color-major;
 
-		&::before{
-			content:'';
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			background: url('@img/contentImgs/pattern.webp') center center / cover no-repeat;
-		}
+		// &::before{
+		// 	content:'';
+		// 	position: absolute;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	top: 0;
+		// 	left: 0;
+		// 	background: url('@img/contentImgs/pattern.webp') center center / cover no-repeat;
+		// 	opacity: .5;
+		// }
 	}
 	&:nth-child(odd){
-		background-color: $background-color-other-1;
-		color: $text-color-secondary;
-		font-weight: 400;
+		background-color: $background-color-secondary;
+		//color: $text-color-other-1;
+		//font-weight: 500;
 	}
 }
 

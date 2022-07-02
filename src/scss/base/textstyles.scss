@@ -3,7 +3,7 @@
 	font-style: normal;
 	font-weight: 600;
 	line-height: 125%;
-	@include adaptiveValue("font-size", 60, 26, 992, 320, 1);
+	@include adaptiveValue("font-size", 60, 26, 1200, 320, 1);
 	color: $text-color-secondary;
 	text-transform: uppercase;
 	text-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
@@ -20,7 +20,7 @@
 	font-style: normal;
 	font-weight: 500;
 	line-height: 125%;
-	@include adaptiveValue("font-size", 24, 16, 992, 320, 1);
+	@include adaptiveValue("font-size", 24, 16, 1200, 320, 1);
 	color: $text-color-secondary;
 	text-shadow: 0px 0px 7px rgba(0, 0, 0, .8);
 	&:not(:last-child) {
@@ -77,5 +77,5 @@
 	font-style: italic;
 	font-weight: 700;
 	line-height: 125%;
-	@include adaptiveValue("font-size", 38, 20);
+	@include adaptiveValue("font-size", 38, 20, 1200, 320, 1);
 }

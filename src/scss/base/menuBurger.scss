@@ -16,8 +16,8 @@
 	&__icon {
 		display: none;
 		position: relative;
-		@include adaptiveValue("width",50 ,40, 768, 320, 1 );
-		@include adaptiveValue("height",35 ,20, 768, 320, 1 );
+		width: rem(40);
+		@include adaptiveValue("height",25 ,20, 768, 320, 1 );
 		cursor: pointer;
 		transition: all 0.2s ease;
 		@media (max-width: rem(1200)) {
@@ -29,17 +29,17 @@
 				
 				& span {
 					opacity: 0;
-					background: $background-color-secondary;
+					background: $background-color-other-1;
 				}
 				&::before {
 					top: 40%;
 					transform: rotate(-45deg);
-					background: $background-color-secondary;
+					background: $background-color-other-1;
 				}
 				&::after {
 					top: 40%;
 					transform: rotate(45deg);
-					background: $background-color-secondary;
+					background: $background-color-other-1;
 				}
 			}
 		}
@@ -85,7 +85,6 @@
 			max-width: rem(360);
 			height: 100%;
 			background: $background-color-menu;
-			backdrop-filter: blur(20px);
 			transition: transform 0.2s ease;
 			overflow: auto;
 			z-index: 99;
@@ -103,7 +102,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		position: relative;
-		@include adaptiveValue("column-gap", 60, 10, 1920, 1200, 1);
+		@include adaptiveValue("column-gap", 50, 10, 1920, 1200, 1);
 		row-gap: rem(10);
 		@media (max-width: rem(1200)) {
 			flex-direction: column;
@@ -131,7 +130,6 @@
 		@include adaptiveValue("font-size",$font-size-menu-links-pc ,$font-size-menu-links-mob, 1920, 1200, 1 ); //устраняет скачек контента при смене fontsize на ховере
 		line-height: math.div( $font-size-menu-links-pc, $font-size-menu-links-pc);
 		letter-spacing: 0.02em;
-		font-weight: 500;
 		transition: opacity .3s ease;
 		&::before{
 			content:'';

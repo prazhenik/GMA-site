@@ -8,7 +8,7 @@ $font-family-other-1: 'DaysOne', sans-serif; //element font family
 //$font-family-other-2: 'Montserrat', sans-serif; //element font family
 
 //font size
-$font-size-major: rem(24); //general document font size
+$font-size-major: rem(22); //general document font size
 $font-size-main-title: rem(60); //main title font size (hero)
 //$font-size-main-subtitle: rem(25); //main subtitle font size (hero)
 
@@ -18,8 +18,8 @@ $font-size-section-title: rem(38); //section title font size
 $font-size-menu-links-pc: 22; //header menu links on pc @media font size
 $font-size-menu-links-mob: 18;  //header (burger) menu links on mobile @media font size
 
-$font-size-btn-text: rem(24); //botton text font size
-$font-size-links-text:  rem(24); //links text font size
+$font-size-btn-text: rem(22); //botton text font size
+$font-size-links-text:  rem(22); //links text font size
 
 //font weight
 $font-weight-major: 500; //general document font weight
@@ -46,25 +46,25 @@ $text-color-btn-active: rgba(255, 255, 255, 1); //active menu links text color
 $text-color-links: rgba(27, 58, 119, 1); //a links text color
 $text-color-links-active: rgba(27, 58, 119, 1); //a links text color
 
-$text-color-other-1: rgba(220, 220, 220, 1); //other text color
+$text-color-other-1: rgba(255, 255, 255, 1); //other text color
 $text-color-other-2: rgba(10, 250, 215, 1); //other text color/color hero title span
 //$text-color-other-3: rgba(10, 250, 215, 1); //other text color
 
 //bacground colors
 $background-color-major: rgba(240, 240, 240, 1); //Цвет фона по умолчанию
-$background-color-secondary: rgba(27, 58, 119, 1); 
+$background-color-secondary: rgb(180, 205, 255); 
 $background-color-menu: rgba(240, 240, 240, 1); //menu bcg 
 $background-color-overlay-lock: rgba(0, 0, 0, .6); // overlays _lock
 $background-color-button:  linear-gradient(94.29deg, #2B5935 10.72%, #00B428 65.76%, #1E9538 98.53%); //
 $background-color-button-active: rgba(50, 250, 7, 0.8); // 
-$background-color-other-1:  rgb(45, 83, 158); // red accents
+$background-color-other-1: rgba(27, 58, 119, 1); // red accents
 $background-color-other-2: rgb(10, 180, 65); // btn hover cover
 
 // border colors
 $border-color-major: rgba(220, 220, 220, 1); //Цвет границ по умолчанию
 $border-color-button: rgba(255, 255, 255, 1);
 $border-color-other-1:  linear-gradient(to right, rgba(255,255,255,1), rgba(55,83,111,.4)); //forms outlines
-$border-color-other-2: rgba(0, 0, 0, 1); //popup outline
+$border-color-other-2: rgba(27, 58, 119, 1); //popup outline
 $border-color-other-3: rgb(10, 180, 65);
 //$borderColor5: ;
 
@@ -82,6 +82,11 @@ $border-color-other-3: rgb(10, 180, 65);
 
 $menu-width: 70;
 
+// default button properties 
+
+$button-height-pc: 75;
+$button-height-mob: 50;
+
 // default popup properties 
 $popup-maxwhidth: 550;
 
@@ -93,8 +98,8 @@ $popup-background-color: rgba(27, 58, 119, 1);
 // default form properties  
 
 // default input properties  
-$input-height-pc: 80;
-$input-height-mob: 60;
+$input-height-pc: 75;
+$input-height-mob: 50;
 
 $input-border-radius: 10;
 

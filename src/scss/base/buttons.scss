@@ -22,14 +22,14 @@
 	justify-content: center;
 	width: auto;
 	overflow: hidden;
-	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 5px rgba(49, 49, 49, 0.8);
 	color: $text-color-btn;
 	border-radius: 10px;
-	border: 2px solid $border-color-button;
-	@include adaptiveValue("width", 500, 280);
-	@include adaptiveValue("min-height", 80, 60);
+	//border: 2px solid $border-color-button;
+	@include adaptiveValue("width", 500, 280, 1200, 320, 1);
+	@include adaptiveValue("min-height", $button-height-pc, $button-height-mob, 1200, 320, 1);
 	padding: rem(0) rem(20);
-	@include adaptiveValue("font-size", 24, 14);
+	@include adaptiveValue("font-size", 22, 14, 1200, 320, 1);
 	font-weight: 600;
 	text-transform: uppercase;
 	line-height: math.div(1 , 1);
@@ -39,12 +39,23 @@
 // custom site
 
 .btn {
-	backdrop-filter: blur(15px);
 	background-color: $background-color-other-2;
 	animation: breathe 2.5s infinite forwards;
+	&::before{
+		content:'';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: url('@img/contentImgs/pattern.webp') center center / 100% no-repeat;
+		opacity: .8;
+		z-index: -1;
+		//filter: saturate(0);
+	}
 	&_hero {
-		border: 2px solid $background-color-other-2;
-		backdrop-filter: blur(15px);
+		border: 2px solid $border-color-other-3;
+		backdrop-filter: blur(10px);
 		color: $text-color-btn;
 		background-color: transparent;
 	}
