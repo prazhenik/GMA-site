@@ -4612,6 +4612,7 @@
                 }), 500);
             }));
         }));
+        const vid = document.querySelector(".hero__video");
         const vidItem = document.querySelector(".hero__video video");
         const offerTitle = document.querySelector(".offer__title");
         const offerSubitle = document.querySelector(".offer__subtitle");
@@ -4619,10 +4620,15 @@
         const playBtnMob = document.querySelector("._video-play-mob");
         const playIcon = document.querySelector(".controls__play");
         const pauseIcon = document.querySelector(".controls__pause");
+        window.addEventListener("load", (() => {
+            setTimeout((() => {
+                vidItem.hidden = false;
+            }), 1e3);
+        }));
         const play = () => {
             vidItem.play();
-            vidItem.style.transition = "filter 1.5s ease";
-            vidItem.style.filter = "grayscale(0)  brightness(1)";
+            vidItem.style.transition = "filter 0.5s ease";
+            vid.style.opacity = "1";
             offerTitle.style.opacity = "0";
             offerSubitle.style.opacity = "0";
             playIcon.style.display = "none";
@@ -4631,7 +4637,7 @@
         };
         const pause = () => {
             vidItem.pause();
-            vidItem.style.filter = "grayscale(.7) brightness(.7)";
+            vid.style.opacity = "0";
             offerTitle.style.opacity = "1";
             offerSubitle.style.opacity = "1";
             playIcon.style.display = "inline-block";

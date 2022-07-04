@@ -157,7 +157,7 @@ buttons.forEach(button => {
 
 		let ripples = document.createElement('span');
 
-		ripples.className ='ripple';
+		ripples.className = 'ripple';
 
 		ripples.style.left = x + 'px';
 		ripples.style.top = y + 'px';
@@ -170,7 +170,7 @@ buttons.forEach(button => {
 })
 
 //---------------video play------------------
-
+const vid = document.querySelector('.hero__video');
 const vidItem = document.querySelector('.hero__video video');
 const offerTitle = document.querySelector('.offer__title');
 const offerSubitle = document.querySelector('.offer__subtitle');
@@ -179,10 +179,20 @@ const playBtnMob = document.querySelector('._video-play-mob');
 const playIcon = document.querySelector('.controls__play');
 const pauseIcon = document.querySelector('.controls__pause');
 
+
+window.addEventListener('load', () => {
+	setTimeout(() => {
+		vidItem.hidden = false;
+	}, 1000)
+})
+
+
 const play = () => {
+	
 	vidItem.play();
-	vidItem.style.transition = "filter 1.5s ease"
-	vidItem.style.filter = "grayscale(0)  brightness(1)"
+	vidItem.style.transition = "filter 0.5s ease"
+	//vidItem.style.filter = "grayscale(0)  brightness(1)"
+	vid.style.opacity = "1"
 	offerTitle.style.opacity = "0"
 	offerSubitle.style.opacity = "0"
 	playIcon.style.display = "none"
@@ -194,7 +204,8 @@ const play = () => {
 
 const pause = () => {
 	vidItem.pause();
-	vidItem.style.filter = "grayscale(.7) brightness(.7)"
+	//vidItem.style.filter = "grayscale(1) brightness(.5)"
+	vid.style.opacity = "0"
 	offerTitle.style.opacity = "1"
 	offerSubitle.style.opacity = "1"
 	playIcon.style.display = "inline-block"
@@ -226,7 +237,7 @@ console.log(algorithmCards);
 if (algorithmCardsBox) {
 	console.log('hello');
 	algorithmCards.forEach(card => {
-		
+
 		setTimeout(showCard, 1000)
 		function showCard() {
 			card.style.opacity = "1";

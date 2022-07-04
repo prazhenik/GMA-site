@@ -11,8 +11,7 @@
 // Стили попапов
 @import "base/popup";
 
-// Стили Бургера
-@import "base/menuBurger";
+
 
 // Стили хлебных крошек
 //@import "base/breadcrumbs";
@@ -53,7 +52,7 @@
 		object-fit: cover;
 	}
 }
-[class*="-ibg_contain"] {
+[class*="-ibg-contain"] {
 	img {
 		object-fit: contain;
 	}

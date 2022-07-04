@@ -1,222 +1,133 @@
-// актуализирован 05/02/22 20.56
+// актуализирован 05/07/22 
+
+// Стили Бургера
+@import "base/menuBurger";
 
 .header {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 2;
-	//background-color: $background-color-major;
+	z-index: 10;
+	background-color: $background-color-secondary;
 	background-color: transparent;
-	//border-bottom: $border-color-major 1px solid;
-	
-	// .header__content
-	&._header-scroll {
-		box-shadow: 0px 2px 10px 1px rgba(0,0,0,0.3);
-		background-color: $background-color-major;
-
+	// .header__outerContainer
+	&__outerContainer {
 	}
+	// .header__content
 	&__content {
+		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		@include adaptiveValue("column-gap",30 , 10, 768, 320, 1);
+		overflow: visible;
+		@include adaptiveValue("column-gap",30 , 15, 768, 320, 1);
 		@include adaptiveValue("height",$header-height-pc ,$header-height-mob, 768, 320, 1 );
-		padding: rem(0) rem(20);
-		@media (max-width: 1200px){
-			padding: rem(0);
-		}
 	}
+	
 	// .header__logo
 	&__logo {
-		
 	}
 	// .header__menu
 	&__menu {
-		//flex: 1 0 auto;
 	}
 	// .header__links
 	&__links {
-	}
-}
-.menu {
-	// .menu__icon
-	&__icon {
-	}
-	// .menu__body
-	&__body {
-	}
-	// .menu__list
-	&__list {
-	}
-	// .menu__item
-	&__item {
-	}
-	// .menu__link
-	&__link {
-	}
-}
-.icon-menu {
-}
-.header-links {
-
-	// .header-links__list
-	&__list {
-
-	}
-	// .header-links__item
-
-	// .header-links__insta
-	&__insta {
-	}
-	// .header-links__lang
-	&__lang {
-	
-	}
-}
-
-.header {
-	// .header__links
-	&__links {
-
-	}
-	
-}
-.header-links {
-	display: flex;
-	gap: rem(3);
-	flex-wrap: nowrap;
-	flex: 0 0 auto;
-	//border-radius: 10px;
-	//overflow: hidden;
-	
-	// .header-links__list
-	&__list {
-		//border: 1px solid rgba($color: rgb(255, 255, 255), $alpha: .5);
-		//border-bottom-left-radius: 10px;
-		//border-top-left-radius: 10px;
-		//background-color: $background-color-other-1;
-		//background-color: rgba($color: rgb(150, 150, 150), $alpha: 1.0);
-		@media (any-hover: hover){
-			&:hover {
-				//background-color: $background-color-other-1;
-
-			}
-		}
-	}
-	// .header-links__item
-	&__item {
-		display: inline-block;
-		@include adaptiveValue("width",40 ,30, 768, 320, 1 );
-			@media (any-hover: hover){
-				&:hover {
-					& a{
-						transform: scale(1.1);
-						transition: transform .1s ease;
-					}
-				}
-			}
-
-
-		& svg, path {
-			@include adaptiveValue("width",30 ,20, 768, 320, 1 );
-			@include adaptiveValue("height",30 ,20, 768, 320, 1 );
-			fill: $text-color-secondary;
-		}
-		// .header-links__item_fb
-		&_fb:hover path {
-
-		}
-		// .header-links__item_insta
-		&_insta:hover path{
-
-		}
-	}
-	& a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		@include adaptiveValue("height",40 ,30, 768, 320, 1 );
-		transition: transform .2s ease;
-	}
-		// .header-links__item_lang
-	&__lang {
-		@include adaptiveValue("width",40 ,30, 768, 320, 1 );
-		@include adaptiveValue("font-size", 24 ,20, 768, 320, 1 );
-		//overflow: hidden;
-		color: $text-color-secondary;
-		//font-weight: 400;
-		@media (any-hover: hover){
-			& a:hover {
-					transform: scale(1.1);
-					transition: transform .1s ease;
-			}
-		}
-		& span {
-			//margin-top: 5%;
-			//text-transform: uppercase;
-		}
-
 		
 	}
 }
-
-.lang {
-	position: relative;
-	background-color: $background-color-other-2;
-		// .lang__present
-		&__present {
-		}
-		// .lang__options
-		&__options {
-			position: absolute;
-			//width: 100%;
-			top: 150%;
-			left: 50%;
-			transform: translate(-50%, 0);
-			background-color: transparent;
-			border-radius: 10px;
-			padding:  rem(10) rem(5);
-			visibility: hidden;
-			& a {
-				&:not(:last-child) {
-					margin-bottom:  rem(5);
-				}
-
-			}
-			
-		}
-}
-
-
 .site-logo {
-	@include adaptiveValue("height",50 ,35, 768, 320, 1 );
-	flex: 0 0 rem(200);
-	max-height: 60px;
-	
-	@media (max-width: rem(1200)){
-		flex: 1 0 auto;
-	}
-	& a {
-		width: 100%;
-		height: 100%;
-	}
-	&__lite {
+	flex: 0 1 rem(180);
+	height: 100%;
+	//background-color: rgba($color: $background-color-major, $alpha: .7) ;
+	//padding: rem(5) rem(10);
+	border-radius: 10px;
+	// .site-logo__item
+	&__item {
+		position: relative;
 		display: inline-block;
-		background: url("@img/logo_GMA_full_light.png") 0% 50% / contain no-repeat;
+		width: 100%;
+		max-width: rem(200);
+		height: 100%;
+		background:  url("@img/logo_GMA_full_lite.png") 0% 50% / contain no-repeat;
+		border-radius: 10px;
+
 	}
-	&__dark {
-		display: none;
-		background: url("@img/logo_GMA_full.png") 0% 50% / contain no-repeat;
+	@media (max-width: 1200px){
+
 	}
 }
+
+
+.header-links {
+	
+	flex: 0 0 auto;
+	@media (max-width: 1200px){
+		margin-left: auto;  
+	}
+	// .header-links__list
+	&__list {
+		display: flex;
+		@include adaptiveValue("column-gap",20 , 10, 768, 320, 1);
+		@include adaptiveValue("height",35 ,30, 1200,320,1 );
+	}
+	// .header-links__item
+	&__item {
+		display: inline-block;
+		height: 100%;
+		
+		& a {
+			display: inline-block;
+			height: 100%;
+		}
+		& svg, path {
+			@include adaptiveValue("width",35 ,30, 1200,320,1 );
+			@include adaptiveValue("height",35 ,30, 1200,320,1 );
+			fill: $text-color-secondary;
+		}
+		// .header-links__item_fb
+		&_fb {
+		}
+		// .header-links__item_insta
+		&_insta {
+		}
+	}
+	// .header-links__lang
+	&__lang {
+	}
+}
+.lang {
+	// .lang__icon
+	&__icon {
+		max-height: rem(35);
+	}
+	// .lang__options
+	&__options {
+		position: absolute;
+		top: 150%;
+		left: 50%;
+		transform: translate(-50%, 0);
+		background-color: transparent;
+		border-radius: 10px;
+		padding:  rem(10) rem(5);
+		visibility: hidden;
+	}
+}
+
+
+
+
+
+
 
 ._header-scroll {
-	& .site-logo__dark {
-		display: inline-block;
+	background-color: rgba($color: $background-color-major, $alpha: .8);
+	backdrop-filter: blur(5px);
+	& .site-logo {
+		background-color: transparent;
 	}
-	& .site-logo__lite {
-		display: none;
+	& .site-logo__item {
+		background:  url("@img/logo_GMA_full.png") 0% 50% / contain no-repeat;
 	}
 	& .header-links__item svg, path {
 		fill: $text-color-major;

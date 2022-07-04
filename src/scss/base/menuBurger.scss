@@ -169,14 +169,6 @@
 	}
 }
 
-._header-scroll {
-	& .menu__link {
-		color: $text-color-menu;
-		&::before{
-			background-color: $background-color-other-2;
-		}
-	}
-}
 
 
 //smooth marker underline menu__link
