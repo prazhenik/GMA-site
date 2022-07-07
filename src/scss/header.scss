@@ -37,8 +37,8 @@
 	}
 }
 .site-logo {
-	flex: 0 1 rem(180);
-	height: 100%;
+	flex: 0 1 rem(200);
+	@include adaptiveValue("height",55 , 35, 1200, 320, 1);
 	//background-color: rgba($color: $background-color-major, $alpha: .7) ;
 	//padding: rem(5) rem(10);
 	border-radius: 10px;
@@ -49,6 +49,7 @@
 		width: 100%;
 		max-width: rem(200);
 		height: 100%;
+	
 		background:  url("@img/logo_GMA_full_lite.png") 0% 50% / contain no-repeat;
 		border-radius: 10px;
 
@@ -69,7 +70,7 @@
 	&__list {
 		display: flex;
 		@include adaptiveValue("column-gap",20 , 10, 768, 320, 1);
-		@include adaptiveValue("height",35 ,30, 1200,320,1 );
+		@include adaptiveValue("height",35 ,25, 1200,320,1 );
 	}
 	// .header-links__item
 	&__item {
@@ -81,8 +82,8 @@
 			height: 100%;
 		}
 		& svg, path {
-			@include adaptiveValue("width",35 ,30, 1200,320,1 );
-			@include adaptiveValue("height",35 ,30, 1200,320,1 );
+			@include adaptiveValue("width",35 ,25, 1200,320,1 );
+			@include adaptiveValue("height",35 ,25, 1200,320,1 );
 			fill: $text-color-secondary;
 		}
 		// .header-links__item_fb
@@ -97,6 +98,7 @@
 	}
 }
 .lang {
+	position: relative;
 	// .lang__icon
 	&__icon {
 		max-height: rem(35);
@@ -104,13 +106,26 @@
 	// .lang__options
 	&__options {
 		position: absolute;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: rem(10);
 		top: 150%;
 		left: 50%;
 		transform: translate(-50%, 0);
 		background-color: transparent;
 		border-radius: 10px;
 		padding:  rem(10) rem(5);
+		mix-blend-mode:difference;
+		color: $text-color-major;
+		& span {
+			color: $text-color-secondary;
+
+		}
 		visibility: hidden;
+	}
+	&:hover > .lang__options{
+		//visibility: visible;
 	}
 }
 
@@ -121,8 +136,8 @@
 
 
 ._header-scroll {
-	background-color: rgba($color: $background-color-major, $alpha: .8);
-	backdrop-filter: blur(5px);
+	background-color: rgba($color: $background-color-major, $alpha: 1);
+	//backdrop-filter: blur(5px);
 	& .site-logo {
 		background-color: transparent;
 	}
@@ -150,6 +165,7 @@
 	& .menu {
 		&__body {
 			color: $text-color-links;
+			//font-weight: 600;
 		}
 		&__link {
 			

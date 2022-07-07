@@ -183,7 +183,7 @@ const pauseIcon = document.querySelector('.controls__pause');
 window.addEventListener('load', () => {
 	setTimeout(() => {
 		vidItem.hidden = false;
-	}, 1000)
+	}, 100)
 })
 
 
@@ -205,7 +205,7 @@ const play = () => {
 const pause = () => {
 	vidItem.pause();
 	//vidItem.style.filter = "grayscale(1) brightness(.5)"
-	vid.style.opacity = "0"
+	vid.style.opacity = "0.4"
 	offerTitle.style.opacity = "1"
 	offerSubitle.style.opacity = "1"
 	playIcon.style.display = "inline-block"

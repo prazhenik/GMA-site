@@ -32,19 +32,19 @@ $font-style: normal;
 // ================================== COLORS roots ==============================
 
 //text colors
-$text-color-major: rgba(27, 58, 119, 1); //general document text color
+$text-color-major: rgba(30, 60, 120, 1); //general document text color
 $text-color-secondary: rgba(230, 230, 230, 1);
 $text-color-accent: rgba(255, 255, 255, 1);
 
 
-$text-color-menu: rgba(27, 58, 119, 1); //menu links text color
+$text-color-menu: rgba(30, 60, 120, 1); //menu links text color
 $text-color-menu-active: rgba(255, 255, 255, 1); //active menu links text color
 
 $text-color-btn: rgba(255, 255, 255, 1); //menu links text color
 $text-color-btn-active: rgba(255, 255, 255, 1); //active menu links text color
 
 $text-color-links: rgba(27, 58, 119, 1); //a links text color
-$text-color-links-active: rgba(27, 58, 119, 1); //a links text color
+$text-color-links-active: rgba(30, 60, 120, 1); //a links text color
 
 $text-color-other-1: rgba(255, 255, 255, 1); //other text color
 $text-color-other-2: rgba(10, 250, 215, 1); //other text color/color hero title span
@@ -52,7 +52,7 @@ $text-color-other-2: rgba(10, 250, 215, 1); //other text color/color hero title 
 
 //bacground colors
 $background-color-major: rgba(240, 240, 240, 1); //Цвет фона по умолчанию
-$background-color-secondary: rgb(19, 68, 165); 
+$background-color-secondary: rgb(20, 70, 165); 
 $background-color-menu: rgba(240, 240, 240, 1); //menu bcg 
 $background-color-overlay-lock: rgba(0, 0, 0, .6); // overlays _lock
 $background-color-button:  linear-gradient(94.29deg, #2B5935 10.72%, #00B428 65.76%, #1E9538 98.53%); //
@@ -90,7 +90,7 @@ $button-height-mob: 50;
 // default popup properties 
 $popup-maxwhidth: 550;
 
-$popup-border-radius: 10;
+$popup-border-radius: 5;
 
 $popup-background-color: rgba(27, 58, 119, 1);
 
@@ -101,7 +101,7 @@ $popup-background-color: rgba(27, 58, 119, 1);
 $input-height-pc: 75;
 $input-height-mob: 50;
 
-$input-border-radius: 10;
+$input-border-radius: 5;
 
 $input-padding: 20;
 

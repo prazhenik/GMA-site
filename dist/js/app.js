@@ -4623,7 +4623,7 @@
         window.addEventListener("load", (() => {
             setTimeout((() => {
                 vidItem.hidden = false;
-            }), 1e3);
+            }), 100);
         }));
         const play = () => {
             vidItem.play();
@@ -4637,7 +4637,7 @@
         };
         const pause = () => {
             vidItem.pause();
-            vid.style.opacity = "0";
+            vid.style.opacity = "0.4";
             offerTitle.style.opacity = "1";
             offerSubitle.style.opacity = "1";
             playIcon.style.display = "inline-block";

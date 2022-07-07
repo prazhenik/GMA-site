@@ -1,7 +1,7 @@
 ._page-title {
 	display: inline-block;
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 700;
 	line-height: 125%;
 	@include adaptiveValue("font-size", 60, 26, 1200, 320, 1);
 	color: $text-color-secondary;
@@ -32,7 +32,8 @@
 }
 
 ._section-title {
-	font-style: italic;
+	position: relative;
+	//font-style: italic;
 	line-height: 125%;
 	display: inline-block;
 	@include adaptiveValue("margin-bottom", 150 , 80, 1200, 320, 1);
@@ -41,11 +42,27 @@
 	transition: opacity .5s ease, transform .5s ease;
 	z-index: 1;
 	transform: translateX(-200%);
+	color: $text-color-accent;
 	& span {
-		font-weight: 700;
-		color: $background-color-other-2;
-	
-
+		position: relative;
+		display: inline-block;
+		font-weight: 600;
+		color: $background-color-major;
+		//isolation: isolate;
+		&::before{
+			content: '';
+			position: absolute;
+			width: 106%;
+			height: 100%;
+			top: 0;
+			left: -3%;
+			//color: $background-color-other-2;
+			background: rgb(200, 60, 60);
+			z-index: -1;
+			//mix-blend-mode: difference;
+			border-radius: rem(5);
+		}
+		//text-shadow: 1px 1px 1px rgb(255, 255, 255);
 	}
 
 	@media (max-width: $mobileSmall) {

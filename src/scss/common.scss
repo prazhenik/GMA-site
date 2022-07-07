@@ -6,26 +6,43 @@ section{
 	}
 	&:nth-child(even){
 		position: relative;
-		background-color: $background-color-major;
-
-		// &::before{
-		// 	content:'';
-		// 	position: absolute;
-		// 	width: 100%;
-		// 	height: 100%;
-		// 	top: 0;
-		// 	left: 0;
-		// 	background: url('@img/contentImgs/pattern.webp') center center / cover no-repeat;
-		// 	opacity: .5;
-		// }
+		color: $text-color-major;
+		&::before{
+			content:'';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background: url('@img/contentImgs/pattern.webp') center center / cover no-repeat;
+			opacity: .5;
+		}
+		& ._section-title{
+			color: $text-color-major;
+		}
 	}
 	&:nth-child(odd){
-		background-color: $background-color-secondary;
-		color: $text-color-other-1;
+		background: rgba($color: $background-color-secondary, $alpha: .9);
+		color: $text-color-secondary;
 		//font-weight: 500;
 	}
 }
 
+[class*="__proposition"] {
+	align-self: center;
+	line-height: math.div(36 , 24);
+	text-align: justify;
+	padding-left: rem(15);
+	border-left: 3px solid $border-color-other-3;
+	@include adaptiveValue("font-size", 24, 14, 1200, 320, 1 );
+	&:not(:last-child) {
+		@include adaptiveValue("margin-bottom", 60, 40, 1200, 320,1 );
+	}
+	span {
+		color: $text-color-accent;
+		font-weight: 600;
+	}
+}
 
 
 @keyframes opacity_fadeIn {
@@ -91,14 +108,14 @@ section{
 }
 
 @keyframes shake2 {
-	0%, 12% {
+	0%, 8% {
 		transform: translate3d(0, 0, 0);
 	}
-	10%, 2%, 6% {
-		transform: translate3d(-3px, 0, 0);
+	2%, 6% {
+		transform: translate3d(-1px, 0, 0);
 	}
-	4%, 8% {
-		transform: translate3d(3px, 0, 0);
+	4% {
+		transform: translate3d(1px, 0, 0);
 	}
 }
 
