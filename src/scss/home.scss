@@ -33,7 +33,7 @@
 	// .hero__content
 	&__content {
 		@include adaptiveValue("padding-top",$header-height-pc ,$header-height-mob, 1200, 320, 1 );
-		height: calc(var(--vh, 1vh) * 100);
+		height: calc(100vh - rem($header-height-mob));
 		min-height: -webkit-fill-available;
 		min-height: 550px;
 		display: flex;
@@ -193,23 +193,23 @@
 			opacity: 1;
 			&:first-child{
 				transition: opacity .2s .1s;
-				animation: shake 5s .1s both ease-in;
+				animation: shake 3s .1s both ease-in;
 			}
 			&:nth-child(2){
 				transition: opacity .2s .4s;
-				animation: shake 5s .4s both ease-in;
+				animation: shake 3s .4s both ease-in;
 			}
 			&:nth-child(3){
 				transition: opacity .2s .7s;
-				animation: shake 5s .7s both ease-in;
+				animation: shake 3s .7s both ease-in;
 			}
 			&:nth-child(4){
 				transition: opacity .2s 1s;
-				animation: shake 5s 1s both ease-in;
+				animation: shake 3s 1s both ease-in;
 			}
 			&:nth-child(5){
 				transition: opacity .2s 1.3s;
-				animation: shake 5s 1.3s both ease-in;
+				animation: shake 3s 1.3s both ease-in;
 			}
 		}
 		.steps__name {
@@ -243,19 +243,20 @@
 		//min-height: rem(300);
 		
 		//border: 2px solid $border-color-other-2;
-		background: rgba($color: $background-color-menu, $alpha: 1);
+		//background: rgba($color: $background-color-menu, $alpha: 1);
 		//box-shadow: -3px -3px 6px #FFFFFF, 3px 3px 8px rgba(174, 174, 192, 0.4);
 		border-radius: 5px;
 		text-align: center;
 		justify-content: center;
-		padding: rem(15) rem(15);
+		//padding: rem(15);
 		position: relative;
 		counter-increment: steps;
 		overflow: hidden;
 		opacity: 0;
 		cursor: default;
-		background: rgba($color: rgb(20, 70, 165), $alpha: .9);
-		backdrop-filter: blur(10px);
+		//background: rgba($color: $background-color-major, $alpha: 1);
+		//border: 3px solid rgba($color: $border-color-other-2, $alpha: .1);
+		//backdrop-filter: blur(10px);
 
 		&::before{
 			content: counter(steps);
@@ -263,10 +264,9 @@
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
-			@include adaptiveValue("font-size", 280, 180, 1200, 320, 1 );
+			@include adaptiveValue("font-size", 300, 220, 1200, 320, 1 );
 			font-family: $font-family-other-1;
-			color: rgba($color: $text-color-secondary, $alpha: .2);
-			//filter: blur(10px);
+			color: rgba($color: $text-color-major, $alpha: .07);
 			//z-index: 1;
 
 		}
@@ -281,11 +281,11 @@
 		display: flex;
 		flex-direction: column;
 		position: relative;
-		color: $text-color-secondary;
+		color: $text-color-major;
 		//box-shadow: inset 1px 1px 8px rgb(206, 206, 206), inset -2px -2px 5px rgb(255, 255, 255);
 		//background: rgba($color: rgb(235, 235, 235), $alpha: 1);
 		
-		padding: rem(30) rem(10);
+		padding: rem(50) rem(10);
 		//border-radius: 10px;
 		// @media (any-hover: hover){
 		// 	&:hover{
@@ -300,7 +300,7 @@
 	// .step__name
 	&__name {
 		font-family: $font-family-other-1;
-		@include adaptiveValue("font-size", 22 , 16, 1200, 320, 1 );
+		@include adaptiveValue("font-size", 24 , 16, 1200, 320, 1 );
 		line-height: math.div(40 ,26 );
 		text-transform: uppercase;
 		margin-bottom:  rem(30);
@@ -314,7 +314,7 @@
 		flex-direction: column;
 		flex: 1 0 auto;
 		justify-content: center;
-		@include adaptiveValue("font-size", 18, 14,1200, 320, 1 );
+		@include adaptiveValue("font-size", 20, 16,1200, 320, 1 );
 		line-height: math.div(30,22 );
 		letter-spacing: -0.5px;
 
@@ -534,8 +534,11 @@
 	  }
 	}
 	// .consult__proposition
-	&__proposition span{
-		color: $text-color-major;
+	&__proposition{
+		font-weight: 600;
+		& span {
+			color: $text-color-major;
+		}	
 	}
 	// .consult__form
 	&__form {
@@ -589,13 +592,15 @@
 	// .photo-block__card
 	&__card {
 		position: absolute;
-		bottom: 0;
+		bottom: rem(20);
 		left: 0;
 		background-color: rgba($color: #ffffff, $alpha: .3);
 		backdrop-filter: blur(10px);
 		border-radius: 5px;
 		width: 100%;
-
+		@media (max-width:$mobile){
+			bottom: rem(0);  
+		}
 		
 	}
 	// .photo-block__name
@@ -617,8 +622,7 @@
 	&__caption {
 		padding: rem(20);
 		padding-left: 10%;
-		font-weight: 600;
-		@include adaptiveValue("font-size", 22, 16, 1200, 320, 1);
+		@include adaptiveValue("font-size", 22, 14, 1200, 320, 1);
 		line-height: math.div(26 , 22);
 	}
 

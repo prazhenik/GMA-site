@@ -140,11 +140,13 @@ html {
 // }
 
 body {
-	//height: calc(var(--vh, 1vh) * 100);
+	height: calc(var(--vh, 1vh) * 100);
+	min-height: -webkit-fill-available;
+// for fullscreen
 	//width: 100vw;
 	//position: fixed;
 	//min-height: 100vh;
-	//min-height: -webkit-fill-available;
+	
 	// universal overlay
 	&::after {
 		content: "";

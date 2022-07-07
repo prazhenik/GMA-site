@@ -34,6 +34,9 @@ section{
 	text-align: justify;
 	padding-left: rem(15);
 	border-left: 3px solid $border-color-other-3;
+	@media (max-width:$mobile){
+		border-left: 2px solid $border-color-other-3;  
+	}
 	@include adaptiveValue("font-size", 24, 14, 1200, 320, 1 );
 	&:not(:last-child) {
 		@include adaptiveValue("margin-bottom", 60, 40, 1200, 320,1 );
@@ -42,6 +45,7 @@ section{
 		color: $text-color-accent;
 		font-weight: 600;
 	}
+
 }
 
 
