@@ -1,11 +1,15 @@
 // Заголовки, общие БЄМ блоки и проче...
 section{
+	position: relative;
+	background-attachment: fixed;
+	min-height: 100%;
 	&:not(:first-child) {
 		@include adaptiveValue("padding-top", 150 , 80, 1200, 320, 1);
 		@include adaptiveValue("padding-bottom", 150 , 80, 1200, 320, 1);
 	}
 	&:nth-child(even){
 		position: relative;
+		background-color: $background-color-major;
 		color: $text-color-major;
 		&::before{
 			content:'';
@@ -22,7 +26,7 @@ section{
 		}
 	}
 	&:nth-child(odd){
-		background: rgba($color: $background-color-secondary, $alpha: .9);
+		background-color: rgba($color: $background-color-secondary, $alpha: .9);
 		color: $text-color-secondary;
 		//font-weight: 500;
 	}

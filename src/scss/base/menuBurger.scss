@@ -102,8 +102,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		position: relative;
-		@include adaptiveValue("column-gap", 50, 10, 1920, 1200, 1);
-		row-gap: rem(10);
+		@include adaptiveValue("column-gap", 50, 5, 1920, 1200, 1);
+		row-gap: rem(5);
 		@media (max-width: rem(1200)) {
 			flex-direction: column;
 			flex-wrap: nowrap;
@@ -117,7 +117,6 @@
 		display: inline-block;
 		font-size: 0; //устраняет скачек контента при смене fontsize на ховере
 		text-align: center; //устраняет скачек контента при смене fontsize на ховере
-		padding: rem(5);
 		line-height: math.div(22 , 22);
 		@media (max-width: rem(1200)) {
 			padding: rem(10);
@@ -130,28 +129,36 @@
 		@include adaptiveValue("font-size",$font-size-menu-links-pc ,$font-size-menu-links-mob, 1920, 1200, 1 ); //устраняет скачек контента при смене fontsize на ховере
 		line-height: math.div( $font-size-menu-links-pc, $font-size-menu-links-pc);
 		letter-spacing: 0.02em;
-		transition: all .3s ease;
-		&::before{
-			content:'';
-			display: inline-block;
-			position: absolute;
-			width: 0%;
-			height: 3px;
-			bottom: -7px;
-			left: 50%;
-			transform: translate(-50%, 0);
-			background-color: $background-color-other-2;
-			border-radius: 3px;
-			transition: all .3s ease;
-		}
+		transition: transform .3s ease;
+		border: 2px solid transparent;
+		padding: rem(7);
+		border-radius: 10px;
+		// &::before{
+		// 	content:'';
+		// 	display: inline-block;
+		// 	position: absolute;
+		// 	width: 0%;
+		// 	height: 2px;
+		// 	bottom: -7px;
+		// 	left: 50%;
+		// 	transform: translate(-50%, 0);
+		// 	background-color: $background-color-other-2;
+		// 	border-radius: 3px;
+		// 	transition: width .2s ease ;
+		// }
 		&:hover,
 		&:active,
 		&.active {
-			transform: translateY(-3px);
+			//border: 2px solid $background-color-other-2;
+			//background-color: rgba($color: $background-color-other-1, $alpha: 1);
+			//color: $text-color-secondary;
+			//transform: translateY(-3px);
+			border: 2px solid $border-color-major;
 			transition: transform .3s ease;
-			&::before{
-				width: 100%;
-				transition: width .3s ease;
+			font-weight: 600;
+			@media (max-width:$mobile){
+				background-color: rgba($color: $background-color-other-1, $alpha: 1);
+				color: $text-color-secondary;
 			}
 		}
 		&::after{

@@ -4637,7 +4637,7 @@
         };
         const pause = () => {
             vidItem.pause();
-            vid.style.opacity = "0.4";
+            vid.style.opacity = "0.6";
             offerTitle.style.opacity = "1";
             offerSubitle.style.opacity = "1";
             playIcon.style.display = "inline-block";

@@ -191,7 +191,7 @@ const play = () => {
 	
 	vidItem.play();
 	vidItem.style.transition = "filter 0.5s ease"
-	//vidItem.style.filter = "grayscale(0)  brightness(1)"
+	//vidItem.style.filter = "grayscale(0)"
 	vid.style.opacity = "1"
 	offerTitle.style.opacity = "0"
 	offerSubitle.style.opacity = "0"
@@ -204,8 +204,8 @@ const play = () => {
 
 const pause = () => {
 	vidItem.pause();
-	//vidItem.style.filter = "grayscale(1) brightness(.5)"
-	vid.style.opacity = "0.4"
+	//vidItem.style.filter = "grayscale(1)"
+	vid.style.opacity = "0.6"
 	offerTitle.style.opacity = "1"
 	offerSubitle.style.opacity = "1"
 	playIcon.style.display = "inline-block"
