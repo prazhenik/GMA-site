@@ -133,6 +133,7 @@
 		border: 2px solid transparent;
 		padding: rem(7);
 		border-radius: 10px;
+		font-weight: 500;
 		// &::before{
 		// 	content:'';
 		// 	display: inline-block;
@@ -155,7 +156,7 @@
 			//transform: translateY(-3px);
 			border: 2px solid $border-color-major;
 			transition: transform .3s ease;
-			font-weight: 600;
+			//font-weight: 600;
 			@media (max-width:$mobile){
 				background-color: rgba($color: $background-color-other-1, $alpha: 1);
 				color: $text-color-secondary;
@@ -164,7 +165,7 @@
 		&::after{
 			display: block; //устраняет скачек контента при смене fontsize на ховере
 			content: attr(title); //устраняет скачек контента при смене fontsize на ховере
-			font-weight: 600; //устраняет скачек контента при смене fontsize на ховере
+			//font-weight: 600; //устраняет скачек контента при смене fontsize на ховере
 			height: 0; //устраняет скачек контента при смене fontsize на ховере
 			overflow: hidden; //устраняет скачек контента при смене fontsize на ховере
 			visibility: hidden; //устраняет скачек контента при смене fontsize на ховере

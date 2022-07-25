@@ -18,7 +18,7 @@
 ._page-subtitle {
 	display: inline-block;
 	font-style: normal;
-	font-weight: 500;
+	//font-weight: 500;
 	line-height: 125%;
 	@include adaptiveValue("font-size", 24, 16, 1200, 320, 1);
 	color: $text-color-secondary;
@@ -43,6 +43,7 @@
 	z-index: 1;
 	transform: translateX(-200%);
 	color: $text-color-accent;
+	font-weight: 500;
 	& span {
 		position: relative;
 		display: inline-block;

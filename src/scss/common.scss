@@ -1,8 +1,6 @@
 // Заголовки, общие БЄМ блоки и проче...
 section{
 	position: relative;
-	background-attachment: fixed;
-	min-height: 100%;
 	&:not(:first-child) {
 		@include adaptiveValue("padding-top", 150 , 80, 1200, 320, 1);
 		@include adaptiveValue("padding-bottom", 150 , 80, 1200, 320, 1);
