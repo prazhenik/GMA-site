@@ -35,11 +35,11 @@ section{
 			url('@img/низ.png');
 			-webkit-mask-size:
 			/* 96px is top mask height */
-			1920px 100px,
+			1920px 101px,
 			/* 192px is top mask height + bottom mask height */
 			1920px calc(100% - 200px),
 			/* 96px is bottom mask height */
-			1920px 100px; 
+			1920px 101px; 
 			-webkit-mask-repeat: no-repeat;
 	 		/* 96px is top mask height */
 			-webkit-mask-position: center top, center 100px, center bottom;
@@ -47,11 +47,11 @@ section{
 			@media (max-width:$mobile){
 				-webkit-mask-size:
 				/* 96px is top mask height */
-				1920px 75px,
+				1920px 76px,
 				/* 192px is top mask height + bottom mask height */
 				1920px calc(100% - 150px),
 				/* 96px is bottom mask height */
-				1920px 75px;
+				1920px 76px;
 			 	-webkit-mask-repeat: no-repeat;
 				/* 96px is top mask height */
 			 	-webkit-mask-position: left top, center 75px, left bottom; 
@@ -71,7 +71,7 @@ section{
 			/* 192px is top mask height + bottom mask height */
 			1920px calc(100% - 100px),
 			/* 96px is bottom mask height */
-			1920px 100px; 
+			1920px 101px; 
 			-webkit-mask-repeat: no-repeat;
 	 		/* 96px is top mask height */
 			-webkit-mask-position: center top, center 0px, center bottom;
@@ -82,7 +82,7 @@ section{
 				/* 192px is top mask height + bottom mask height */
 				1920px calc(100% - 75px),
 				/* 96px is bottom mask height */
-				1920px 75px;
+				1920px 76px;
 			}
 	}
 }

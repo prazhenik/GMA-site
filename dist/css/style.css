@@ -1128,7 +1128,7 @@ section:nth-child(odd) {
 section:nth-child(odd):not(:first-child) {
   -webkit-mask-image: url("../img/верх.png"), -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)), url("../img/низ.png");
   -webkit-mask-image: url("../img/верх.png"), linear-gradient(#fff, #fff), url("../img/низ.png");
-  -webkit-mask-size: 1920px 100px, 1920px calc(100% - 200px), 1920px 100px;
+  -webkit-mask-size: 1920px 101px, 1920px calc(100% - 200px), 1920px 101px;
   -webkit-mask-repeat: no-repeat;
   /* 96px is top mask height */
   -webkit-mask-position: center top, center 100px, center bottom;
@@ -1137,7 +1137,7 @@ section:nth-child(odd):not(:first-child) {
 section:first-child {
   -webkit-mask-image: url("../img/верх.png"), -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)), url("../img/низ.png");
   -webkit-mask-image: url("../img/верх.png"), linear-gradient(#fff, #fff), url("../img/низ.png");
-  -webkit-mask-size: 1920px 0px, 1920px calc(100% - 100px), 1920px 100px;
+  -webkit-mask-size: 1920px 0px, 1920px calc(100% - 100px), 1920px 101px;
   -webkit-mask-repeat: no-repeat;
   /* 96px is top mask height */
   -webkit-mask-position: center top, center 0px, center bottom;
@@ -2980,14 +2980,14 @@ section:first-child {
   }
 
   section:nth-child(odd):not(:first-child) {
-    -webkit-mask-size: 1920px 75px, 1920px calc(100% - 150px), 1920px 75px;
+    -webkit-mask-size: 1920px 76px, 1920px calc(100% - 150px), 1920px 76px;
     -webkit-mask-repeat: no-repeat;
     /* 96px is top mask height */
     -webkit-mask-position: left top, center 75px, left bottom;
   }
 
   section:first-child {
-    -webkit-mask-size: 1920px 0px, 1920px calc(100% - 75px), 1920px 75px;
+    -webkit-mask-size: 1920px 0px, 1920px calc(100% - 75px), 1920px 76px;
   }
 
   [class*=__proposition] {
