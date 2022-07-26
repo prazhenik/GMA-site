@@ -5,6 +5,7 @@
 .hero {
 	position: relative;
 	//@include adaptiveValue("padding-top",$header-height-pc ,$header-height-mob, 1200, 320, 1 );
+
 	// .hero__video
 	&__video {
 		position: absolute;
@@ -409,8 +410,8 @@
 		overflow-y: auto;
 		padding-top: 5px;
 		padding-bottom: 5px;
-		border-top: 2px solid $border-color-other-3;
-		border-bottom: 2px solid $border-color-other-3;
+		border-top: 1px solid $border-color-other-3;
+		border-bottom: 1px solid $border-color-other-3;
 		//border-radius: 10px;
 	}
 	// .specialties__item

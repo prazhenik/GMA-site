@@ -16,7 +16,7 @@ section{
 			height: 100%;
 			top: 0;
 			left: 0;
-			background: url('@img/contentImgs/pattern.webp') center center / cover no-repeat;
+			//background: url('@img/contentImgs/pattern.webp') center center / cover no-repeat;
 			opacity: .5;
 		}
 		& ._section-title{
@@ -26,7 +26,64 @@ section{
 	&:nth-child(odd){
 		background-color: rgba($color: $background-color-secondary, $alpha: .9);
 		color: $text-color-secondary;
-		//font-weight: 500;
+		&:not(:first-child) {
+			-webkit-mask-image:
+			/* top mask PNG/SVG image */
+			url('@img/верх.png'),
+			linear-gradient(#fff, #fff),
+			/* bottom mask PNG/SVG image */
+			url('@img/низ.png');
+			-webkit-mask-size:
+			/* 96px is top mask height */
+			1920px 100px,
+			/* 192px is top mask height + bottom mask height */
+			1920px calc(100% - 200px),
+			/* 96px is bottom mask height */
+			1920px 100px; 
+			-webkit-mask-repeat: no-repeat;
+	 		/* 96px is top mask height */
+			-webkit-mask-position: center top, center 100px, center bottom;
+			//font-weight: 500;
+			@media (max-width:$mobile){
+				-webkit-mask-size:
+				/* 96px is top mask height */
+				1920px 75px,
+				/* 192px is top mask height + bottom mask height */
+				1920px calc(100% - 150px),
+				/* 96px is bottom mask height */
+				1920px 75px;
+			 	-webkit-mask-repeat: no-repeat;
+				/* 96px is top mask height */
+			 	-webkit-mask-position: left top, center 75px, left bottom; 
+			}
+		}	
+	}
+	&:first-child{
+			-webkit-mask-image:
+			/* top mask PNG/SVG image */
+			url('@img/верх.png'),
+			linear-gradient(#fff, #fff),
+			/* bottom mask PNG/SVG image */
+			url('@img/низ.png');
+			-webkit-mask-size:
+			/* 96px is top mask height */
+			1920px 0px,
+			/* 192px is top mask height + bottom mask height */
+			1920px calc(100% - 100px),
+			/* 96px is bottom mask height */
+			1920px 100px; 
+			-webkit-mask-repeat: no-repeat;
+	 		/* 96px is top mask height */
+			-webkit-mask-position: center top, center 0px, center bottom;
+			@media (max-width:$mobile){
+				-webkit-mask-size:
+				/* 96px is top mask height */
+				1920px 0px,
+				/* 192px is top mask height + bottom mask height */
+				1920px calc(100% - 75px),
+				/* 96px is bottom mask height */
+				1920px 75px;
+			}
 	}
 }
 
@@ -35,9 +92,9 @@ section{
 	line-height: math.div(36 , 24);
 	text-align: justify;
 	padding-left: rem(15);
-	border-left: 3px solid $border-color-other-3;
+	border-left: 2px solid $border-color-other-3;
 	@media (max-width:$mobile){
-		border-left: 2px solid $border-color-other-3;  
+		border-left: 1px solid $border-color-other-3;  
 	}
 	@include adaptiveValue("font-size", 24, 14, 1200, 320, 1 );
 	&:not(:last-child) {
