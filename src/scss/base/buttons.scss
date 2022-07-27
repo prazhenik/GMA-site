@@ -27,7 +27,7 @@
 	border-radius: 5px;
 	//border: 2px solid $border-color-button;
 	@include adaptiveValue("width", 500, 280, 1200, 320, 1);
-	@include adaptiveValue("min-height", $button-height-pc, $button-height-mob, 1200, 320, 1);
+	@include adaptiveValue("height", $button-height-pc, $button-height-mob, 1200, 320, 1);
 	padding: rem(0) rem(20);
 	@include adaptiveValue("font-size", 22, 14, 1200, 320, 1);
 	font-weight: 600;
@@ -81,7 +81,7 @@
 
 	}
 
-	&_popup, &_consult, &_partners {
+	&_popup, &_consult, &_partners, &_contacts {
 		width: 100%;
 	}
 	& span.ripple {

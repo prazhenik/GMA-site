@@ -77,7 +77,7 @@
 		input, textarea {
 			width: 100%;
 
-			@include adaptiveValue("height", $input-height-pc, $input-height-mob);
+			@include adaptiveValue("height", $input-height-pc, $input-height-mob, 1200, 320, 1);
 			padding: rem($input-padding);
 			background-color: $input-background-color;
 			@include adaptiveValue("font-size", 22, 16, 1200, 320, 1 );
@@ -134,7 +134,7 @@
 	}
 }
 
-.partners__form-block {
+.partners__form-block, .contacts__form-block  {
 	.form {
 		flex-direction: row;
 		width: 100%;
@@ -163,6 +163,7 @@
 		}
 		// .form__submit
 		&__submit, &__submit button  {
+			display: inline-block;
 			flex: 1 1 30%;
 		}
 	}

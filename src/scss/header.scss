@@ -83,10 +83,11 @@
 		& svg, path {
 			@include adaptiveValue("width",35 ,25, 1200,320,1 );
 			@include adaptiveValue("height",35 ,25, 1200,320,1 );
-			fill: $text-color-secondary;
 		}
 		// .header-links__item_fb
 		&_fb {
+			stroke: $text-color-accent;
+			stroke-width: 4;
 		}
 		// .header-links__item_insta
 		&_insta {
@@ -94,6 +95,7 @@
 	}
 	// .header-links__lang
 	&__lang {
+
 	}
 }
 .lang {
@@ -101,6 +103,9 @@
 	// .lang__icon
 	&__icon {
 		max-height: rem(35);
+		& path {
+			fill: $text-color-accent;
+			}
 	}
 	// .lang__options
 	&__options {
@@ -145,15 +150,54 @@
 	& .site-logo__item {
 		background:  url("@img/logo_GMA_full.png") 0% 50% / contain no-repeat;
 	}
-	& .header-links__item svg, path {
-		fill: $text-color-major;
+
+	//svg, path, rect
+
+	& .header-links__item {
+		&_fb {
+			& svg {
+				//fill: $text-color-major;
+			}
+			& path {
+				//fill: white;
+				//stroke: white;
+				stroke: $text-color-major;
+			}
+			& rect {
+				//fill: $text-color-major;
+				stroke: $text-color-major;
+			}
+			
+		}
+		// .header-links__item_insta
+		&_insta {
+			& svg {
+				//fill: $text-color-major;
+			}
+			
+			& circle {
+				stroke: $text-color-major;
+				
+				//fill: white;
+				//stroke: white;
+			}
+			& rect {
+				//fill: $text-color-major;
+				stroke: $text-color-major;
+			}
+		}
 	}
 	& .header-links__list {
 
 	}
-	& .header-links__lang {
+	& .header__lang {
 		//color: $text-color-links;
 		.lang {
+			&__icon {
+				& path {
+					fill: $text-color-major;
+				}
+			}
 				// .lang__present
 				&__present {
 				}

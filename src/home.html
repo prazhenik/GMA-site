@@ -304,6 +304,37 @@
 								<span>Цифры</span> расскажут о нас
 							</h2>
 							<div class="about__content _section-content">
+								<div class="about__text">
+									<p><span>Сервис Global Medical Assistance</span> берет свое начало в 2018 году.</p>
+									<p><span>Наша цель</span> - помочь пациентам из любой точки мира выбрать наиболее подходящий медицинский центр в Европе для прохождения обследования, лечения, либо  реабилитации.</p>
+									<p><span>Наши услуги бесплатны</span> для клиентов, это наш вклад в их счастливое здоровое будущее.</p>
+								</div>
+								<div class="about__counters counters">
+									<div class="counters__item">
+										<div class="counters__digits">с <span data-digits-counter class="digit">2018</span></div>
+										<div class="counters__desc">
+											года помогаем людям быть снова здоровыми
+										</div>
+									</div>
+									<div class="counters__item">
+										<div class="counters__digits"><span data-digits-counter class="digit">80</span>+</div>
+										<div class="counters__desc">
+											клиентов воспользовались нашими услугами
+										</div>
+									</div>
+									<div class="counters__item">
+										<div class="counters__digits"><span data-digits-counter class="digit">100</span>%</div>
+										<div class="counters__desc">
+											клиентов получают индивидуальный подход
+										</div>
+									</div>
+									<div class="counters__item">
+										<div class="counters__digits"><span data-digits-counter class="digit">8</span></div>
+										<div class="counters__desc">
+											клиник готовы принять нашего пациента прямо сейчас
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -315,7 +346,86 @@
 								<span>Обращайтесь</span>, мы всегда на связи
 							</h2>
 							<div class="contacts__content _section-content">
+								<div class="contacts__form-block">
+									<p class="contacts__proposition">
+										Узнайте больше о наших услугах и клиниках, заказав <span>бесплатную консультацию</span>.
+									</p>
+									<form id="form-contacts" action="sendmail.php" data-ajax="true" method="POST"
+										class="contacts__form form form-contacts">
+										<div class="form__item form__item-input">
+											<input id="form-contacts-name" autocomplete="off" type="text" name="form[name]"
+												data-required="text" data-error="Invalid character or data not entered"
+												placeholder="Ваше имя*" class="form__input _text _req">
+										</div>
+										<div class="form__item form__item-input">
+											<input id="form-contacts-phone" autocomplete="off" type="tel" name="form[phone]"
+												data-required="phone"
+												data-error="Enter your phone number without spaces, starting with '+'"
+												placeholder="Ваш номер телефона*" class="form__input _phone _req">
+										</div>
+										<div class="form__submit form__submit_contacts">
+											<button type="submit" class="btn btn_contacts">Получить консультацию</button>
+										</div>
+									</form>
+								</div>
+								<div class="contacts__subscribe contacts-subscribe">
+									<div class="contacts-subscribe__text">
+										<p><span>Подписывайтесь</span>, на наши странички в <span>Instagram и Facebook</span>, задавайте вопросы и первыми узнавайте свежие новости <span>GMA - Global Medical Assistance</span>.</p>
+									</в>
+									<div class="contacts-subscribe__links">
+										<a class="contacts-subscribe__link contacts-subscribe__link_fb" href="http://facebook.com">
+											<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<rect x="2.5" y="2.5" width="95" height="95" rx="17.5" stroke="white" stroke-width="5"/>
+												<g clip-path="url(#clip0_621_407)">
+													<path
+													d="M68.2513 62.0632L70.4248 46.5996H56.7764V36.5599C56.7764 32.3285 58.6781 28.21 64.7671 28.21H71V15.0449C67.3658 14.4051 63.6936 14.0559 60.0125 14C48.8254 14 41.4658 21.4009 41.4658 34.8101V46.5996H29V62.0632H41.4658V100H56.7764V62.0632H68.2513Z" stroke="white" stroke-width="5" fill="none"/>
+												</g>
+												
+												<defs>
+													<clipPath id="clip0_621_407">
+														<rect width="100" height="100" rx="20" fill="none" />
+													</clipPath>
+												</defs>
+											</svg>
+										</a>
+										<p class="contacts-subscribe__call">
+											Подпишитесь на нас
+										</p>
+										<a class="contacts-subscribe__link contacts-subscribe__link_insta" href="http://instagram.com">
+											<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<rect x="3" y="3" width="94" height="94" rx="17" stroke="white" stroke-width="5" fill="none" />
+												<circle class="circle_big" cx="49.5" cy="49.5" r="23.5" stroke="white" stroke-width="5" fill="none" />
+												<circle cx="78" cy="22" r="7" stroke="white" stroke-width="5" fill="none" />
+											</svg>
+										</a>
+									</div>
+								</div>
 							</div>
+							<!-- <div class="contacts__content _section-content">
+								<div class="contacts__form-block">
+									<p class="contacts__proposition">
+										
+									</p>
+									<form id="form-contacts" action="sendmail.php" data-ajax="true" method="POST"
+										class="contacts__form form form-contacts">
+										<div class="form__item form__item-input">
+											<input id="form-contacts-name" autocomplete="off" type="text" name="form[name]"
+												data-required="text" data-error="Invalid character or data not entered"
+												placeholder="Ваше имя*" class="form__input _text _req">
+										</div>
+										<div class="form__item form__item-input">
+											<input id="form-partners-phone" autocomplete="off" type="tel" name="form[phone]"
+												data-required="phone"
+												data-error="Enter your phone number without spaces, starting with '+'"
+												placeholder="Ваш номер телефона*" class="form__input _phone _req">
+										</div>
+										<div class="form__submit form__submit_contacts">
+											<button type="submit" class="btn btn_contacts"></button>
+										</div>
+									</form>
+								</div>
+
+							</div> -->
 						</div>
 					</div>
 				</section>
