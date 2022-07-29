@@ -24,7 +24,7 @@ section{
 		}
 	}
 	&:nth-child(odd){
-		background-color: rgba($color: $background-color-other-1, $alpha: .9);
+		//background-color: rgba($color: $background-color-other-1, $alpha: 1);
 		color: $text-color-secondary;
 		&:not(:first-child) {
 			-webkit-mask-image:
@@ -117,6 +117,13 @@ section{
 [class*="__form-block"] {
 
 }
+
+@keyframes stars_rotate {
+	from { transform: translate(-50%, -50%) rotate(0deg) ; }
+	to { transform: translate(-50%, -50%) rotate(360deg); }
+
+}
+
 
 @keyframes opacity_fadeIn {
 	from { opacity: 0; }

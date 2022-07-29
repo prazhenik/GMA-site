@@ -4612,44 +4612,36 @@
                 }), 500);
             }));
         }));
-        const vid = document.querySelector(".hero__video");
+        const hero = document.querySelector(".hero");
+        document.querySelector(".hero__video");
         const vidItem = document.querySelector(".hero__video video");
-        const offerTitle = document.querySelector(".offer__title");
-        const offerSubitle = document.querySelector(".offer__subtitle");
+        document.querySelector(".offer__title");
+        document.querySelector(".offer__subtitle");
         const playBtnPc = document.querySelector("._video-play-pc");
         const playBtnMob = document.querySelector("._video-play-mob");
         const playIcon = document.querySelector(".controls__play");
-        const pauseIcon = document.querySelector(".controls__pause");
+        document.querySelector(".controls__pause");
         window.addEventListener("load", (() => {
             setTimeout((() => {
                 vidItem.hidden = false;
             }), 100);
         }));
         const play = () => {
+            hero.classList.add("_video_played");
             vidItem.play();
-            vidItem.style.transition = "filter 0.5s ease";
-            vid.style.opacity = "1";
-            offerTitle.style.opacity = "0";
-            offerSubitle.style.opacity = "0";
-            playIcon.style.display = "none";
-            pauseIcon.style.display = "inline-block";
-            playIcon.classList.add("played");
+            playIcon.classList.add("_icon-played");
         };
         const pause = () => {
+            hero.classList.remove("_video_played");
             vidItem.pause();
-            vid.style.opacity = "0.6";
-            offerTitle.style.opacity = "1";
-            offerSubitle.style.opacity = "1";
-            playIcon.style.display = "inline-block";
-            pauseIcon.style.display = "none";
         };
         if ((window.onload || playBtnPc) && vidItem && !isMobile.any()) {
-            playBtnPc.addEventListener("mouseenter", play);
-            playBtnPc.addEventListener("mouseleave", pause);
+            playBtnMob.addEventListener("mouseenter", play);
+            playBtnMob.addEventListener("mouseleave", pause);
         } else if ((window.onload || playBtnMob) && vidItem && isMobile.any()) playBtnMob.addEventListener("click", (() => {
-            if (!playIcon.classList.contains("played")) play(); else {
+            if (!playIcon.classList.contains("_icon-played")) play(); else {
                 pause();
-                playIcon.classList.remove("played");
+                playIcon.classList.remove("_icon-played");
             }
         }));
         window.addEventListener("load", windowLoad);

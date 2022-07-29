@@ -1118,7 +1118,6 @@ section:nth-child(even) ._section-title {
 }
 
 section:nth-child(odd) {
-  background-color: rgba(27, 58, 119, 0.9);
   color: rgb(230, 230, 230);
 }
 
@@ -1189,6 +1188,30 @@ section:first-child {
 [class*=__proposition] span {
   color: rgb(255, 255, 255);
   font-weight: 600;
+}
+
+@-webkit-keyframes stars_rotate {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes stars_rotate {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 @-webkit-keyframes opacity_fadeIn {
@@ -2096,16 +2119,27 @@ section:first-child {
 
 .hero {
   position: relative;
+  overflow: hidden;
 }
 
 .hero__video {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+.hero__video::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1b3a77;
+  opacity: 1;
   -webkit-transition: opacity 0.5s ease;
   -o-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
-  opacity: 0.6;
 }
 
 .hero__video video {
@@ -2143,6 +2177,65 @@ section:first-child {
   }
 }
 
+.hero._video_played .video::after {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.hero._video_played .hero-map__box {
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.hero._video_played .offer__title,
+.hero._video_played .offer__subtitle {
+  -webkit-transform: translateX(-200%);
+      -ms-transform: translateX(-200%);
+          transform: translateX(-200%);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.hero-map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.no-webp .hero-map__box{
+  background: url("../img/EU_map.png") center center/contain no-repeat; }
+
+.hero-map__box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 50rem;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+  margin-left: auto;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
 .video__box {
   position: relative;
   width: 100%;
@@ -2152,16 +2245,17 @@ section:first-child {
 .offer {
   position: relative;
   max-width: 53.125rem;
-  padding: 3.125rem 0rem;
+  padding: 5rem 0rem;
   width: 100%;
 }
 
 .offer__title,
 .offer__subtitle {
-  opacity: 1;
-  -webkit-transition: opacity 1s ease;
-  -o-transition: opacity 1s ease;
-  transition: opacity 1s ease;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .offer__buttons {
@@ -2180,41 +2274,38 @@ section:first-child {
   background-color: transparent;
 }
 
-.controls {
-  display: none;
-}
-
 .controls__box {
   position: relative;
-  border-radius: 10px;
+  border-radius: 7px;
   border: rgb(255, 255, 255) 1px solid;
   display: inline-block;
+  cursor: pointer;
 }
 
-@supports (width: clamp( 3.125rem , 2.4431818182rem  +  3.4090909091vw , 5rem )) {
+@supports (width: clamp( 3.125rem , 2.5568181818rem  +  2.8409090909vw , 4.6875rem )) {
   .controls__box {
-    width: clamp( 3.125rem , 2.4431818182rem  +  3.4090909091vw , 5rem );
+    width: clamp( 3.125rem , 2.5568181818rem  +  2.8409090909vw , 4.6875rem );
   }
 }
 
-@supports not (width: clamp( 3.125rem , 2.4431818182rem  +  3.4090909091vw , 5rem )) {
+@supports not (width: clamp( 3.125rem , 2.5568181818rem  +  2.8409090909vw , 4.6875rem )) {
   .controls__box {
     width: calc(
-			3.125rem + 1.875 * (100vw - 20rem) / 55
+			3.125rem + 1.5625 * (100vw - 20rem) / 55
 		);
   }
 }
 
-@supports (height: clamp( 3.125rem , 2.4431818182rem  +  3.4090909091vw , 5rem )) {
+@supports (height: clamp( 3.125rem , 2.5568181818rem  +  2.8409090909vw , 4.6875rem )) {
   .controls__box {
-    height: clamp( 3.125rem , 2.4431818182rem  +  3.4090909091vw , 5rem );
+    height: clamp( 3.125rem , 2.5568181818rem  +  2.8409090909vw , 4.6875rem );
   }
 }
 
-@supports not (height: clamp( 3.125rem , 2.4431818182rem  +  3.4090909091vw , 5rem )) {
+@supports not (height: clamp( 3.125rem , 2.5568181818rem  +  2.8409090909vw , 4.6875rem )) {
   .controls__box {
     height: calc(
-			3.125rem + 1.875 * (100vw - 20rem) / 55
+			3.125rem + 1.5625 * (100vw - 20rem) / 55
 		);
   }
 }
@@ -3302,6 +3393,9 @@ section:first-child {
             align-items: flex-end;
   }
 
+  .no-webp .hero-map__box{
+    background: url("../img/EU_map.png") center top/cover no-repeat; }
+
   .offer {
     text-align: center;
   }
@@ -3400,6 +3494,13 @@ section:first-child {
 
 .webp ._header-scroll .site-logo__item{ background: url(../img/logo_GMA_full.webp) 0% 50%/contain no-repeat; }
 
+.webp .hero-map__box{ background: url(../img/EU_map.webp) center center/contain no-repeat; }
+
 .webp .capability::before{ background: url(../img/contentImgs/cover_knowleges.webp) center center/cover no-repeat; }
 
 .webp .partners::before{ background: url(../img/contentImgs/cover_partners.webp) center center/cover no-repeat; }
+
+@media (max-width: 47.99875em){
+
+  .webp .hero-map__box{ background: url(../img/EU_map.webp) center top/cover no-repeat; }
+}

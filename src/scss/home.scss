@@ -1,9 +1,12 @@
 .page{
 	//@include adaptiveValue("padding-top",$header-height-pc ,$header-height-mob, 768, 320, 1 );
+	
 }
 
 .hero {
 	position: relative;
+	overflow: hidden;
+	//background-color: $background-color-other-1;
 	//@include adaptiveValue("padding-top",$header-height-pc ,$header-height-mob, 1200, 320, 1 );
 
 	// .hero__video
@@ -12,23 +15,30 @@
 		width: 100%;
 		height: 100%;
 		//height: calc(100% - rem($header-height-pc));
-		transition: opacity .5s ease;
-		opacity: .6;
-		//background-color: $background-color-other-1;
+		
+		&::after{
+			content:'';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: rgba($color: $background-color-other-1, $alpha: 1);
+			opacity: 1;
+			transition: opacity .5s ease;
+		}
 		& video {
 			width: 100%;
 			height: 100vh;
-			//top: 50%;
-			//left: 50%;
 			top: 0%;
 			left: 0%;
-			//transform: translate(-50%, -50%);
 			object-fit: cover;
-			//filter: grayscale(1);
 			@media (max-width:$mobile){
 				height: calc(100vh - rem($header-height-mob));
 			}
 		}
+	}
+	&__map{
 	}
 	// .hero__outerContainer
 	&__outerContainer {
@@ -44,6 +54,7 @@
 		min-height: 550px;
 		display: flex;
 		align-items: center;
+		
 		@media (max-width:$mobile){
 			height: calc(100vh - rem($header-height-mob));
 			align-items: flex-end;  
@@ -53,6 +64,48 @@
 	&__offer {
 	}
 }
+
+.hero._video_played{
+	& .video::after{
+		opacity: 0;
+		transition: opacity .5s ease;
+	}
+	& .hero-map__box{
+		transform: translateX(100%);
+		transition: transform .3s ease;
+	}
+	& .offer__title, .offer__subtitle{
+		transform: translateX(-200%);
+		transition: transform .3s ease;
+	}
+}
+
+
+
+.hero-map{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	//background-color: rgba($color: $background-color-other-1, $alpha: 1);
+	&__box{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		max-width: rem(800);
+		top: 0;
+		left: 0;
+		transform: translate(0, 0);
+		margin-left: auto;
+		background:  url('@img/EU_map.png') center center/contain no-repeat;
+		transition: transform .3s ease;
+		@media (max-width:$mobile){
+			background:  url('@img/EU_map.png') center top/cover no-repeat; 
+		}
+	}
+}
+
 .video {
 	
 	// .video__box
@@ -66,7 +119,7 @@
 .offer {
 	position: relative;
 	max-width: rem(850);
-	padding: rem(50) rem(0);
+	padding: rem(80) rem(0);
 	width: 100%;
 	
 	@media (max-width:$mobile){
@@ -75,8 +128,9 @@
 	// .offer__title
 	&__title,
 	&__subtitle {
-		opacity: 1;
-		transition: opacity 1s ease;
+		//opacity: 1;
+		//transition: opacity 1s ease;
+		transition: transform .3s ease;
 	}
 
 	&__buttons {
@@ -96,7 +150,7 @@
 }
 
 .controls {
-	display: none;
+	
 	@media (any-hover: hover){
 		&:hover{
 			
@@ -108,11 +162,12 @@
 	// .controls__box
 	&__box {
 		position: relative;
-		@include adaptiveValue("width", 80, 50, 1200, 320, 1);
-		@include adaptiveValue("height", 80, 50, 1200, 320, 1);
-		border-radius: 10px;
+		@include adaptiveValue("width", 75, 50, 1200, 320, 1);
+		@include adaptiveValue("height", 75, 50, 1200, 320, 1);
+		border-radius: 7px;
 		border: $border-color-button 1px solid;
 		display: inline-block;
+		cursor: pointer;
 		@media (any-hover: hover){
 			&:hover{
 				//border: red 2px solid;
