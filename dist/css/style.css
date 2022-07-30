@@ -781,7 +781,7 @@ body._preloader {
   color: rgb(255, 255, 255);
   -webkit-animation: breathe 2.5s infinite forwards;
           animation: breathe 2.5s infinite forwards;
-  background-color: rgb(65, 190, 65);
+  background-color: rgb(10, 180, 65);
   /*
   &::before{
   	content:'';
@@ -805,7 +805,7 @@ body._preloader {
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   color: rgb(255, 255, 255);
-  background-color: rgb(65, 190, 65);
+  background-color: rgb(10, 180, 65);
 }
 
 .btn_popup,
@@ -1707,6 +1707,15 @@ section:first-child {
   visibility: hidden;
 }
 
+.menu__link._navigator-active {
+  border: 2px solid rgb(220, 220, 220);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
 /*
 #marker {
 	position: absolute;
@@ -1877,11 +1886,63 @@ section:first-child {
 }
 
 .lang__icon {
-  max-height: 2.1875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgb(10, 180, 65);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 7px;
+  text-transform: uppercase;
+  color: rgb(240, 240, 240);
+  font-weight: 600;
 }
 
-.lang__icon path {
-  fill: rgb(255, 255, 255);
+@supports (width: clamp( 1.5625rem , 1.2215909091rem  +  1.7045454545vw , 2.5rem )) {
+  .lang__icon {
+    width: clamp( 1.5625rem , 1.2215909091rem  +  1.7045454545vw , 2.5rem );
+  }
+}
+
+@supports not (width: clamp( 1.5625rem , 1.2215909091rem  +  1.7045454545vw , 2.5rem )) {
+  .lang__icon {
+    width: calc(
+			1.5625rem + 0.9375 * (100vw - 20rem) / 55
+		);
+  }
+}
+
+@supports (height: clamp( 1.5625rem , 1.2215909091rem  +  1.7045454545vw , 2.5rem )) {
+  .lang__icon {
+    height: clamp( 1.5625rem , 1.2215909091rem  +  1.7045454545vw , 2.5rem );
+  }
+}
+
+@supports not (height: clamp( 1.5625rem , 1.2215909091rem  +  1.7045454545vw , 2.5rem )) {
+  .lang__icon {
+    height: calc(
+			1.5625rem + 0.9375 * (100vw - 20rem) / 55
+		);
+  }
+}
+
+@supports (font-size: clamp( 0.75rem , 0.5681818182rem  +  0.9090909091vw , 1.25rem )) {
+  .lang__icon {
+    font-size: clamp( 0.75rem , 0.5681818182rem  +  0.9090909091vw , 1.25rem );
+  }
+}
+
+@supports not (font-size: clamp( 0.75rem , 0.5681818182rem  +  0.9090909091vw , 1.25rem )) {
+  .lang__icon {
+    font-size: calc(
+			0.75rem + 0.5 * (100vw - 20rem) / 55
+		);
+  }
 }
 
 .lang__options {
@@ -1918,7 +1979,7 @@ section:first-child {
   background-color: rgba(240, 240, 240, 0.8);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgb(65, 190, 65);
+  border-bottom: 1px solid rgb(10, 180, 65);
 }
 
 ._header-scroll .site-logo {
@@ -1928,14 +1989,14 @@ section:first-child {
 .no-webp ._header-scroll .header__logo .site-logo__item{
   background: url("../img/logo_GMA_full.png") 0% 50%/contain no-repeat; }
 
-.no-webp ._header-scroll .header-subscribe__link_fb{
-  background: url("../img/icons/fb.png") center right/cover no-repeat; }
+.no-webp ._header-scroll .header-links__link_fb{
+  background: url("../img/icons/fb_scrl.png") center right/cover no-repeat; }
 
-.no-webp ._header-scroll .header-subscribe__link_insta{
-  background: url("../img/icons/insta.png") center right/cover no-repeat; }
+.no-webp ._header-scroll .header-links__link_insta{
+  background: url("../img/icons/insta_scrl.png") center right/cover no-repeat; }
 
-._header-scroll .header__lang .lang__icon path {
-  fill: rgb(30, 60, 120);
+._header-scroll .header__lang .lang__icon {
+  border: 2px solid rgb(10, 180, 65);
 }
 
 ._header-scroll .header__lang .lang__options {
@@ -1957,6 +2018,17 @@ section:first-child {
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   border: 2px solid transparent;
+}
+
+._header-scroll .menu__link._navigator-active {
+  background-color: #1b3a77;
+  border: 2px solid transparent;
+  color: rgb(240, 240, 240);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 ._header-scroll .menu__icon span,
@@ -3241,10 +3313,16 @@ section:first-child {
 }
 
 .no-webp .contacts-subscribe__link_fb{
-  background: url("../img/icons/fb.png") center right/cover no-repeat; }
+  background: url("../img/icons/fb_footer.png") center right/cover no-repeat; }
+
+.no-webp .contacts-subscribe__link_fb:active{
+  background: url("../img/icons/fb_hov_footer.png") center right/cover no-repeat; }
 
 .no-webp .contacts-subscribe__link_insta{
-  background: url("../img/icons/insta.png") center right/cover no-repeat; }
+  background: url("../img/icons/insta_footer.png") center right/cover no-repeat; }
+
+.no-webp .contacts-subscribe__link_insta:active{
+  background: url("../img/icons/insta_hov_footer.png") center right/cover no-repeat; }
 
 .contacts-subscribe__call {
   text-transform: uppercase;
@@ -3345,6 +3423,17 @@ section:first-child {
         -ms-transform: translateX(-22.5rem);
             transform: translateX(-22.5rem);
     color: rgb(30, 60, 120);
+  }
+
+  .menu__body._active ._navigator-active {
+    background-color: #1b3a77;
+    color: rgb(240, 240, 240);
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+    border: 2px solid transparent;
   }
 
   .menu__list {
@@ -3466,6 +3555,11 @@ section:first-child {
 }
 
 @media (max-width: 36.06125em) {
+  .lang__icon {
+    border-width: 1px;
+    border-radius: 4px;
+  }
+
   .footer .footer__addresses,
   .footer .footer__policies {
     width: 100%;
@@ -3532,10 +3626,10 @@ section:first-child {
   .no-webp .header-links__link_insta:hover{
     background: url("../img/icons/insta_hov.png") center center/contain no-repeat; }
 
-  .no-webp ._header-scroll .header-subscribe__link_fb:hover{
+  .no-webp ._header-scroll .header-links__link_fb:hover{
     background: url("../img/icons/fb_hov.png") center right/cover no-repeat; }
 
-  .no-webp ._header-scroll .header-subscribe__link_insta:hover{
+  .no-webp ._header-scroll .header-links__link_insta:hover{
     background: url("../img/icons/insta_hov.png") center right/cover no-repeat; }
 
   .hero-map__box:hover {
@@ -3567,10 +3661,10 @@ section:first-child {
   }
 
   .no-webp .contacts-subscribe__link_fb:hover{
-    background: url("../img/icons/fb_hov.png") center right/cover no-repeat; }
+    background: url("../img/icons/fb_hov_footer.png") center right/cover no-repeat; }
 
   .no-webp .contacts-subscribe__link_insta:hover{
-    background: url("../img/icons/insta_hov.png") center right/cover no-repeat; }
+    background: url("../img/icons/insta_hov_footer.png") center right/cover no-repeat; }
 }
 
 .webp .header .header__logo .site-logo__item{ background: url(../img/logo_GMA_full_redwhite.webp) 0% 50%/contain no-repeat; }
@@ -3581,9 +3675,9 @@ section:first-child {
 
 .webp ._header-scroll .header__logo .site-logo__item{ background: url(../img/logo_GMA_full.webp) 0% 50%/contain no-repeat; }
 
-.webp ._header-scroll .header-subscribe__link_fb{ background: url(../img/icons/fb.webp) center right/cover no-repeat; }
+.webp ._header-scroll .header-links__link_fb{ background: url(../img/icons/fb_scrl.webp) center right/cover no-repeat; }
 
-.webp ._header-scroll .header-subscribe__link_insta{ background: url(../img/icons/insta.webp) center right/cover no-repeat; }
+.webp ._header-scroll .header-links__link_insta{ background: url(../img/icons/insta_scrl.webp) center right/cover no-repeat; }
 
 .webp .footer .footer__logo .site-logo__item{ background: url(../img/logo_GMA_full.webp) 0% 50%/contain no-repeat; }
 
@@ -3595,9 +3689,13 @@ section:first-child {
 
 .webp .contacts::before{ background: url(../img/contentImgs/cover_inTouch2.webp) center right/cover no-repeat; }
 
-.webp .contacts-subscribe__link_fb{ background: url(../img/icons/fb.webp) center right/cover no-repeat; }
+.webp .contacts-subscribe__link_fb{ background: url(../img/icons/fb_footer.webp) center right/cover no-repeat; }
 
-.webp .contacts-subscribe__link_insta{ background: url(../img/icons/insta.webp) center right/cover no-repeat; }
+.webp .contacts-subscribe__link_fb:active{ background: url(../img/icons/fb_hov_footer.webp) center right/cover no-repeat; }
+
+.webp .contacts-subscribe__link_insta{ background: url(../img/icons/insta_footer.webp) center right/cover no-repeat; }
+
+.webp .contacts-subscribe__link_insta:active{ background: url(../img/icons/insta_hov_footer.webp) center right/cover no-repeat; }
 
 @media (max-width: 47.99875em){
 
@@ -3616,20 +3714,20 @@ section:first-child {
 
 @media (any-hover: hover){
 
-  .webp ._header-scroll .header-subscribe__link_fb:hover{ background: url(../img/icons/fb_hov.webp) center right/cover no-repeat; }
+  .webp ._header-scroll .header-links__link_fb:hover{ background: url(../img/icons/fb_hov.webp) center right/cover no-repeat; }
 }
 
 @media (any-hover: hover){
 
-  .webp ._header-scroll .header-subscribe__link_insta:hover{ background: url(../img/icons/insta_hov.webp) center right/cover no-repeat; }
+  .webp ._header-scroll .header-links__link_insta:hover{ background: url(../img/icons/insta_hov.webp) center right/cover no-repeat; }
 }
 
 @media (any-hover: hover){
 
-  .webp .contacts-subscribe__link_fb:hover{ background: url(../img/icons/fb_hov.webp) center right/cover no-repeat; }
+  .webp .contacts-subscribe__link_fb:hover{ background: url(../img/icons/fb_hov_footer.webp) center right/cover no-repeat; }
 }
 
 @media (any-hover: hover){
 
-  .webp .contacts-subscribe__link_insta:hover{ background: url(../img/icons/insta_hov.webp) center right/cover no-repeat; }
+  .webp .contacts-subscribe__link_insta:hover{ background: url(../img/icons/insta_hov_footer.webp) center right/cover no-repeat; }
 }

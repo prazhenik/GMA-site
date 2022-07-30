@@ -94,6 +94,14 @@
 				color: $text-color-major;
 				//max-width: rem(600);
 				//right: 0%;
+				& ._navigator-active {
+					background-color: rgba($color: $background-color-other-1, $alpha: 1);
+					color: $text-color-secondary;
+					//transform: translateY(-3px);
+					transition: transform .3s ease;
+					//font-weight: 600;
+					border: 2px solid transparent;
+				}
 			}
 		}
 	}
@@ -174,6 +182,10 @@
 			//@include adaptiveValue("font-size", 30, 20, 1200, 320, 1 );
 			font-size: rem(22);
 			color: $text-color-menu;
+		}
+		&._navigator-active {
+			border: 2px solid $border-color-major;
+			transition: transform .3s ease;
 		}
 	}
 }

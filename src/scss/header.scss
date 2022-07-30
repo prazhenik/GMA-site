@@ -96,10 +96,23 @@
 	position: relative;
 	// .lang__icon
 	&__icon {
-		max-height: rem(35);
-		& path {
-			fill: $text-color-accent;
-			}
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include adaptiveValue("width",40 ,25, 1200,320,1 );
+		@include adaptiveValue("height",40 ,25, 1200,320,1 );
+		//background: url('@img/icons/globe.png') center center/ contain no-repeat;
+		background-color: $background-color-other-2;
+		border: 2px solid $border-color-button;
+		border-radius: 7px;
+		text-transform: uppercase;
+		color: $text-color-secondary;
+		font-weight: 600;
+		@include adaptiveValue("font-size", 20, 12, 1200, 320, 1 );
+		@media (max-width:$mobileSmall){
+			border-width: 1px;
+			border-radius: 4px;
+		}
 	}
 	// .lang__options
 	&__options {
@@ -147,9 +160,9 @@
 
 	//svg, path, rect
 
-	& .header-subscribe__link {
+	& .header-links__link {
 		&_fb {
-			background: url('@img/icons/fb.png') center right/ cover no-repeat;
+			background: url('@img/icons/fb_scrl.png') center right/ cover no-repeat;
 			@media (any-hover: hover){
 				&:hover{
 					background: url('@img/icons/fb_hov.png') center right/ cover no-repeat;
@@ -158,7 +171,7 @@
 		}
 		// .header-links__item_insta
 		&_insta {
-			background: url('@img/icons/insta.png') center right/ cover no-repeat;
+			background: url('@img/icons/insta_scrl.png') center right/ cover no-repeat;
 			@media (any-hover: hover){
 				&:hover{
 					background: url('@img/icons/insta_hov.png') center right/ cover no-repeat;
@@ -173,8 +186,12 @@
 		//color: $text-color-links;
 		.lang {
 			&__icon {
-				& path {
-					fill: $text-color-major;
+				border: 2px solid $background-color-other-2;
+				
+				@media (any-hover: hover){
+					&:hover{
+						//background: url('@img/icons/insta_hov.png') center right/ cover no-repeat;
+					}
 				}
 			}
 				// .lang__present
@@ -202,6 +219,12 @@
 				transition: transform .3s ease;
 				//font-weight: 600;
 				border: 2px solid transparent;
+			}
+			&._navigator-active {
+				background-color: rgba($color: $background-color-other-1, $alpha: 1);
+				border: 2px solid transparent;
+				color: $text-color-secondary;
+				transition: transform .3s ease;
 			}
 		}
 		&__icon {

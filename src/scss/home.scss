@@ -954,20 +954,26 @@
 	
 		// .contacts-links__item_fb
 		&_fb {
-			background: url('@img/icons/fb.png') center right/ cover no-repeat;
+			background: url('@img/icons/fb_footer.png') center right/ cover no-repeat;
 			@media (any-hover: hover){
 				&:hover{
-					background: url('@img/icons/fb_hov.png') center right/ cover no-repeat;
+					background: url('@img/icons/fb_hov_footer.png') center right/ cover no-repeat;
 				}
+			}
+			&:active{
+				background: url('@img/icons/fb_hov_footer.png') center right/ cover no-repeat;
 			}
 		}
 		// .contacts-links__item_insta
 		&_insta {
-			background: url('@img/icons/insta.png') center right/ cover no-repeat;
+			background: url('@img/icons/insta_footer.png') center right/ cover no-repeat;
 			@media (any-hover: hover){
 				&:hover{
-					background: url('@img/icons/insta_hov.png') center right/ cover no-repeat;
+					background: url('@img/icons/insta_hov_footer.png') center right/ cover no-repeat;
 				}
+			}
+			&:active{
+				background: url('@img/icons/insta_hov_footer.png') center right/ cover no-repeat;
 			}
 		}
 
