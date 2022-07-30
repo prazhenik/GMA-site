@@ -59,6 +59,9 @@
 		flex: 0 0 auto;
 		//margin-bottom:  rem(20);
 	}
+	& .footer__logo .site-logo__item {
+		background:  url("@img/logo_GMA_full.png") 0% 50% / contain no-repeat;
+	}
 	// .footer__policy
 	&__policy {
 		text-decoration: underline;
@@ -103,9 +106,5 @@
 }
 
 }
-.site-logo {
-&__dark_footer {
-display: inline-block;
-}
-}
+
 

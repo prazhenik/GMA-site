@@ -1,4 +1,22 @@
 // Заголовки, общие БЄМ блоки и проче...
+
+.site-logo {
+	flex: 0 1 rem(200);
+	@include adaptiveValue("height",55 , 35, 1200, 320, 1);
+	border-radius: 10px;
+	// .site-logo__item
+	&__item {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		max-width: rem(200);
+		height: 100%;
+		//background:  url("@img/logo_GMA_full_redwhite.png") 0% 50% / contain no-repeat;
+		border-radius: 10px;
+
+	}
+}
+
 section{
 	position: relative;
 	&:not(:first-child) {
@@ -24,9 +42,9 @@ section{
 		}
 	}
 	&:nth-child(odd){
-		//background-color: rgba($color: $background-color-other-1, $alpha: 1);
 		color: $text-color-secondary;
 		&:not(:first-child) {
+			background-color: rgba($color: $background-color-other-1, $alpha: 1);
 			-webkit-mask-image:
 			/* top mask PNG/SVG image */
 			url('@img/верх.png'),

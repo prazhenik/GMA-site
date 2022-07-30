@@ -171,16 +171,13 @@ buttons.forEach(button => {
 
 //---------------video play------------------
 const hero = document.querySelector('.hero');
-const vid = document.querySelector('.hero__video');
 const vidItem = document.querySelector('.hero__video video');
-const offerTitle = document.querySelector('.offer__title');
-const offerSubitle = document.querySelector('.offer__subtitle');
-const playBtnPc = document.querySelector('._video-play-pc');
-const playBtnMob = document.querySelector('._video-play-mob');
+const playBtn = document.querySelector('._video-play-btn');
 const playIcon = document.querySelector('.controls__play');
 const pauseIcon = document.querySelector('.controls__pause');
 
 
+// устраняет артефакт видео при загрузке
 window.addEventListener('load', () => {
 	setTimeout(() => {
 		vidItem.hidden = false;
@@ -190,14 +187,11 @@ window.addEventListener('load', () => {
 
 const play = () => {
 	hero.classList.add('_video_played');
-	vidItem.play();
-	//vidItem.style.transition = "filter 0.5s ease"
-	// //vidItem.style.filter = "grayscale(0)"
-	// vid.style.opacity = "1"
-	// offerTitle.style.opacity = "0"
-	// offerSubitle.style.opacity = "0"
-	//playIcon.style.display = "none"
-	//pauseIcon.style.display = "inline-block"
+	setTimeout(function () {
+		vidItem.play();
+	}, 200);
+	playIcon.style.display = "none"
+	pauseIcon.style.display = "inline-block"
 	playIcon.classList.add('_icon-played')
 }
 
@@ -206,27 +200,26 @@ const play = () => {
 const pause = () => {
 	hero.classList.remove('_video_played');
 	vidItem.pause();
-	//vidItem.style.filter = "grayscale(1)"
-	// vid.style.opacity = "1"
-	// offerTitle.style.opacity = "1"
-	// offerSubitle.style.opacity = "1"
-	// playIcon.style.display = "inline-block"
-	// pauseIcon.style.display = "none"
+	playIcon.style.display = "inline-block"
+	pauseIcon.style.display = "none"
 }
 
-if (((window.onload || playBtnPc) && vidItem) && !isMobile.any()) {
-	playBtnMob.addEventListener('mouseenter', play);
-	playBtnMob.addEventListener('mouseleave', pause);
-} else if (((window.onload || playBtnMob) && vidItem) && isMobile.any()) {
-	playBtnMob.addEventListener('click', () => {
-		if (!playIcon.classList.contains('_icon-played')) {
-			play();
+if ((window.onload || playBtn) && vidItem) {
+	playBtn.addEventListener('click', () => {
+		if (hero.classList.contains('_video_played')) {
+			pause();
 		} else {
-			pause()
-			playIcon.classList.remove('_icon-played')
+			play()
 		}
+	})
+	document.addEventListener('scroll', () => {
+		pause()
+		playIcon.classList.remove('_video_played')
 	});
+	playBtn.addEventListener('mouseleave', pause);
 }
+
+
 
 //---------------algorithm cards animation------------------
 /*

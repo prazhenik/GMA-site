@@ -25,7 +25,7 @@
 			left: 0;
 			background-color: rgba($color: $background-color-other-1, $alpha: 1);
 			opacity: 1;
-			transition: opacity .5s ease;
+			transition: opacity .5s;
 		}
 		& video {
 			width: 100%;
@@ -68,11 +68,12 @@
 .hero._video_played{
 	& .video::after{
 		opacity: 0;
-		transition: opacity .5s ease;
+		transition: opacity 1s;
 	}
 	& .hero-map__box{
-		transform: translateX(100%);
-		transition: transform .3s ease;
+		transform: scale(2);
+		opacity: 0;
+		transition: transform .3s linear, opacity .25s linear;
 	}
 	& .offer__title, .offer__subtitle{
 		transform: translateX(-200%);
@@ -98,10 +99,17 @@
 		left: 0;
 		transform: translate(0, 0);
 		margin-left: auto;
-		background:  url('@img/EU_map.png') center center/contain no-repeat;
-		transition: transform .3s ease;
+		background:    url('@img/EU_map.png') center center/contain no-repeat;
+		transition: transform .2s linear, opacity .15s linear;
+		opacity: 1;
 		@media (max-width:$mobile){
 			background:  url('@img/EU_map.png') center top/cover no-repeat; 
+		}
+		@media (any-hover: hover){
+			&:hover{
+				transform: scale(1.01);
+				transition: transform .3s linear;
+			}
 		}
 	}
 }
@@ -130,7 +138,7 @@
 	&__subtitle {
 		//opacity: 1;
 		//transition: opacity 1s ease;
-		transition: transform .3s ease;
+		transition: transform .35s ease;
 	}
 
 	&__buttons {
@@ -168,16 +176,19 @@
 		border: $border-color-button 1px solid;
 		display: inline-block;
 		cursor: pointer;
+		transition: transform .3s;
 		@media (any-hover: hover){
 			&:hover{
-				//border: red 2px solid;
-				// .controls__play
-				& .controls__play svg path {	
-					//fill: red;
-					//stroke: $border-color-major;
-				
-				}
+				border: $border-color-other-3 2px solid;
+				transform: scale(1.1);
+				transition: transform .3s;
+
 			}
+		}
+		&:active{
+			border: $border-color-other-3 2px solid;
+			transform: scale(1.1);
+			transition: transform .3s;
 		}
 	}
 // .controls__play
@@ -402,8 +413,8 @@
 		top: 0;
 		left: 0;
 		background: url('@img/contentImgs/cover_knowleges.jpg') center center / cover no-repeat;
-		opacity: .4;
-		filter: blur(2px);
+		opacity: .2;
+		filter: saturate(0);
 	}
 		
 	// .capability__content
@@ -706,8 +717,8 @@
 		top: 0;
 		left: 0;
 		background: url('@img/contentImgs/cover_partners.jpg') center center / cover no-repeat;
-		opacity: .4;
-		filter: blur(2px);
+		opacity: .2;
+		filter: saturate(0);
 	}
 	// .partners__outerContainer
 	&__outerContainer {
@@ -843,6 +854,18 @@
 //--------contacts---------------------
 
 .contacts {
+	position: relative;
+	&::before{
+		content:'';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: url('@img/contentImgs/cover_inTouch2.jpg') center right/ cover no-repeat;
+		opacity: .2;
+		filter: saturate(0);
+	}
 	// .contacts__outerContainer
 	&__outerContainer {
 	}
@@ -902,7 +925,7 @@
 				font-weight: 600;
 			}
 			&:not(:last-child) {
-				margin-bottom:  rem(50);
+				margin-bottom:  rem(80);
 			}
 		}
 		&:not(:last-child) {
@@ -915,22 +938,39 @@
 		align-items: center;
 		justify-content: center;
 		flex-wrap: wrap;
-		@include adaptiveValue("gap", 50, 10, 1200, 320, 1 );
+		@include adaptiveValue("gap", 50, 10, 1200, 577, 1 );
+		@media (max-width:$mobileSmall){
+			justify-content: space-around;
+			row-gap: rem(50);
+	  	}
 	}
 	// .contacts-subscribe__link
 	&__link {
-		& svg, path {
-			@include adaptiveValue("width",100 ,50, 768,320,1 );
-			@include adaptiveValue("height",100 ,50, 768,320,1 );
-		}
-		// .header-links__item_fb
+		@include adaptiveValue("width",100 ,80, 768,320,1 );
+		@include adaptiveValue("height",100 ,80, 768,320,1 );
+		@media (max-width:$mobileSmall){
+			order: 2;
+	  	}
+	
+		// .contacts-links__item_fb
 		&_fb {
-			stroke: $text-color-accent;
-			stroke-width: 4;
+			background: url('@img/icons/fb.png') center right/ cover no-repeat;
+			@media (any-hover: hover){
+				&:hover{
+					background: url('@img/icons/fb_hov.png') center right/ cover no-repeat;
+				}
+			}
 		}
-		// .header-links__item_insta
+		// .contacts-links__item_insta
 		&_insta {
+			background: url('@img/icons/insta.png') center right/ cover no-repeat;
+			@media (any-hover: hover){
+				&:hover{
+					background: url('@img/icons/insta_hov.png') center right/ cover no-repeat;
+				}
+			}
 		}
+
 	}
 	// .contacts-subscribe__text
 	&__call {
@@ -938,6 +978,12 @@
 		@include adaptiveValue("font-size", 36, 20, 1200, 320, 1 );
 		line-height: math.div(36 , 36);
 		font-weight: 600;
+		text-align: center;
+		@media (max-width:$mobileSmall){
+			flex: 1 1 100%; 
+			order: 1;
+	  	}
+		
 	}
 }
 
