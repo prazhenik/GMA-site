@@ -18,7 +18,7 @@
 	<meta property="og:locale" content="ru">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="GMA. Global Medical Assistance">
-	<meta property="og:description" content="prazhenik.dev: frontend developer. Building reliable websites easy to use for the average user.">
+	<meta property="og:description" content="GMA. Global Medical Assistance - бесплатный сервис, цель которого - помочь пациентам из любой точки мира выбрать наиболее подходящий медицинский центр в Европе для прохождения обследования, лечения, либо  реабилитации.">
 	<meta property="og:url" content="https://gma.care/">
 	<meta property="og:site_name" content="GMA. Global Medical Assistance">
 	<meta property="og:image:width" content="2560">
@@ -32,7 +32,7 @@
 	<meta name="theme-color" content="#1B3A77"> <!-- theme color -->
 	<!-- <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png"> -->
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220730191944">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220801160520">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<!-- npm install --save-dev t-scroll<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
@@ -67,12 +67,18 @@
 					</div>
 					<div class="header__links header-links">
 						<ul class="header-links__list">
-							<li class="header-links__item header-links__item_fb">
-								<a class="header-links__link header-links__link_fb" href="#">
+							<li class="header-links__item socials socials_fb">
+								<a class="socials__link socials__link_fb" href="#">
+									<picture><source srcset="img/icons/fb.webp" type="image/webp"><img class="icon_reg" src="img/icons/fb.png" alt=""></picture>
+									<picture><source srcset="img/icons/fb_scrl.webp" type="image/webp"><img class="icon_scrl" src="img/icons/fb_scrl.png" alt=""></picture>
+									<picture><source srcset="img/icons/fb_hov.webp" type="image/webp"><img class="icon_hov" src="img/icons/fb_hov.png" alt=""></picture>
 								</a>
 							</li>
-							<li class="header-links__item header-links__item_insta">
-								<a class="header-links__link header-links__link_insta" href="#">
+							<li class="header-links__item socials socials_insta">
+								<a class="socials__link socials__link_insta" href="#">
+									<picture><source srcset="img/icons/insta.webp" type="image/webp"><img class="icon_reg" src="img/icons/insta.png" alt=""></picture>
+									<picture><source srcset="img/icons/insta_scrl.webp" type="image/webp"><img class="icon_scrl" src="img/icons/insta_scrl.png" alt=""></picture>
+									<picture><source srcset="img/icons/insta_hov.webp" type="image/webp"><img class="icon_hov" src="img/icons/insta_hov.png" alt=""></picture>
 								</a>
 							</li>
 							<li class="header-links__item header-links__item_lang">
@@ -102,7 +108,7 @@
 
 		<main class="page">
 			<div class="page__body">
-				<section data-watch="navigator" data-watch-threshold="0.3" class="hero">
+				<section data-watch="navigator" data-watch-threshold="0.5" class="hero">
 					<div class="hero__video video">
 						<div class="video__box">
 							<video hidden loop muted src="files/video/hero-vid.webm"></video>
@@ -217,7 +223,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.3" class="capability">
+				<section data-watch="navigator" data-watch-threshold="0.2" class="capability">
 					<div class="capability__outerContainer">
 						<div class="capability__innerContainer">
 							<h2 class="capability__title _section-title">
@@ -293,7 +299,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch data-watch-threshold="0.3" class="consult">
+				<section data-watch data-watch-threshold="0.2" class="consult">
 					<div class="consult__outerContainer">
 						<div class="consult__innerContainer">
 							<h2 class="consult__title _section-title">
@@ -342,7 +348,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.3" class="partners">
+				<section data-watch="navigator" data-watch-threshold="0.2" class="partners">
 					<div class="partners__outerContainer">
 						<div class="partners__innerContainer">
 							<h2 class="partners__title _section-title">
@@ -376,7 +382,7 @@
 							</div>
 						</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.3" class="about">
+				<section data-watch="navigator" data-watch-threshold="0.2" class="about">
 					<div class="about__outerContainer">
 						<div class="about__innerContainer">
 							<h2 class="about__title _section-title">
@@ -418,7 +424,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch-threshold="0.3" data-watch="navigator" class="contacts">
+				<section data-watch-threshold="0.2" data-watch="navigator" class="contacts">
 					<div class="contacts__outerContainer">
 						<div class="contacts__innerContainer">
 							<h2 class="contacts__title _section-title">
@@ -445,13 +451,17 @@
 									<div class="contacts-subscribe__text">
 										<p><span>Подписывайтесь</span>, на наши странички в <span>Instagram и Facebook</span>, задавайте вопросы и первыми узнавайте свежие новости <span>GMA - Global Medical Assistance</span>.</p>
 										</в>
-										<div class="contacts-subscribe__links">
-											<a class="contacts-subscribe__link contacts-subscribe__link_fb" href="http://facebook.com">
+										<div class="contacts-subscribe__links socials socials_fb">
+											<a class="socials__link socials__link_fb" href="http://facebook.com">
+												<picture><source srcset="img/icons/fb.webp" type="image/webp"><img class="icon_reg" src="img/icons/fb.png" alt=""></picture>
+												<picture><source srcset="img/icons/fb_hov.webp" type="image/webp"><img class="icon_hov" src="img/icons/fb_hov.png" alt=""></picture>
 											</a>
 											<p class="contacts-subscribe__call">
 												Подпишитесь на нас
 											</p>
-											<a class="contacts-subscribe__link contacts-subscribe__link_insta" href="http://instagram.com">
+											<a class="socials__link socials__link_insta" href="http://instagram.com">
+												<picture><source srcset="img/icons/insta_hov.webp" type="image/webp"><img class="icon_hov" src="img/icons/insta_hov.png" alt=""></picture>
+												<picture><source srcset="img/icons/insta.webp" type="image/webp"><img class="icon_reg" src="img/icons/insta.png" alt=""></picture>
 											</a>
 										</div>
 									</div>
@@ -578,7 +588,7 @@
 	</div>
 	<!---------------------------------popup whis forms-------------------------------->
 
-	<script src="js/app.min.js?_v=20220730191944"></script>
+	<script src="js/app.min.js?_v=20220801160520"></script>
 
 
 </body>

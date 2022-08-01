@@ -17,6 +17,7 @@
 	}
 }
 
+
 section{
 	position: relative;
 	&:not(:first-child) {
@@ -27,6 +28,8 @@ section{
 		position: relative;
 		background-color: $background-color-major;
 		color: $text-color-major;
+		@include adaptiveValue("padding-top", 130 , 60, 1200, 320, 1);
+		@include adaptiveValue("padding-bottom", 130 , 60, 1200, 320, 1);
 		// &::before{
 		// 	content:'';
 		// 	position: absolute;
@@ -44,7 +47,7 @@ section{
 	&:nth-child(odd){
 		color: $text-color-secondary;
 		&:not(:first-child) {
-			background-color: rgba($color: $background-color-other-1, $alpha: 1);
+			background-color: rgba($color: $background-color-secondary, $alpha: 1);
 			-webkit-mask-image:
 			/* top mask PNG/SVG image */
 			url('@img/верх.png'),
@@ -105,6 +108,36 @@ section{
 	}
 }
 
+.socials__link {
+	position: relative;
+	display: inline-block;
+	& img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		&.icon_hov {
+			display: none;
+
+		}
+		&.icon_scrl{
+			display: none;
+		}
+	}
+	@media (any-hover: hover){
+		&:hover{
+			& img.icon_hov {
+				display: inline-block;
+				opacity: 1;
+				transition: opacity .5s, display .5s;
+			}
+		}
+	}
+}
+
+
 .btn {
 	&_contacts, &_contacts  {
 		display: inline-block;
@@ -124,7 +157,7 @@ section{
 	}
 	@include adaptiveValue("font-size", 24, 14, 1200, 320, 1 );
 	&:not(:last-child) {
-		@include adaptiveValue("margin-bottom", 60, 40, 1200, 320,1 );
+		@include adaptiveValue("margin-bottom", 50, 30, 1200, 320,1 );
 	}
 	span {
 		color: $text-color-accent;

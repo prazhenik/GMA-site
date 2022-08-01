@@ -95,7 +95,7 @@
 				//max-width: rem(600);
 				//right: 0%;
 				& ._navigator-active {
-					background-color: rgba($color: $background-color-other-1, $alpha: 1);
+					background-color: rgba($color: $background-color-secondary, $alpha: 1);
 					color: $text-color-secondary;
 					//transform: translateY(-3px);
 					transition: transform .3s ease;

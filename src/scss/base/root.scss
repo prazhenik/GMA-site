@@ -33,7 +33,7 @@ $font-style: normal;
 
 //text colors
 $text-color-major: rgba(30, 60, 120, 1); //general document text color
-$text-color-secondary: rgba(240, 240, 240, 1);
+$text-color-secondary: rgba(255, 255, 255, 1);
 $text-color-accent: rgba(255, 255, 255, 1);
 
 
@@ -43,7 +43,7 @@ $text-color-menu-active: rgba(255, 255, 255, 1); //active menu links text color
 $text-color-btn: rgba(255, 255, 255, 1); //menu links text color
 $text-color-btn-active: rgba(255, 255, 255, 1); //active menu links text color
 
-$text-color-links: rgba(27, 58, 119, 1); //a links text color
+$text-color-links:  rgba(30, 60, 120, 1); //a links text color
 $text-color-links-active: rgba(30, 60, 120, 1); //a links text color
 
 $text-color-other-1: rgba(255, 255, 255, 1); //other text color
@@ -52,13 +52,13 @@ $text-color-other-2: rgba(10, 250, 215, 1); //other text color/color hero title 
 
 //bacground colors
 $background-color-major: rgba(240, 240, 240, 1); //Цвет фона по умолчанию
-$background-color-secondary: rgb(0, 0, 0); 
+$background-color-secondary:  rgba(30, 60, 120, 1); 
 $background-color-menu: rgba(240, 240, 240, 1); //menu bcg 
 $background-color-overlay-lock: rgba(0, 0, 0, .6); // overlays _lock
-$background-color-button:  linear-gradient(94.29deg, #2B5935 10.72%, #00B428 65.76%, #1E9538 98.53%); //
+$background-color-button:   rgba(0, 0, 0, .6); //
 $background-color-button-active: rgba(10, 180, 65, 0.8); // 
-$background-color-other-1: rgba(27, 58, 119, 1); // red accents
-$background-color-other-2: rgb(10, 180, 65); // btn hover cover
+$background-color-other-1:   rgba(30, 60, 120, 1); // red accents
+$background-color-other-2: rgba(10, 180, 65, 1); // btn hover cover
 
 // border colors
 $border-color-major: rgba(220, 220, 220, 1); //Цвет границ по умолчанию
