@@ -34,7 +34,7 @@
 		max-width: rem($popup-maxwhidth);
 		background: $popup-background-color;
 		border-radius: rem($popup-border-radius);
-		border: 2px solid $border-color-major;
+		border: 1px solid $border-color-major;
 		@include adaptiveValue("padding-top", 70, 40, 1200, 320, 1);
 		@include adaptiveValue("padding-bottom", 70, 40, 1200, 320, 1);
 		@include adaptiveValue("padding-left", 50, 10, 1200, 320, 1);
@@ -50,7 +50,7 @@
 	}
 	// .popup__close
 	&__close {
-		padding: 10px;
+		padding: 15px;
 		position: absolute;
 		cursor: pointer;
 		outline: none;

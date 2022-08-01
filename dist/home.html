@@ -32,7 +32,7 @@
 	<meta name="theme-color" content="#1B3A77"> <!-- theme color -->
 	<!-- <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png"> -->
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220801160520">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220801195238">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<!-- npm install --save-dev t-scroll<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
@@ -48,38 +48,40 @@
 			<div class="header__outerContainer">
 				<div class="header__content">
 					<div class="header__logo site-logo">
-						<a class="site-logo__item" href="/home.html"></a>
+						<a class="site-logo__item" href="#" data-goto=".hero"></a>
 					</div>
 					<div class="header__menu menu">
 						<button type="button" class="menu__icon icon-menu"><span></span></button>
 						<nav class="menu__body">
 							<ul class="menu__list">
-								<li class="menu__item"><a href="#" data-goto-speed="500" data-goto=".hero" title="Главная" class="menu__link">Главная</a>
+								<li class="menu__item"><a href="#" data-goto=".hero" title="Главная" class="menu__link">Главная</a>
 									<span id="marker"></span>
 								</li>
-								<li class="menu__item"><a href="#" data-goto-speed="500" data-goto=".algorithm" title="Наш подход" class="menu__link">Наш подход</a></li>
-								<li class="menu__item"><a href="#" data-goto-speed="500" data-goto=".capability" title="Возможности" class="menu__link">Возможности</a></li>
-								<li class="menu__item"><a href="#" data-goto-speed="500" data-goto=".partners" title="Партнеры" class="menu__link">Партнеры</a></li>
-								<li class="menu__item"><a href="#" data-goto-speed="500" data-goto=".about" title="О нас" class="menu__link">О нас</a></li>
-								<li class="menu__item"><a href="#" data-goto-speed="500" data-goto=".contacts" title="Контакты" class="menu__link">Контакты</a></li>
+								<li class="menu__item"><a href="#" data-goto=".algorithm" title="Наш подход" class="menu__link">Наш подход</a></li>
+								<li class="menu__item"><a href="#" data-goto=".capability" title="Возможности" class="menu__link">Возможности</a></li>
+								<li class="menu__item"><a href="#" data-goto=".partners" title="Партнеры" class="menu__link">Партнеры</a></li>
+								<li class="menu__item"><a href="#" data-goto=".about" title="О нас" class="menu__link">О нас</a></li>
+								<li class="menu__item"><a href="#" data-goto=".contacts" title="Контакты" class="menu__link">Контакты</a></li>
 							</ul>
 						</nav>
 					</div>
 					<div class="header__links header-links">
 						<ul class="header-links__list">
 							<li class="header-links__item socials socials_fb">
-								<a class="socials__link socials__link_fb" href="#">
-									<picture><source srcset="img/icons/fb.webp" type="image/webp"><img class="icon_reg" src="img/icons/fb.png" alt=""></picture>
-									<picture><source srcset="img/icons/fb_scrl.webp" type="image/webp"><img class="icon_scrl" src="img/icons/fb_scrl.png" alt=""></picture>
-									<picture><source srcset="img/icons/fb_hov.webp" type="image/webp"><img class="icon_hov" src="img/icons/fb_hov.png" alt=""></picture>
+								<!--noindex--><a href="http://facebook.com" target="_blank" rel="nofollow noopener noreferrer" class="socials__link socials__link_fb">
+									<picture><source srcset="img/icons/fb.webp" type="image/webp"><img class="icon_reg" src="img/icons/fb.png" alt="fb_icon"></picture>
+									<picture><source srcset="img/icons/fb_scrl.webp" type="image/webp"><img class="icon_scrl" src="img/icons/fb_scrl.png" alt="fb_icon_scroll"></picture>
+									<picture><source srcset="img/icons/fb_hov.webp" type="image/webp"><img class="icon_hov" src="img/icons/fb_hov.png" alt="fb_icon_hover"></picture>
 								</a>
+								<!--/noindex-->
 							</li>
 							<li class="header-links__item socials socials_insta">
-								<a class="socials__link socials__link_insta" href="#">
-									<picture><source srcset="img/icons/insta.webp" type="image/webp"><img class="icon_reg" src="img/icons/insta.png" alt=""></picture>
-									<picture><source srcset="img/icons/insta_scrl.webp" type="image/webp"><img class="icon_scrl" src="img/icons/insta_scrl.png" alt=""></picture>
-									<picture><source srcset="img/icons/insta_hov.webp" type="image/webp"><img class="icon_hov" src="img/icons/insta_hov.png" alt=""></picture>
+								<!--noindex--><a href="http://instagram.com" target="_blank" rel="nofollow noopener noreferrer" class="socials__link socials__link_insta">
+									<picture><source srcset="img/icons/insta.webp" type="image/webp"><img class="icon_reg" src="img/icons/insta.png" alt="insta_icon"></picture>
+									<picture><source srcset="img/icons/insta_scrl.webp" type="image/webp"><img class="icon_scrl" src="img/icons/insta_scrl.png" alt="insta_icon_scroll"></picture>
+									<picture><source srcset="img/icons/insta_hov.webp" type="image/webp"><img class="icon_hov" src="img/icons/insta_hov.png" alt="insta_icon_hover"></picture>
 								</a>
+								<!--/noindex-->
 							</li>
 							<li class="header-links__item header-links__item_lang">
 								<div class="header__lang lang">
@@ -111,7 +113,7 @@
 				<section data-watch="navigator" data-watch-threshold="0.5" class="hero">
 					<div class="hero__video video">
 						<div class="video__box">
-							<video hidden loop muted src="files/video/hero-vid.webm"></video>
+							<video hidden loop muted src="files/video/hero-vid_v3.webm"></video>
 						</div>
 					</div>
 					<div class="hero__map hero-map">
@@ -157,7 +159,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.3" class="algorithm">
+				<section data-watch="navigator" data-watch-threshold="0.2" class="algorithm">
 					<div class="algorithm__outerContainer">
 						<div class="algorithm__innerContainer">
 							<h2 class="algorithm__title _section-title">
@@ -452,17 +454,19 @@
 										<p><span>Подписывайтесь</span>, на наши странички в <span>Instagram и Facebook</span>, задавайте вопросы и первыми узнавайте свежие новости <span>GMA - Global Medical Assistance</span>.</p>
 										</в>
 										<div class="contacts-subscribe__links socials socials_fb">
-											<a class="socials__link socials__link_fb" href="http://facebook.com">
-												<picture><source srcset="img/icons/fb.webp" type="image/webp"><img class="icon_reg" src="img/icons/fb.png" alt=""></picture>
-												<picture><source srcset="img/icons/fb_hov.webp" type="image/webp"><img class="icon_hov" src="img/icons/fb_hov.png" alt=""></picture>
+											<!--noindex--><a href="http://facebook.com" target="_blank" rel="nofollow noopener noreferrer" class="socials__link socials__link_fb">
+												<picture><source srcset="img/icons/fb.webp" type="image/webp"><img class="icon_reg" src="img/icons/fb.png" alt="fb_icon"></picture>
+												<picture><source srcset="img/icons/fb_hov.webp" type="image/webp"><img class="icon_hov" src="img/icons/fb_hov.png" alt="fb_icon_hover"></picture>
 											</a>
+											<!--/noindex-->
 											<p class="contacts-subscribe__call">
 												Подпишитесь на нас
 											</p>
-											<a class="socials__link socials__link_insta" href="http://instagram.com">
-												<picture><source srcset="img/icons/insta_hov.webp" type="image/webp"><img class="icon_hov" src="img/icons/insta_hov.png" alt=""></picture>
-												<picture><source srcset="img/icons/insta.webp" type="image/webp"><img class="icon_reg" src="img/icons/insta.png" alt=""></picture>
+											<!--noindex--><a href="http://instagram.com" target="_blank" rel="nofollow noopener noreferrer" class="socials__link socials__link_insta">
+												<picture><source srcset="img/icons/insta.webp" type="image/webp"><img class="icon_reg" src="img/icons/insta.png" alt="insta_icon"></picture>
+												<picture><source srcset="img/icons/insta_hov.webp" type="image/webp"><img class="icon_hov" src="img/icons/insta_hov.png" alt="insta_icon_hover"></picture>
 											</a>
+											<!--/noindex-->
 										</div>
 									</div>
 								</div>
@@ -588,7 +592,7 @@
 	</div>
 	<!---------------------------------popup whis forms-------------------------------->
 
-	<script src="js/app.min.js?_v=20220801160520"></script>
+	<script src="js/app.min.js?_v=20220801195238"></script>
 
 
 </body>
