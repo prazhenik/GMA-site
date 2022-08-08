@@ -108,6 +108,38 @@ section{
 	}
 }
 
+
+
+.tel-block {
+	// .tel-block__list
+	&__list {
+		display: flex;
+		flex-wrap: nowrap;
+	}
+	// .tel-block__list-item
+	&__list-item {
+	}
+	// .tel-block__link
+	&__link {
+		// .tel-block__link_whatsapp
+		&_whatsapp {
+		}
+		// .tel-block__link_viber
+		&_viber {
+		}
+		// .tel-block__link_telegram
+		&_telegram {
+		}
+	}
+	// .tel-block__tel
+	&__tel {
+
+	}
+}
+
+
+
+
 .socials__link {
 	position: relative;
 	display: inline-block;

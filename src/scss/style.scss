@@ -25,7 +25,7 @@ $minWidth: 320;
 // Ширина полотна (макета)
 $maxWidth: 1920;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
-$maxWidthContainer: 0;
+$maxWidthContainer: 1920;
 $innerWidthContainer: 1400; // контейнер для внутреннего контента
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
@@ -65,7 +65,7 @@ $responsiveType: 1;
 	[class*="__outerContainer"] {
 		@if ($maxWidthContainer>0) {
 			max-width: rem($maxWidthContainer);
-			box-sizing: content-box;
+			box-sizing: border-box;
 			margin: 0 auto;
 		}
 		@if ($containerPadding>0) {
@@ -85,7 +85,7 @@ $responsiveType: 1;
 		margin: 0 auto;
 		@if ($maxWidthContainer>0) {
 			max-width: rem($maxWidthContainer);
-			box-sizing: content-box;
+			box-sizing: border-box;
 		} @else {
 			@if ($containerPadding>0) {
 				padding: 0 rem(math.div($containerPadding, 2));

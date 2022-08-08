@@ -30,7 +30,7 @@
 		flex-wrap: wrap;
 		//align-items: center;
 		&:not(:last-child) {
-			@include adaptiveValue("margin-bottom",70 ,30, 768, 560, 1 );
+			@include adaptiveValue("margin-bottom",50 ,30, 1200, 560, 1 );
 		}
 		// .footer__row_top
 		&_top {
@@ -39,7 +39,7 @@
 		}
 		// .footer__row_bottom
 		&_bottom {
-			@include adaptiveValue("font-size",14 ,10, 768, 320, 1  );
+			@include adaptiveValue("font-size",14 ,10, 1200, 320, 1  );
 			row-gap: rem(10);
 			align-items: center;
 			& a {
@@ -96,6 +96,7 @@
 		}
 		// .addresses__tel
 		&__tel {
+
 		}
 		// .addresses__location
 		&__location {
@@ -103,8 +104,65 @@
 		// .addresses__mail
 		&__mail {
 		}
+	}
 }
 
+.addresses {
+	// .addresses__item
+	&__item {
+	}
+}
+.tel-block {
+	// .tel-block_footer
+	&_footer {
+			// .tel-block__list
+		& .tel-block__list {
+			justify-content: end;
+			gap: rem(15);
+			&:not(:last-child) {
+				margin-bottom: rem(10);
+			}
+			@media (max-width:$mobileSmall){
+				justify-content: start;  
+			}
+		}
+		// .tel-block__list-item
+		& .tel-block__list-item {
+		}
+		// .tel-block__link
+		& .tel-block__link {
+			& img {
+				@include adaptiveValue("width", 30 , 30 , 1200, 320, 1);
+			}
+			// .tel-block__link_whatsapp
+			&_whatsapp {
+			}
+			// .tel-block__link_viber
+			&_viber {
+			}
+			// .tel-block__link_telegram
+			&_telegram {
+			}
+		}
+		// .tel-block__tel
+		& .tel-block__tel {
+
+		}
+	}
 }
 
 
+.tel-block {
+	// .tel-block_consult
+	&_footer {
+		// .tel-block__icons
+		& .tel-block__icons {
+
+
+		}
+		// .tel-block__tel
+		& .tel-block__tel {
+			
+		}
+	}
+}
