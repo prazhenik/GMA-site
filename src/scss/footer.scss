@@ -132,7 +132,7 @@
 		// .tel-block__link
 		& .tel-block__link {
 			& img {
-				@include adaptiveValue("width", 30 , 30 , 1200, 320, 1);
+				width: rem(30);
 			}
 			// .tel-block__link_whatsapp
 			&_whatsapp {

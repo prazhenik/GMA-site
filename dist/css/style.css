@@ -2244,18 +2244,8 @@ section:first-child {
   margin-bottom: 0.625rem;
 }
 
-@supports (width: clamp( 1.875rem , 1.875rem  +  0vw , 1.875rem )) {
-  .tel-block_footer .tel-block__link img {
-    width: clamp( 1.875rem , 1.875rem  +  0vw , 1.875rem );
-  }
-}
-
-@supports not (width: clamp( 1.875rem , 1.875rem  +  0vw , 1.875rem )) {
-  .tel-block_footer .tel-block__link img {
-    width: calc(
-			1.875rem + 0 * (100vw - 20rem) / 55
-		);
-  }
+.tel-block_footer .tel-block__link img {
+  width: 1.875rem;
 }
 
 .hero {
