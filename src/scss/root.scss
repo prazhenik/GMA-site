@@ -1,4 +1,30 @@
 //актуализирован 26/06/22 - дефолтные стили форм и папапов
+//актуализирован 10/08/22 - общая ревизия
+
+// ================================= GLOBAL roots ================================= 
+
+$minWidth: 320; // Минимальная ширина страницы
+$maxWidth: 1920; // Ширина полотна (макета)
+$maxWidthContainer: 1920; // Ширина ограничивающего контейнера (0 = нет ограничения)
+$innerWidthContainer: 1400; // контейнер для внутреннего контента
+$containerPadding: 30; // Общий отступ у контейнера (30 = по 15px слева и справа, 0 = нет отступа)
+$scrollbarWidth: 16px; //ширина скроллбара браузера для коррекции (16рх)
+$overlayZindex: 149; //индекс глобального оверлея
+
+// ================================= CONTEINER roots =================================
+// Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поинты
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении 720
+$mobile: em(767.98); // Телефоны L 540
+$mobileSmall: em(576.98); // Телефоны S padding: 15px
+
+// Тип адаптива:
+// 1 = отзывчивость (у контейнера нет брейкпоинтов),
+// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+$responsiveType: 1;
 
 // ================================= FONT roots ================================= 
 
@@ -55,56 +81,51 @@ $background-color-major: rgba(240, 240, 240, 1); //Цвет фона по умо
 $background-color-secondary:  rgba(30, 60, 120, 1); 
 $background-color-menu: rgba(240, 240, 240, 1); //menu bcg 
 $background-color-overlay-lock: rgba(0, 0, 0, .6); // overlays _lock
-$background-color-button:   rgba(0, 0, 0, .6); //
-$background-color-button-active: rgba(10, 180, 65, 0.8); // 
-$background-color-other-1:   rgba(30, 60, 120, 1); // red accents
-$background-color-other-2: rgba(10, 180, 65, 1); // btn hover cover
+$background-color-button-major:   rgba(10, 180, 65, 1); //
+$background-color-button-secondary:   rgba(10, 180, 65, 1); //
+$background-color-button-active:rgba(30, 60, 120, 1); // 
+$background-color-other-1: rgba(30, 60, 120, 1); // 
+$background-color-other-2:  rgba(35, 155, 75, 1); // btn hover cover
+$background-color-other-3: rgba(10, 180, 65, 1); // btn hover cover
 
 // border colors
 $border-color-major: rgba(220, 220, 220, 1); //Цвет границ по умолчанию
 $border-color-button: rgba(255, 255, 255, 1);
-$border-color-other-1:  linear-gradient(to right, rgba(255,255,255,1), rgba(55,83,111,.4)); //forms outlines
-$border-color-other-2: rgba(27, 58, 119, 1); //popup outline
-$border-color-other-3: rgb(10, 180, 65);
+//$border-color-other-1:  rgba(255, 255, 255, 1); 
+//$border-color-other-2: rgba(27, 58, 119, 1); 
+$border-color-other-3: rgba(10, 180, 65, 1);
 //$borderColor5: ;
 
 
 //================================== blockSizes roots ================================== 
 // page blocks properties 
+$header-height-pc: 75;
+$header-height-mob: 50;
 
-	$header-height-pc: 75;
-	$header-height-mob: 50;
+$footer-height-pc: 300;
+$footer-height-mob: 300;
 
-	$footer-height-pc: 300;
-	$footer-height-mob: 300;
 
 // default menu burger properties 
-
-$menu-width: 70;
+$menu-width: 360; // для % убрать rem()
 
 // default button properties 
+$button-width-pc: 500;
+$button-width-mob: 290;
 
 $button-height-pc: 75;
 $button-height-mob: 50;
 
 // default popup properties 
-$popup-maxwhidth: 550;
-
-$popup-border-radius: 5;
-
-$popup-background-color: rgba(27, 58, 119, 1);
-
+$popup-whidth: 550;
 
 // default form properties  
 
 // default input properties  
 $input-height-pc: 75;
 $input-height-mob: 50;
-
 $input-border-radius: 5;
-
 $input-padding: 20;
-
 $input-color:  $text-color-major;
 $input-background-color: rgba(230, 230, 230, 1);
 $input-background-color-focus: rgba(255, 255, 255, 1);

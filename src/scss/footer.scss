@@ -131,9 +131,8 @@
 		}
 		// .tel-block__link
 		& .tel-block__link {
-			& img {
-				width: rem(30);
-			}
+			width: rem(30);
+			height: rem(30);
 			// .tel-block__link_whatsapp
 			&_whatsapp {
 			}

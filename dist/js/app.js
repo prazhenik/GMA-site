@@ -3807,7 +3807,7 @@
                             if (!this.isOpen) this.lastFocusEl = buttonOpen;
                             this.targetOpen.selector = `${this._dataValue}`;
                             this._selectorOpen = true;
-                            setTimeout((() => this.open()), 500);
+                            setTimeout((() => this.open()), 300);
                             return;
                         } else this.popupLogging(`Не заполнен атрибут у ${buttonOpen.classList}`);
                         return;

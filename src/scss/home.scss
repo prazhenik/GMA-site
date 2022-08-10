@@ -1,14 +1,5 @@
-.page{
-	//@include adaptiveValue("padding-top",$header-height-pc ,$header-height-mob, 768, 320, 1 );
-	
-}
-
 .hero {
-	position: relative;
-	overflow: hidden;
-	//background-color: $background-color-other-1;
-	//@include adaptiveValue("padding-top",$header-height-pc ,$header-height-mob, 1200, 320, 1 );
-
+	
 	// .hero__video
 	&__video {
 		position: absolute;
@@ -83,15 +74,12 @@
 	}
 }
 
-
-
 .hero-map{
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
-	//background-color: rgba($color: $background-color-other-1, $alpha: 1);
 	&__box{
 		position: relative;
 		width: 100%;
@@ -102,7 +90,7 @@
 		transform: translate(0, 0);
 		margin-left: auto;
 		background:    url('@img/EU_map.png') center center/contain no-repeat;
-		transition: transform .2s linear, opacity .15s linear;
+		transition: transform .3s, opacity .15s;
 		opacity: 1;
 		@media (max-width:$mobile){
 			background:  url('@img/EU_map.png') center top/cover no-repeat; 
@@ -110,14 +98,13 @@
 		@media (any-hover: hover){
 			&:hover{
 				transform: scale(1.01);
-				transition: transform .3s linear;
+				transition: transform .3s;
 			}
 		}
 	}
 }
 
 .video {
-	
 	// .video__box
 	&__box {
 		position: relative;
@@ -138,8 +125,6 @@
 	// .offer__title
 	&__title,
 	&__subtitle {
-		//opacity: 1;
-		//transition: opacity 1s ease;
 		transition: transform .35s ease;
 	}
 
@@ -160,12 +145,6 @@
 }
 
 .controls {
-	
-	@media (any-hover: hover){
-		&:hover{
-			
-		}
-	}
 	@media (max-width: $mobile) {
 		display: inline-block;
 	}
@@ -190,7 +169,7 @@
 		&:active{
 			border: $border-color-other-3 2px solid;
 			transform: scale(1.1);
-			transition: transform .3s;
+			transition: transform .2s;
 		}
 	}
 // .controls__play
@@ -208,7 +187,6 @@
 			transform: translate(-50%, -50%);
 			@include adaptiveValue("width", 80, 50, 1200, 320, 1);
 			@include adaptiveValue("height", 80, 50, 1200, 320, 1);
-			//margin-top: rem(-2);
 			pointer-events: none;
 			& path {
 				fill: $background-color-major;
@@ -243,11 +221,24 @@
 //-------------------algorithm----------------------
 
 .algorithm {
+	// .algorithm__outerContainer
+	&__outerContainer {
+	}
+	// .algorithm__innerContainer
+	&__innerContainer {
+	}
 	// .algorithm__title
 	&__title {
 	}
+	// .algorithm__content
+	&__content {
+	}
 	// .algorithm__steps
 	&__steps {
+	}
+	// .algorithm__button
+	&__button {
+		text-align: center;
 	}
 }
 
@@ -287,14 +278,8 @@
 				animation: shake 3s 1.3s both ease-in;
 			}
 		}
-		.steps__name {
-
-		}
-		.steps__desc {
-
-		}
 	}
-	// .step__item
+	// .steps__item
 	&__item {
 		display: flex;
 		flex: 1 1 20%;
@@ -303,13 +288,11 @@
 		border-radius: 5px;
 		text-align: center;
 		justify-content: center;
-		//padding: rem(15);
 		position: relative;
 		counter-increment: steps;
 		overflow: hidden;
 		opacity: 0;
 		cursor: default;
-
 		&::before{
 			content: counter(steps);
 			position: absolute;
@@ -319,16 +302,9 @@
 			@include adaptiveValue("font-size", 300, 220, 1200, 320, 1 );
 			font-family: $font-family-other-1;
 			color: rgba($color: $text-color-major, $alpha: .07);
-			//z-index: 1;
-
 		}
-		@media (max-width:$mobile){
-			//padding: rem(30) rem(10);
-			//min-height: rem(150);
-		}
-
 	}
-	// .step__card
+	// .steps__card
 	&__card {
 		display: flex;
 		flex-direction: column;
@@ -341,11 +317,7 @@
 			}
 		}
 	}
-	// .step__numb
-	&__numb {
-
-	}
-	// .step__name
+	// .steps__name
 	&__name {
 		font-family: $font-family-other-1;
 		@include adaptiveValue("font-size", 24 , 16, 1200, 320, 1 );
@@ -356,7 +328,7 @@
 			@include adaptiveValue("margin-bottom", 30, 15, 1200, 320,1);
 		}
 	}
-	// .step__desc
+	// .steps__desc
 	&__desc {
 		display: flex;
 		flex-direction: column;
@@ -365,16 +337,9 @@
 		@include adaptiveValue("font-size", 20, 16,1200, 320, 1 );
 		line-height: math.div(30,22 );
 		letter-spacing: -0.5px;
-
-		& .cont {
-		}
 	}
 }
 
-.algorithm__button {
-	display: block;
-	text-align: center;
-}
 
 //-------------------capability----------------------
 
@@ -452,7 +417,6 @@
 		padding-bottom: 5px;
 		border-top: 1px solid $border-color-other-3;
 		border-bottom: 1px solid $border-color-other-3;
-		//border-radius: 10px;
 	}
 	// .specialties__item
 	&__item {
@@ -473,24 +437,14 @@
 		justify-content: center;
 		align-items: center;
 		flex: 1 1 25%;
-		//max-width: rem(350);
-		@media (max-width:$mobile){
-			//border-radius: 7px; 
-
-		}
 		@media (any-hover: hover){
 			&:hover{
-			animation: shake2 4s 0s both ease-in;
+				animation: shake2 4s 0s both ease-in;
 			}
 		}
 	}
 }
 .capability-offer {
-	display: flex;
-	justify-content: center;
-	column-gap: rem(40);
-	flex-wrap: wrap;
-
 
 	// .capability-offer__proposition
 	&__proposition {
@@ -498,10 +452,7 @@
 	}
 	// .capability-offer__button
 	&__button {
-		@media (max-width:$mobile){
-			flex: 1 0 100%;
-		}
-		
+		text-align: center;
 	}
 }
 
@@ -524,39 +475,32 @@
 	}
 	// .consult__content
 	&__content {
-		
 		display: flex;
 		flex: 1 0 100%;
 		@include adaptiveValue("gap", 50 , 30, 1200, 320, 1);
 		flex-wrap: wrap;
 		@media (max-width:$mobile){
-			 justify-content: center; 
+			justify-content: center; 
 		}
 	}
 
 	&__left {
 		width: 45%;
-	
-		//padding-right: rem(50);
 		@media (max-width:$tablet){
 			width: 100%;
 			padding-right:  rem(0);
 		}
-		
 	}
 
 	&__right {
 		position: absolute;
-		//max-width: rem(700);
 		width: 50%;
 		height: 100%;
 		max-height: rem(1000);
 		top: 0;
 		right: rem(15);
-		//filter: drop-shadow(0px 0px 2px rgb(230, 230, 230)) drop-shadow(3px 3px 7px rgb(150, 150, 150));
 		@media (max-width:$tablet){
 			position: initial;
-			//margin-top: rem(-50);
 			width: 100%;
 			@include adaptiveValue("height",600 ,350, 768, 320, 1 );
 		}
@@ -564,11 +508,10 @@
 	// .consult__form-block
 	&__form-block {
 		width: 100%;
-		max-width: rem(768);
-		///border-radius: 5px;
 		@media (max-width:$tablet){
+			max-width: rem(577);
 			margin: 0 auto;
-	  }
+	  	}
 	}
 	// .consult__proposition
 	&__proposition{
@@ -579,7 +522,7 @@
 	}
 	// .consult__form
 	&__form {
-		
+
 	}
 	// .consult__photo-block
 	&__photo-block {
@@ -589,17 +532,10 @@
 
 .photo-block {
 	position: relative;
-	
-			//width: 100%;
 	height: 100%;
 	// .photo-block__photo
 	&__photo {
-		//border: 2px solid $border-color-other-3;
-		//border-radius: 5px;
-		//width: 100%;
 		height: 100%;
-		//z-index: -1;
-	
 		& img {
 			object-fit: contain;
 			@media (max-width:$mobile){
@@ -619,7 +555,6 @@
 		left: 50%;
 		transform: translate(-50%);
 		background-color: rgba($color: $background-color-major, $alpha: .5);
-		//background: linear-gradient(0deg, rgba(255,255,255,1) 25%, rgba(255,255,255,0.7) 65%, rgba(255,255,255,0) 100%);
 		backdrop-filter: blur(5px);
 		text-align: center;
 		max-width: rem(600);
@@ -636,10 +571,6 @@
 	&__label {
 		display: block;
 		line-height: 1.1;
-		//padding: 2% 10%;
-		//border-radius: 7px;
-		//max-width: rem(700);
-		//background: rgba($color: $background-color-other-1, $alpha: .9);
 		margin: 0 auto;
 		color: red;
 		font-weight: 700;
@@ -658,7 +589,6 @@
 .tel-block {
 	// .tel-block_consult
 	&_consult {
-		
 			// .tel-block__list
 		& .tel-block__list {
 			justify-content: center;
@@ -672,9 +602,8 @@
 		}
 		// .tel-block__link
 		& .tel-block__link {
-			& img {
-				@include adaptiveValue("width", 50 , 30 , 1200, 320, 1);
-			}
+			@include adaptiveValue("width", 50 , 30 , 1200, 320, 1);
+			@include adaptiveValue("height", 50 , 30 , 1200, 320, 1);
 			// .tel-block__link_whatsapp
 			&_whatsapp {
 			}
@@ -693,21 +622,22 @@
 			@include adaptiveValue("font-size", 55, 30, 1200, 320, 1);
 			font-weight: 700;
 			letter-spacing: -2px;
+			transition: color .2s;
+			&:hover{
+				color: $background-color-other-2;
+				transition: color .2s;
+			}
 			&:not(:last-child) {
 				margin-bottom:  rem(20);
 			}
-			//padding: rem(20) rem(0);
 			& small {
 				@include adaptiveValue("font-size", 35, 20, 1200, 320, 1);
 				font-weight: 400;
 				line-height: 1.15;
-				//vertical-align: end;
 			}
 		}
 	}
 }
-
-
 
 
 //-------------------partners----------------------
@@ -759,8 +689,9 @@
 		}
 	}
 	// .partners__form-block
-	&__form-block {
+	&__form-block  {
 
+	 
 	}
 	// .partners__proposition
 	&__proposition {
@@ -780,8 +711,6 @@
 	}
 	// .form__submit
 	&__submit {
-
-		display: inline-block;
 		// .form__submit_partners
 		&_partners {
 		}
@@ -968,7 +897,6 @@
 			flex: 1 1 100%; 
 			order: 1;
 	  	}
-		
 	}
 }
 

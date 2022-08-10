@@ -1,5 +1,6 @@
 // актуализирован 09/02/22 10.12
 //актуализирован 26/06/22 1845 - дефолтные стили попапа
+//актуализирован 10/08/22 1845 - дефолтные стили попапа
 
 //-------------------general popup properties-------------------
 .popup {
@@ -9,10 +10,12 @@
 	bottom: 0;
 	right: 0;
 	padding: 30px 15px;
-	transition: visibility 0.5s ease 0s;
 	visibility: hidden;
 	pointer-events: none;
 	overflow: hidden;
+	opacity: 0;
+	transition: opacity 0.5s ease 0s, transform 0.5s ease 0s;
+	transform: scale(.8);
 	// .popup__wrapper
 	&__wrapper {
 		display: flex;
@@ -31,21 +34,18 @@
 		transform: scale(0);
 		transition: visibility 0.5s ease 0s scale 0.5s ease 0s;
 		width: 100%;
-		max-width: rem($popup-maxwhidth);
-		background: $popup-background-color;
-		border-radius: rem($popup-border-radius);
+		max-width: rem($popup-whidth);
+		background: $background-color-secondary;
+		border-radius: rem(5);
 		border: 1px solid $border-color-major;
 		@include adaptiveValue("padding-top", 70, 40, 1200, 320, 1);
 		@include adaptiveValue("padding-bottom", 70, 40, 1200, 320, 1);
 		@include adaptiveValue("padding-left", 50, 10, 1200, 320, 1);
 		@include adaptiveValue("padding-right", 50, 10, 1200, 320, 1);
 		text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-		@media (max-width: $mobile) {
-			//width: 90%;
-		}
 		&.lock & {
 			visibility: visible;
-			transition: visibility 0.5s ease 0s scale 0.5s ease 0s;
+			transition: scale 0.5s ease 0s;
 		}
 	}
 	// .popup__close
@@ -57,30 +57,24 @@
 		margin: 0;
 		top: 0;
 		right: 0;
+		width: rem(60);
+		height: rem(60);
 		background-color: transparent;
 		& svg {
-			fill: $background-color-major;
-		}
-		line-height: 1;
-		&_callback {
-
-		}
-		& svg {
-			transition: all 0.3s ease;
+			fill: $text-color-secondary;
+			transition: transform 0.3s ease;
 			@media (any-hover: hover) {
 				&:hover {
 					transform: scale(1.15);
 				}
 			}
 		}
+		&_callback {
+
+		}
 	}
 	&__title {
-		opacity: 1;
-		color: $text-color-secondary;
-		@include adaptiveValue("margin-bottom", 50, 40, 1200, 320, 1);
-		&::after{
-			transform: translate(0%, 0);
-		}
+		margin-bottom:  rem(40) !important;
 	}
 	&__subtitle {
 		color: $text-color-secondary;
@@ -109,10 +103,12 @@
 	visibility: visible;
 	overflow: auto;
 	pointer-events: auto;
+	opacity: 1;
+	transition: opacity 0.5s ease 0s, transform 0.5s ease 0s;
+	transform: scale(1);	
 	& .popup__content {
 		visibility: visible;
-		transform: scale(1);
-		transition: visibility 0.5s ease 0s scale 0.5s ease 0s;
+		transform: scale(1);	
 	}
 }
 

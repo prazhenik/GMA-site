@@ -1,43 +1,173 @@
-// Общий файл элементов форм
-// Для подключения/отключения стилей конкретного єлемента формы смотри base/forms/forms.scss
-@import "base/forms/forms";
+//актуализирован 10/08/22 - общая ревизия
 
-//стили заголовков
-@import "base/textstyles";
+//========================== ПОДКЛЮЧЕНИЕ МОДУЛЕЙ BASE ===============================
 
-//стили кнопок
-@import "base/buttons";
+@import "base/null.scss";  // Обнуление и общие параметры
+@import "base/common"; // Подключение стилей общих элементов проекта, секций, блоков, КЕЙФРЕЙМЫ
+@import "base/menuBurger"; // Стили Бургера
+@import "base/forms/forms"; // Общий файл элементов форм. Для подключения/отключения стилей конкретного єлемента формы смотри base/forms/forms.scss
+@import "base/buttons"; //стили кнопок
+@import "base/popup"; // Стили попапов
+//@import "base/breadcrumbs"; // Стили хлебных крошек
+//@import "base/spollers"; // Стили спойлеров
+//@import "base/tabs"; // Стили табов
+//@import "base/maps"; // Стили карт
+//@import "base/showmore"; // Стили блока "показать еще"
+//@import "base/fullscreen"; // Стили для полноэкранного блока
+//@import "base/sticky"; // Стили для липкого блока
 
-// Стили попапов
-@import "base/popup";
-
-
-
-// Стили хлебных крошек
-//@import "base/breadcrumbs";
-
-// Стили спойлеров
-// @import "base/spollers";
-
-// Стили табов
-// @import "base/tabs";
-
-// Стили карт
-// @import "base/maps";
-
-// Стили блока "показать еще"
-// @import "base/showmore";
-
-// Стили для полноэкранного блока
-// @import "base/fullscreen";
-
-// Стили для липкого блока
-// @import "base/sticky";
-
-// Стили анимации при скролее
+//========================== ПОДКЛЮЧЕНИЕ МОДУЛЕЙ BASE ===============================
 
 
-// Стили для отзывчивых картинок (IBG)
+//========================== ГЛОБАЛЬНЫЕ СТИЛИ ===============================
+
+html {
+	//height: calc(var(--vh, 1vh) * 100);
+	//	width: 100vw;
+	//position: fixed;
+}
+
+body {
+	height: calc(var(--vh, 1vh) * 100);
+	min-height: -webkit-fill-available;
+
+//--------------for fullscreen-----------------
+	//width: 100vw;
+	//position: fixed;
+	//min-height: 100vh;
+
+//--------------universal overlay-----------------
+	&::after {
+		content: "";
+		background-color: $background-color-overlay-lock;
+		backdrop-filter: blur(10px);
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		transition: all 0.2s ease;
+		pointer-events: none;
+		z-index: $overlayZindex;
+		overflow: hidden;
+	}
+	.lock.loaded &::after{
+		//opacity: 0;
+		//transition: opacity 0.2s ease;
+	}
+
+
+	// Скролл заблокирован
+	&._preloader {
+		overflow: hidden;
+	}
+
+	//добавить :not(.touch) для отключения на моб устройствах
+	.lock.loaded & {
+		overflow: hidden;
+		touch-action: none;
+	}
+	.lock.loaded:not(.touch) & {
+		padding-right: calc($scrollbarWidth + 0px) !important; // общая коррекция контента на скролл при модалке/меню
+		& header {
+			padding-right: calc( $scrollbarWidth + 0px) !important; // коррекция хедера на скролл при модалке/меню если header position fixed ил relative
+		}
+	}
+}
+// Оболочка =======================================================================
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background: $background-color-major;
+	position: relative;
+
+	// Прижимаем footer
+	> main {
+		flex: 1 1 auto;
+		z-index: 1;
+	}
+	// Фикс для слайдеров
+	> * {
+		min-width: 0;
+	}
+}
+
+//========================== СТИЛИ КОНТЕЙНЕРОВ ===============================*/
+
+//(i) Стили будут применяться ко 
+//всем классам содержащим *__container
+//Например header__container, main__container и т.д.
+//Снипет (HTML): cnt
+
+
+@if ($responsiveType==1) {
+	// Отзывчивая
+	[class*="__outerContainer"] {
+		@if ($maxWidthContainer>0) {
+			max-width: rem($maxWidthContainer);
+			box-sizing: border-box;
+			margin: 0 auto;
+		}
+		@if ($containerPadding>0) {
+			padding: 0 rem(math.div($containerPadding, 2));
+		}
+	}
+	[class*="__innerContainer"] {
+		@if ($innerWidthContainer>0) {
+			max-width: rem($innerWidthContainer);
+			box-sizing: content-box;
+			margin: 0 auto;
+		}
+	}
+} @else {
+	// По брейк-поинтам
+	[class*="__outerContainer"] {
+		margin: 0 auto;
+		@if ($maxWidthContainer>0) {
+			max-width: rem($maxWidthContainer);
+			box-sizing: border-box;
+		} @else {
+			@if ($containerPadding>0) {
+				padding: 0 rem(math.div($containerPadding, 2));
+			}
+		}
+		//--------------------------------------------MD 1: $mw + 20;--------------------------------------
+		@media (max-width: $pc) {
+			max-width: rem(970);
+		}
+		//-----------------------------------------------MD 2: 991.98----------------------------------------------
+		@media (max-width: $tablet) {
+			max-width: rem(750);
+		}
+		//-----------------------------------------------MD 3: 767.98-----------------------------------------------
+		@media (max-width: $mobile) {
+			max-width: rem(540);
+		}
+		//-----------------------------------------------MD 4: 576.98-----------------------------------------------
+		@media (max-width: $mobileSmall) {
+			max-width: none;
+			@if ($containerPadding>0 and $maxWidthContainer>0) {
+				padding: 0 rem(math.div($containerPadding, 2));
+			}
+		}
+	}
+	[class*="__innerContainer"] {
+		@if ($innerWidthContainer>0) {
+			max-width: rem($innerWidthContainer);
+			box-sizing: content-box;
+			margin: 0 auto;
+		}
+	}
+}
+
+
+
+//========================== СТИЛИ ВСПОМОГАТЕЛЬНЫХ КЛАССОВ ===============================
+ 
 // Сниппет (HTML): ibg (div c картинкой и классами)
 // Сниппет (HTML): ibga (a c картинкой и классами)
 

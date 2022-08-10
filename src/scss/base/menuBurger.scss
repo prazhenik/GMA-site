@@ -26,7 +26,6 @@
 			z-index: 100;
 			&._active {
 				transition: all 0.5s ease;
-				
 				& span {
 					opacity: 0;
 					background: $background-color-other-1;
@@ -74,32 +73,26 @@
 		align-items: center;
 		justify-content: center;
 		color: $text-color-secondary;
-
 		@media (max-width: rem(1200)) {
 			position: fixed;
 			justify-content: center;
 			text-align: center;
 			top: 0%;
-			right: rem(-360);
+			right: rem(-$menu-width);
 			width: 100%;
-			max-width: rem(360);
+			max-width: rem($menu-width);
 			height: 100vh;
 			background: $background-color-menu;
 			transition: transform 0.2s ease;
 			overflow: auto;
 			z-index: 99;
-			border-left: $border-color-other-3 3px solid;
+			border-left: $border-color-other-3 2px solid;
 			&._active {
-				transform: translateX(rem(-360));
+				transform: translateX(rem(-$menu-width));
 				color: $text-color-major;
-				//max-width: rem(600);
-				//right: 0%;
 				& ._navigator-active {
 					background-color: rgba($color: $background-color-secondary, $alpha: 1);
 					color: $text-color-secondary;
-					//transform: translateY(-3px);
-					transition: transform .3s ease;
-					//font-weight: 600;
 					border: 2px solid transparent;
 				}
 			}
@@ -117,7 +110,7 @@
 			flex-wrap: nowrap;
 			padding: rem(50) rem(0);
 			max-width: rem(600);
-			//row-gap: rem(20);
+			text-transform: uppercase;
 		}
 	}
 
@@ -134,7 +127,7 @@
 	&__link {
 		display: inline-block;
 		position: relative; //smooth marker underline menu__link
-		@include adaptiveValue("font-size",$font-size-menu-links-pc ,$font-size-menu-links-mob, 1920, 1200, 1 ); //устраняет скачек контента при смене fontsize на ховере
+		@include adaptiveValue("font-size",$font-size-menu-links-pc ,$font-size-menu-links-mob, 1920, 1200, 1 ); 
 		line-height: math.div( $font-size-menu-links-pc, $font-size-menu-links-pc);
 		letter-spacing: 0.02em;
 		transition: transform .3s ease;
@@ -142,69 +135,41 @@
 		padding: rem(7);
 		border-radius: 10px;
 		font-weight: 500;
-		// &::before{
-		// 	content:'';
-		// 	display: inline-block;
-		// 	position: absolute;
-		// 	width: 0%;
-		// 	height: 2px;
-		// 	bottom: -7px;
-		// 	left: 50%;
-		// 	transform: translate(-50%, 0);
-		// 	background-color: $background-color-other-2;
-		// 	border-radius: 3px;
-		// 	transition: width .2s ease ;
-		// }
-		&:hover,
-		&:active,
-		&.active {
-			//border: 2px solid $background-color-other-2;
-			//background-color: rgba($color: $background-color-other-1, $alpha: 1);
-			//color: $text-color-secondary;
-			//transform: translateY(-3px);
-			border: 2px solid $border-color-major;
-			transition: transform .3s ease;
-			//font-weight: 600;
-			@media (max-width:$mobile){
+		transition: border .2s;
+		@media (any-hover: hover){
+			&:hover{
+				border: 2px solid $border-color-major;
+				transition: border .2s;
+				//font-weight: 600;
+				@media (max-width:$tablet){
+					background-color: rgba($color: $background-color-other-1, $alpha: 1);
+					color: $text-color-secondary;
+				}
+			}
+		}
+		@media (any-hover: none){
+			&:hover,
+			&:active,
+			&.active {
 				background-color: rgba($color: $background-color-other-1, $alpha: 1);
 				color: $text-color-secondary;
 			}
 		}
+		/*
 		&::after{
 			display: block; //устраняет скачек контента при смене fontsize на ховере
 			content: attr(title); //устраняет скачек контента при смене fontsize на ховере
-			//font-weight: 600; //устраняет скачек контента при смене fontsize на ховере
+			font-weight: 600; //устраняет скачек контента при смене fontsize на ховере
 			height: 0; //устраняет скачек контента при смене fontsize на ховере
 			overflow: hidden; //устраняет скачек контента при смене fontsize на ховере
 			visibility: hidden; //устраняет скачек контента при смене fontsize на ховере
 		}
+		*/
 		@media (max-width: rem(1200)) {
-			//@include adaptiveValue("font-size", 30, 20, 1200, 320, 1 );
 			font-size: rem(22);
 			color: $text-color-menu;
-		}
-		&._navigator-active {
-			border: 2px solid $border-color-major;
-			transition: transform .3s ease;
 		}
 	}
 }
 
 
-
-//smooth marker underline menu__link
-/*
-#marker {
-	position: absolute;
-	width: 100%;
-	height: 1px;
-	bottom: -5px;
-	left: 0;
-	background-color: $background-color-other-2;
-	transition: .5s;
-}
-*/
-
-
-
-//---------------------------- ▲ ▲ ▲ BURGER ▲ ▲ ▲ ------------------------------

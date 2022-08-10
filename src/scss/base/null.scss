@@ -1,5 +1,5 @@
 //актуализирован 17/02/22 13.56
-
+//актуализирован 10/08/22 - общая ревизия
 
 
 * {
@@ -25,10 +25,12 @@ a:active {
 
 html,
 body {
+	position: relative;
 	min-width: $minWidth + px;
 	-webkit-overflow-scrolling: touch;
 	height: 100%;
 	width: 100%;
+
 }
 body {
 	color: $text-color-major;
@@ -44,6 +46,7 @@ body {
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
 	
 }
 input,

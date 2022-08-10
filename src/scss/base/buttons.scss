@@ -1,17 +1,6 @@
 //<BUTTONS (a.btn+tab)>
 // Снипет (HTML): btn
-
-.button {
-	display: inline-flex;
-	padding: 0px 0px;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
-	&._fw {
-		width: 100%;
-	}
-}
+//актуализирован 10/08/22 1845 - стили дефолтной кнопки
 
 .btn {
 	display: inline-flex;
@@ -20,70 +9,42 @@
 	cursor: pointer;
 	align-items: center;
 	justify-content: center;
-	width: auto;
+	align-self: center;
 	overflow: hidden;
-	//box-shadow: 0px 0px 5px rgba(49, 49, 49, 0.8);
-	color: $text-color-btn;
-	border-radius: 5px;
-	//border: 2px solid $border-color-button;
-	@include adaptiveValue("width", 500, 280, 1200, 320, 1);
-	@include adaptiveValue("height", $button-height-pc, $button-height-mob, 1200, 320, 1);
-	padding: rem(0) rem(20);
-	@include adaptiveValue("font-size", 22, 14, 1200, 320, 1);
-	font-weight: 600;
-	text-transform: uppercase;
-	line-height: math.div(1 , 1);
-	min-width: rem(calc($minWidth - $containerPadding));
+	min-width: rem(250);
+	margin: 0 auto;
 }
 
-// custom site
+//-------------------custom buttons properties-------------------
 
 .btn {
-	//border: 1px solid $border-color-button;
-	//background-color: $background-color-other-2;
-	
+	@include adaptiveValue("font-size", 22, 14, 1200, 320, 1);
 	color: $text-color-btn;
+	font-weight: 600;
+	text-transform: uppercase;
+	@include adaptiveValue("width", $button-width-pc, $button-width-mob, 1200, 320, 1);
+	@include adaptiveValue("height", $button-height-pc, $button-height-mob, 1200, 320, 1);
+	padding: rem(0) rem(20);
+	background-color:  $background-color-button-major;
+	border-radius: 5px;
 	animation: breathe 2.5s infinite forwards;
-	background-color:  $background-color-other-2;
+
 	@media (any-hover: hover){
 		&:hover{
-			background-color: $background-color-other-1;
-			border: 1px solid rgba($color: #fff, $alpha: .5);
+			background-color: $background-color-button-active;
+			border: 1px solid rgba($color: $border-color-button, $alpha: .5);
 			animation: none;
 		}
 	}
 
-	@media (max-width:$mobile){
+	@media (max-width:$mobileSmall){
 		width: 100%;
-	}
-	/*
-	&::before{
-		content:'';
-		position: absolute;
-		width: calc(100% - 10px);
-		height: calc(100% - 10px);
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		//background: url('@img/contentImgs/pattern.webp') center center / 100% no-repeat;
-		//background-color: rgb(62, 170, 59);
-		border: 2px solid $border-color-button;
-		//filter: saturate(0);
-		border-radius: 10px;
-		z-index: -1;
-
-	}*/
-	&_hero {
-		//border: 1px solid $border-color-button;
-		backdrop-filter: blur(5px);
-		color: $text-color-btn;
-		background-color:  $background-color-other-2;
-
 	}
 
 	&_popup, &_consult, &_partners, &_contacts {
 		width: 100%;
 	}
+	// ripple effect
 	& span.ripple {
 		position: absolute;
 		background: $background-color-major;
@@ -92,8 +53,8 @@
 		border-radius: 50%;
 		animation: ripplesAnimate .5s linear;
 	}
-
-	@media (any-hover: hover) {
-
-	}
 }
+
+
+
+
