@@ -389,8 +389,8 @@ section:nth-child(odd) {
 
 section:nth-child(odd):not(:first-child) {
   background-color: #1e3c78;
-  -webkit-mask-image: url("../img/верх.png"), -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)), url("../img/низ.png");
-  -webkit-mask-image: url("../img/верх.png"), linear-gradient(#fff, #fff), url("../img/низ.png");
+  -webkit-mask-image: url("../img/mask_top.png"), -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)), url("../img/mask_bottom.png");
+  -webkit-mask-image: url("../img/mask_top.png"), linear-gradient(#fff, #fff), url("../img/mask_bottom.png");
   -webkit-mask-size: 1920px 101px, 1920px calc(100% - 200px), 1920px 101px;
   -webkit-mask-repeat: no-repeat;
   /* 96px is top mask height */
@@ -398,8 +398,8 @@ section:nth-child(odd):not(:first-child) {
 }
 
 section:first-child {
-  -webkit-mask-image: url("../img/верх.png"), -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)), url("../img/низ.png");
-  -webkit-mask-image: url("../img/верх.png"), linear-gradient(#fff, #fff), url("../img/низ.png");
+  -webkit-mask-image: url("../img/mask_top.png"), -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)), url("../img/mask_bottom.png");
+  -webkit-mask-image: url("../img/mask_top.png"), linear-gradient(#fff, #fff), url("../img/mask_bottom.png");
   -webkit-mask-size: 1920px 0px, 1920px calc(100% - 100px), 1920px 101px;
   -webkit-mask-repeat: no-repeat;
   /* 96px is top mask height */

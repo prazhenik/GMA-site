@@ -76,7 +76,9 @@ export function pageNavigation() {
 }
 // Работа с шапкой при скроле
 
-document.addEventListener('loaded', () => {
+console.log(123);
+
+document.addEventListener('DOMContentLoaded', () => {
 	headerScroll()
 })
 
@@ -89,7 +91,9 @@ export function headerScroll() {
 	let scrollDirection = 0;
 	let timer;
 	let interval;
-	document.addEventListener("windowScroll", function (e) {
+
+
+	function addClassScroll(e) {
 		const scrollTop = window.scrollY;
 		clearTimeout(timer);
 		if (scrollTop >= startPoint) {
@@ -119,8 +123,13 @@ export function headerScroll() {
 			}
 		}
 		scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
+	}
 
-	});
+	if (window.scrollY > 0) {
+		addClassScroll()
+	}
+
+	document.addEventListener("windowScroll", addClassScroll);
 }
 // Прилипающий блок
 export function stickyBlock() {

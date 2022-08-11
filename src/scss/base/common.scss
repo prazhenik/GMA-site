@@ -102,10 +102,10 @@ section{
 			background-color: rgba($color: $background-color-secondary, $alpha: 1);
 			-webkit-mask-image:
 			/* top mask PNG/SVG image */
-			url('@img/верх.png'),
+			url('@img/mask_top.png'),
 			linear-gradient(#fff, #fff),
 			/* bottom mask PNG/SVG image */
-			url('@img/низ.png');
+			url('@img/mask_bottom.png');
 			-webkit-mask-size:
 			/* 96px is top mask height */
 			1920px 101px,
@@ -134,10 +134,10 @@ section{
 	&:first-child{
 			-webkit-mask-image:
 			/* top mask PNG/SVG image */
-			url('@img/верх.png'),
+			url('@img/mask_top.png'),
 			linear-gradient(#fff, #fff),
 			/* bottom mask PNG/SVG image */
-			url('@img/низ.png');
+			url('@img/mask_bottom.png');
 			-webkit-mask-size:
 			/* 96px is top mask height */
 			1920px 0px,

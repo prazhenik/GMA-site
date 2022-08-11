@@ -2,8 +2,8 @@
 <!-- актуализиван 26/06/22 1850 - разметка дефолтного попапа -->
 
 <!---------------------------------simple popup-------------------------------->
-<!-- 
-<div id="popup" aria-hidden="true" class="popup">
+
+<div id="success" aria-hidden="true" class="popup popup_success">
 	<div class="popup__wrapper">
 		<div class="popup__content">
 			<button data-close type="button" class="popup__close">Закрыть</button>
@@ -12,7 +12,7 @@
 		</div>
 	</div>
 </div>
--->
+
 
 <!---------------------------------popup with forms-------------------------------->
 <div id="callback" aria-hidden="true" class="popup popup_callback">
@@ -30,7 +30,7 @@
 					</g>
 				</svg>
 			</button>
-			<form id="form-callback" action="sendmail.php" data-ajax="true" method="POST" class="popup__form form form-callback">
+			<form id="form-callback" action="sendmail-callback.php" data-ajax="true" data-popup-message="#success" method="POST" class="popup__form form form-callback">
 				<div class="form__item form__item_input">
 					<input id="form-callback-name" autocomplete="off" type="text" name="form[name]" data-required="text"
 						data-error="Invalid character or data not entered" placeholder="Ваше имя*"

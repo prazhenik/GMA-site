@@ -47,20 +47,20 @@
 			<div class="header__outerContainer">
 				<div class="header__content">
 					<div class="header__logo site-logo">
-						<a class="site-logo__item" href="#" data-goto=".hero"></a>
+						<a class="site-logo__item" href="#" data-goto="#hero"></a>
 					</div>
 					<div class="header__menu menu">
 						<button type="button" class="menu__icon icon-menu"><span></span></button>
 						<nav class="menu__body">
 							<ul class="menu__list">
-								<li class="menu__item"><a href="#" data-goto=".hero" title="Главная" class="menu__link">Главная</a>
+								<li class="menu__item"><a href="#" data-goto="#hero" title="Главная" class="menu__link">Главная</a>
 									<span id="marker"></span>
 								</li>
-								<li class="menu__item"><a href="#" data-goto=".algorithm" title="Наш подход" class="menu__link">Наш подход</a></li>
-								<li class="menu__item"><a href="#" data-goto=".capability" title="Возможности" class="menu__link">Возможности</a></li>
-								<li class="menu__item"><a href="#" data-goto=".partners" title="Партнеры" class="menu__link">Партнеры</a></li>
-								<li class="menu__item"><a href="#" data-goto=".about" title="О нас" class="menu__link">О нас</a></li>
-								<li class="menu__item"><a href="#" data-goto=".contacts" title="Контакты" class="menu__link">Контакты</a></li>
+								<li class="menu__item"><a href="#" data-goto="#algorithm" title="Наш подход" class="menu__link">Наш подход</a></li>
+								<li class="menu__item"><a href="#" data-goto="#capability" title="Возможности" class="menu__link">Возможности</a></li>
+								<li class="menu__item"><a href="#" data-goto="#partners" title="Партнеры" class="menu__link">Партнеры</a></li>
+								<li class="menu__item"><a href="#" data-goto="#about" title="О нас" class="menu__link">О нас</a></li>
+								<li class="menu__item"><a href="#" data-goto="#contacts" title="Контакты" class="menu__link">Контакты</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -184,17 +184,17 @@
 	<!-- актуализиван 26/06/22 1850 - разметка дефолтного попапа -->
 
 	<!---------------------------------simple popup-------------------------------->
-	<!-- 
-<div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
+
+	<div id="success" aria-hidden="true" class="popup popup_success">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">Закрыть</button>
+				<div class="popup__text">
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
--->
+
 
 	<!---------------------------------popup with forms-------------------------------->
 	<div id="callback" aria-hidden="true" class="popup popup_callback">
@@ -210,7 +210,7 @@
 						</g>
 					</svg>
 				</button>
-				<form id="form-callback" action="sendmail.php" data-ajax="true" method="POST" class="popup__form form form-callback">
+				<form id="form-callback" action="sendmail-callback.php" data-ajax="true" data-popup-message="#success" method="POST" class="popup__form form form-callback">
 					<div class="form__item form__item_input">
 						<input id="form-callback-name" autocomplete="off" type="text" name="form[name]" data-required="text" data-error="Invalid character or data not entered" placeholder="Ваше имя*" class="form__input _text _req">
 					</div>

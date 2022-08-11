@@ -9,7 +9,7 @@
 		@@include('html/_header.htm',{})
 		<main class="page">
 			<div class="page__body">
-				<section data-watch="navigator" data-watch-threshold="0.2" class="hero">
+				<section data-watch-once data-watch="navigator" data-watch-threshold="0.2" id="hero" class="hero">
 					<div  class="hero__video video">
 						<div class="video__box">
 							<video hidden loop muted src="files/video/hero-vid_v3.webm"></video>
@@ -62,7 +62,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.2" class="algorithm">
+				<section data-watch-once data-watch="navigator" data-watch-threshold="0.2" id="algorithm" class="algorithm">
 					<div class="algorithm__outerContainer">
 						<div class="algorithm__innerContainer">
 							<h2 class="algorithm__title _section-title">
@@ -129,7 +129,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.2" class="capability">
+				<section data-watch-once data-watch="navigator" data-watch-threshold="0.2" id="capability" class="capability">
 					<div class="capability__outerContainer">
 						<div class="capability__innerContainer">
 							<h2 class="capability__title _section-title">
@@ -206,7 +206,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch data-watch-threshold="0.2" class="consult">
+				<section data-watch-once data-watch data-watch-threshold="0.2" id="consult" class="consult">
 					<div class="consult__outerContainer">
 						<div class="consult__innerContainer">
 							<h2 class="consult__title _section-title">
@@ -218,7 +218,7 @@
 										<p class="consult__proposition">
 											Наш сотрудник обязательно Вам перезвонит, <span>бесплатно</span> проконсультирует и ответит на все вопросы!
 										</p>
-										<form id="form-consult" action="sendmail.php" data-ajax="true" method="POST"
+										<form id="form-consult" action="sendmail-consult.php" data-ajax="true" method="POST"
 											class="consult__form form form-consult">
 											<div class="form__item form__item_input">
 												<input id="form-consult-name" autocomplete="off" type="text" name="form[name]"
@@ -279,7 +279,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.2" class="partners">
+				<section data-watch-once data-watch="navigator" data-watch-threshold="0.2" id="partners" class="partners">
 					<div class="partners__outerContainer">
 						<div class="partners__innerContainer">
 							<h2 class="partners__title _section-title">
@@ -298,7 +298,7 @@
 									<p class="partners__proposition">
 										Свяжитесь с нами и наши консультанты дадут наиболее актуальную информацию о партнерах, <span>готовых принять пациента</span> по конкретному направлению.
 									</p>
-									<form id="form-partners" action="sendmail.php" data-ajax="true" method="POST"
+									<form id="form-partners" action="sendmail-partners.php" data-ajax="true" method="POST"
 										class="partners__form form form-partners">
 										<div class="form__item form__item-input">
 											<input id="form-partners-name" autocomplete="off" type="text" name="form[name]"
@@ -319,7 +319,7 @@
 							</div>
 						</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.2" class="about">
+				<section data-watch-once data-watch="navigator" data-watch-threshold="0.2" id="about" class="about">
 					<div class="about__outerContainer">
 						<div class="about__innerContainer">
 							<h2 class="about__title _section-title">
@@ -361,7 +361,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch-threshold="0.2" data-watch="navigator" class="contacts">
+				<section data-watch-once data-watch="navigator" data-watch-threshold="0.2" id="contacts" class="contacts">
 					<div class="contacts__outerContainer">
 						<div class="contacts__innerContainer">
 							<h2 class="contacts__title _section-title">
@@ -372,7 +372,7 @@
 									<p class="contacts__proposition">
 										Узнайте больше о наших услугах и клиниках, заказав <span>бесплатную консультацию</span>.
 									</p>
-									<form id="form-contacts" action="sendmail.php" data-ajax="true" method="POST"
+									<form id="form-contacts" action="sendmail-contacts.php" data-ajax="true" method="POST"
 										class="contacts__form form form-contacts">
 										<div class="form__item form__item-input">
 											<input id="form-contacts-name" autocomplete="off" type="text" name="form[name]"

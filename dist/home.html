@@ -32,7 +32,7 @@
 	<meta name="theme-color" content="#1B3A77"> <!-- theme color -->
 	<!-- <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png"> -->
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220810221227">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220811151224">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<!-- npm install --save-dev t-scroll<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
@@ -48,20 +48,20 @@
 			<div class="header__outerContainer">
 				<div class="header__content">
 					<div class="header__logo site-logo">
-						<a class="site-logo__item" href="#" data-goto=".hero"></a>
+						<a class="site-logo__item" href="#" data-goto="#hero"></a>
 					</div>
 					<div class="header__menu menu">
 						<button type="button" class="menu__icon icon-menu"><span></span></button>
 						<nav class="menu__body">
 							<ul class="menu__list">
-								<li class="menu__item"><a href="#" data-goto=".hero" title="Главная" class="menu__link">Главная</a>
+								<li class="menu__item"><a href="#" data-goto="#hero" title="Главная" class="menu__link">Главная</a>
 									<span id="marker"></span>
 								</li>
-								<li class="menu__item"><a href="#" data-goto=".algorithm" title="Наш подход" class="menu__link">Наш подход</a></li>
-								<li class="menu__item"><a href="#" data-goto=".capability" title="Возможности" class="menu__link">Возможности</a></li>
-								<li class="menu__item"><a href="#" data-goto=".partners" title="Партнеры" class="menu__link">Партнеры</a></li>
-								<li class="menu__item"><a href="#" data-goto=".about" title="О нас" class="menu__link">О нас</a></li>
-								<li class="menu__item"><a href="#" data-goto=".contacts" title="Контакты" class="menu__link">Контакты</a></li>
+								<li class="menu__item"><a href="#" data-goto="#algorithm" title="Наш подход" class="menu__link">Наш подход</a></li>
+								<li class="menu__item"><a href="#" data-goto="#capability" title="Возможности" class="menu__link">Возможности</a></li>
+								<li class="menu__item"><a href="#" data-goto="#partners" title="Партнеры" class="menu__link">Партнеры</a></li>
+								<li class="menu__item"><a href="#" data-goto="#about" title="О нас" class="menu__link">О нас</a></li>
+								<li class="menu__item"><a href="#" data-goto="#contacts" title="Контакты" class="menu__link">Контакты</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -107,7 +107,7 @@
 
 		<main class="page">
 			<div class="page__body">
-				<section data-watch="navigator" data-watch-threshold="0.2" class="hero">
+				<section data-watch-once data-watch="navigator" data-watch-threshold="0.2" id="hero" class="hero">
 					<div class="hero__video video">
 						<div class="video__box">
 							<video hidden loop muted src="files/video/hero-vid_v3.webm"></video>
@@ -156,7 +156,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.2" class="algorithm">
+				<section data-watch-once data-watch="navigator" data-watch-threshold="0.2" id="algorithm" class="algorithm">
 					<div class="algorithm__outerContainer">
 						<div class="algorithm__innerContainer">
 							<h2 class="algorithm__title _section-title">
@@ -222,7 +222,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.2" class="capability">
+				<section data-watch-once data-watch="navigator" data-watch-threshold="0.2" id="capability" class="capability">
 					<div class="capability__outerContainer">
 						<div class="capability__innerContainer">
 							<h2 class="capability__title _section-title">
@@ -298,7 +298,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch data-watch-threshold="0.2" class="consult">
+				<section data-watch-once data-watch data-watch-threshold="0.2" id="consult" class="consult">
 					<div class="consult__outerContainer">
 						<div class="consult__innerContainer">
 							<h2 class="consult__title _section-title">
@@ -310,7 +310,7 @@
 										<p class="consult__proposition">
 											Наш сотрудник обязательно Вам перезвонит, <span>бесплатно</span> проконсультирует и ответит на все вопросы!
 										</p>
-										<form id="form-consult" action="sendmail.php" data-ajax="true" method="POST" class="consult__form form form-consult">
+										<form id="form-consult" action="sendmail-consult.php" data-ajax="true" method="POST" class="consult__form form form-consult">
 											<div class="form__item form__item_input">
 												<input id="form-consult-name" autocomplete="off" type="text" name="form[name]" data-required="text" data-error="Invalid character or data not entered" placeholder="Ваше имя*" class="form__input _text _req">
 											</div>
@@ -362,7 +362,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.2" class="partners">
+				<section data-watch-once data-watch="navigator" data-watch-threshold="0.2" id="partners" class="partners">
 					<div class="partners__outerContainer">
 						<div class="partners__innerContainer">
 							<h2 class="partners__title _section-title">
@@ -381,7 +381,7 @@
 									<p class="partners__proposition">
 										Свяжитесь с нами и наши консультанты дадут наиболее актуальную информацию о партнерах, <span>готовых принять пациента</span> по конкретному направлению.
 									</p>
-									<form id="form-partners" action="sendmail.php" data-ajax="true" method="POST" class="partners__form form form-partners">
+									<form id="form-partners" action="sendmail-partners.php" data-ajax="true" method="POST" class="partners__form form form-partners">
 										<div class="form__item form__item-input">
 											<input id="form-partners-name" autocomplete="off" type="text" name="form[name]" data-required="text" data-error="Invalid character or data not entered" placeholder="Ваше имя*" class="form__input _text _req">
 										</div>
@@ -396,7 +396,7 @@
 							</div>
 						</div>
 				</section>
-				<section data-watch="navigator" data-watch-threshold="0.2" class="about">
+				<section data-watch-once data-watch="navigator" data-watch-threshold="0.2" id="about" class="about">
 					<div class="about__outerContainer">
 						<div class="about__innerContainer">
 							<h2 class="about__title _section-title">
@@ -438,7 +438,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch-threshold="0.2" data-watch="navigator" class="contacts">
+				<section data-watch-once data-watch="navigator" data-watch-threshold="0.2" id="contacts" class="contacts">
 					<div class="contacts__outerContainer">
 						<div class="contacts__innerContainer">
 							<h2 class="contacts__title _section-title">
@@ -449,7 +449,7 @@
 									<p class="contacts__proposition">
 										Узнайте больше о наших услугах и клиниках, заказав <span>бесплатную консультацию</span>.
 									</p>
-									<form id="form-contacts" action="sendmail.php" data-ajax="true" method="POST" class="contacts__form form form-contacts">
+									<form id="form-contacts" action="sendmail-contacts.php" data-ajax="true" method="POST" class="contacts__form form form-contacts">
 										<div class="form__item form__item-input">
 											<input id="form-contacts-name" autocomplete="off" type="text" name="form[name]" data-required="text" data-error="Invalid character or data not entered" placeholder="Ваше имя*" class="form__input _text _req">
 										</div>
@@ -577,17 +577,17 @@
 	<!-- актуализиван 26/06/22 1850 - разметка дефолтного попапа -->
 
 	<!---------------------------------simple popup-------------------------------->
-	<!-- 
-<div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
+
+	<div id="success" aria-hidden="true" class="popup popup_success">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">Закрыть</button>
+				<div class="popup__text">
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
--->
+
 
 	<!---------------------------------popup with forms-------------------------------->
 	<div id="callback" aria-hidden="true" class="popup popup_callback">
@@ -603,7 +603,7 @@
 						</g>
 					</svg>
 				</button>
-				<form id="form-callback" action="sendmail.php" data-ajax="true" method="POST" class="popup__form form form-callback">
+				<form id="form-callback" action="sendmail-callback.php" data-ajax="true" data-popup-message="#success" method="POST" class="popup__form form form-callback">
 					<div class="form__item form__item_input">
 						<input id="form-callback-name" autocomplete="off" type="text" name="form[name]" data-required="text" data-error="Invalid character or data not entered" placeholder="Ваше имя*" class="form__input _text _req">
 					</div>
@@ -622,7 +622,7 @@
 	</div>
 	<!---------------------------------popup whis forms-------------------------------->
 
-	<script src="js/app.min.js?_v=20220810221227"></script>
+	<script src="js/app.min.js?_v=20220811151224"></script>
 
 
 </body>
