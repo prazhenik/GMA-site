@@ -32,7 +32,7 @@
 	<meta name="theme-color" content="#1B3A77"> <!-- theme color -->
 	<!-- <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png"> -->
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220811151224">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220812200700">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<!-- npm install --save-dev t-scroll<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
@@ -308,14 +308,15 @@
 								<div class="consult__left">
 									<div class="consult__form-block">
 										<p class="consult__proposition">
-											Наш сотрудник обязательно Вам перезвонит, <span>бесплатно</span> проконсультирует и ответит на все вопросы!
+											Наш сотрудник обязательно Вам перезвонит, <span>бесплатно</span> проконсультирует и
+											ответит на все вопросы!
 										</p>
 										<form id="form-consult" action="sendmail-consult.php" data-ajax="true" method="POST" class="consult__form form form-consult">
 											<div class="form__item form__item_input">
-												<input id="form-consult-name" autocomplete="off" type="text" name="form[name]" data-required="text" data-error="Invalid character or data not entered" placeholder="Ваше имя*" class="form__input _text _req">
+												<input id="form-consult-name" autocomplete="off" type="text" name="name" data-required="text" data-validate data-error="Please enter a valid name" placeholder="Ваше имя*" class="form__input _text _req">
 											</div>
 											<div class="form__item form__item_input">
-												<input id="form-consult-phone" autocomplete="off" type="tel" name="form[phone]" data-required="phone" data-error="Enter your phone number without spaces, starting with '+'" placeholder="Ваш номер телефона*" class="form__input _phone _req">
+												<input id="form-consult-phone" autocomplete="off" type="tel" name="phone" data-required="phone" data-validate data-value="+" data-error="Enter your full phone number without spaces" placeholder="Ваш номер телефона*" class="form__input _phone _req">
 											</div>
 											<div class="form__submit form__submit_consult">
 												<button type="submit" class="btn btn_consult">Заказать звонок</button>
@@ -333,7 +334,8 @@
 												Не хотите ждать? Звоните!
 											</p>
 											<div class="addresses__item tel-block tel-block_consult">
-												<a class="tel-block__tel" href="tel:+380662223344"> <small>+38 066</small>&nbsp222 33 44&nbsp<small>(ua)</small></a>
+												<a class="tel-block__tel" href="tel:+380662223344"> <small>+38 066</small>&nbsp222
+													33 44&nbsp<small>(ua)</small></a>
 												<ul class="tel-block__list">
 													<li class="tel-block__list-item">
 														<a class="tel-block__link" href="tel:+380662223344"> <picture><source srcset="img/icons/tel_square.webp" type="image/webp"><img src="img/icons/tel_square.png" alt="tel_square.png"></picture> </a>
@@ -371,22 +373,26 @@
 							<div class="partners__content _section-content">
 								<div class="partners__text">
 									<p class="partners__paragraph">
-										Наши партнеры - это ведущие профильные клиники и реабилитационные центры из <span>Греции, Испании, Германии, Франции, Турции, Израиля.</span>
+										Наши партнеры - это ведущие профильные клиники и реабилитационные центры из <span>Греции,
+											Испании, Германии, Франции, Турции, Израиля.</span>
 									</p>
 									<p class="partners__paragraph">
-										Каждый из них имеет безупречную репутацию, новейшее лечебно-диагностическое оборудование, лабораторную базу, и, самое главное, <span>высококвалифицированный медицинский состав.</span>
+										Каждый из них имеет безупречную репутацию, новейшее лечебно-диагностическое оборудование,
+										лабораторную базу, и, самое главное, <span>высококвалифицированный медицинский
+											состав.</span>
 									</p>
 								</div>
 								<div class="partners__form-block">
 									<p class="partners__proposition">
-										Свяжитесь с нами и наши консультанты дадут наиболее актуальную информацию о партнерах, <span>готовых принять пациента</span> по конкретному направлению.
+										Свяжитесь с нами и наши консультанты дадут наиболее актуальную информацию о партнерах,
+										<span>готовых принять пациента</span> по конкретному направлению.
 									</p>
 									<form id="form-partners" action="sendmail-partners.php" data-ajax="true" method="POST" class="partners__form form form-partners">
 										<div class="form__item form__item-input">
-											<input id="form-partners-name" autocomplete="off" type="text" name="form[name]" data-required="text" data-error="Invalid character or data not entered" placeholder="Ваше имя*" class="form__input _text _req">
+											<input id="form-partners-name" autocomplete="off" type="text" name="name" data-required="text" data-validate data-error="Please enter a valid name" placeholder="Ваше имя*" class="form__input _text _req">
 										</div>
 										<div class="form__item form__item-input">
-											<input id="form-partners-phone" autocomplete="off" type="tel" name="form[phone]" data-required="phone" data-error="Enter your phone number without spaces, starting with '+'" placeholder="Ваш номер телефона*" class="form__input _phone _req">
+											<input id="form-partners-phone" autocomplete="off" type="tel" name="phone" data-required="phone" data-validate data-value="+" data-error="Enter your full phone number without spaces" placeholder="Ваш номер телефона*" class="form__input _phone _req">
 										</div>
 										<div class="form__submit form__submit_partners">
 											<button type="submit" class="btn btn_partners">Выбрать клинику</button>
@@ -405,8 +411,10 @@
 							<div class="about__content _section-content">
 								<div class="about__text">
 									<p><span>Сервис Global Medical Assistance</span> берет свое начало в 2018 году.</p>
-									<p><span>Наша цель</span> - помочь пациентам из любой точки мира выбрать наиболее подходящий медицинский центр в Европе для прохождения обследования, лечения, либо реабилитации.</p>
-									<p><span>Наши услуги бесплатны</span> для клиентов, это наш вклад в их счастливое здоровое будущее.</p>
+									<p><span>Наша цель</span> - помочь пациентам из любой точки мира выбрать наиболее подходящий
+										медицинский центр в Европе для прохождения обследования, лечения, либо реабилитации.</p>
+									<p><span>Наши услуги бесплатны</span> для клиентов, это наш вклад в их счастливое здоровое
+										будущее.</p>
 								</div>
 								<div class="about__counters counters">
 									<div class="counters__item">
@@ -451,10 +459,10 @@
 									</p>
 									<form id="form-contacts" action="sendmail-contacts.php" data-ajax="true" method="POST" class="contacts__form form form-contacts">
 										<div class="form__item form__item-input">
-											<input id="form-contacts-name" autocomplete="off" type="text" name="form[name]" data-required="text" data-error="Invalid character or data not entered" placeholder="Ваше имя*" class="form__input _text _req">
+											<input id="form-contacts-name" autocomplete="off" type="text" name="name" data-required="text" data-validate data-error="Please enter a valid name" placeholder="Ваше имя*" class="form__input _text _req">
 										</div>
 										<div class="form__item form__item-input">
-											<input id="form-contacts-phone" autocomplete="off" type="tel" name="form[phone]" data-required="phone" data-error="Enter your phone number without spaces, starting with '+'" placeholder="Ваш номер телефона*" class="form__input _phone _req">
+											<input id="form-contacts-phone" autocomplete="off" type="tel" name="phone" data-required="phone" data-validate data-error="Enter your full phone number without spaces" placeholder="Ваш номер телефона*" data-value="+" class="form__input _phone _req ">
 										</div>
 										<div class="form__submit form__submit_contacts">
 											<button type="submit" class="btn btn_contacts">Получить консультацию</button>
@@ -463,7 +471,9 @@
 								</div>
 								<div class="contacts__subscribe contacts-subscribe">
 									<div class="contacts-subscribe__text">
-										<p><span>Подписывайтесь</span>, на наши странички в <span>Instagram и Facebook</span>, задавайте вопросы и первыми узнавайте свежие новости <span>GMA - Global Medical Assistance</span>.</p>
+										<p><span>Подписывайтесь</span>, на наши странички в <span>Instagram и Facebook</span>,
+											задавайте вопросы и первыми узнавайте свежие новости <span>GMA - Global Medical
+												Assistance</span>.</p>
 										</в>
 										<div class="contacts-subscribe__links socials socials_fb">
 											<!--noindex--><a href="http://facebook.com" target="_blank" rel="nofollow noopener noreferrer" class="socials__link socials__link_fb">
@@ -482,40 +492,10 @@
 										</div>
 									</div>
 								</div>
-								<!-- <div class="contacts__content _section-content">
-								<div class="contacts__form-block">
-									<p class="contacts__proposition">
-										
-									</p>
-									<form id="form-contacts" action="sendmail.php" data-ajax="true" method="POST"
-										class="contacts__form form form-contacts">
-										<div class="form__item form__item-input">
-											<input id="form-contacts-name" autocomplete="off" type="text" name="form[name]"
-												data-required="text" data-error="Invalid character or data not entered"
-												placeholder="Ваше имя*" class="form__input _text _req">
-										</div>
-										<div class="form__item form__item-input">
-											<input id="form-partners-phone" autocomplete="off" type="tel" name="form[phone]"
-												data-required="phone"
-												data-error="Enter your phone number without spaces, starting with '+'"
-												placeholder="Ваш номер телефона*" class="form__input _phone _req">
-										</div>
-										<div class="form__submit form__submit_contacts">
-											<button type="submit" class="btn btn_contacts"></button>
-										</div>
-									</form>
-								</div>
-
-							</div> -->
 							</div>
 						</div>
 				</section>
 			</div>
-
-			<!-- <div data-popup='#callback' class="_popup-link">
-				<button type="button" class="_popup-link__btn btn btn_popup">Contact Us</button>
-			</div> -->
-
 		</main>
 		<footer class="footer">
 			<div class="footer__outerContainer">
@@ -578,12 +558,12 @@
 
 	<!---------------------------------simple popup-------------------------------->
 
-	<div id="success" aria-hidden="true" class="popup popup_success">
-		<div class="popup__wrapper">
-			<div class="popup__content">
-				<button data-close type="button" class="popup__close">Закрыть</button>
-				<div class="popup__text">
-				</div>
+	<div id="success" aria-hidden="false" class="popup popup_success">
+		<div class="popup__wrapper popup__wrapper_success">
+			<div class="popup__content popup__content_success">
+				<h2 class="popup__title popup__title_success _section-title _section-title_success">Спасибо!</h2>
+				<p class="popup__subtitle popup__subtitle_success">Заявка успешно отправлена. Наш специалист свяжется с Вами в ближайшее время</p>
+				<button data-close type="button" class="popup__btn popup__btn_success btn">Закрыть</button>
 			</div>
 		</div>
 	</div>
@@ -605,13 +585,13 @@
 				</button>
 				<form id="form-callback" action="sendmail-callback.php" data-ajax="true" data-popup-message="#success" method="POST" class="popup__form form form-callback">
 					<div class="form__item form__item_input">
-						<input id="form-callback-name" autocomplete="off" type="text" name="form[name]" data-required="text" data-error="Invalid character or data not entered" placeholder="Ваше имя*" class="form__input _text _req">
+						<input id="form-callback-name" autocomplete="off" type="text" name="name" data-required="text" data-validate data-error="Please enter a valid name" placeholder="Ваше имя*" class="form__input _text _req">
 					</div>
 					<div class="form__item form__item_input">
-						<input id="form-callback-phone" autocomplete="off" type="tel" name="form[phone]" data-required="phone" data-error="Enter your phone number without spaces, starting with '+'" placeholder="Ваш номер телефона*" class="form__input _phone _req">
+						<input id="form-callback-phone" autocomplete="off" type="tel" name="phone" data-required="phone" data-validate data-value="+" data-error="Enter your full phone number without spaces" placeholder="Ваш номер телефона*" class="form__input _phone _req">
 					</div>
 					<div class="form__item form__item_textarea">
-						<textarea id="form-callback-textarea" autocomplete="off" name="form[textarea]" data-error="Please write your message" placeholder="Ваш вопрос (не обязательно):" class="form__textarea _req"></textarea>
+						<textarea id="form-callback-textarea" autocomplete="off" name="textarea" data-error="Please write your message" placeholder="Ваш вопрос (не обязательно):" class="form__textarea _req"></textarea>
 					</div>
 					<div class="form__submit form__submit_callback">
 						<button type="submit" class="btn btn_popup">Отправить</button>
@@ -622,7 +602,7 @@
 	</div>
 	<!---------------------------------popup whis forms-------------------------------->
 
-	<script src="js/app.min.js?_v=20220811151224"></script>
+	<script src="js/app.min.js?_v=20220812200700"></script>
 
 
 </body>

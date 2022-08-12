@@ -12,15 +12,15 @@ $mail->setLanguage('ru', 'phpmailer/language/');
 $mail->IsHTML(true);
 
 //От кого письмо
-$mail->setFrom('ellinets.dok@gmail.com', 'Илья Илья');
+$mail->setFrom('medhelp@gma.care', 'GMA.care');
 //Кому отправить
-$mail->addAddress('prazhenik.dev@gmail.com');
+$mail->addAddress('mail.gma.care@gmail.com');
 //Тема письма
-$mail->Subject = 'Новое сообщение';
+$mail->Subject = 'GMA.care Запрос на обратный звонок';
 
 
 //Тело письма
-$body = '<h1>Новое сообщение prazhenik.dev</h1>';
+$body = '<h1>Заявка на консультацию с вопросом</h1>';
 
 if (trim(!empty($_POST['name']))) {
 	$body .= '<p><strong>Имя:</strong> ' . $_POST['name'] . '</p>';
@@ -31,7 +31,7 @@ if (trim(!empty($_POST['phone']))) {
 }
 
 if (trim(!empty($_POST['phone']))) {
-	$body .= '<p><strong>Телефон:</strong> ' . $_POST['textarea'] . '</p>';
+	$body .= '<p><strong>Сообщение:</strong> ' . $_POST['textarea'] . '</p>';
 }
 
 $mail->Body = $body;

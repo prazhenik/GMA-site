@@ -10,14 +10,14 @@
 		<main class="page">
 			<div class="page__body">
 				<section data-watch-once data-watch="navigator" data-watch-threshold="0.2" id="hero" class="hero">
-					<div  class="hero__video video">
+					<div class="hero__video video">
 						<div class="video__box">
 							<video hidden loop muted src="files/video/hero-vid_v3.webm"></video>
 						</div>
 					</div>
 					<div class="hero__outerContainer">
 						<div class="hero__map hero-map">
-							<div  class="hero-map__box">
+							<div class="hero-map__box">
 							</div>
 						</div>
 						<div class="hero__innerContainer">
@@ -36,7 +36,7 @@
 										<div class="offer__controls controls">
 											<div class="controls__box _video-play-btn">
 												<div class="controls__play">
-													<svg class="play"  width="20" height="20" viewBox="0 0 100 100">
+													<svg class="play" width="20" height="20" viewBox="0 0 100 100">
 														<g>
 															<path
 																d="M31.356,25.677l38.625,22.3c1.557,0.899,1.557,3.147,0,4.046l-38.625,22.3c-1.557,0.899-3.504-0.225-3.504-2.023V27.7   C27.852,25.902,29.798,24.778,31.356,25.677z" />
@@ -129,7 +129,8 @@
 						</div>
 					</div>
 				</section>
-				<section data-watch-once data-watch="navigator" data-watch-threshold="0.2" id="capability" class="capability">
+				<section data-watch-once data-watch="navigator" data-watch-threshold="0.2" id="capability"
+					class="capability">
 					<div class="capability__outerContainer">
 						<div class="capability__innerContainer">
 							<h2 class="capability__title _section-title">
@@ -216,19 +217,20 @@
 								<div class="consult__left">
 									<div class="consult__form-block">
 										<p class="consult__proposition">
-											Наш сотрудник обязательно Вам перезвонит, <span>бесплатно</span> проконсультирует и ответит на все вопросы!
+											Наш сотрудник обязательно Вам перезвонит, <span>бесплатно</span> проконсультирует и
+											ответит на все вопросы!
 										</p>
 										<form id="form-consult" action="sendmail-consult.php" data-ajax="true" method="POST"
 											class="consult__form form form-consult">
 											<div class="form__item form__item_input">
-												<input id="form-consult-name" autocomplete="off" type="text" name="form[name]"
-													data-required="text" data-error="Invalid character or data not entered"
+												<input id="form-consult-name" autocomplete="off" type="text" name="name"
+													data-required="text" data-validate data-error="Please enter a valid name"
 													placeholder="Ваше имя*" class="form__input _text _req">
 											</div>
 											<div class="form__item form__item_input">
-												<input id="form-consult-phone" autocomplete="off" type="tel" name="form[phone]"
-													data-required="phone"
-													data-error="Enter your phone number without spaces, starting with '+'"
+												<input id="form-consult-phone" autocomplete="off" type="tel" name="phone"
+													data-required="phone" data-validate data-value="+"
+													data-error="Enter your full phone number without spaces"
 													placeholder="Ваш номер телефона*" class="form__input _phone _req">
 											</div>
 											<div class="form__submit form__submit_consult">
@@ -247,10 +249,12 @@
 												Не хотите ждать? Звоните!
 											</p>
 											<div class="addresses__item tel-block tel-block_consult">
-												<a class="tel-block__tel" href="tel:+380662223344">  <small>+38 066</small>&nbsp222 33 44&nbsp<small>(ua)</small></a>
+												<a class="tel-block__tel" href="tel:+380662223344"> <small>+38 066</small>&nbsp222
+													33 44&nbsp<small>(ua)</small></a>
 												<ul class="tel-block__list">
 													<li class="tel-block__list-item">
-														<a class="tel-block__link" href="tel:+380662223344"> <img src="@img/icons/tel_square.png" alt="tel_square.png"> </a>
+														<a class="tel-block__link" href="tel:+380662223344"> <img
+																src="@img/icons/tel_square.png" alt="tel_square.png"> </a>
 													</li>
 													<li class="tel-block__list-item">
 														<a class="tel-block__link tel-block__link_whatsapp" target="_blank"
@@ -270,7 +274,7 @@
 															<img src="@img/icons/telegram_square.png" alt="telegram_square.png">
 														</a>
 													</li>
-												</ul> 
+												</ul>
 											</div>
 										</div>
 									</div>
@@ -288,27 +292,31 @@
 							<div class="partners__content _section-content">
 								<div class="partners__text">
 									<p class="partners__paragraph">
-										Наши партнеры - это ведущие профильные клиники и реабилитационные центры из <span>Греции, Испании, Германии, Франции, Турции, Израиля.</span>  
+										Наши партнеры - это ведущие профильные клиники и реабилитационные центры из <span>Греции,
+											Испании, Германии, Франции, Турции, Израиля.</span>
 									</p>
 									<p class="partners__paragraph">
-										Каждый из них имеет безупречную репутацию, новейшее лечебно-диагностическое оборудование, лабораторную базу, и, самое главное, <span>высококвалифицированный медицинский состав.</span> 
+										Каждый из них имеет безупречную репутацию, новейшее лечебно-диагностическое оборудование,
+										лабораторную базу, и, самое главное, <span>высококвалифицированный медицинский
+											состав.</span>
 									</p>
 								</div>
 								<div class="partners__form-block">
 									<p class="partners__proposition">
-										Свяжитесь с нами и наши консультанты дадут наиболее актуальную информацию о партнерах, <span>готовых принять пациента</span> по конкретному направлению.
+										Свяжитесь с нами и наши консультанты дадут наиболее актуальную информацию о партнерах,
+										<span>готовых принять пациента</span> по конкретному направлению.
 									</p>
 									<form id="form-partners" action="sendmail-partners.php" data-ajax="true" method="POST"
 										class="partners__form form form-partners">
 										<div class="form__item form__item-input">
-											<input id="form-partners-name" autocomplete="off" type="text" name="form[name]"
-												data-required="text" data-error="Invalid character or data not entered"
+											<input id="form-partners-name" autocomplete="off" type="text" name="name"
+												data-required="text" data-validate data-error="Please enter a valid name"
 												placeholder="Ваше имя*" class="form__input _text _req">
 										</div>
 										<div class="form__item form__item-input">
-											<input id="form-partners-phone" autocomplete="off" type="tel" name="form[phone]"
-												data-required="phone"
-												data-error="Enter your phone number without spaces, starting with '+'"
+											<input id="form-partners-phone" autocomplete="off" type="tel" name="phone"
+												data-required="phone" data-validate data-value="+"
+												data-error="Enter your full phone number without spaces"
 												placeholder="Ваш номер телефона*" class="form__input _phone _req">
 										</div>
 										<div class="form__submit form__submit_partners">
@@ -328,8 +336,10 @@
 							<div class="about__content _section-content">
 								<div class="about__text">
 									<p><span>Сервис Global Medical Assistance</span> берет свое начало в 2018 году.</p>
-									<p><span>Наша цель</span> - помочь пациентам из любой точки мира выбрать наиболее подходящий медицинский центр в Европе для прохождения обследования, лечения, либо  реабилитации.</p>
-									<p><span>Наши услуги бесплатны</span> для клиентов, это наш вклад в их счастливое здоровое будущее.</p>
+									<p><span>Наша цель</span> - помочь пациентам из любой точки мира выбрать наиболее подходящий
+										медицинский центр в Европе для прохождения обследования, лечения, либо реабилитации.</p>
+									<p><span>Наши услуги бесплатны</span> для клиентов, это наш вклад в их счастливое здоровое
+										будущее.</p>
 								</div>
 								<div class="about__counters counters">
 									<div class="counters__item">
@@ -375,15 +385,15 @@
 									<form id="form-contacts" action="sendmail-contacts.php" data-ajax="true" method="POST"
 										class="contacts__form form form-contacts">
 										<div class="form__item form__item-input">
-											<input id="form-contacts-name" autocomplete="off" type="text" name="form[name]"
-												data-required="text" data-error="Invalid character or data not entered"
-												placeholder="Ваше имя*" class="form__input _text _req">
+											<input id="form-contacts-name" autocomplete="off" type="text" name="name"
+												data-required="text" data-validate data-error="Please enter a valid name"
+												placeholder="Ваше имя*"  class="form__input _text _req">
 										</div>
 										<div class="form__item form__item-input">
-											<input id="form-contacts-phone" autocomplete="off" type="tel" name="form[phone]"
-												data-required="phone"
-												data-error="Enter your phone number without spaces, starting with '+'"
-												placeholder="Ваш номер телефона*" class="form__input _phone _req">
+											<input id="form-contacts-phone" autocomplete="off" type="tel" name="phone"
+												data-required="phone" data-validate
+												data-error="Enter your full phone number without spaces"
+												placeholder="Ваш номер телефона*" data-value="+" class="form__input _phone _req ">
 										</div>
 										<div class="form__submit form__submit_contacts">
 											<button type="submit" class="btn btn_contacts">Получить консультацию</button>
@@ -392,57 +402,34 @@
 								</div>
 								<div class="contacts__subscribe contacts-subscribe">
 									<div class="contacts-subscribe__text">
-										<p><span>Подписывайтесь</span>, на наши странички в <span>Instagram и Facebook</span>, задавайте вопросы и первыми узнавайте свежие новости <span>GMA - Global Medical Assistance</span>.</p>
-									</в>
-									<div class="contacts-subscribe__links socials socials_fb">
-										<!--noindex--><a href="http://facebook.com" target="_blank" rel="nofollow noopener noreferrer" class="socials__link socials__link_fb">
-											<img class="icon_reg" src="@img/icons/fb_contacts.png" alt="fb_icon">
-											<img class="icon_hov" src="@img/icons/fb_hov_contacts.png" alt="fb_icon_hover">
-										</a><!--/noindex-->
-										<p class="contacts-subscribe__call">
-											Подпишитесь на нас
-										</p>
-										<!--noindex--><a href="http://instagram.com" target="_blank" rel="nofollow noopener noreferrer" class="socials__link socials__link_insta">
-											<img class="icon_reg" src="@img/icons/insta_contacts.png" alt="insta_icon">
-											<img class="icon_hov" src="@img/icons/insta_hov_contacts.png" alt="insta_icon_hover">
-										</a><!--/noindex-->
+										<p><span>Подписывайтесь</span>, на наши странички в <span>Instagram и Facebook</span>,
+											задавайте вопросы и первыми узнавайте свежие новости <span>GMA - Global Medical
+												Assistance</span>.</p>
+										</в>
+										<div class="contacts-subscribe__links socials socials_fb">
+											<!--noindex--><a href="http://facebook.com" target="_blank"
+												rel="nofollow noopener noreferrer" class="socials__link socials__link_fb">
+												<img class="icon_reg" src="@img/icons/fb_contacts.png" alt="fb_icon">
+												<img class="icon_hov" src="@img/icons/fb_hov_contacts.png" alt="fb_icon_hover">
+											</a>
+											<!--/noindex-->
+											<p class="contacts-subscribe__call">
+												Подпишитесь на нас
+											</p>
+											<!--noindex--><a href="http://instagram.com" target="_blank"
+												rel="nofollow noopener noreferrer" class="socials__link socials__link_insta">
+												<img class="icon_reg" src="@img/icons/insta_contacts.png" alt="insta_icon">
+												<img class="icon_hov" src="@img/icons/insta_hov_contacts.png"
+													alt="insta_icon_hover">
+											</a>
+											<!--/noindex-->
+										</div>
 									</div>
 								</div>
 							</div>
-							<!-- <div class="contacts__content _section-content">
-								<div class="contacts__form-block">
-									<p class="contacts__proposition">
-										
-									</p>
-									<form id="form-contacts" action="sendmail.php" data-ajax="true" method="POST"
-										class="contacts__form form form-contacts">
-										<div class="form__item form__item-input">
-											<input id="form-contacts-name" autocomplete="off" type="text" name="form[name]"
-												data-required="text" data-error="Invalid character or data not entered"
-												placeholder="Ваше имя*" class="form__input _text _req">
-										</div>
-										<div class="form__item form__item-input">
-											<input id="form-partners-phone" autocomplete="off" type="tel" name="form[phone]"
-												data-required="phone"
-												data-error="Enter your phone number without spaces, starting with '+'"
-												placeholder="Ваш номер телефона*" class="form__input _phone _req">
-										</div>
-										<div class="form__submit form__submit_contacts">
-											<button type="submit" class="btn btn_contacts"></button>
-										</div>
-									</form>
-								</div>
-
-							</div> -->
 						</div>
-					</div>
 				</section>
 			</div>
-
-			<!-- <div data-popup='#callback' class="_popup-link">
-				<button type="button" class="_popup-link__btn btn btn_popup">Contact Us</button>
-			</div> -->
-			
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>

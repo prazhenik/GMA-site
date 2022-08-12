@@ -65,6 +65,7 @@ export function formFieldsInit(options = { viewPass: false }) {
 			if (targetElement.hasAttribute('data-validate')) {
 				formValidate.validateInput(targetElement);
 			}
+
 		}
 	});
 
@@ -80,6 +81,14 @@ export function formFieldsInit(options = { viewPass: false }) {
 		});
 	}
 }
+
+
+// formRequiredItem.addEventListener("focusout", function (e) {
+// 	if(formRequiredItem.value == "") {
+// 		console.log(formRequiredItem.value);
+// 		removeError(formRequiredItem)
+// })
+
 // Валидация форм
 export let formValidate = {
 	getErrors(form) {
@@ -94,21 +103,29 @@ export let formValidate = {
 			});
 		}
 		return error;
+
 	},
 	validateInput(formRequiredItem) {
 		let error = 0;
-		formRequiredItem.addEventListener("focusin", function (e) {
-			console.log(formRequiredItem);
-		})
 		if (formRequiredItem.getAttribute("data-required") === "phone" || formRequiredItem.classList.contains("_phone")) {
 			console.log(formRequiredItem);
-			formRequiredItem.value = formRequiredItem.value.replace(" ", "");
+			//formRequiredItem.value = formRequiredItem.value.replace(" ", "");
+			// if(this.phoneTest(formRequiredItem)) {
+			// 	if(formRequiredItem.value !== "") {
+			// 		this.removeError(formRequiredItem)
+			// 	}
+			// 	console.log(formRequiredItem.value);
+			// 	//;
+			//}
 			if (this.phoneTest(formRequiredItem)) {
 				this.addError(formRequiredItem);
 				error++;
+				console.log(formRequiredItem.value);
+
 			} else {
 				this.removeError(formRequiredItem);
 			}
+
 		} else if (formRequiredItem.getAttribute("data-required") === "email" || formRequiredItem.classList.contains("_email")) {
 			console.log(formRequiredItem);
 			formRequiredItem.value = formRequiredItem.value.replace(" ", "");
@@ -187,12 +204,12 @@ export let formValidate = {
 		}, 0);
 	},
 	textTest(formRequiredItem) {
-		return !/^[0-9A-Za-zА-Яа-яІі'єЄ]{4,}/.test(formRequiredItem.value);
+		//return !/^[^\d][A-Za-zА-Яа-яІі'єЄ0-9]{1,}/.test(formRequiredItem.value); // буквы и цифры (логин)
+		return !/^[A-Za-zА-Яа-яІі'єЄ]{2,}/.test(formRequiredItem.value); // только буквы (имя)
 	},
 	phoneTest(formRequiredItem) {
 		return !/^\+[\d]{10,12}\d$/.test(formRequiredItem.value);
 	},
-
 	emailTest(formRequiredItem) {
 		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
 	}
@@ -389,4 +406,98 @@ export function formRating() {
 			}
 		}
 	}
+}
+
+//-----------------------------маски для Placeholers--------------------------------------
+
+let inputs = document.querySelectorAll('input[data-value],textarea[data-value]');
+inputs_init(inputs);
+
+function inputs_init(inputs) {
+	if (inputs.length > 0) {
+		for (let index = 0; index < inputs.length; index++) {
+			const input = inputs[index];
+			const input_g_value = input.getAttribute('data-value');
+			// if (input.value != '' && input.value != input_g_value) {
+			// 	//input_focus_add(input);
+			// }
+			input.addEventListener('focusin', function (e) {
+				//input_placeholder_add(input)
+				if (input.value == input_g_value) {
+					//input_focus_add(input);
+					//input.value = '555555';
+
+				}
+
+				if (input.classList.contains('_phone') && input.value == !input_g_value && input.value == "") {
+					input.classList.add('_mask');
+					Inputmask("+9{12,13}", {
+						"placeholder": '',
+						clearIncomplete: false,
+						clearComplete: false,
+						clearMaskOnLostFocus: true,
+						noremask: false,
+						onincomplete: function () {
+							//input_clear_mask(input, input_g_value);
+							//input_placeholderPhone_add(input);
+							//return originalPlaceholder;
+						},
+						oncomplete: function () {
+							//return originalPlaceholder;
+							//input_clear_mask(input, input_g_value);
+							//input_placeholderPhone_add(input);
+							//input_placeholder_add(input)
+						},
+						onUnMask: function () {
+							//input_clear_mask(input, input_g_value);
+							//input_placeholderPhone_add(input);
+						},
+					}).mask(input);
+				}
+
+				// if (input.classList.contains('_digital')) {
+				// 	input.classList.add('_mask');
+				// 	Inputmask("9{1,}", {
+				// 		//"placeholder": '',
+				// 		//clearIncomplete: true,
+				// 		//clearMaskOnLostFocus: true,
+				// 		onincomplete: function () {
+				// 			//input_clear_mask(input, input_g_value);
+				// 		}
+				// 	}).mask(input);
+				// }
+				input.classList.remove('_mask');
+				//form_remove_error(input);
+			});
+
+			// для работы календаря подключить вендор из libs/datepicker-full.min.js
+		}
+	}
+}
+
+function input_placeholder_add(input) {
+	const input_g_value = input.getAttribute('data-value');
+	if (input.value == '' && input_g_value != '') {
+		input.value = input_g_value; // добавили +
+	}
+}
+
+function input_placeholderPhone_add(input) {
+	const input_phone_value = input.placeholder;
+	//console.log('input_phone_value');
+	input.value = input_phone_value;
+}
+
+function input_focus_add(input) {
+	input.classList.add('_focus');
+	input.parentElement.classList.add('_focus');
+}
+function input_focus_remove(input) {
+	input.classList.remove('_focus');
+	input.parentElement.classList.remove('_focus');
+}
+function input_clear_mask(input, input_g_value) {
+	input.inputmask.remove();
+	input.value = input_g_value;
+	input_focus_remove(input);
 }

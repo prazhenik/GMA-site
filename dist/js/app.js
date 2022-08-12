@@ -4048,15 +4048,12 @@
             },
             validateInput(formRequiredItem) {
                 let error = 0;
-                formRequiredItem.addEventListener("focusin", (function(e) {
-                    console.log(formRequiredItem);
-                }));
                 if ("phone" === formRequiredItem.getAttribute("data-required") || formRequiredItem.classList.contains("_phone")) {
                     console.log(formRequiredItem);
-                    formRequiredItem.value = formRequiredItem.value.replace(" ", "");
                     if (this.phoneTest(formRequiredItem)) {
                         this.addError(formRequiredItem);
                         error++;
+                        console.log(formRequiredItem.value);
                     } else this.removeError(formRequiredItem);
                 } else if ("email" === formRequiredItem.getAttribute("data-required") || formRequiredItem.classList.contains("_email")) {
                     console.log(formRequiredItem);
@@ -4117,7 +4114,7 @@
                 }), 0);
             },
             textTest(formRequiredItem) {
-                return !/^[0-9A-Za-zА-Яа-яІі'єЄ]{4,}/.test(formRequiredItem.value);
+                return !/^[A-Za-zА-Яа-яІі'єЄ]{2,}/.test(formRequiredItem.value);
             },
             phoneTest(formRequiredItem) {
                 return !/^\+[\d]{10,12}\d$/.test(formRequiredItem.value);
@@ -4189,6 +4186,31 @@
             }
             function formLogging(message) {
                 FLS(`[Формы]: ${message}`);
+            }
+        }
+        let inputs = document.querySelectorAll("input[data-value],textarea[data-value]");
+        inputs_init(inputs);
+        function inputs_init(inputs) {
+            if (inputs.length > 0) for (let index = 0; index < inputs.length; index++) {
+                const input = inputs[index];
+                const input_g_value = input.getAttribute("data-value");
+                input.addEventListener("focusin", (function(e) {
+                    if (input.value == input_g_value) ;
+                    if (input.classList.contains("_phone") && input.value == !input_g_value && "" == input.value) {
+                        input.classList.add("_mask");
+                        Inputmask("+9{12,13}", {
+                            placeholder: "",
+                            clearIncomplete: false,
+                            clearComplete: false,
+                            clearMaskOnLostFocus: true,
+                            noremask: false,
+                            onincomplete: function() {},
+                            oncomplete: function() {},
+                            onUnMask: function() {}
+                        }).mask(input);
+                    }
+                    input.classList.remove("_mask");
+                }));
             }
         }
         __webpack_require__(125);
