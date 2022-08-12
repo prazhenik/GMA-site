@@ -40,9 +40,10 @@ const config = {
 		type: 'filesystem'
 	},
 	optimization: {
-		minimizer: [new TerserPlugin({
-			extractComments: false,
-		})],
+		minimize: false
+		// minimizer: [new TerserPlugin({
+		// 	extractComments: false,
+		// })],
 	},
 	output: {
 		path: `${paths.build}`,
