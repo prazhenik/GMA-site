@@ -46,7 +46,7 @@ const config = {
 	},
 	output: {
 		path: `${paths.build}`,
-		filename: 'app.min.js',
+		filename: 'app.js',
 		publicPath: '/',
 	},
 	module: {
