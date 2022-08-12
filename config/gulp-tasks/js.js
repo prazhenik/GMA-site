@@ -9,8 +9,8 @@ export const js = () => {
 				message: "Error: <%= error.message %>"
 			}))
 		)
-		.pipe(webpack({
-			config: webPackConfig
-		}))
+		// .pipe(webpack({
+		// 	config: webPackConfig
+		// }))
 		.pipe(app.gulp.dest(app.path.build.js));
 }
