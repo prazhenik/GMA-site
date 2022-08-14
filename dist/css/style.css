@@ -3215,9 +3215,7 @@ body._preloader {
       -ms-flex-pack: justify;
           justify-content: space-between;
   overflow: visible;
-  -webkit-column-gap: 3.125rem;
-     -moz-column-gap: 3.125rem;
-          column-gap: 3.125rem;
+  grid-column-gap: 3.125rem;
 }
 
 @supports (height: clamp( 3.125rem , 2.0089285714rem  +  5.5803571429vw , 4.6875rem )) {
@@ -3251,23 +3249,15 @@ body._preloader {
   grid-template-columns: repeat(3, 1fr);
 }
 
-@supports ((-moz-column-gap: clamp( 0.625rem , 0.1785714286rem  +  2.2321428571vw , 1.25rem )) or (column-gap: clamp( 0.625rem , 0.1785714286rem  +  2.2321428571vw , 1.25rem ))) {
+@supports (grid-column-gap: clamp( 0.625rem , 0.1785714286rem  +  2.2321428571vw , 1.25rem )) {
   .header-links__list {
-    -webkit-column-gap: clamp( 0.625rem , 0.1785714286rem  +  2.2321428571vw , 1.25rem );
-       -moz-column-gap: clamp( 0.625rem , 0.1785714286rem  +  2.2321428571vw , 1.25rem );
-            column-gap: clamp( 0.625rem , 0.1785714286rem  +  2.2321428571vw , 1.25rem );
+    grid-column-gap: clamp( 0.625rem , 0.1785714286rem  +  2.2321428571vw , 1.25rem );
   }
 }
 
-@supports not ((-moz-column-gap: clamp( 0.625rem , 0.1785714286rem  +  2.2321428571vw , 1.25rem )) or (column-gap: clamp( 0.625rem , 0.1785714286rem  +  2.2321428571vw , 1.25rem ))) {
+@supports not (grid-column-gap: clamp( 0.625rem , 0.1785714286rem  +  2.2321428571vw , 1.25rem )) {
   .header-links__list {
-    -webkit-column-gap: calc(
-			0.625rem + 0.625 * (100vw - 20rem) / 28
-		);
-       -moz-column-gap: calc(
-			0.625rem + 0.625 * (100vw - 20rem) / 28
-		);
-            column-gap: calc(
+    grid-column-gap: calc(
 			0.625rem + 0.625 * (100vw - 20rem) / 28
 		);
   }
@@ -4931,7 +4921,7 @@ body._preloader {
 .footer__rows {
   display: -ms-grid;
   display: grid;
-  row-gap: 1.875rem;
+  grid-row-gap: 1.875rem;
   width: 100%;
   font-weight: 600;
 }
@@ -4942,14 +4932,12 @@ body._preloader {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-column-gap: 1.875rem;
-     -moz-column-gap: 1.875rem;
-          column-gap: 1.875rem;
+  grid-column-gap: 1.875rem;
 }
 
 .footer__row_top {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  row-gap: 1.875rem;
+  grid-row-gap: 1.875rem;
 }
 
 @supports (font-size: clamp( 0.875rem , 0.8rem  +  0.375vw , 1.25rem )) {
@@ -5022,7 +5010,7 @@ body._preloader {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  row-gap: 0.625rem;
+  grid-row-gap: 0.625rem;
 }
 
 .footer .addresses {
@@ -5034,10 +5022,11 @@ body._preloader {
 }
 
 .tel-block_footer .tel-block__list {
+  text-align: end;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
-  gap: 0.9375rem;
+  grid-gap: 0.9375rem;
 }
 
 .tel-block_footer .tel-block__list:not(:last-child) {
@@ -5051,9 +5040,7 @@ body._preloader {
 
 @media (max-width: 1200px) {
   .header__content {
-    -webkit-column-gap: 0.9375rem;
-       -moz-column-gap: 0.9375rem;
-            column-gap: 0.9375rem;
+    grid-column-gap: 0.9375rem;
     -ms-grid-columns: 1fr minmax(70px, 10fr) 40px;
     grid-template-columns: 1fr minmax(70px, 10fr) 40px;
   }

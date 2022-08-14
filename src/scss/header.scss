@@ -19,11 +19,11 @@
 		align-items: center;
 		justify-content: space-between;
 		overflow: visible;
-		column-gap: rem(50);
+		grid-column-gap: rem(50);
 		//@include adaptiveValue("column-gap",50 , 15, 768, 320, 1);
 		@include adaptiveValue("height",$header-height-pc ,$header-height-mob, 768, 320, 1 );
 		@media (max-width: 1200px){
-			column-gap: rem(15);
+			grid-column-gap: rem(15);
 			grid-template-columns: 1fr minmax(70px, 10fr) 40px;
 		}
 		&:not(:last-child) {
@@ -64,7 +64,7 @@
 	&__list {
 		display: inline-grid;
 		grid-template-columns: repeat(3, 1fr);
-		@include adaptiveValue("column-gap", 20 , 10, 768, 320, 1);
+		@include adaptiveValue("grid-column-gap", 20 , 10, 768, 320, 1);
 		@include adaptiveValue("height",40 ,25, 1200,320,1 );
 
 	}

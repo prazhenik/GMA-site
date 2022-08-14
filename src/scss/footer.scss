@@ -14,7 +14,7 @@
 	}
 	&__rows {
 		display: grid;
-		row-gap: rem(30);
+		grid-row-gap: rem(30);
 		width: 100%;
 		font-weight: 600;
 	}
@@ -22,12 +22,12 @@
 	&__row {
 		display: grid;
 		justify-content: space-between;
-		column-gap: rem(30);
+		grid-column-gap: rem(30);
 		// .footer__row_top
 		&_top {
 			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 			@include adaptiveValue("font-size",20 ,14, 1920, 320, 1 );
-			row-gap: rem(30);
+			grid-row-gap: rem(30);
 		}
 		// .footer__row_bottom
 		&_bottom {
@@ -66,7 +66,7 @@
 			flex-direction: column;
 
 			justify-content: space-between;
-			row-gap: rem(10);
+			grid-row-gap: rem(10);
 			@media (max-width:$mobileSmall){
 				width: 100%;
 			}
@@ -109,8 +109,9 @@
 	&_footer {
 			// .tel-block__list
 		& .tel-block__list {
+			text-align: end;
 			justify-content: end;
-			gap: rem(15);
+			grid-gap: rem(15);
 			&:not(:last-child) {
 				margin-bottom: rem(10);
 			}
