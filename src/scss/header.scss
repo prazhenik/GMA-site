@@ -19,6 +19,9 @@
 		overflow: visible;
 		@include adaptiveValue("column-gap",30 , 15, 768, 320, 1);
 		@include adaptiveValue("height",$header-height-pc ,$header-height-mob, 768, 320, 1 );
+		&:not(:last-child) {
+			@include adaptiveValue("margin-left",30 , 15, 768, 320, 1);
+		}
 	}
 	
 	// .header__logo
@@ -46,6 +49,9 @@
 		display: flex;
 		@include adaptiveValue("column-gap",20 , 10, 768, 320, 1);
 		@include adaptiveValue("height",40 ,25, 1200,320,1 );
+		&:not(:last-child) {
+			@include adaptiveValue("margin-left",20 , 10, 768, 320, 1);
+		}
 	}
 	// .header-links__item
 	&__item {
@@ -118,6 +124,10 @@
 		padding:  rem(10) rem(5);
 		mix-blend-mode:difference;
 		color: $text-color-major;
+		&:not(:last-child) {
+			margin-left: rem(10);
+			margin-bottom: rem(10);
+		}
 		& span {
 			color: $text-color-secondary;
 

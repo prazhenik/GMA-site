@@ -105,6 +105,10 @@
 		position: relative;
 		@include adaptiveValue("column-gap", 50, 5, 1920, 1200, 1);
 		row-gap: rem(5);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-left", 50, 5, 1920, 1200, 1);
+			margin-bottom: rem(5);
+		}
 		@media (max-width: rem(1200)) {
 			flex-direction: column;
 			flex-wrap: nowrap;

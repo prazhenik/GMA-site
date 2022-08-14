@@ -154,13 +154,16 @@ import './files/scroll/lazyload.js';
 // Наблюдатель за объектами c атрибутом data-watch
 // Документация по работе в шаблоне: js/libs/watcher.js
 // Сниппет(HTML):
-import './libs/watcher.js'
+//import './libs/watcher.js'
 
 
 
 // Функции работы скроллом
-import * as flsScroll from "./files/scroll/scroll.js";
 
+//AOS плагин. добавление классов блокам во вьюпорте
+import './files/scroll/aos.js';
+
+import * as flsScroll from "./files/scroll/scroll.js";
 
 // Плавная навигация по странице
 flsScroll.pageNavigation();

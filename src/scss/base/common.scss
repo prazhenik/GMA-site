@@ -45,7 +45,7 @@
 	@include adaptiveValue("font-size", 46, 24, 1200, 320, 1);
 	transition: opacity .5s ease, transform .5s ease;
 	z-index: 1;
-	transform: translateX(-200%);
+	//transform: translateX(-200%);
 	color: $text-color-accent;
 	font-weight: 500;
 	& span {
@@ -69,7 +69,7 @@
 
 // стиль при доскроле
 ._watcher-view ._section-title {
-		transform: translateX(0);
+		//transform: translateX(0);
 		transition: opacity .5s ease, transform .5s ease;
 }
 

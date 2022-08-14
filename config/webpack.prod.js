@@ -40,7 +40,7 @@ const config = {
 		type: 'filesystem'
 	},
 	optimization: {
-		minimize: false
+		minimize: false // отключение создания сжатого app.min.js
 		// minimizer: [new TerserPlugin({
 		// 	extractComments: false,
 		// })],
