@@ -4150,15 +4150,15 @@
                     ...options,
                     classes: {
                         ...config.classes,
-                        ...options?.classes
+                        ...options.classes
                     },
                     hashSettings: {
                         ...config.hashSettings,
-                        ...options?.hashSettings
+                        ...options.hashSettings
                     },
                     on: {
                         ...config.on,
-                        ...options?.on
+                        ...options.on
                     }
                 };
                 this.bodyLock = false;

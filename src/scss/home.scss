@@ -42,6 +42,7 @@
 	// .hero__content
 	&__content {
 		@include adaptiveValue("padding-top",$header-height-pc ,$header-height-mob, 1200, 320, 1 );
+		//@include adaptiveValue("padding-bottom",$header-height-pc ,$header-height-mob, 1200, 320, 1 );
 		max-height: rem(1000);
 		height: 100vh;
 		min-height: -webkit-fill-available;
@@ -116,7 +117,7 @@
 .offer {
 	position: relative;
 	max-width: rem(850);
-	padding: rem(80) rem(0);
+	padding: rem(80) rem(0) rem(110);
 	width: 100%;
 	
 	@media (max-width:$mobile){
@@ -131,10 +132,7 @@
 	&__buttons {
 		display: flex;
 		flex-wrap: wrap;
-		column-gap: rem(15);
-		row-gap: rem(40);
 		&:not(:last-child) {
-			margin-left: rem(15);
 			margin-bottom: rem(40);
 		}
 		@media (max-width:$mobile){
@@ -145,6 +143,14 @@
 	// .offer__button
 	&__button {
 		background-color:  transparent;
+		&:not(:last-child) {
+			margin-right: rem(15);
+			@media (max-width: em(360)){
+				width: 100%;
+				margin-right: 0;
+				margin-bottom: rem(40);  
+			}
+		}
 	}
 }
 

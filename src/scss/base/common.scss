@@ -164,7 +164,7 @@ section{
 
 
 .site-logo {
-	flex: 0 1 rem(200);
+	@include adaptiveValue("width", 180 ,130, 1200, 320, 1 );
 	@include adaptiveValue("height",55 , 35, 1200, 320, 1);
 	border-radius: 10px;
 	// .site-logo__item
