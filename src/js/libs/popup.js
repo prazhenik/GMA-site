@@ -84,23 +84,23 @@ class Popup {
 			'[contenteditable]',
 			'[tabindex]:not([tabindex^="-"])'
 		];
-		//this.options = Object.assign(config, options);
-		this.options = {
-			...config,
-			...options,
-			classes: {
-				...config.classes,
-				...options.classes,
-			},
-			hashSettings: {
-				...config.hashSettings,
-				...options.hashSettings,
-			},
-			on: {
-				...config.on,
-				...options.on,
-			}
-		}
+		this.options = Object.assign(config, options);
+		// this.options = {
+		// 	config,
+		// 	options,
+		// 	classes: {
+		// 		...config.classes,
+		// 		...options.classes,
+		// 	},
+		// 	hashSettings: {
+		// 		...config.hashSettings,
+		// 		...options.hashSettings,
+		// 	},
+		// 	on: {
+		// 		...config.on,
+		// 		...options.on,
+		// 	}
+		// }
 		this.bodyLock = false;
 		this.options.init ? this.initPopups() : null
 	}

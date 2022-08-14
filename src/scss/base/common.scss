@@ -183,8 +183,7 @@ section{
 .tel-block {
 	// .tel-block__list
 	&__list {
-		display: flex;
-		flex-wrap: nowrap;
+		display: grid;
 	}
 	// .tel-block__list-item
 	&__list-item {

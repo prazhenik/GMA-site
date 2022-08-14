@@ -1849,11 +1849,8 @@ section:first-child {
 }
 
 .tel-block__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  display: -ms-grid;
+  display: grid;
 }
 
 .tel-block__link {
@@ -2438,10 +2435,8 @@ section:first-child {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-column-gap: 1.875rem;
-     -moz-column-gap: 1.875rem;
-          column-gap: 1.875rem;
-  row-gap: 1.25rem;
+  grid-column-gap: 1.875rem;
+  grid-row-gap: 1.25rem;
   min-height: 100%;
 }
 
@@ -3836,7 +3831,7 @@ body._preloader {
   display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16.25rem, 1fr));
-  gap: 1.875rem;
+  grid-gap: 1.875rem;
   counter-reset: steps;
 }
 
@@ -4096,7 +4091,7 @@ body._preloader {
   display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
-  gap: 0.3125rem;
+  grid-gap: 0.3125rem;
   overflow: hidden;
   cursor: default;
   margin: 0rem -0.3125rem;
@@ -4195,15 +4190,15 @@ body._preloader {
       flex-wrap: wrap;
 }
 
-@supports (gap: clamp( 1.875rem , 1.4204545455rem  +  2.2727272727vw , 3.125rem )) {
+@supports (grid-gap: clamp( 1.875rem , 1.4204545455rem  +  2.2727272727vw , 3.125rem )) {
   .consult__content {
-    gap: clamp( 1.875rem , 1.4204545455rem  +  2.2727272727vw , 3.125rem );
+    grid-gap: clamp( 1.875rem , 1.4204545455rem  +  2.2727272727vw , 3.125rem );
   }
 }
 
-@supports not (gap: clamp( 1.875rem , 1.4204545455rem  +  2.2727272727vw , 3.125rem )) {
+@supports not (grid-gap: clamp( 1.875rem , 1.4204545455rem  +  2.2727272727vw , 3.125rem )) {
   .consult__content {
-    gap: calc(
+    grid-gap: calc(
 			1.875rem + 1.25 * (100vw - 20rem) / 55
 		);
   }
@@ -4321,20 +4316,22 @@ body._preloader {
 }
 
 .tel-block_consult .tel-block__list {
+  -ms-grid-columns: (50px)[4];
+  grid-template-columns: repeat(4, 50px);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-@supports (gap: clamp( 0.9375rem , 0.5965909091rem  +  1.7045454545vw , 1.875rem )) {
+@supports (grid-gap: clamp( 0.9375rem , 0.5965909091rem  +  1.7045454545vw , 1.875rem )) {
   .tel-block_consult .tel-block__list {
-    gap: clamp( 0.9375rem , 0.5965909091rem  +  1.7045454545vw , 1.875rem );
+    grid-gap: clamp( 0.9375rem , 0.5965909091rem  +  1.7045454545vw , 1.875rem );
   }
 }
 
-@supports not (gap: clamp( 0.9375rem , 0.5965909091rem  +  1.7045454545vw , 1.875rem )) {
+@supports not (grid-gap: clamp( 0.9375rem , 0.5965909091rem  +  1.7045454545vw , 1.875rem )) {
   .tel-block_consult .tel-block__list {
-    gap: calc(
+    grid-gap: calc(
 			0.9375rem + 0.9375 * (100vw - 20rem) / 55
 		);
   }
@@ -4575,7 +4572,7 @@ body._preloader {
   display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16.25rem, 1fr));
-  gap: 1.875rem;
+  grid-gap: 1.875rem;
 }
 
 .counters__item {
@@ -4784,15 +4781,15 @@ body._preloader {
       flex-wrap: wrap;
 }
 
-@supports (gap: clamp( 0.625rem , -1.6904093098rem  +  6.4205457464vw , 3.125rem )) {
+@supports (grid-gap: clamp( 0.625rem , -1.6904093098rem  +  6.4205457464vw , 3.125rem )) {
   .contacts-subscribe__links {
-    gap: clamp( 0.625rem , -1.6904093098rem  +  6.4205457464vw , 3.125rem );
+    grid-gap: clamp( 0.625rem , -1.6904093098rem  +  6.4205457464vw , 3.125rem );
   }
 }
 
-@supports not (gap: clamp( 0.625rem , -1.6904093098rem  +  6.4205457464vw , 3.125rem )) {
+@supports not (grid-gap: clamp( 0.625rem , -1.6904093098rem  +  6.4205457464vw , 3.125rem )) {
   .contacts-subscribe__links {
-    gap: calc(
+    grid-gap: calc(
 			0.625rem + 2.5 * (100vw - 36.0625rem) / 38.9375
 		);
   }
@@ -5022,11 +5019,11 @@ body._preloader {
 }
 
 .tel-block_footer .tel-block__list {
-  text-align: end;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
-  grid-gap: 0.9375rem;
+  grid-column-gap: 0.9375rem;
+  margin-left: auto;
+  max-width: 7.5rem;
+  -ms-grid-columns: (30px)[4];
+  grid-template-columns: repeat(4, 30px);
 }
 
 .tel-block_footer .tel-block__list:not(:last-child) {
@@ -5269,7 +5266,7 @@ body._preloader {
 
   .steps {
     grid-template-columns: repeat(auto-fit, minmax(11.875rem, 1fr));
-    gap: 1.25rem;
+    grid-gap: 1.25rem;
   }
 
   .specialties {
@@ -5285,7 +5282,7 @@ body._preloader {
   .contacts-subscribe__links {
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    row-gap: 3.125rem;
+    grid-row-gap: 3.125rem;
   }
 
   .contacts-subscribe__links:not(:last-child) {
@@ -5317,9 +5314,7 @@ body._preloader {
   }
 
   .tel-block_footer .tel-block__list {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
+    margin-left: 0;
   }
 }
 

@@ -109,14 +109,15 @@
 	&_footer {
 			// .tel-block__list
 		& .tel-block__list {
-			text-align: end;
-			justify-content: end;
-			grid-gap: rem(15);
+			grid-column-gap: rem(15);
+			margin-left: auto;
+			max-width: rem(120);
+			grid-template-columns: repeat(4, 30px);
 			&:not(:last-child) {
 				margin-bottom: rem(10);
 			}
 			@media (max-width:$mobileSmall){
-				justify-content: start;  
+				margin-left: 0; 
 			}
 		}
 		// .tel-block__list-item

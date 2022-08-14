@@ -44,8 +44,8 @@
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	column-gap: rem(30);
-	row-gap: rem(20);
+	grid-column-gap: rem(30);
+	grid-row-gap: rem(20);
 	min-height: 100%;
 	&:not(:last-child) {
 		margin-bottom: rem(20)

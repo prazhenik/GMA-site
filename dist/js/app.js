@@ -4145,22 +4145,7 @@
                 this._selectorOpen = false;
                 this.lastFocusEl = false;
                 this._focusEl = [ "a[href]", 'input:not([disabled]):not([type="hidden"]):not([aria-hidden])', "button:not([disabled]):not([aria-hidden])", "select:not([disabled]):not([aria-hidden])", "textarea:not([disabled]):not([aria-hidden])", "area[href]", "iframe", "object", "embed", "[contenteditable]", '[tabindex]:not([tabindex^="-"])' ];
-                this.options = {
-                    ...config,
-                    ...options,
-                    classes: {
-                        ...config.classes,
-                        ...options.classes
-                    },
-                    hashSettings: {
-                        ...config.hashSettings,
-                        ...options.hashSettings
-                    },
-                    on: {
-                        ...config.on,
-                        ...options.on
-                    }
-                };
+                this.options = Object.assign(config, options);
                 this.bodyLock = false;
                 this.options.init ? this.initPopups() : null;
             }
