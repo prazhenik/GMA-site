@@ -40,16 +40,23 @@
 
 //-------------------general form properties-------------------
 
+.form-wrapper{
+	margin: -10px;
+}
+
+
 .form {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	grid-column-gap: rem(30);
-	grid-row-gap: rem(20);
 	min-height: 100%;
-	&:not(:last-child) {
-		margin-bottom: rem(20)
+	justify-self: center;
+	flex: 1 0 auto;
+	width: 100%;
+	& > * {
+		padding: 10px;
 	}
+
 	&__error {
 		position: absolute;
 		font-weight: 500;
@@ -68,12 +75,11 @@
 		width: 100%;
 		flex: 1 1 100%; 
 		min-width: rem(250);
-		&:not(textarea) {
+		& input {
 			@include adaptiveValue("height", $input-height-pc, $input-height-mob, 1200, 320, 1);
 		}
 		input, textarea {
 			width: 100%;
-			@include adaptiveValue("height", $input-height-pc, $input-height-mob, 1200, 320, 1);
 			padding: rem($input-padding);
 			background-color: $input-background-color;
 			@include adaptiveValue("font-size", 22, 16, 1200, 320, 1 );

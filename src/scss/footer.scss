@@ -22,7 +22,7 @@
 	&__row {
 		display: grid;
 		justify-content: space-between;
-		grid-column-gap: rem(30);
+		//grid-column-gap: rem(30);
 		// .footer__row_top
 		&_top {
 			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -49,7 +49,7 @@
 	// .footer__logo
 	&__logo {
 		flex: 0 0 auto;
-		//margin-bottom:  rem(20);
+		margin-bottom:  rem(30);
 	}
 	& .footer__logo .site-logo__item {
 		background:  url("@img/logo_GMA_full.png") 0% 50% / contain no-repeat;
@@ -64,9 +64,7 @@
 		&__addresses, &__policies   {
 			display: flex;
 			flex-direction: column;
-
 			justify-content: space-between;
-			grid-row-gap: rem(10);
 			@media (max-width:$mobileSmall){
 				width: 100%;
 			}
@@ -82,6 +80,9 @@
 	}
 		// .addresses__item
 		&__item {
+			&:not(:last-child) {
+				margin-bottom:  rem(10);
+			}
 			& a {
 				text-decoration: underline;
 			}
