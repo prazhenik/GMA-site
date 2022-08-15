@@ -142,20 +142,17 @@
 	// .offer__button
 	&__button {
 		background-color:  transparent;
-		&:not(:last-child) {
-			margin-right: rem(15);
-			@media (max-width: em(366)){
-				width: 100%;
-				margin-right: 0;
-				margin-bottom: rem(40);  
-			}
-		}
+		@media (max-width: $mobileSmall){
+			width: 100%;
+		}	
 	}
 }
 
 .controls {
-	@media (max-width: $mobile) {
-		display: inline-block;
+	margin-left: rem(15);
+	@media (max-width: $mobileSmall) {
+		margin-left: rem(0);
+		margin-top: rem(30);
 	}
 	// .controls__box
 	&__box {
@@ -271,13 +268,13 @@
 				animation: shake 3s .2s both ease-in;
 			}
 			&:nth-child(3){
-				animation: shake 3s .4s both ease-in;
+				animation: shake 3s .3s both ease-in;
 			}
 			&:nth-child(4){
-				animation: shake 3s .6s both ease-in;
+				animation: shake 3s .4s both ease-in;
 			}
 			&:nth-child(5){
-				animation: shake 3s .8s both ease-in;
+				animation: shake 3s .5s both ease-in;
 			}
 		
 	}
@@ -584,8 +581,7 @@
 	&_consult {
 			// .tel-block__list
 		& .tel-block__list {
-			//max-width: rem(120);
-			grid-template-columns: repeat(4, 50px);
+			grid-template-columns: repeat(4, auto);
 			justify-content: center;
 			@include adaptiveValue("grid-gap", 30, 15, 0, 1200);
 			&:not(:last-child) {

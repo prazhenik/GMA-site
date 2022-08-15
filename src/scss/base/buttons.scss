@@ -26,7 +26,7 @@
 	color: $text-color-btn;
 	font-weight: 600;
 	text-transform: uppercase;
-	@include adaptiveValue("width", $button-width-pc, $button-width-mob, 2, 1200);
+	@include adaptiveValue("width", $button-width-pc, $button-width-mob, 2, 1200, 577);
 	@include adaptiveValue("height", $button-height-pc, $button-height-mob, 0, 1200);
 	height: 100%;
 	padding: rem(0) rem(20);
@@ -43,7 +43,7 @@
 	}
 
 	@media (max-width:$mobileSmall){
-		width: 100%;
+		width: 80%;
 	}
 
 	&_popup, &_consult, &_partners, &_contacts {
