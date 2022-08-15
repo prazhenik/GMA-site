@@ -14,20 +14,20 @@
 	min-width: rem(270);
 	margin: 0 auto;
 	& span {
-		display: inline-block;
-		align-self: center;
+		display: block;
+		margin: auto;
 	}
 }
 
 //-------------------custom buttons properties-------------------
 
 .btn {
-	@include adaptiveValue("font-size", 22, 14, 1200, 320, 1);
+	@include adaptiveValue("font-size", 22, 14, 0, 1200);
 	color: $text-color-btn;
 	font-weight: 600;
 	text-transform: uppercase;
-	@include adaptiveValue("width", $button-width-pc, $button-width-mob, 1200, 320, 1);
-	@include adaptiveValue("height", $button-height-pc, $button-height-mob, 1200, 320, 1);
+	@include adaptiveValue("width", $button-width-pc, $button-width-mob, 0, 1200);
+	@include adaptiveValue("height", $button-height-pc, $button-height-mob, 0, 1200);
 	height: 100%;
 	padding: rem(0) rem(20);
 	background-color:  $background-color-button-major;

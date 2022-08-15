@@ -8,17 +8,16 @@
 	display: flex;
 	justify-content: center;
 	flex: 1 0 auto;
+	@include adaptiveValue("margin-left",30 , 15, 0, 1200 );
+	@include adaptiveValue("max-width",50 , 40, 1, 1200 );
 	@media (max-width: rem(1200)) {
 		order: 3;
-		max-width: rem(40);
-
-		
 	}
 	&__icon {
 		display: none;
 		position: relative;
-		width: rem(40);
-		@include adaptiveValue("height",25 ,20, 768, 320, 1 );
+		@include adaptiveValue("height",30 ,20, 0, 1200);
+		@include adaptiveValue("width",50 , 40, 1, 1200);
 		cursor: pointer;
 		transition: all 0.2s ease;
 		@media (max-width: rem(1200)) {
@@ -135,7 +134,7 @@
 	&__link {
 		display: inline-block;
 		position: relative; //smooth marker underline menu__link
-		@include adaptiveValue("font-size",$font-size-menu-links-pc ,$font-size-menu-links-mob, 1920, 1200, 1 ); 
+		@include adaptiveValue("font-size",$font-size-menu-links-pc ,$font-size-menu-links-mob, 0, 1920, 1200 ); 
 		line-height: math.div( $font-size-menu-links-pc, $font-size-menu-links-pc);
 		letter-spacing: 0.02em;
 		transition: transform .3s ease;

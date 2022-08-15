@@ -42,7 +42,7 @@
 }
 
 // Адаптивное свойство (clamp)
-@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 0) {
+@mixin adaptiveValue($property, $startSize, $minSize, $keepSize: 0, $widthFrom: $containerWidth, $widthTo: $minWidth) {
 	@if ($startSize==0) {
 		$startSize: 0.000001;
 	}
@@ -77,27 +77,26 @@
 		$propertyValue: #{"clamp(" rem($startSize) "," $flyValue "," rem($minSize) ")"};
 	}
 
-	// Если поддерживается clamp();
-	@supports (#{$property}: $propertyValue) {
-		#{$property}: $propertyValue;
-	}
-	// Если не поддерживается clamp();
-	@supports not (#{$property}: $propertyValue) {
-		#{$property}: calc(
-			#{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div($widthFrom, 16) -
-				math.div($widthTo, 16)}
-		);
-	}
-
 	// Устанавливаем значения по умолчанию
-	@if $widthFrom != $containerWidth and $widthFrom != $maxWidth and $keepSize != 1 and $keepSize != 2 {
+	@if $keepSize != 1 and $keepSize != 3 {
 		@media (min-width: $widthFromMedia) {
-			#{$property}: inherit;
+			#{$property}: rem($startSize);
 		}
 	}
-	@if $widthTo != $minWidth and $keepSize != 1 and $keepSize != 3 {
+	// Адаптируем размер в промежутке между указанными ширинами вьюпорта
+	@media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+		// Если поддерживается clamp();
+		@supports (#{$property}: $propertyValue) {
+			#{$property}: $propertyValue;
+		}
+		// Если не поддерживается clamp();
+		@supports not (#{$property}: $propertyValue) {
+			#{$property}: calc(#{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div($widthFrom, 16) - math.div($widthTo, 16)});
+		}
+	}
+	@if $keepSize != 1 and $keepSize != 2 {
 		@media (max-width: $widthToMedia) {
-			#{$property}: inherit;
+			#{$property}: rem($minSize);
 		}
 	}
 }

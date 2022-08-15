@@ -13,21 +13,15 @@
 	// .header__content
 	&__content {
 		position: relative;
-		display: grid;
-		grid-template-columns: 1fr minmax(70px, 10fr) 1fr;
-		grid-template-rows: 1fr;
+		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		overflow: visible;
-		grid-column-gap: rem(50);
-		//@include adaptiveValue("column-gap",50 , 15, 768, 320, 1);
-		@include adaptiveValue("height",$header-height-pc ,$header-height-mob, 768, 320, 1 );
-		@media (max-width: 1200px){
-			grid-column-gap: rem(15);
-			grid-template-columns: 1fr minmax(70px, 10fr) 40px;
-		}
-		&:not(:last-child) {
-			//@include adaptiveValue("margin-left",30 , 15, 768, 320, 1);
+		@include adaptiveValue("height",$header-height-pc ,$header-height-mob, 0, 768, 320 );
+		& > *:not(:first-child) {
+			@media (min-width: em(1201)){
+				//margin-left: rem(20);
+			}
 		}
 	}
 	
@@ -41,7 +35,6 @@
 	// .header__menu
 	&__menu {
 		&:not(:last-child) {
-			//@include adaptiveValue("margin-left",30 , 15, 768, 320, 1);
 		}
 	}
 	// .header__links
@@ -54,18 +47,21 @@
 
 .header-links {
 	flex: 0 0 auto;
+	align-content: center;
 	&:not(:last-child) {
-		//@include adaptiveValue("margin-right",30 , 15, 768, 320, 1);
 	}
 	@media (max-width: 1200px){
-		margin-left: auto;  
+		margin-left: auto;
 	}
 	// .header-links__list
 	&__list {
 		display: inline-grid;
 		grid-template-columns: repeat(3, 1fr);
-		@include adaptiveValue("grid-column-gap", 20 , 10, 768, 320, 1);
-		@include adaptiveValue("height",40 ,25, 1200,320,1 );
+		@include adaptiveValue("grid-column-gap", 20 , 10, 0, 768);
+		@include adaptiveValue("height",40 ,25, 0, 1200 );
+		margin-left: rem(30);
+		margin-top: rem(3);
+		
 
 	}
 	// .header-links__item
@@ -76,7 +72,7 @@
 		}
 	}
 	.socials__link {
-		@include adaptiveValue("width",40 ,25, 1200,320,1 );
+		@include adaptiveValue("width",40 ,25, 0, 1200,320 );
 		height: 100%;
 		transition: transform .2s ;
 		&:hover{
@@ -107,8 +103,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		@include adaptiveValue("width",40 ,25, 1200,320,1 );
-		@include adaptiveValue("height",40 ,25, 1200,320,1 );
+		@include adaptiveValue("width",40 ,25, 0, 1200,320);
+		@include adaptiveValue("height",40 ,25, 0, 1200,320);
 		background-color: $background-color-button-major;
 		border: 2px solid $border-color-button;
 		border-radius: 7px;
@@ -116,7 +112,7 @@
 		color: $text-color-secondary;
 		font-weight: 600;
 		cursor: pointer;
-		@include adaptiveValue("font-size", 20, 12, 1200, 320, 1 );
+		@include adaptiveValue("font-size", 20, 12, 0, 1200, 320 );
 		transition: transform .2s;
 		&:hover{
 			transform: scale(1.1);

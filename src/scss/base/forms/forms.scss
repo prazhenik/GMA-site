@@ -54,15 +54,15 @@
 	flex: 1 0 auto;
 	width: 100%;
 	& > * {
-		padding: 10px;
+		padding: rem(10);
 	}
 
 	&__error {
 		position: absolute;
 		font-weight: 500;
-		@include adaptiveValue("font-size", 12, 8);
-		@include adaptiveValue("bottom", -15, -10);
-		right: 0;
+		@include adaptiveValue("font-size", 12, 8, 0, 1200);
+		right: rem(10);
+		bottom: rem(-2);
 		z-index: 2;
 		color: red;
 	}
@@ -76,19 +76,19 @@
 		flex: 1 1 100%; 
 		min-width: rem(250);
 		& input {
-			@include adaptiveValue("height", $input-height-pc, $input-height-mob, 1200, 320, 1);
+			@include adaptiveValue("height", $input-height-pc, $input-height-mob, 0, 1200);
 		}
 		input, textarea {
 			width: 100%;
 			padding: rem($input-padding);
 			background-color: $input-background-color;
-			@include adaptiveValue("font-size", 22, 16, 1200, 320, 1 );
+			@include adaptiveValue("font-size", 22, 16, 0, 1200);
 			font-weight: 500;
 			color: $text-color-major;
 			caret-color: $input-caret-color;
 			appearance: none;
 			border-radius: rem($input-border-radius);
-			border: 2px inset $border-color-major;
+			border: 2px solid $border-color-major;
 			box-shadow: inset 7px 7px 7px rgba(156, 156, 156, 0.7), inset -4px -4px 7px #FFFFFF;
 			&:focus {
 				background-color: $input-background-color-focus;
@@ -101,7 +101,7 @@
 			&::placeholder {
 				color: $input-placeholder-color;
 				font-weight: 400;
-				@include adaptiveValue("font-size", 18, 12, 1200, 320, 1 );
+				@include adaptiveValue("font-size", 18, 12, 0, 1200);
 			}
 		}
 		textarea {

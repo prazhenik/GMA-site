@@ -9,8 +9,8 @@
 		display: flex;
 		flex-direction: column;	
 		align-items: center;
-		@include adaptiveValue("padding-top", 60 , 30, 1200, 320, 1 );
-		@include adaptiveValue("padding-bottom", 75 , 40, 1200, 320, 1 );
+		@include adaptiveValue("padding-top", 60 , 30, 0, 1200);
+		@include adaptiveValue("padding-bottom", 75 , 40, 0, 1200);
 	}
 	&__rows {
 		display: grid;
@@ -26,12 +26,12 @@
 		// .footer__row_top
 		&_top {
 			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-			@include adaptiveValue("font-size",20 ,14, 1920, 320, 1 );
+			@include adaptiveValue("font-size",20 ,14,  0, 1920);
 			grid-row-gap: rem(30);
 		}
 		// .footer__row_bottom
 		&_bottom {
-			@include adaptiveValue("font-size",14 ,9, 1200, 320, 1  );
+			@include adaptiveValue("font-size",14 ,9, 0, 1200);
 			grid-template-columns: 2fr 1fr;
 			align-items: center;
 			& a {
