@@ -1,6 +1,4 @@
 .footer {
-
-
 	// .footer__innerContainer
 	&__innerContainer {
 	}
@@ -13,26 +11,27 @@
 		@include adaptiveValue("padding-bottom", 75 , 40, 2, 1200);
 	}
 	&__rows {
-		display: grid;
-		grid-row-gap: rem(30);
 		width: 100%;
 		font-weight: 600;
 	}
 	// .footer__row
 	&__row {
-		display: grid;
+		display: flex;
 		justify-content: space-between;
-		//grid-column-gap: rem(30);
+
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+		}
 		// .footer__row_top
 		&_top {
-			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+			flex-wrap: wrap;
 			@include adaptiveValue("font-size",20 ,14, 0, 1920);
-			grid-row-gap: rem(30);
+			margin-bottom: rem(30);
 		}
 		// .footer__row_bottom
 		&_bottom {
 			@include adaptiveValue("font-size",14 ,9, 0, 1200);
-			grid-template-columns: 2fr 1fr;
+			//grid-template-columns: 2fr 1fr;
 			align-items: center;
 			& a {
 				text-decoration: underline;
@@ -44,12 +43,18 @@
 	}
 	// .footer__policies
 	&__policies {
-
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 	// .footer__logo
 	&__logo {
 		flex: 0 0 auto;
-		margin-bottom:  rem(30);
+		@media (max-width:$mobileSmall){
+			&:not(:last-child) {
+				margin-bottom:  rem(30);
+			}
+		}
 	}
 	& .footer__logo .site-logo__item {
 		background:  url("@img/logo_GMA_full.png") 0% 50% / contain no-repeat;
@@ -62,11 +67,11 @@
 	.footer {
 		// .footer__addresses
 		&__addresses, &__policies   {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
 			@media (max-width:$mobileSmall){
 				width: 100%;
+				&:not(:last-child) {
+					margin-bottom:  rem(30);
+				}
 			}
 			
 

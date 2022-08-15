@@ -144,7 +144,7 @@
 		background-color:  transparent;
 		&:not(:last-child) {
 			margin-right: rem(15);
-			@media (max-width: em(360)){
+			@media (max-width: em(366)){
 				width: 100%;
 				margin-right: 0;
 				margin-bottom: rem(40);  
@@ -412,12 +412,6 @@
 	}
 	@media (max-width:$mobileSmall){
 		grid-template-columns: repeat(auto-fit, minmax(rem(260), 1fr));
-		max-height: 350px;
-		overflow-y: auto;
-		padding-top: 5px;
-		padding-bottom: 5px;
-		border-top: 1px solid $border-color-other-3;
-		border-bottom: 1px solid $border-color-other-3;
 	}
 	// .specialties__item
 	&__item {

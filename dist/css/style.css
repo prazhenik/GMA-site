@@ -3608,29 +3608,30 @@ body._preloader {
 }
 
 .footer__rows {
-  display: -ms-grid;
-  display: grid;
-  grid-row-gap: 1.875rem;
   width: 100%;
   font-weight: 600;
 }
 
 .footer__row {
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
+.footer__row:not(:last-child) {
+  margin-bottom: 1.875rem;
+}
+
 .footer__row_top {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  grid-row-gap: 1.875rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 1.875rem;
 }
 
 .footer__row_bottom {
-  -ms-grid-columns: 2fr 1fr;
-  grid-template-columns: 2fr 1fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -3644,23 +3645,7 @@ body._preloader {
   text-align: end;
 }
 
-.footer__logo {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-  margin-bottom: 1.875rem;
-}
-
-.footer .footer__logo .site-logo__item {
-  background: url("../img/logo_GMA_full.png") 0% 50%/contain no-repeat;
-}
-
-.footer__policy {
-  text-decoration: underline;
-}
-
-.footer .footer__addresses,
-.footer .footer__policies {
+.footer__policies {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3671,6 +3656,20 @@ body._preloader {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.footer__logo {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.footer .footer__logo .site-logo__item {
+  background: url("../img/logo_GMA_full.png") 0% 50%/contain no-repeat;
+}
+
+.footer__policy {
+  text-decoration: underline;
 }
 
 .footer .addresses {
@@ -3813,6 +3812,10 @@ body._preloader {
 
   .btn {
     font-size: 1.375rem;
+  }
+
+  .btn {
+    width: 31.25rem;
   }
 
   .btn {
@@ -4661,12 +4664,6 @@ body._preloader {
 
   .specialties {
     grid-template-columns: repeat(auto-fit, minmax(16.25rem, 1fr));
-    max-height: 350px;
-    overflow-y: auto;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-top: 1px solid rgb(10, 180, 65);
-    border-bottom: 1px solid rgb(10, 180, 65);
   }
 
   .contacts-subscribe__links .contacts-subscribe__call {
@@ -4694,9 +4691,18 @@ body._preloader {
             order: 1;
   }
 
+  .footer__logo:not(:last-child) {
+    margin-bottom: 1.875rem;
+  }
+
   .footer .footer__addresses,
   .footer .footer__policies {
     width: 100%;
+  }
+
+  .footer .footer__addresses:not(:last-child),
+  .footer .footer__policies:not(:last-child) {
+    margin-bottom: 1.875rem;
   }
 
   .footer .addresses {
@@ -4708,7 +4714,7 @@ body._preloader {
   }
 }
 
-@media (max-width: 22.5em) {
+@media (max-width: 22.875em) {
   .offer__button:not(:last-child) {
     width: 100%;
     margin-right: 0;
