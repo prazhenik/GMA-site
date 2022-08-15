@@ -9,8 +9,8 @@
 		display: flex;
 		flex-direction: column;	
 		align-items: center;
-		@include adaptiveValue("padding-top", 60 , 30, 0, 1200);
-		@include adaptiveValue("padding-bottom", 75 , 40, 0, 1200);
+		@include adaptiveValue("padding-top", 60 , 30, 2, 1200);
+		@include adaptiveValue("padding-bottom", 75 , 40, 2, 1200);
 	}
 	&__rows {
 		display: grid;
@@ -26,7 +26,7 @@
 		// .footer__row_top
 		&_top {
 			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-			@include adaptiveValue("font-size",20 ,14,  0, 1920);
+			@include adaptiveValue("font-size",20 ,14, 0, 1920);
 			grid-row-gap: rem(30);
 		}
 		// .footer__row_bottom
@@ -73,7 +73,6 @@
 		}
 }
 .addresses {
-	//padding-top:  rem(10);
 	text-align: end;
 	@media (max-width:$mobileSmall){
 		text-align: start;

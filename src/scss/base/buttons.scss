@@ -26,7 +26,7 @@
 	color: $text-color-btn;
 	font-weight: 600;
 	text-transform: uppercase;
-	@include adaptiveValue("width", $button-width-pc, $button-width-mob, 0, 1200);
+	@include adaptiveValue("width", $button-width-pc, $button-width-mob, 1, 1200);
 	@include adaptiveValue("height", $button-height-pc, $button-height-mob, 0, 1200);
 	height: 100%;
 	padding: rem(0) rem(20);

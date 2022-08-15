@@ -48,7 +48,6 @@
 	@include adaptiveValue("font-size", 46, 24, 0, 1200);
 	transition: opacity .5s ease, transform .5s ease;
 	z-index: 1;
-	//transform: translateX(-200%);
 	color: $text-color-accent;
 	font-weight: 500;
 	& span {
@@ -86,15 +85,14 @@ section{
 	position: relative;
 	overflow: hidden;
 	&:not(:first-child) {
-		@include adaptiveValue("padding-top", 150 , 80, 0, 1200);
-		@include adaptiveValue("padding-bottom", 150 , 80, 0, 1200);
+
 	}
 	&:nth-child(even){
 		position: relative;
 		background-color: $background-color-major;
 		color: $text-color-major;
-		@include adaptiveValue("padding-top", 130 , 60, 0, 1200);
-		@include adaptiveValue("padding-bottom", 130 , 60, 0, 1200);
+		@include adaptiveValue("padding-top", 100 , 50, 0, 1200);
+		@include adaptiveValue("padding-bottom", 100 , 50, 0, 1200);
 		& ._section-title{
 			color: $text-color-major;
 		}
@@ -103,6 +101,8 @@ section{
 		color: $text-color-secondary;
 		background-color: rgba($color: $background-color-secondary, $alpha: 1);
 		&:not(:first-child) {
+			@include adaptiveValue("padding-top", 200 , 100, 0, 1200);
+			@include adaptiveValue("padding-bottom", 200 , 100, 0, 1200);
 			-webkit-mask-image:
 			/* top mask PNG/SVG image */
 			url('@img/mask_top.png'),
