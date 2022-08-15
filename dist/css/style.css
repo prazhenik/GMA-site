@@ -2407,19 +2407,13 @@ section:first-child {
   color: rgb(255, 255, 255);
   font-weight: 600;
   text-transform: uppercase;
+  width: 100%;
   height: 100%;
   padding: 0rem 1.25rem;
   background-color: rgb(10, 180, 65);
   border-radius: 5px;
   -webkit-animation: breathe 2.5s infinite forwards;
           animation: breathe 2.5s infinite forwards;
-}
-
-.btn_popup,
-.btn_consult,
-.btn_partners,
-.btn_contacts {
-  width: 100%;
 }
 
 .btn span.ripple {
@@ -3815,11 +3809,13 @@ body._preloader {
   }
 
   .btn {
-    width: 31.25rem;
+    height: 4.6875rem;
   }
 
-  .btn {
-    height: 4.6875rem;
+  .btn_hero,
+  .btn_alhorithm,
+  .btn_capability {
+    width: 31.25rem;
   }
 
   .popup__content {
@@ -4644,7 +4640,9 @@ body._preloader {
 }
 
 @media (max-width: 36.06125em) {
-  .btn {
+  .btn_hero,
+  .btn_alhorithm,
+  .btn_capability {
     width: 80%;
   }
 
@@ -5749,13 +5747,17 @@ body._preloader {
 
 @media (min-width: 36.0625em) and (max-width: 75em) {
 @supports (width: clamp( 21.875rem , 13.1922150883rem  +  24.077046549vw , 31.25rem )) {
-    .btn {
+    .btn_hero,
+    .btn_alhorithm,
+    .btn_capability {
       width: clamp( 21.875rem , 13.1922150883rem  +  24.077046549vw , 31.25rem );
     }
 }
 
 @supports not (width: clamp( 21.875rem , 13.1922150883rem  +  24.077046549vw , 31.25rem )) {
-    .btn {
+    .btn_hero,
+    .btn_alhorithm,
+    .btn_capability {
       width: calc(21.875rem + 9.375 * (100vw - 36.0625rem) / 38.9375);
     }
 }

@@ -32,7 +32,7 @@
 	<meta name="theme-color" content="#1B3A77"> <!-- theme color -->
 	<!-- <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png"> -->
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220815164429">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220815174235">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<!-- npm install --save-dev t-scroll<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
@@ -217,7 +217,7 @@
 								</div>
 							</div>
 							<div class="algorithm__button _popup-link" data-popup='#callback'>
-								<button id="algorithmButton" data-value="Заявка на бесплатную консультацию" type="button" class="btn"><span>Оставить заявку</span></button>
+								<button id="algorithmButton" data-value="Заявка на бесплатную консультацию" type="button" class="btn btn_alhorithm"><span>Оставить заявку</span></button>
 							</div>
 						</div>
 					</div>
@@ -291,7 +291,7 @@
 										</p>
 									</div>
 									<div class="capability-offer__button _popup-link" data-popup='#callback'>
-										<button id="capabilityButton" data-value="Расскажите о ваших программах" type="button" class="btn"><span>Узнать о программах</span></button>
+										<button id="capabilityButton" data-value="Расскажите о ваших программах" type="button" class="btn btn_capability"><span>Узнать о программах</span></button>
 									</div>
 								</div>
 							</div>
@@ -312,7 +312,7 @@
 											ответит на все вопросы!
 										</p>
 										<div class="consult__form-wrapper form-wrapper">
-											<form id="form-consult" action="sendmail-consult.php" data-ajax="true" method="POST" class="consult__form form form-consult">
+											<form id="form-consult" action="sendmail-consult.php" data-popup-message="#success" data-ajax="true" method="POST" class="consult__form form form-consult">
 												<div class="form__item form__item_input">
 													<input id="form-consult-name" autocomplete="off" type="text" name="name" data-required="text" data-validate data-error="Please enter a valid name" placeholder="Ваше имя*" class="form__input _text _req">
 												</div>
@@ -391,7 +391,7 @@
 										<span>готовых принять пациента</span> по конкретному направлению.
 									</p>
 									<div class="partners__form-wrapper form-wrapper">
-										<form id="form-partners" action="sendmail-partners.php" data-ajax="true" method="POST" class="partners__form form form-partners">
+										<form id="form-partners" action="sendmail-partners.php" data-popup-message="#success" data-ajax="true" method="POST" class="partners__form form form-partners">
 											<div class="form__item form__item-input">
 												<input id="form-partners-name" autocomplete="off" type="text" name="name" data-required="text" data-validate data-error="Please enter a valid name" placeholder="Ваше имя*" class="form__input _text _req">
 											</div>
@@ -463,7 +463,7 @@
 										Узнайте больше о наших услугах и клиниках, заказав <span>бесплатную консультацию</span>.
 									</p>
 									<div class="contacts__form-wrapper form-wrapper">
-										<form id="form-contacts" action="sendmail-contacts.php" data-ajax="true" method="POST" class="contacts__form form form-contacts">
+										<form id="form-contacts" action="sendmail-contacts.php" data-popup-message="#success" data-ajax="true" method="POST" class="contacts__form form form-contacts">
 											<div class="form__item form__item-input">
 												<input id="form-contacts-name" autocomplete="off" type="text" name="name" data-required="text" data-validate data-error="Please enter a valid name" placeholder="Ваше имя*" class="form__input _text _req">
 											</div>
@@ -614,7 +614,7 @@
 	</div>
 	<!---------------------------------popup whis forms-------------------------------->
 
-	<script src="js/app.min.js?_v=20220815164429"></script>
+	<script src="js/app.min.js?_v=20220815174235"></script>
 
 
 </body>

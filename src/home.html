@@ -124,7 +124,7 @@
 							</div>
 							<div class="algorithm__button _popup-link" data-popup='#callback'>
 								<button id="algorithmButton" data-value="Заявка на бесплатную консультацию" type="button"
-									class="btn"><span>Оставить заявку</span></button>
+									class="btn btn_alhorithm"><span>Оставить заявку</span></button>
 							</div>
 						</div>
 					</div>
@@ -199,7 +199,7 @@
 									</div>
 									<div class="capability-offer__button _popup-link" data-popup='#callback'>
 										<button id="capabilityButton" data-value="Расскажите о ваших программах" type="button"
-											class="btn"><span>Узнать о программах</span></button>
+											class="btn btn_capability"><span>Узнать о программах</span></button>
 									</div>
 								</div>
 							</div>
@@ -220,7 +220,7 @@
 											ответит на все вопросы!
 										</p>
 										<div class="consult__form-wrapper form-wrapper">
-											<form id="form-consult" action="sendmail-consult.php" data-ajax="true" method="POST"
+											<form id="form-consult" action="sendmail-consult.php" data-popup-message="#success" data-ajax="true" method="POST"
 												class="consult__form form form-consult">
 												<div class="form__item form__item_input">
 													<input id="form-consult-name" autocomplete="off" type="text" name="name"
@@ -309,7 +309,7 @@
 										<span>готовых принять пациента</span> по конкретному направлению.
 									</p>
 									<div class="partners__form-wrapper form-wrapper">
-										<form id="form-partners" action="sendmail-partners.php" data-ajax="true" method="POST"
+										<form id="form-partners" action="sendmail-partners.php" data-popup-message="#success" data-ajax="true" method="POST"
 											class="partners__form form form-partners">
 											<div class="form__item form__item-input">
 												<input id="form-partners-name" autocomplete="off" type="text" name="name"
@@ -387,7 +387,7 @@
 										Узнайте больше о наших услугах и клиниках, заказав <span>бесплатную консультацию</span>.
 									</p>
 									<div class="contacts__form-wrapper form-wrapper">
-										<form id="form-contacts" action="sendmail-contacts.php" data-ajax="true" method="POST"
+										<form id="form-contacts" action="sendmail-contacts.php" data-popup-message="#success" data-ajax="true" method="POST"
 											class="contacts__form form form-contacts">
 											<div class="form__item form__item-input">
 												<input id="form-contacts-name" autocomplete="off" type="text" name="name"
