@@ -9,7 +9,7 @@
 	justify-content: center;
 	flex: 1 0 auto;
 	@include adaptiveValue("margin-left",30 , 15, 0, 1200 );
-	@include adaptiveValue("max-width",50 , 40, 1, 1200 );
+	@include adaptiveValue("max-width",50 , 40, 3, 1200 );
 	@media (max-width: rem(1200)) {
 		order: 3;
 	}
@@ -17,7 +17,7 @@
 		display: none;
 		position: relative;
 		@include adaptiveValue("height",30 ,20, 0, 1200);
-		@include adaptiveValue("width",50 , 40, 1, 1200);
+		@include adaptiveValue("width",50 , 40, 0, 1200);
 		cursor: pointer;
 		transition: all 0.2s ease;
 		@media (max-width: rem(1200)) {
@@ -55,6 +55,9 @@
 			left: 0;
 			border-radius: 2px;
 			opacity: 1;
+			@media (max-width:$mobileSmall){
+				height: rem(1);
+			}
 		}
 		&::before {
 			top: 0;

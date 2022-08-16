@@ -4918,40 +4918,12 @@
                 }), 500);
             }));
         }));
-        const hero = document.querySelector(".hero");
         const vidItem = document.querySelector(".hero__video video");
-        const playBtn = document.querySelector("._video-play-btn");
-        const playIcon = document.querySelector(".controls__play");
-        const pauseIcon = document.querySelector(".controls__pause");
         window.addEventListener("load", (() => {
             setTimeout((() => {
                 vidItem.hidden = false;
-            }), 100);
+            }), 0);
         }));
-        const play = () => {
-            hero.classList.add("_video_played");
-            setTimeout((function() {
-                vidItem.play();
-            }), 200);
-            playIcon.style.display = "none";
-            pauseIcon.style.display = "inline-block";
-            playIcon.classList.add("_icon-played");
-        };
-        const pause = () => {
-            hero.classList.remove("_video_played");
-            vidItem.pause();
-            playIcon.style.display = "inline-block";
-            pauseIcon.style.display = "none";
-        };
-        if ((window.onload || playBtn) && vidItem) {
-            playBtn.addEventListener("click", (() => {
-                if (hero.classList.contains("_video_played")) pause(); else play();
-            }));
-            document.addEventListener("scroll", (() => {
-                pause();
-                playIcon.classList.remove("_video_played");
-            }));
-        }
         window.addEventListener("load", windowLoad);
         function windowLoad() {
             function digitsCountersInit(digitsCountersItems) {
