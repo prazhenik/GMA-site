@@ -218,7 +218,7 @@ if ((window.onload || playBtn) && vidItem) {
 		pause()
 		playIcon.classList.remove('_video_played')
 	});
-	playBtn.addEventListener('mouseleave', pause);
+	//playBtn.addEventListener('mouseleave', pause);
 }
 
 

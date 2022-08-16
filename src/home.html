@@ -12,28 +12,31 @@
 				<section id="hero" class="hero">
 					<div class="hero__video video">
 						<div class="video__box">
-							<video hidden loop muted src="files/video/hero-vid_v3.webm"></video>
+							<video hidden autoplay muted src="files/video/GMA_v4.mp4"></video>
 						</div>
 					</div>
 					<div class="hero__outerContainer">
-						<div class="hero__map hero-map">
+						<!-- <div class="hero__map hero-map">
 							<div class="hero-map__box">
 							</div>
-						</div>
+						</div> -->
 						<div class="hero__innerContainer">
 							<div class="hero__content _section-content">
 								<div class="hero__offer offer">
-									<h1 class="offer__title _page-title">
-										Не теряйте время на медицину прошлого
-									</h1>
-									<p class="offer__subtitle _page-subtitle">
-										Профессиональная диагностика, лечение и реабилитация в ведущих профильных клиниках Европы.
-									</p>
+									<div class="offer__text">
+										<h1 class="offer__title _page-title" >
+											Не теряйте время на медицину прошлого
+										</h1>
+										<p class="offer__subtitle _page-subtitle">
+											Профессиональная диагностика, лечение и реабилитация в ведущих профильных клиниках
+											Европы.
+										</p>
+									</div>
 									<div class="offer__buttons">
 										<div class="offer__button _popup-link" data-popup='#callback'>
 											<button type="button" class="btn btn_hero"><span>Получить консультацию</span></button>
 										</div>
-										<div class="offer__button controls">
+										<!-- <div class="offer__button controls">
 											<div class="controls__box _video-play-btn">
 												<div class="controls__play">
 													<svg class="play" width="20" height="20" viewBox="0 0 100 100">
@@ -55,7 +58,7 @@
 													</svg>
 												</div>
 											</div>
-										</div>
+										</div> -->
 									</div>
 								</div>
 							</div>
@@ -122,7 +125,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="algorithm__button _popup-link" data-popup='#callback'>
+							<div class="algorithm__button _popup-link" data-aos="fade-up" data-popup='#callback'>
 								<button id="algorithmButton" data-value="Заявка на бесплатную консультацию" type="button"
 									class="btn btn_alhorithm"><span>Оставить заявку</span></button>
 							</div>
@@ -132,27 +135,27 @@
 				<section id="capability" class="capability">
 					<div class="capability__outerContainer">
 						<div class="capability__innerContainer">
-							<h2 data-aos="fade-right" class="capability__title _section-title">
+							<h2 data-aos="fade-right" data-aos-offset="200" class="capability__title _section-title">
 								<span>Знаем</span> как вам помочь
 							</h2>
 							<div class="capability__content _section-content">
 								<div class="capability__text">
-									<p>
+									<p data-aos="fade-up">
 										Наши программы разработаны с учетом передового <span>мирового научного и практического
 											опыта</span> в
 										диагностике, лечении и реабилитации пациентов.
 									</p>
-									<p>
+									<p data-aos="fade-up">
 										Они охватывают практически <span>весь спектр медицинских направлений</span>, позволяя
 										определить
 										максимально эффективный комплекс исследований и процедур в каждом конкретном случае.
 									</p>
 								</div>
 								<div class="capability__specialties specialties">
-									<div data-aos="flip-up"  data-aos-duration="1500" class="specialties__item">
+									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
 										<span>Комплексная диагностика</span>
 									</div>
-									<div data-aos="flip-up"  data-aos-duration="1500"class="specialties__item">
+									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
 										<span>Реабилитация</span>
 									</div>
 									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
@@ -191,13 +194,13 @@
 								</div>
 								<div class="capability__offer capability-offer">
 									<div class="capability-offer__proposition">
-										<p>
+										<p data-aos="fade-up">
 											О программах по этим и другим направлениям Вы можете <span>бесплатно
 												проконсультироваться</span> у наших
 											специалистов.
 										</p>
 									</div>
-									<div class="capability-offer__button _popup-link" data-popup='#callback'>
+									<div class="capability-offer__button _popup-link" data-aos="fade-up" data-popup='#callback'>
 										<button id="capabilityButton" data-value="Расскажите о ваших программах" type="button"
 											class="btn btn_capability"><span>Узнать о программах</span></button>
 									</div>
@@ -213,15 +216,15 @@
 								<span>Заполните</span> всего два поля
 							</h2>
 							<div class="consult__content _section-content">
-								<div class="consult__left">
-									<div data-aos="fade-in" class="consult__form-block">
+								<div class="consult__left" data-aos="fade-up">
+									<div class="consult__form-block">
 										<p class="consult__proposition">
 											Наш сотрудник обязательно Вам перезвонит, <span>бесплатно</span> проконсультирует и
 											ответит на все вопросы!
 										</p>
 										<div class="consult__form-wrapper form-wrapper">
-											<form id="form-consult" action="sendmail-consult.php" data-popup-message="#success" data-ajax="true" method="POST"
-												class="consult__form form form-consult">
+											<form id="form-consult" action="sendmail-consult.php" data-popup-message="#success"
+												data-ajax="true" method="POST" class="consult__form form form-consult">
 												<div class="form__item form__item_input">
 													<input id="form-consult-name" autocomplete="off" type="text" name="name"
 														data-required="text" data-validate data-error="Please enter a valid name"
@@ -241,7 +244,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="consult__right">
+								<div class="consult__right" data-aos="fade-up">
 									<div class="consult__photo-block photo-block">
 										<div class="photo-block__photo photo-ibg">
 											<img data-src="@img/call_center.png" alt="call_center.png">
@@ -293,24 +296,24 @@
 							</h2>
 							<div class="partners__content _section-content">
 								<div class="partners__text">
-									<p class="partners__paragraph">
+									<p class="partners__paragraph" data-aos="fade-up">
 										Наши партнеры - это ведущие профильные клиники и реабилитационные центры из <span>Греции,
 											Испании, Германии, Франции, Турции, Израиля.</span>
 									</p>
-									<p class="partners__paragraph">
+									<p class="partners__paragraph" data-aos="fade-up">
 										Каждый из них имеет безупречную репутацию, новейшее лечебно-диагностическое оборудование,
 										лабораторную базу, и, самое главное, <span>высококвалифицированный медицинский
 											состав.</span>
 									</p>
 								</div>
-								<div class="partners__form-block">
+								<div class="partners__form-block" data-aos="fade-up">
 									<p class="partners__proposition">
 										Свяжитесь с нами и наши консультанты дадут наиболее актуальную информацию о партнерах,
 										<span>готовых принять пациента</span> по конкретному направлению.
 									</p>
 									<div class="partners__form-wrapper form-wrapper">
-										<form id="form-partners" action="sendmail-partners.php" data-popup-message="#success" data-ajax="true" method="POST"
-											class="partners__form form form-partners">
+										<form id="form-partners" action="sendmail-partners.php" data-popup-message="#success"
+											data-ajax="true" method="POST" class="partners__form form form-partners">
 											<div class="form__item form__item-input">
 												<input id="form-partners-name" autocomplete="off" type="text" name="name"
 													data-required="text" data-validate data-error="Please enter a valid name"
@@ -338,14 +341,14 @@
 								<span>Цифры</span> расскажут о нас
 							</h2>
 							<div class="about__content _section-content">
-								<div class="about__text">
+								<div class="about__text" data-aos="fade-up">
 									<p><span>Сервис Global Medical Assistance</span> берет свое начало в 2018 году.</p>
 									<p><span>Наша цель</span> - помочь пациентам из любой точки мира выбрать наиболее подходящий
 										медицинский центр в Европе для прохождения обследования, лечения, либо реабилитации.</p>
 									<p><span>Наши услуги бесплатны</span> для клиентов, это наш вклад в их счастливое здоровое
 										будущее.</p>
 								</div>
-								<div class="about__counters counters">
+								<div class="about__counters counters" data-aos="fade-up">
 									<div class="counters__item">
 										<div class="counters__digits">с <span data-digits-counter class="digit">2018</span></div>
 										<div class="counters__desc">
@@ -382,13 +385,13 @@
 								<span>Обращайтесь</span>, мы всегда на связи
 							</h2>
 							<div class="contacts__content _section-content">
-								<div class="contacts__form-block">
+								<div class="contacts__form-block" data-aos="fade-up">
 									<p class="contacts__proposition">
 										Узнайте больше о наших услугах и клиниках, заказав <span>бесплатную консультацию</span>.
 									</p>
 									<div class="contacts__form-wrapper form-wrapper">
-										<form id="form-contacts" action="sendmail-contacts.php" data-popup-message="#success" data-ajax="true" method="POST"
-											class="contacts__form form form-contacts">
+										<form id="form-contacts" action="sendmail-contacts.php" data-popup-message="#success"
+											data-ajax="true" method="POST" class="contacts__form form form-contacts">
 											<div class="form__item form__item-input">
 												<input id="form-contacts-name" autocomplete="off" type="text" name="name"
 													data-required="text" data-validate data-error="Please enter a valid name"
@@ -410,13 +413,14 @@
 
 								</div>
 								<div class="contacts__subscribe contacts-subscribe">
-									<div class="contacts-subscribe__text">
+									<div class="contacts-subscribe__text"  data-aos="fade-up">
 										<p><span>Подписывайтесь</span>, на наши странички в <span>Instagram и Facebook</span>,
 											задавайте вопросы и первыми узнавайте свежие новости <span>GMA - Global Medical
 												Assistance</span>.</p>
 										</в>
-										<div class="contacts-subscribe__links socials socials_fb">
-											<!--noindex--><a href="http://facebook.com" target="_blank"
+										<div class="contacts-subscribe__links socials"  data-aos="fade-up">
+											<!--noindex-->
+											<a href="http://facebook.com" target="_blank"
 												rel="nofollow noopener noreferrer" class="socials__link socials__link_fb">
 												<img class="icon_reg" src="@img/icons/fb_contacts.png" alt="fb_icon">
 												<img class="icon_hov" src="@img/icons/fb_hov_contacts.png" alt="fb_icon_hover">
@@ -425,7 +429,8 @@
 											<p class="contacts-subscribe__call">
 												Подпишитесь на нас
 											</p>
-											<!--noindex--><a href="http://instagram.com" target="_blank"
+											<!--noindex-->
+											<a href="http://instagram.com" target="_blank"
 												rel="nofollow noopener noreferrer" class="socials__link socials__link_insta">
 												<img class="icon_reg" src="@img/icons/insta_contacts.png" alt="insta_icon">
 												<img class="icon_hov" src="@img/icons/insta_hov_contacts.png"

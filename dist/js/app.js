@@ -4951,7 +4951,6 @@
                 pause();
                 playIcon.classList.remove("_video_played");
             }));
-            playBtn.addEventListener("mouseleave", pause);
         }
         window.addEventListener("load", windowLoad);
         function windowLoad() {

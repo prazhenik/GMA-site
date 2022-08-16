@@ -55,12 +55,11 @@
 	}
 	// .header-links__list
 	&__list {
-		display: inline-grid;
-		grid-template-columns: repeat(3, 1fr);
-		@include adaptiveValue("grid-column-gap", 20 , 10, 0, 768);
+		display: flex;
+		//@include adaptiveValue("grid-column-gap", 20 , 10, 0, 768);
 		@include adaptiveValue("height",40 ,25, 0, 1200 );
 		margin-left: rem(30);
-		margin-top: rem(3);
+		
 		
 
 	}
@@ -68,7 +67,7 @@
 	&__item {
 		display: inline-block;
 		&:not(:last-child) {
-			//@include adaptiveValue("margin-right",20 , 10, 768, 320, 1);
+			@include adaptiveValue("margin-right",20 , 10, 0, 768);
 		}
 	}
 	.socials__link {
@@ -98,9 +97,13 @@
 
 .lang {
 	position: relative;
+	//padding-bottom: rem(3);
+
+
 	// .lang__icon
 	&__icon {
-		display: flex;
+		vertical-align: middle;
+		display: inline-flex;
 		align-items: center;
 		justify-content: center;
 		@include adaptiveValue("width",40 ,25, 0, 1200,320);
@@ -192,6 +195,7 @@
 			color: $text-color-links;
 		}
 		&__link {
+			text-shadow: none;
 			transition: color .2s, background-color .2s;
 			&:hover,
 			&:active,

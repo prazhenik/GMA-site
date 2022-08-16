@@ -15,7 +15,7 @@
 			top: 0;
 			left: 0;
 			background: rgba($color: $background-color-other-1, $alpha: 1);
-			opacity: .8;
+			opacity: .0;
 			transition: opacity .5s;
 		}
 		& video {
@@ -48,6 +48,7 @@
 		min-height: 550px;
 		display: flex;
 		align-items: center;
+		//justify-content: center;
 		@media (max-width:$mobile){
 			height: calc(100vh - rem($header-height-mob));
 			align-items: flex-end;  
@@ -118,23 +119,41 @@
 	max-width: rem(850);
 	padding: rem(80) rem(0) rem(110);
 	width: 100%;
-	
-	@media (max-width:$mobile){
+	//text-align: center; 
+	@media (max-width:$mobileSmall){
 		text-align: center; 
+	}
+	&__text {
+		@include adaptiveValue("padding", 25 , 10, 0, 1200);
+		background-color: rgba($color: #fff, $alpha: .1);
+		backdrop-filter: blur(10px);
+		border-radius: 7px;
+		border: 1px solid;
+		border-color: rgba($color: $border-color-major, $alpha: .3) ;
+		&:not(:last-child) {
+			margin-bottom:  rem(60);
+			@media (max-width:$mobile){
+				margin-bottom:  rem(40);
+				font-weight: 500;  
+			}
+		}
 	}
 	// .offer__title
 	&__title,
 	&__subtitle {
+		//text-align: justify;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
 		transition: transform .35s ease;
 	}
 
 	&__buttons {
 		display: flex;
 		flex-wrap: wrap;
+		//justify-content: center;
 		&:not(:last-child) {
 			margin-bottom: rem(40);
 		}
-		@media (max-width:$mobile){
+		@media (max-width:$mobileSmall){
 			 justify-content: center; 
 		}
 	}
@@ -352,6 +371,7 @@
 		top: 0;
 		left: 0;
 		background: url('@img/contentImgs/cover_knowleges.jpg') center center / cover no-repeat;
+		background-attachment: fixed;
 		opacity: .2;
 		filter: saturate(0);
 	}
@@ -544,14 +564,15 @@
 		bottom: 0px;
 		left: 50%;
 		transform: translate(-50%);
-		background-color: rgba($color: $background-color-major, $alpha: .5);
-		backdrop-filter: blur(5px);
 		text-align: center;
 		max-width: rem(600);
 		width: 100%;
 		padding: rem(20);
-		border: 1px solid $border-color-major;
-		border-radius: rem(10);
+		background-color: rgba($color: #fff, $alpha: .1);
+		backdrop-filter: blur(10px);
+		border-radius: 7px;
+		border: 1px solid;
+		border-color: rgba($color: $border-color-major, $alpha: .8) ;
 		@media (max-width:$mobile){
 			bottom: rem(0);  
 		}
@@ -644,6 +665,7 @@
 		top: 0;
 		left: 0;
 		background: url('@img/contentImgs/cover_partners.jpg') center center / cover no-repeat;
+		background-attachment: fixed;
 		opacity: .2;
 		filter: saturate(0);
 	}
@@ -789,6 +811,7 @@
 		top: 0;
 		left: 0;
 		background: url('@img/contentImgs/cover_inTouch2.jpg') center right/ cover no-repeat;
+		background-attachment: fixed;
 		opacity: .2;
 		filter: saturate(0);
 	}

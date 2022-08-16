@@ -31,7 +31,7 @@
 	height: 100%;
 	padding: rem(0) rem(20);
 	background-color:  $background-color-button-major;
-	text-shadow: 2px 2px 3px rgba(0, 0, 0, .5);
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
 	border-radius: 5px;
 	animation: breathe 2.5s infinite forwards;
 
@@ -49,8 +49,8 @@
 
 	&_hero, &_alhorithm, &_capability {
 		@include adaptiveValue("width", $button-width-pc, $button-width-mob, 2, 1200, 577);
-		@media (max-width:$mobileSmall){
-			width: 80%; 
+		@media (max-width: $mobileSmall){
+			width: 100%; 
 		}
 	}
 	// ripple effect
