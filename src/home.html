@@ -9,16 +9,12 @@
 		@@include('html/_header.htm',{})
 		<main class="page">
 			<div class="page__body">
-				<section id="hero" class="hero">
+				<section class="hero">
 					<div class="hero__video video">
 						<div class="video__box">
-							<video hidden autoplay loop muted preload>
+							<video autoplay loop muted preload playsinline>
 								<source src="files/video/GMA_v4.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 							</video>
-							
-							<!-- <video hidden autoplay loop muted src="files/video/GMA_v4.mp4"></video> -->
-							<!-- <video hidden autoplay loop muted src="https://youtu.be/XUKwZZUFtcI"></video> -->
-							<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/vyfmiEPTzNo?controls=0&autoplay=1&&loop=1&playlist=vyfmiEPTzNo&modestbranding=1$showinfo=0" frameborder="0" allow="autoplay" title="YouTube video player"></iframe> -->
 						</div>
 					</div>
 					<div class="hero__outerContainer">
@@ -30,7 +26,7 @@
 							<div class="hero__content _section-content">
 								<div class="hero__offer offer">
 									<div class="offer__text">
-										<h1 class="offer__title _page-title" >
+										<h1 class="offer__title _page-title">
 											Не теряйте время на медицину прошлого
 										</h1>
 										<p class="offer__subtitle _page-subtitle">
@@ -71,7 +67,7 @@
 						</div>
 					</div>
 				</section>
-				<section id="algorithm" class="algorithm">
+				<section class="algorithm">
 					<div class="algorithm__outerContainer">
 						<div class="algorithm__innerContainer">
 							<h2 data-aos="fade-right" class="algorithm__title _section-title">
@@ -138,7 +134,7 @@
 						</div>
 					</div>
 				</section>
-				<section id="capability" class="capability">
+				<section class="capability">
 					<div class="capability__outerContainer">
 						<div class="capability__innerContainer">
 							<h2 data-aos="fade-right" data-aos-offset="200" class="capability__title _section-title">
@@ -158,43 +154,43 @@
 									</p>
 								</div>
 								<div class="capability__specialties specialties">
-									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
+									<div data-aos="flip-down" data-aos-duration="1500" class="specialties__item">
 										<span>Комплексная диагностика</span>
 									</div>
-									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
+									<div data-aos="flip-down" data-aos-duration="1500" class="specialties__item">
 										<span>Реабилитация</span>
 									</div>
-									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
+									<div data-aos="flip-down" data-aos-duration="1500" class="specialties__item">
 										<span>Лечение онкологии</span>
 									</div>
-									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
+									<div data-aos="flip-down" data-aos-duration="1500" class="specialties__item">
 										<span>Сосудистая хирургия и кардиология</span>
 									</div>
-									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
+									<div data-aos="flip-down" data-aos-duration="1500" class="specialties__item">
 										<span>Репродуктология</span>
 									</div>
-									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
+									<div data-aos="flip-down" data-aos-duration="1500" class="specialties__item">
 										<span>Ортопедия</span>
 									</div>
-									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
+									<div data-aos="flip-down" data-aos-duration="1500" class="specialties__item">
 										<span>Протезирование конечностей</span>
 									</div>
-									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
+									<div data-aos="flip-down" data-aos-duration="1500" class="specialties__item">
 										<span>Эндопротезирование суставов</span>
 									</div>
-									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
+									<div data-aos="flip-down" data-aos-duration="1500" class="specialties__item">
 										<span>Урология</span>
 									</div>
-									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
+									<div data-aos="flip-down" data-aos-duration="1500" class="specialties__item">
 										<span>Трансплантология</span>
 									</div>
-									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
+									<div data-aos="flip-down" data-aos-duration="1500" class="specialties__item">
 										<span>Малоинвазивная хирургия</span>
 									</div>
-									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
+									<div data-aos="flip-down" data-aos-duration="1500" class="specialties__item">
 										<span>Неврология</span>
 									</div>
-									<div data-aos="flip-up" data-aos-duration="1500" class="specialties__item">
+									<div data-aos="flip-down" data-aos-duration="1500" class="specialties__item">
 										<span>Нейрохирургия</span>
 									</div>
 								</div>
@@ -215,7 +211,7 @@
 						</div>
 					</div>
 				</section>
-				<section id="consult" class="consult">
+				<section class="consult">
 					<div class="consult__outerContainer">
 						<div class="consult__innerContainer">
 							<h2 data-aos="fade-right" class="consult__title _section-title">
@@ -239,7 +235,7 @@
 												<div class="form__item form__item_input">
 													<input id="form-consult-phone" autocomplete="off" type="tel" name="phone"
 														data-required="phone" data-validate data-value="+"
-														data-error="Enter your full phone number without spaces"
+														data-error="+XXXXXXXXXXXX"
 														placeholder="Ваш номер телефона*" class="form__input _phone _req">
 												</div>
 												<div class="form__submit form__submit_consult">
@@ -294,7 +290,7 @@
 						</div>
 					</div>
 				</section>
-				<section id="partners" class="partners">
+				<section class="partners">
 					<div class="partners__outerContainer">
 						<div class="partners__innerContainer">
 							<h2 data-aos="fade-right" class="partners__title _section-title">
@@ -328,8 +324,8 @@
 											<div class="form__item form__item-input">
 												<input id="form-partners-phone" autocomplete="off" type="tel" name="phone"
 													data-required="phone" data-validate data-value="+"
-													data-error="Enter your full phone number without spaces"
-													placeholder="Ваш номер телефона*" class="form__input _phone _req">
+													data-error="+XXXXXXXXXXXX" placeholder="Ваш номер телефона*"
+													class="form__input _phone _req">
 											</div>
 											<div class="form__submit form__submit_partners">
 												<button type="submit" class="btn btn_partners"><span>Выбрать клинику</span></button>
@@ -340,7 +336,7 @@
 							</div>
 						</div>
 				</section>
-				<section id="about" class="about">
+				<section class="about">
 					<div class="about__outerContainer">
 						<div class="about__innerContainer">
 							<h2 data-aos="fade-right" class="about__title _section-title">
@@ -384,7 +380,7 @@
 						</div>
 					</div>
 				</section>
-				<section id="contacts" class="contacts">
+				<section class="contacts">
 					<div class="contacts__outerContainer">
 						<div class="contacts__innerContainer">
 							<h2 data-aos="fade-right" class="contacts__title _section-title">
@@ -406,7 +402,7 @@
 											<div class="form__item form__item-input">
 												<input id="form-contacts-phone" autocomplete="off" type="tel" name="phone"
 													data-required="phone" data-validate
-													data-error="Enter your full phone number without spaces"
+													data-error="+XXXXXXXXXXXX"
 													placeholder="Ваш номер телефона*" data-value="+"
 													class="form__input _phone _req ">
 											</div>
@@ -419,15 +415,15 @@
 
 								</div>
 								<div class="contacts__subscribe contacts-subscribe">
-									<div class="contacts-subscribe__text"  data-aos="fade-up">
+									<div class="contacts-subscribe__text" data-aos="fade-up">
 										<p><span>Подписывайтесь</span>, на наши странички в <span>Instagram и Facebook</span>,
 											задавайте вопросы и первыми узнавайте свежие новости <span>GMA - Global Medical
 												Assistance</span>.</p>
 										</в>
-										<div class="contacts-subscribe__links socials"  data-aos="fade-up">
+										<div class="contacts-subscribe__links socials" data-aos="fade-up">
 											<!--noindex-->
-											<a href="http://facebook.com" target="_blank"
-												rel="nofollow noopener noreferrer" class="socials__link socials__link_fb">
+											<a href="http://facebook.com" target="_blank" rel="nofollow noopener noreferrer"
+												class="socials__link socials__link_fb">
 												<img class="icon_reg" src="@img/icons/fb_contacts.png" alt="fb_icon">
 												<img class="icon_hov" src="@img/icons/fb_hov_contacts.png" alt="fb_icon_hover">
 											</a>
@@ -436,8 +432,8 @@
 												Подпишитесь на нас
 											</p>
 											<!--noindex-->
-											<a href="http://instagram.com" target="_blank"
-												rel="nofollow noopener noreferrer" class="socials__link socials__link_insta">
+											<a href="http://instagram.com" target="_blank" rel="nofollow noopener noreferrer"
+												class="socials__link socials__link_insta">
 												<img class="icon_reg" src="@img/icons/insta_contacts.png" alt="insta_icon">
 												<img class="icon_hov" src="@img/icons/insta_hov_contacts.png"
 													alt="insta_icon_hover">

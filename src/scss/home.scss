@@ -14,9 +14,9 @@
 			height: 100%;
 			top: 0;
 			left: 0;
-			//background: rgba($color: $background-color-other-1, $alpha: 1);
-			//opacity: .0;
+			background: url('@img/contentImgs/vid_preview.png') center right/ cover no-repeat;;
 			transition: opacity .5s;
+			z-index: -1;
 		}
 		& video {
 			width: 100%;
@@ -75,35 +75,35 @@
 	}
 }
 
-.hero-map{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	&__box{
-		position: relative;
-		width: 100%;
-		height: 100%;
-		max-width: rem(800);
-		top: 0;
-		left: 0;
-		transform: translate(0, 0);
-		margin-left: auto;
-		background: url('@img/EU_map.png') center center/contain no-repeat;
-		transition: transform .3s, opacity .15s;
-		opacity: 1;
-		@media (max-width:$mobile){
-			background: url('@img/EU_map.png') center top/cover no-repeat; 
-		}
-		@media (any-hover: hover){
-			&:hover{
-				transform: scale(1.01);
-				transition: transform .3s;
-			}
-		}
-	}
-}
+// .hero-map{
+// 	position: absolute;
+// 	width: 100%;
+// 	height: 100%;
+// 	top: 0;
+// 	left: 0;
+// 	&__box{
+// 		position: relative;
+// 		width: 100%;
+// 		height: 100%;
+// 		max-width: rem(800);
+// 		top: 0;
+// 		left: 0;
+// 		transform: translate(0, 0);
+// 		margin-left: auto;
+// 		background: url('@img/EU_map.png') center center/contain no-repeat;
+// 		transition: transform .3s, opacity .15s;
+// 		opacity: 1;
+// 		@media (max-width:$mobile){
+// 			background: url('@img/EU_map.png') center top/cover no-repeat; 
+// 		}
+// 		@media (any-hover: hover){
+// 			&:hover{
+// 				transform: scale(1.01);
+// 				transition: transform .3s;
+// 			}
+// 		}
+// 	}
+// }
 
 .video {
 	// .video__box
@@ -116,7 +116,7 @@
 
 .offer {
 	position: relative;
-	max-width: rem(850);
+	max-width: rem(920);
 	padding: rem(80) rem(0) rem(110);
 	width: 100%;
 	//text-align: center; 
@@ -124,12 +124,15 @@
 		text-align: center; 
 	}
 	&__text {
-		@include adaptiveValue("padding", 25 , 10, 0, 1200);
+		padding: rem(30) rem(0);
+		@include adaptiveValue("padding-left", 60 , 10, 0, 1200);
+		@include adaptiveValue("padding-right", 60 , 10, 0, 1200);
 		background-color: rgba($color: #fff, $alpha: .1);
 		backdrop-filter: blur(10px);
 		border-radius: 7px;
 		border: 1px solid;
 		border-color: rgba($color: $border-color-major, $alpha: .3) ;
+		box-shadow:inset 0px 0px 5px rgba($color: #fff, $alpha: .4), 1px 2px 6px rgba($color: #000, $alpha: .2);
 		&:not(:last-child) {
 			margin-bottom:  rem(60);
 			@media (max-width:$mobile){
@@ -167,81 +170,81 @@
 	}
 }
 
-.controls {
-	margin-left: rem(15);
-	@media (max-width: $mobileSmall) {
-		margin-left: rem(0);
-		margin-top: rem(30);
-	}
-	// .controls__box
-	&__box {
-		position: relative;
-		@include adaptiveValue("width", 75, 50, 0, 1200);
-		@include adaptiveValue("height", 75, 50, 0, 1200);
-		border-radius: 7px;
-		border: $border-color-button 1px solid;
-		display: inline-block;
-		cursor: pointer;
-		transition: transform .1s;
-		@media (any-hover: hover){
-			&:hover{
-				border: $border-color-other-3 2px solid;
-				transform: scale(1.05);
-				transition: transform .1s;
+// .controls {
+// 	margin-left: rem(15);
+// 	@media (max-width: $mobileSmall) {
+// 		margin-left: rem(0);
+// 		margin-top: rem(30);
+// 	}
+// 	// .controls__box
+// 	&__box {
+// 		position: relative;
+// 		@include adaptiveValue("width", 75, 50, 0, 1200);
+// 		@include adaptiveValue("height", 75, 50, 0, 1200);
+// 		border-radius: 7px;
+// 		border: $border-color-button 1px solid;
+// 		display: inline-block;
+// 		cursor: pointer;
+// 		transition: transform .1s;
+// 		@media (any-hover: hover){
+// 			&:hover{
+// 				border: $border-color-other-3 2px solid;
+// 				transform: scale(1.05);
+// 				transition: transform .1s;
 
-			}
-		}
-		&:active{
-			border: $border-color-other-3 2px solid;
-			transform: scale(1.1);
-			transition: transform .2s;
-		}
-	}
-// .controls__play
-	&__play {
-		position: absolute;
-		width:100%;
-		height: 100%;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		& svg {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-			@include adaptiveValue("width", 80, 50, 0, 1200);
-			@include adaptiveValue("height", 80, 50, 0, 1200);
-			pointer-events: none;
-			& path {
-				fill: $background-color-major;
-				transition: fill .2s ease;
-			}
-		}
-	}
-	&__pause {
-		display: none;
-		position: absolute;
-		width:100%;
-		height: 100%;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		& svg {
-			position: absolute;
-			@include adaptiveValue("width", 50, 30, 0, 1200);
-			@include adaptiveValue("height", 50, 30, 0, 1200);
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-			pointer-events: none;
-			& rect {
-				fill: $background-color-major;
-				transition: fill .2s ease;
-			}
-		}
-	}
-}
+// 			}
+// 		}
+// 		&:active{
+// 			border: $border-color-other-3 2px solid;
+// 			transform: scale(1.1);
+// 			transition: transform .2s;
+// 		}
+// 	}
+// // .controls__play
+// 	&__play {
+// 		position: absolute;
+// 		width:100%;
+// 		height: 100%;
+// 		top: 50%;
+// 		left: 50%;
+// 		transform: translate(-50%, -50%);
+// 		& svg {
+// 			position: absolute;
+// 			left: 50%;
+// 			top: 50%;
+// 			transform: translate(-50%, -50%);
+// 			@include adaptiveValue("width", 80, 50, 0, 1200);
+// 			@include adaptiveValue("height", 80, 50, 0, 1200);
+// 			pointer-events: none;
+// 			& path {
+// 				fill: $background-color-major;
+// 				transition: fill .2s ease;
+// 			}
+// 		}
+// 	}
+// 	&__pause {
+// 		display: none;
+// 		position: absolute;
+// 		width:100%;
+// 		height: 100%;
+// 		top: 50%;
+// 		left: 50%;
+// 		transform: translate(-50%, -50%);
+// 		& svg {
+// 			position: absolute;
+// 			@include adaptiveValue("width", 50, 30, 0, 1200);
+// 			@include adaptiveValue("height", 50, 30, 0, 1200);
+// 			left: 50%;
+// 			top: 50%;
+// 			transform: translate(-50%, -50%);
+// 			pointer-events: none;
+// 			& rect {
+// 				fill: $background-color-major;
+// 				transition: fill .2s ease;
+// 			}
+// 		}
+// 	}
+// }
 
 //-------------------algorithm----------------------
 
@@ -353,6 +356,7 @@
 		flex: 1 0 auto;
 		justify-content: center;
 		@include adaptiveValue("font-size", 20, 16, 0, 1200);
+		font-weight: 500;
 		line-height: math.div(30,22 );
 		letter-spacing: -0.5px;
 	}
@@ -442,13 +446,15 @@
 		text-transform: uppercase;
 		//color: $text-color-major;
 		color: $text-color-secondary;
-		border: 1px solid $border-color-major;
 		padding: rem(5) rem(15);
 		text-align: center;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex: 1 1 25%;
+		border: 1px solid;
+		border-color: rgba($color: $border-color-major, $alpha: .3) ;
+		box-shadow:inset 0px 0px 5px rgba($color: #fff, $alpha: .4), 1px 2px 6px rgba($color: #000, $alpha: .2);
 		@media (any-hover: hover){
 			&:hover{
 				animation: shake2 4s 0s both ease-in;
