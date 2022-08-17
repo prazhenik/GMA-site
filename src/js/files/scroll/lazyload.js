@@ -7,5 +7,11 @@ const lazyMedia = new LazyLoad({
 	use_native: true
 });
 
+// Instance using native lazy loading
+const lazyBackground = new LazyLoad({
+	elements_selector: '[data-bg],.lazy',
+	class_loaded: '_lazy-loaded',
+});
+
 // Обновить модуль
-//lazyMedia.update();
+lazyMedia.update();

@@ -2907,7 +2907,6 @@ body._preloader {
   height: 100%;
   top: 0;
   left: 0;
-  background: url("../img/contentImgs/vid_preview.png") center right/cover no-repeat;
   -webkit-transition: opacity 0.5s;
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
@@ -3137,6 +3136,10 @@ body._preloader {
 
 .capability {
   position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .capability::before {
@@ -3146,11 +3149,10 @@ body._preloader {
   height: 100%;
   top: 0;
   left: 0;
-  background: url("../img/contentImgs/cover_knowleges.jpg") center center/cover no-repeat;
-  background-attachment: fixed;
-  opacity: 0.2;
-  -webkit-filter: saturate(0);
-          filter: saturate(0);
+  opacity: 0.8;
+  background-color: rgb(30, 60, 120);
+  -webkit-backdrop-filter: saturate(0);
+          backdrop-filter: saturate(0);
 }
 
 .capability__content {
@@ -3348,6 +3350,10 @@ body._preloader {
 
 .partners {
   position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .partners::before {
@@ -3357,11 +3363,10 @@ body._preloader {
   height: 100%;
   top: 0;
   left: 0;
-  background: url("../img/contentImgs/cover_partners.jpg") center center/cover no-repeat;
-  background-attachment: fixed;
-  opacity: 0.2;
-  -webkit-filter: saturate(0);
-          filter: saturate(0);
+  opacity: 0.8;
+  background-color: rgb(30, 60, 120);
+  -webkit-backdrop-filter: saturate(0);
+          backdrop-filter: saturate(0);
 }
 
 .partners__content {
@@ -3445,6 +3450,10 @@ body._preloader {
 
 .contacts {
   position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .contacts::before {
@@ -3454,11 +3463,10 @@ body._preloader {
   height: 100%;
   top: 0;
   left: 0;
-  background: url("../img/contentImgs/cover_inTouch2.jpg") center right/cover no-repeat;
-  background-attachment: fixed;
-  opacity: 0.2;
-  -webkit-filter: saturate(0);
-          filter: saturate(0);
+  opacity: 0.8;
+  background-color: rgb(30, 60, 120);
+  -webkit-backdrop-filter: saturate(0);
+          backdrop-filter: saturate(0);
 }
 
 .contacts__content {

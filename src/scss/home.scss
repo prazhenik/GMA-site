@@ -14,7 +14,7 @@
 			height: 100%;
 			top: 0;
 			left: 0;
-			background: url('@img/contentImgs/vid_preview.png') center right/ cover no-repeat;;
+			//background: url('@img/contentImgs/vid_preview.png') center right/ cover no-repeat;;
 			transition: opacity .5s;
 			z-index: -1;
 		}
@@ -367,6 +367,10 @@
 
 .capability {
 	position: relative;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 	&::before{
 		content:'';
 		position: absolute;
@@ -374,10 +378,12 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		background: url('@img/contentImgs/cover_knowleges.jpg') center center / cover no-repeat;
-		background-attachment: fixed;
-		opacity: .2;
-		filter: saturate(0);
+		opacity: .8;
+		background-color: $background-color-secondary;
+		backdrop-filter: saturate(0);
+
+		//background: url('@img/contentImgs/cover_knowleges.jpg') center center / cover no-repeat;
+		
 	}
 		
 	// .capability__content
@@ -663,6 +669,10 @@
 
 .partners {
 	position: relative;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 	&::before{
 		content:'';
 		position: absolute;
@@ -670,10 +680,9 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		background: url('@img/contentImgs/cover_partners.jpg') center center / cover no-repeat;
-		background-attachment: fixed;
-		opacity: .2;
-		filter: saturate(0);
+		opacity: .8;
+		background-color: $background-color-secondary;
+		backdrop-filter: saturate(0);
 	}
 	// .partners__outerContainer
 	&__outerContainer {
@@ -809,6 +818,10 @@
 
 .contacts {
 	position: relative;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 	&::before{
 		content:'';
 		position: absolute;
@@ -816,10 +829,9 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		background: url('@img/contentImgs/cover_inTouch2.jpg') center right/ cover no-repeat;
-		background-attachment: fixed;
-		opacity: .2;
-		filter: saturate(0);
+		opacity: .8;
+		background-color: $background-color-secondary;
+		backdrop-filter: saturate(0);
 	}
 	// .contacts__outerContainer
 	&__outerContainer {

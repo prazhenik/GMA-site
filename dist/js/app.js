@@ -4574,11 +4574,16 @@
         const inputMasks = document.querySelectorAll("input");
         if (inputMasks.length) flsModules.inputmask = Inputmask().mask(inputMasks);
         var lazyload_min = __webpack_require__(732);
-        new lazyload_min({
+        const lazyMedia = new lazyload_min({
             elements_selector: "[data-src],[data-srcset]",
             class_loaded: "_lazy-loaded",
             use_native: true
         });
+        new lazyload_min({
+            elements_selector: "[data-bg],.lazy",
+            class_loaded: "_lazy-loaded"
+        });
+        lazyMedia.update();
         var aos = __webpack_require__(711);
         aos.init({
             disable: false,
