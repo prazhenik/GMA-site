@@ -32,7 +32,7 @@
 	<meta name="theme-color" content="#1B3A77"> <!-- theme color -->
 	<!-- <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png"> -->
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220816205218">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220817154746">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<!-- npm install --save-dev t-scroll<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
@@ -103,7 +103,13 @@
 				<section id="hero" class="hero">
 					<div class="hero__video video">
 						<div class="video__box">
-							<video hidden autoplay loop muted src="files/video/GMA_v4.mp4"></video>
+							<video hidden autoplay loop muted preload>
+								<source src="files/video/GMA_v4.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+							</video>
+
+							<!-- <video hidden autoplay loop muted src="files/video/GMA_v4.mp4"></video> -->
+							<!-- <video hidden autoplay loop muted src="https://youtu.be/XUKwZZUFtcI"></video> -->
+							<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/vyfmiEPTzNo?controls=0&autoplay=1&&loop=1&playlist=vyfmiEPTzNo&modestbranding=1$showinfo=0" frameborder="0" allow="autoplay" title="YouTube video player"></iframe> -->
 						</div>
 					</div>
 					<div class="hero__outerContainer">
@@ -616,7 +622,7 @@
 	</div>
 	<!---------------------------------popup whis forms-------------------------------->
 
-	<script src="js/app.min.js?_v=20220816205218"></script>
+	<script src="js/app.min.js?_v=20220817154746"></script>
 
 
 </body>
