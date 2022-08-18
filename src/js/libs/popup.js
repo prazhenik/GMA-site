@@ -362,3 +362,18 @@ popupLogging(message) {
 }
 // Запускаем и добавляем в объект модулей
 flsModules.popup = new Popup({});
+
+
+
+// ----------------------------cookies--------------------------------------------
+
+const cookiesPanel = document.querySelector('#cookies')
+const closePanel = document.querySelector('.panel__btn')
+
+if(cookiesPanel){
+	closePanel.addEventListener('click', ()=> {
+		cookiesPanel.style.transform = 'translateY(100%)'
+	})
+}
+
+

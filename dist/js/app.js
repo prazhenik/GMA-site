@@ -4324,6 +4324,11 @@
             }
         }
         flsModules.popup = new Popup({});
+        const cookiesPanel = document.querySelector("#cookies");
+        const closePanel = document.querySelector(".panel__btn");
+        if (cookiesPanel) closePanel.addEventListener("click", (() => {
+            cookiesPanel.style.transform = "translateY(100%)";
+        }));
         var smooth_scroll_polyfills_min = __webpack_require__(2);
         let gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
             const targetBlockElement = document.querySelector(targetBlock);

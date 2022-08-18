@@ -1776,7 +1776,7 @@ section:first-child {
   line-height: 1.5;
   text-align: justify;
   padding-left: 0.9375rem;
-  border-left: 2px solid rgb(35, 115, 60);
+  border-left: 2px solid rgb(10, 180, 65);
 }
 
 [class*=__proposition] span {
@@ -2583,6 +2583,56 @@ section:first-child {
   background-color: rgb(30, 60, 120);
 }
 
+.panel_cookies {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgb(30, 60, 120);
+  color: rgb(240, 240, 240);
+  padding: 1.25rem 1.25rem;
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+  transition: -webkit-transform 0.5s ease-in;
+  -o-transition: transform 0.5s ease-in;
+  transition: transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+}
+
+.panel__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  max-width: 37.5rem;
+}
+
+.panel__text {
+  line-height: 1.3333333333;
+  text-align: justify;
+}
+
+.panel__text:not(:last-child) {
+  margin-right: 1.25rem;
+}
+
+.panel__link {
+  font-weight: 600;
+  text-decoration: underline !important;
+  white-space: nowrap;
+}
+
+.panel__btn {
+  width: auto;
+  min-width: 0;
+}
+
 body {
   height: calc(var(--vh, 1vh) * 100);
   min-height: -webkit-fill-available;
@@ -2922,7 +2972,7 @@ body._preloader {
 
 .hero__video video {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   max-height: 62.5rem;
   top: 0%;
   left: 0%;
@@ -3393,7 +3443,7 @@ body._preloader {
 }
 
 .tel-block_consult .tel-block__tel:hover {
-  color: rgb(35, 155, 75);
+  color: rgb(10, 180, 65);
   -webkit-transition: color 0.2s;
   -o-transition: color 0.2s;
   transition: color 0.2s;
@@ -3673,6 +3723,12 @@ body._preloader {
   height: 1.875rem;
 }
 
+@media (min-width: 161.875em) {
+  .panel__content {
+    max-width: 75rem;
+  }
+}
+
 @media (min-width: 48em) {
   .header__content {
     height: 4.6875rem;
@@ -3842,6 +3898,10 @@ body._preloader {
 
   .popup__subtitle_success {
     font-size: 1.25rem;
+  }
+
+  .panel__text {
+    font-size: 0.875rem;
   }
 
   .header-links__list {
@@ -4226,6 +4286,14 @@ body._preloader {
     font-size: 0.875rem;
   }
 
+  .panel__content {
+    max-width: 37.5rem;
+  }
+
+  .panel__text {
+    font-size: 0.625rem;
+  }
+
   .header__content {
     height: 3.125rem;
   }
@@ -4588,7 +4656,7 @@ body._preloader {
   }
 
   [class*=__proposition] {
-    border-left: 1px solid rgb(35, 115, 60);
+    border-left: 1px solid rgb(10, 180, 65);
   }
 
   .header-links .socials__link {
@@ -4629,7 +4697,7 @@ body._preloader {
   .menu__icon span,
   .menu__icon::before,
   .menu__icon::after {
-    height: 0.125rem;
+    height: 0.0625rem;
   }
 
   .btn_hero,
@@ -5145,6 +5213,18 @@ body._preloader {
 @supports not (font-size: clamp( 0.875rem , 0.7386363636rem  +  0.6818181818vw , 1.25rem )) {
     .popup__subtitle_success {
       font-size: calc(0.875rem + 0.375 * (100vw - 20rem) / 55);
+    }
+}
+
+@supports (font-size: clamp( 0.625rem , 0.5340909091rem  +  0.4545454545vw , 0.875rem )) {
+    .panel__text {
+      font-size: clamp( 0.625rem , 0.5340909091rem  +  0.4545454545vw , 0.875rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.625rem , 0.5340909091rem  +  0.4545454545vw , 0.875rem )) {
+    .panel__text {
+      font-size: calc(0.625rem + 0.25 * (100vw - 20rem) / 55);
     }
 }
 
@@ -5789,6 +5869,20 @@ body._preloader {
 @supports not (margin-right: clamp( 0.625rem , -1.6904093098rem  +  6.4205457464vw , 3.125rem )) {
     .contacts-subscribe__links .contacts-subscribe__call {
       margin-right: calc(0.625rem + 2.5 * (100vw - 36.0625rem) / 38.9375);
+    }
+}
+}
+
+@media (min-width: 20em) and (max-width: 161.875em) {
+@supports (max-width: clamp( 37.5rem , 32.2136563877rem  +  26.4317180617vw , 75rem )) {
+    .panel__content {
+      max-width: clamp( 37.5rem , 32.2136563877rem  +  26.4317180617vw , 75rem );
+    }
+}
+
+@supports not (max-width: clamp( 37.5rem , 32.2136563877rem  +  26.4317180617vw , 75rem )) {
+    .panel__content {
+      max-width: calc(37.5rem + 37.5 * (100vw - 20rem) / 141.875);
     }
 }
 }

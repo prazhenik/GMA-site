@@ -16,12 +16,13 @@
 
 <!---------------------------------cookies popup-------------------------------->
 
-<div id="cookies" aria-hidden="false" class="popup popup_cookies">
-	<div class="popup__wrapper popup__wrapper_cookies">
-		<div class="popup__content popup__content_cookies">
-			<p class="popup__text popup__text_cookies">Заявка успешно отправлена. Наш специалист свяжется с Вами в
-				ближайшее время</p>
-			<button data-close type="button" class="popup__btn popup__btn_success btn"><span>Закрыть</span></button>
+<div id="cookies" class="panel panel_cookies">
+	<div class="panel__wrapper">
+		<div class="panel__content">
+			<p class="panel__text">Этот сайт использует cookie для хранения данных. Продолжая использовать сайт, Вы даете
+				свое согласие на работу с этими файлами, а также соглашаетесь с <a class="panel__link"
+					href="privacy.html">Политикой Конфиденциальности</a> </p>
+			<button type="button" class="panel__btn btn"><span>Ok</span></button>
 		</div>
 	</div>
 </div>
@@ -52,8 +53,8 @@
 					</div>
 					<div class="form__item form__item_input">
 						<input id="form-callback-phone" autocomplete="off" type="tel" name="phone" data-required="phone"
-							data-validate data-value="+" data-error="+XXXXXXXXXXXX"
-							placeholder="Ваш номер телефона*" class="form__input _phone _req">
+							data-validate data-value="+" data-error="+XXXXXXXXXXXX" placeholder="Ваш номер телефона*"
+							class="form__input _phone _req">
 					</div>
 					<div class="form__item form__item_textarea">
 						<textarea id="form-callback-textarea" autocomplete="off" name="textarea"
