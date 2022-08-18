@@ -6,7 +6,6 @@
 		width: 100%;
 		height: 100%;
 		//height: calc(100% - rem($header-height-pc));
-		
 		&::after{
 			content:'';
 			position: absolute;
@@ -14,6 +13,7 @@
 			height: 100%;
 			top: 0;
 			left: 0;
+			filter: brightness(.6);
 			//background: url('@img/contentImgs/vid_preview.png') center right/ cover no-repeat;;
 			transition: opacity .5s;
 			z-index: -1;
@@ -25,6 +25,7 @@
 			top: 0%;
 			left: 0%;
 			object-fit: cover;
+			filter: brightness(.8);
 			@media (max-width:$mobile){
 				height: calc(100vh - rem($header-height-mob));
 			}
@@ -60,19 +61,18 @@
 }
 
 .hero._video_played{
-	& .video::after{
-		opacity: 0;
-		transition: opacity 1s;
-	}
-	& .hero-map__box{
-		transform: scale(2);
-		opacity: 0;
-		transition: transform .3s linear, opacity .25s linear;
-	}
-	& .offer__title, .offer__subtitle{
-		transform: translateX(-200%);
-		transition: transform .3s ease;
-	}
+	// & .video video{
+
+	// }
+	// & .hero-map__box{
+	// 	transform: scale(2);
+	// 	opacity: 0;
+	// 	transition: transform .3s linear, opacity .25s linear;
+	// }
+	// & .offer__title, .offer__subtitle{
+	// 	transform: translateX(-200%);
+	// 	transition: transform .3s ease;
+	// }
 }
 
 // .hero-map{
@@ -117,22 +117,22 @@
 .offer {
 	position: relative;
 	max-width: rem(920);
-	padding: rem(80) rem(0) rem(110);
+	padding: rem(80) rem(0);
 	width: 100%;
 	//text-align: center; 
 	@media (max-width:$mobileSmall){
 		text-align: center; 
 	}
 	&__text {
-		padding: rem(30) rem(0);
-		@include adaptiveValue("padding-left", 60 , 10, 0, 1200);
-		@include adaptiveValue("padding-right", 60 , 10, 0, 1200);
-		background-color: rgba($color: #fff, $alpha: .1);
-		backdrop-filter: blur(10px);
-		border-radius: 7px;
-		border: 1px solid;
-		border-color: rgba($color: $border-color-major, $alpha: .3) ;
-		box-shadow:inset 0px 0px 5px rgba($color: #fff, $alpha: .4), 1px 2px 6px rgba($color: #000, $alpha: .2);
+		//padding: rem(30) rem(0);
+		//@include adaptiveValue("padding-left", 60 , 10, 0, 1200);
+		//@include adaptiveValue("padding-right", 60 , 10, 0, 1200);
+		//background-color: rgba($color: #fff, $alpha: .1);
+		//backdrop-filter: blur(10px);
+		//border-radius: 7px;
+		//border: 1px solid;
+		//border-color: rgba($color: $border-color-major, $alpha: .3) ;
+		//box-shadow:inset 0px 0px 5px rgba($color: #fff, $alpha: .4), 1px 2px 6px rgba($color: #000, $alpha: .2);
 		&:not(:last-child) {
 			margin-bottom:  rem(60);
 			@media (max-width:$mobile){
@@ -170,81 +170,80 @@
 	}
 }
 
-// .controls {
-// 	margin-left: rem(15);
-// 	@media (max-width: $mobileSmall) {
-// 		margin-left: rem(0);
-// 		margin-top: rem(30);
-// 	}
-// 	// .controls__box
-// 	&__box {
-// 		position: relative;
-// 		@include adaptiveValue("width", 75, 50, 0, 1200);
-// 		@include adaptiveValue("height", 75, 50, 0, 1200);
-// 		border-radius: 7px;
-// 		border: $border-color-button 1px solid;
-// 		display: inline-block;
-// 		cursor: pointer;
-// 		transition: transform .1s;
-// 		@media (any-hover: hover){
-// 			&:hover{
-// 				border: $border-color-other-3 2px solid;
-// 				transform: scale(1.05);
-// 				transition: transform .1s;
+.controls {
+	margin-left: rem(15);
+	@media (max-width: $mobileSmall) {
+		margin-left: rem(0);
+		margin-top: rem(40);
+	}
+	// .controls__box
+	&__box {
+		position: relative;
+		@include adaptiveValue("width", 75, 50, 0, 1200);
+		@include adaptiveValue("height", 75, 50, 0, 1200);
 
-// 			}
-// 		}
-// 		&:active{
-// 			border: $border-color-other-3 2px solid;
-// 			transform: scale(1.1);
-// 			transition: transform .2s;
-// 		}
-// 	}
-// // .controls__play
-// 	&__play {
-// 		position: absolute;
-// 		width:100%;
-// 		height: 100%;
-// 		top: 50%;
-// 		left: 50%;
-// 		transform: translate(-50%, -50%);
-// 		& svg {
-// 			position: absolute;
-// 			left: 50%;
-// 			top: 50%;
-// 			transform: translate(-50%, -50%);
-// 			@include adaptiveValue("width", 80, 50, 0, 1200);
-// 			@include adaptiveValue("height", 80, 50, 0, 1200);
-// 			pointer-events: none;
-// 			& path {
-// 				fill: $background-color-major;
-// 				transition: fill .2s ease;
-// 			}
-// 		}
-// 	}
-// 	&__pause {
-// 		display: none;
-// 		position: absolute;
-// 		width:100%;
-// 		height: 100%;
-// 		top: 50%;
-// 		left: 50%;
-// 		transform: translate(-50%, -50%);
-// 		& svg {
-// 			position: absolute;
-// 			@include adaptiveValue("width", 50, 30, 0, 1200);
-// 			@include adaptiveValue("height", 50, 30, 0, 1200);
-// 			left: 50%;
-// 			top: 50%;
-// 			transform: translate(-50%, -50%);
-// 			pointer-events: none;
-// 			& rect {
-// 				fill: $background-color-major;
-// 				transition: fill .2s ease;
-// 			}
-// 		}
-// 	}
-// }
+		border: $border-color-button 1px solid;
+		display: inline-block;
+		cursor: pointer;
+		transition: transform .1s;
+		background-color: rgba($color: $background-color-major, $alpha: .2);
+		backdrop-filter: blur(10px);
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
+		border: 1px solid  rgba($color: $border-color-other-3, $alpha: .2)  ;
+		border-radius: 7px;
+		box-shadow: inset 3px 5px 8px rgba($color: #000, $alpha: .2), inset -3px -4px 5px rgba($color: #fff, $alpha: .3), 1px 3px 6px rgba($color: #000, $alpha: .4);
+			&:hover{
+				transform: scale(1.05);
+				transition: transform .1s;
+			}
+	}
+// .controls__play
+	&__play {
+		display: none;
+		position: absolute;
+		width:100%;
+		height: 100%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		opacity: .7;
+		& svg {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			@include adaptiveValue("width", 80, 50, 0, 1200);
+			@include adaptiveValue("height", 80, 50, 0, 1200);
+			pointer-events: none;
+			& path {
+				fill: $background-color-major;
+				transition: fill .2s ease;
+			}
+		}
+	}
+	&__pause {
+		position: absolute;
+		width:100%;
+		height: 100%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		opacity: .7;
+		& svg {
+			position: absolute;
+			@include adaptiveValue("width", 50, 30, 0, 1200);
+			@include adaptiveValue("height", 50, 30, 0, 1200);
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			pointer-events: none;
+			& rect {
+				fill: $background-color-major;
+				transition: fill .2s ease;
+			}
+		}
+	}
+}
 
 //-------------------algorithm----------------------
 

@@ -2738,6 +2738,8 @@ body._preloader {
   -o-transition: transform 0.2s;
   transition: transform 0.2s;
   transition: transform 0.2s, -webkit-transform 0.2s;
+  border-radius: 7px;
+  border: rgb(240, 240, 240) 2px solid;
 }
 
 .header-links .socials__link:hover {
@@ -2790,7 +2792,6 @@ body._preloader {
   height: 100%;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
-  font-weight: 500;
   cursor: pointer;
 }
 
@@ -2836,6 +2837,10 @@ body._preloader {
 
 ._header-scroll .header__logo .site-logo__item {
   background: url("../img/logo_GMA_full.png") 0% 50%/contain no-repeat;
+}
+
+._header-scroll .socials__link {
+  border: rgb(30, 60, 120) 2px solid;
 }
 
 ._header-scroll .socials__link img.icon_reg {
@@ -2907,6 +2912,8 @@ body._preloader {
   height: 100%;
   top: 0;
   left: 0;
+  -webkit-filter: brightness(0.6);
+          filter: brightness(0.6);
   -webkit-transition: opacity 0.5s;
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
@@ -2921,6 +2928,8 @@ body._preloader {
   left: 0%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
 }
 
 .hero__outerContainer {
@@ -2940,37 +2949,6 @@ body._preloader {
           align-items: center;
 }
 
-.hero._video_played .video::after {
-  opacity: 0;
-  -webkit-transition: opacity 1s;
-  -o-transition: opacity 1s;
-  transition: opacity 1s;
-}
-
-.hero._video_played .hero-map__box {
-  -webkit-transform: scale(2);
-      -ms-transform: scale(2);
-          transform: scale(2);
-  opacity: 0;
-  -webkit-transition: opacity 0.25s linear, -webkit-transform 0.3s linear;
-  transition: opacity 0.25s linear, -webkit-transform 0.3s linear;
-  -o-transition: transform 0.3s linear, opacity 0.25s linear;
-  transition: transform 0.3s linear, opacity 0.25s linear;
-  transition: transform 0.3s linear, opacity 0.25s linear, -webkit-transform 0.3s linear;
-}
-
-.hero._video_played .offer__title,
-.hero._video_played .offer__subtitle {
-  -webkit-transform: translateX(-200%);
-      -ms-transform: translateX(-200%);
-          transform: translateX(-200%);
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-}
-
 .video__box {
   position: relative;
   width: 100%;
@@ -2980,20 +2958,8 @@ body._preloader {
 .offer {
   position: relative;
   max-width: 57.5rem;
-  padding: 5rem 0rem 6.875rem;
+  padding: 5rem 0rem;
   width: 100%;
-}
-
-.offer__text {
-  padding: 1.875rem 0rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  border-radius: 7px;
-  border: 1px solid;
-  border-color: rgba(220, 220, 220, 0.3);
-  -webkit-box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.4), 1px 2px 6px rgba(0, 0, 0, 0.2);
-          box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.4), 1px 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .offer__text:not(:last-child) {
@@ -3024,6 +2990,100 @@ body._preloader {
 
 .offer__button {
   background-color: transparent;
+}
+
+.controls {
+  margin-left: 0.9375rem;
+}
+
+.controls__box {
+  position: relative;
+  border: rgb(255, 255, 255) 1px solid;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.1s;
+  transition: -webkit-transform 0.1s;
+  -o-transition: transform 0.1s;
+  transition: transform 0.1s;
+  transition: transform 0.1s, -webkit-transform 0.1s;
+  background-color: rgba(240, 240, 240, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(35, 115, 60, 0.2);
+  border-radius: 7px;
+  -webkit-box-shadow: inset 3px 5px 8px rgba(0, 0, 0, 0.2), inset -3px -4px 5px rgba(255, 255, 255, 0.3), 1px 3px 6px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 3px 5px 8px rgba(0, 0, 0, 0.2), inset -3px -4px 5px rgba(255, 255, 255, 0.3), 1px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.controls__box:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: -webkit-transform 0.1s;
+  transition: -webkit-transform 0.1s;
+  -o-transition: transform 0.1s;
+  transition: transform 0.1s;
+  transition: transform 0.1s, -webkit-transform 0.1s;
+}
+
+.controls__play {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0.7;
+}
+
+.controls__play svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.controls__play svg path {
+  fill: rgb(240, 240, 240);
+  -webkit-transition: fill 0.2s ease;
+  -o-transition: fill 0.2s ease;
+  transition: fill 0.2s ease;
+}
+
+.controls__pause {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0.7;
+}
+
+.controls__pause svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.controls__pause svg rect {
+  fill: rgb(240, 240, 240);
+  -webkit-transition: fill 0.2s ease;
+  -o-transition: fill 0.2s ease;
+  transition: fill 0.2s ease;
 }
 
 .algorithm__button {
@@ -3808,12 +3868,28 @@ body._preloader {
     padding-top: 4.6875rem;
   }
 
-  .offer__text {
-    padding-left: 3.75rem;
+  .controls__box {
+    width: 4.6875rem;
   }
 
-  .offer__text {
-    padding-right: 3.75rem;
+  .controls__box {
+    height: 4.6875rem;
+  }
+
+  .controls__play svg {
+    width: 5rem;
+  }
+
+  .controls__play svg {
+    height: 5rem;
+  }
+
+  .controls__pause svg {
+    width: 3.125rem;
+  }
+
+  .controls__pause svg {
+    height: 3.125rem;
   }
 
   .steps:not(:last-child) {
@@ -4182,12 +4258,28 @@ body._preloader {
     padding-top: 3.125rem;
   }
 
-  .offer__text {
-    padding-left: 0.625rem;
+  .controls__box {
+    width: 3.125rem;
   }
 
-  .offer__text {
-    padding-right: 0.625rem;
+  .controls__box {
+    height: 3.125rem;
+  }
+
+  .controls__play svg {
+    width: 3.125rem;
+  }
+
+  .controls__play svg {
+    height: 3.125rem;
+  }
+
+  .controls__pause svg {
+    width: 1.875rem;
+  }
+
+  .controls__pause svg {
+    height: 1.875rem;
   }
 
   .steps:not(:last-child) {
@@ -4499,6 +4591,14 @@ body._preloader {
     border-left: 1px solid rgb(35, 115, 60);
   }
 
+  .header-links .socials__link {
+    border-width: 1px;
+  }
+
+  ._header-scroll .socials__link {
+    border-width: 1px;
+  }
+
   .hero__video video {
     height: calc(100vh - 3.125rem);
   }
@@ -4540,7 +4640,6 @@ body._preloader {
 
   .lang {
     border-width: 1px;
-    border-radius: 4px;
   }
 
   .lang__icon {
@@ -4560,6 +4659,11 @@ body._preloader {
 
   .offer__button {
     width: 100%;
+  }
+
+  .controls {
+    margin-left: 0rem;
+    margin-top: 2.5rem;
   }
 
   .steps {
@@ -5116,27 +5220,75 @@ body._preloader {
     }
 }
 
-@supports (padding-left: clamp( 0.625rem , -0.5113636364rem  +  5.6818181818vw , 3.75rem )) {
-    .offer__text {
-      padding-left: clamp( 0.625rem , -0.5113636364rem  +  5.6818181818vw , 3.75rem );
+@supports (width: clamp( 3.125rem , 2.5568181818rem  +  2.8409090909vw , 4.6875rem )) {
+    .controls__box {
+      width: clamp( 3.125rem , 2.5568181818rem  +  2.8409090909vw , 4.6875rem );
     }
 }
 
-@supports not (padding-left: clamp( 0.625rem , -0.5113636364rem  +  5.6818181818vw , 3.75rem )) {
-    .offer__text {
-      padding-left: calc(0.625rem + 3.125 * (100vw - 20rem) / 55);
+@supports not (width: clamp( 3.125rem , 2.5568181818rem  +  2.8409090909vw , 4.6875rem )) {
+    .controls__box {
+      width: calc(3.125rem + 1.5625 * (100vw - 20rem) / 55);
     }
 }
 
-@supports (padding-right: clamp( 0.625rem , -0.5113636364rem  +  5.6818181818vw , 3.75rem )) {
-    .offer__text {
-      padding-right: clamp( 0.625rem , -0.5113636364rem  +  5.6818181818vw , 3.75rem );
+@supports (height: clamp( 3.125rem , 2.5568181818rem  +  2.8409090909vw , 4.6875rem )) {
+    .controls__box {
+      height: clamp( 3.125rem , 2.5568181818rem  +  2.8409090909vw , 4.6875rem );
     }
 }
 
-@supports not (padding-right: clamp( 0.625rem , -0.5113636364rem  +  5.6818181818vw , 3.75rem )) {
-    .offer__text {
-      padding-right: calc(0.625rem + 3.125 * (100vw - 20rem) / 55);
+@supports not (height: clamp( 3.125rem , 2.5568181818rem  +  2.8409090909vw , 4.6875rem )) {
+    .controls__box {
+      height: calc(3.125rem + 1.5625 * (100vw - 20rem) / 55);
+    }
+}
+
+@supports (width: clamp( 3.125rem , 2.4431818182rem  +  3.4090909091vw , 5rem )) {
+    .controls__play svg {
+      width: clamp( 3.125rem , 2.4431818182rem  +  3.4090909091vw , 5rem );
+    }
+}
+
+@supports not (width: clamp( 3.125rem , 2.4431818182rem  +  3.4090909091vw , 5rem )) {
+    .controls__play svg {
+      width: calc(3.125rem + 1.875 * (100vw - 20rem) / 55);
+    }
+}
+
+@supports (height: clamp( 3.125rem , 2.4431818182rem  +  3.4090909091vw , 5rem )) {
+    .controls__play svg {
+      height: clamp( 3.125rem , 2.4431818182rem  +  3.4090909091vw , 5rem );
+    }
+}
+
+@supports not (height: clamp( 3.125rem , 2.4431818182rem  +  3.4090909091vw , 5rem )) {
+    .controls__play svg {
+      height: calc(3.125rem + 1.875 * (100vw - 20rem) / 55);
+    }
+}
+
+@supports (width: clamp( 1.875rem , 1.4204545455rem  +  2.2727272727vw , 3.125rem )) {
+    .controls__pause svg {
+      width: clamp( 1.875rem , 1.4204545455rem  +  2.2727272727vw , 3.125rem );
+    }
+}
+
+@supports not (width: clamp( 1.875rem , 1.4204545455rem  +  2.2727272727vw , 3.125rem )) {
+    .controls__pause svg {
+      width: calc(1.875rem + 1.25 * (100vw - 20rem) / 55);
+    }
+}
+
+@supports (height: clamp( 1.875rem , 1.4204545455rem  +  2.2727272727vw , 3.125rem )) {
+    .controls__pause svg {
+      height: clamp( 1.875rem , 1.4204545455rem  +  2.2727272727vw , 3.125rem );
+    }
+}
+
+@supports not (height: clamp( 1.875rem , 1.4204545455rem  +  2.2727272727vw , 3.125rem )) {
+    .controls__pause svg {
+      height: calc(1.875rem + 1.25 * (100vw - 20rem) / 55);
     }
 }
 

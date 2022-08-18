@@ -5,7 +5,7 @@
 <!-- актуализирован 29/04/22 20.56 -->
 
 <head>
-	<title lang-page-title>Главная</title>
+	<title>Главная</title>
 	<meta charset="UTF-8">
 	<meta name="title" content="GMA. Global Medical Assistance">
 	<meta name="format-detection" content="telephone=no">
@@ -32,7 +32,10 @@
 	<meta name="theme-color" content="#1B3A77"> <!-- theme color -->
 	<!-- <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png"> -->
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220817234250">
+	<link rel="alternate" hreflang="en" href="http:/gma.care/en/">
+	<link rel="alternate" hreflang="ua" href="http:/gma.care/ua/">
+	<!-- <link rel="alternate" hreflang="x-default" href="http:/gma.care/"> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20220818140454">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="robots" content="noindex, nofollow">
 	<!-- npm install --save-dev t-scroll<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
@@ -70,15 +73,15 @@
 						<ul class="header-links__list">
 							<li class="header-links__item socials socials_fb">
 								<!--noindex--><a href="http://facebook.com" target="_blank" rel="nofollow noopener noreferrer" class="socials__link socials__link_fb">
-									<img class="icon_reg" src="img/icons/fb.png" alt="fb_icon">
-									<img class="icon_scrl" src="img/icons/fb_scrl.png" alt="fb_icon_scroll">
+									<img class="icon_reg" src="img/icons/fb_bor.png" alt="fb_icon">
+									<img class="icon_scrl" src="img/icons/fb_scrl_bor.png" alt="fb_icon_scroll">
 								</a>
 								<!--/noindex-->
 							</li>
 							<li class="header-links__item socials socials_insta">
 								<!--noindex--><a href="http://instagram.com" target="_blank" rel="nofollow noopener noreferrer" class="socials__link socials__link_insta">
-									<img class="icon_reg" src="img/icons/insta.png" alt="insta_icon">
-									<img class="icon_scrl" src="img/icons/insta_scrl.png" alt="insta_icon_scroll">
+									<img class="icon_reg" src="img/icons/insta_bor.png" alt="insta_icon">
+									<img class="icon_scrl" src="img/icons/insta_scrl_bor.png" alt="insta_icon_scroll">
 								</a>
 								<!--/noindex-->
 							</li>
@@ -103,7 +106,7 @@
 				<section class="hero">
 					<div class="hero__video video">
 						<div class="video__box">
-							<video autoplay loop muted preload="metadata" poster="vid_preview.jpg" playsinline>
+							<video autoplay loop muted preload="metadata" poster=" files/video/vid_preview.jpg" playsinline>
 								<source src="files/video/GMA_v4.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 							</video>
 						</div>
@@ -129,18 +132,14 @@
 										<div class="offer__button _popup-link" data-popup='#callback'>
 											<button type="button" class="btn btn_hero"><span>Получить консультацию</span></button>
 										</div>
-										<!-- <div class="offer__button controls">
+										<div class="offer__button controls">
 											<div class="controls__box _video-play-btn">
 												<div class="controls__play">
 													<svg class="play" width="20" height="20" viewBox="0 0 100 100">
 														<g>
-															<path
-																d="M31.356,25.677l38.625,22.3c1.557,0.899,1.557,3.147,0,4.046l-38.625,22.3c-1.557,0.899-3.504-0.225-3.504-2.023V27.7   C27.852,25.902,29.798,24.778,31.356,25.677z" />
-															<path
-																d="M69.981,47.977l-38.625-22.3c-0.233-0.134-0.474-0.21-0.716-0.259l37.341,21.559c1.557,0.899,1.557,3.147,0,4.046   l-38.625,22.3c-0.349,0.201-0.716,0.288-1.078,0.301c0.656,0.938,1.961,1.343,3.078,0.699l38.625-22.3   C71.538,51.124,71.538,48.876,69.981,47.977z" />
-															<path
-																d="M31.356,25.677l38.625,22.3c1.557,0.899,1.557,3.147,0,4.046   l-38.625,22.3c-1.557,0.899-3.504-0.225-3.504-2.023V27.7C27.852,25.902,29.798,24.778,31.356,25.677z"
-																style="fill:none;stroke-miterlimit:10;" />
+															<path d="M31.356,25.677l38.625,22.3c1.557,0.899,1.557,3.147,0,4.046l-38.625,22.3c-1.557,0.899-3.504-0.225-3.504-2.023V27.7   C27.852,25.902,29.798,24.778,31.356,25.677z" />
+															<path d="M69.981,47.977l-38.625-22.3c-0.233-0.134-0.474-0.21-0.716-0.259l37.341,21.559c1.557,0.899,1.557,3.147,0,4.046   l-38.625,22.3c-0.349,0.201-0.716,0.288-1.078,0.301c0.656,0.938,1.961,1.343,3.078,0.699l38.625-22.3   C71.538,51.124,71.538,48.876,69.981,47.977z" />
+															<path d="M31.356,25.677l38.625,22.3c1.557,0.899,1.557,3.147,0,4.046   l-38.625,22.3c-1.557,0.899-3.504-0.225-3.504-2.023V27.7C27.852,25.902,29.798,24.778,31.356,25.677z" style="fill:none;stroke-miterlimit:10;" />
 														</g>
 													</svg>
 												</div>
@@ -151,7 +150,7 @@
 													</svg>
 												</div>
 											</div>
-										</div> -->
+										</div>
 									</div>
 								</div>
 							</div>
@@ -582,6 +581,17 @@
 		</div>
 	</div>
 
+	<!---------------------------------cookies popup-------------------------------->
+
+	<div id="cookies" aria-hidden="false" class="popup popup_cookies">
+		<div class="popup__wrapper popup__wrapper_cookies">
+			<div class="popup__content popup__content_cookies">
+				<p class="popup__text popup__text_cookies">Заявка успешно отправлена. Наш специалист свяжется с Вами в
+					ближайшее время</p>
+				<button data-close type="button" class="popup__btn popup__btn_success btn"><span>Закрыть</span></button>
+			</div>
+		</div>
+	</div>
 
 	<!---------------------------------popup with forms-------------------------------->
 	<div id="callback" aria-hidden="true" class="popup popup_callback">
@@ -618,7 +628,7 @@
 	</div>
 	<!---------------------------------popup whis forms-------------------------------->
 
-	<script src="js/app.min.js?_v=20220817234250"></script>
+	<script src="js/app.min.js?_v=20220818140454"></script>
 
 
 </body>
