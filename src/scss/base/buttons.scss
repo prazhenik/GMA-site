@@ -1,18 +1,18 @@
 //<BUTTONS (a.btn+tab)>
 // Снипет (HTML): btn
 //актуализирован 10/08/22 1845 - стили дефолтной кнопки
+//актуализирован 19/08/22 1845 - стили дефолтной кнопки
 
 .btn {
-	display: inline-flex;
 	position: relative;
+	display: inline-flex;
 	flex: 0 0 auto;
-	cursor: pointer;
 	align-items: center;
 	justify-content: center;
 	align-self: center;
-	overflow: hidden;
-	min-width: rem(270);
 	margin: 0 auto;
+	overflow: hidden;
+	cursor: pointer;
 	& span {
 		display: block;
 		margin: auto;
@@ -22,19 +22,20 @@
 //-------------------custom buttons properties-------------------
 
 .btn {
-	@include adaptiveValue("font-size", 22, 14, 0, 1200);
-	color: $text-color-btn;
-	font-weight: 600;
-	text-transform: uppercase;
+	min-width: rem(270);
 	width: 100%;
 	@include adaptiveValue("height", $button-height-pc, $button-height-mob, 0, 1200);
 	height: 100%;
 	padding: rem(0) rem(20);
-	background-color:  $background-color-button-major;
+	@include adaptiveValue("font-size", 22, 14, 0, 1200);
+	font-weight: 600;
+	text-transform: uppercase;
+	color: $text-color-btn;
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
-	border: 1px solid  rgba($color: $border-color-other-3, $alpha: .3)  ;
-	box-shadow: inset 3px 5px 8px rgba($color: #000, $alpha: .2), inset -3px -4px 5px rgba($color: #fff, $alpha: .3), 1px 3px 6px rgba($color: #000, $alpha: .4);
+	background-color:  $background-color-button-major;
+	border: 1px solid  rgba($color: $border-color-other-3, $alpha: .3);
 	border-radius: 5px;
+	box-shadow: inset 3px 5px 8px rgba($color: #000, $alpha: .2), inset -3px -4px 5px rgba($color: #fff, $alpha: .3), 1px 3px 6px rgba($color: #000, $alpha: .4);
 	animation: breathe 2.5s infinite forwards;
 	& span {
 		text-shadow: 2px 2px 3px rgba(0, 0, 0, .3);
@@ -58,13 +59,13 @@
 			width: 100%; 
 		}
 	}
-	// ripple effect
+		// ripple effect, js in common.js
 	& span.ripple {
 		position: absolute;
 		background: $background-color-major;
-		transform: translate(-50%, -50%);
 		pointer-events: none;
 		border-radius: 50%;
+		transform: translate(-50%, -50%);
 		animation: ripplesAnimate .5s linear;
 	}
 }

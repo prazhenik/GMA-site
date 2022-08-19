@@ -4557,7 +4557,6 @@
                 const input = inputs[index];
                 const input_g_value = input.getAttribute("data-value");
                 input.addEventListener("focusin", (function(e) {
-                    if (input.value == input_g_value) ;
                     if (input.classList.contains("_phone") && input.value == !input_g_value && "" == input.value) {
                         input.classList.add("_mask");
                         Inputmask("+9{12,13}", {
@@ -4565,10 +4564,7 @@
                             clearIncomplete: false,
                             clearComplete: false,
                             clearMaskOnLostFocus: true,
-                            noremask: false,
-                            onincomplete: function() {},
-                            oncomplete: function() {},
-                            onUnMask: function() {}
+                            noremask: false
                         }).mask(input);
                     }
                     input.classList.remove("_mask");
@@ -4904,6 +4900,9 @@
             }
             "undefined" != typeof document && (window.VanillaTilt = t, t.init(document.querySelectorAll("[data-tilt]")));
         })();
+        window.onbeforeunload = function() {
+            window.scrollTo(0, 0);
+        };
         if (!isMobile.any()) VanillaTilt.init(document.querySelectorAll(".btn"), {
             max: 10,
             speed: 200,
@@ -4958,6 +4957,9 @@
             hero.classList.add("_video_played");
             playBtn.addEventListener("click", (() => {
                 if (hero.classList.contains("_video_played")) pause(); else play();
+            }));
+            playBtn.addEventListener("keydown", (e => {
+                if (13 == e.which && 176 == e.which && "Enter" === e.code && hero.classList.contains("_video_played")) pause(); else play();
             }));
         }
         window.addEventListener("load", windowLoad);

@@ -1,4 +1,5 @@
 //актуализирован 09/02/22 10.19
+//актуализирован 19/08/22 общая ревизия
 
 //---------------------------- ▼ ▼ ▼ BURGER ▼ ▼ ▼ -------------------------------
 
@@ -6,9 +7,9 @@
 
 .menu {
 	display: flex;
+	flex: 1 1 auto;
 	justify-content: center;
-	flex: 1 0 auto;
-	@include adaptiveValue("margin-left",30 , 15, 0, 1200 );
+	@include adaptiveValue("margin-left",30 , 10, 0, 1200 );
 	@include adaptiveValue("max-width",50 , 40, 3, 1200 );
 	@media (max-width: rem(1200)) {
 		order: 3;
@@ -46,15 +47,15 @@
 		&::before,
 		&::after {
 			content: "";
-			display: inline;
 			position: absolute;
-			height: rem(2);
-			transition: all 0.2s ease ;
-			background: $text-color-secondary;
-			width: 100%;
+			display: inline;
 			left: 0;
+			width: 100%;
+			height: rem(2);
+			background: $text-color-secondary;
 			border-radius: 2px;
 			opacity: 1;
+			transition: all 0.2s ease ;
 			@media (max-width:$mobileSmall){
 				height: rem(1);
 			}
@@ -76,9 +77,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		color: $text-color-secondary;
 		width: 100%;
-		max-width: rem(1000);
+		color: $text-color-secondary;
 		text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
 		@media (max-width: rem(1200)) {
 			position: fixed;
@@ -90,11 +90,11 @@
 			max-width: rem($menu-width);
 			height: 100vh;
 			background: $background-color-menu;
-			transition: transform 0.2s ease;
+			text-shadow: none;
+			border-left: $border-color-other-3 2px solid;
 			overflow: auto;
 			z-index: 99;
-			border-left: $border-color-other-3 2px solid;
-			text-shadow: none;
+			transition: transform 0.2s ease;
 			&._active {
 				transform: translateX(rem(-$menu-width));
 				color: $text-color-major;
@@ -108,14 +108,11 @@
 	}
 
 	&__list {
-		display: flex;
-		flex-wrap: wrap;
 		position: relative;
-		justify-content: space-between;
-		flex: 1 0 100%;
-		//@include adaptiveValue("column-gap", 50, 5, 1920, 1200, 1);
-		//row-gap: rem(5);
-
+		display: flex;
+		flex: 0 1 1100px;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
 		@media (max-width: rem(1200)) {
 			flex-direction: column;
 			flex-wrap: nowrap;
@@ -127,10 +124,7 @@
 
 	&__item {
 		display: inline-block;
-		font-size: 0; //устраняет скачек контента при смене fontsize на ховере
-		text-align: center; //устраняет скачек контента при смене fontsize на ховере
 		line-height: math.div(22 , 22);
-
 		@media (max-width: rem(1200)) {
 			padding: rem(10);
 		}
@@ -138,21 +132,20 @@
 
 	&__link {
 		display: inline-block;
-		position: relative; //smooth marker underline menu__link
+		padding: rem(5);
+		margin: rem(0) rem(5);
 		@include adaptiveValue("font-size",$font-size-menu-links-pc ,$font-size-menu-links-mob, 0, 1920, 1200 ); 
 		line-height: math.div( $font-size-menu-links-pc, $font-size-menu-links-pc);
 		letter-spacing: 0.02em;
-		transition: transform .3s ease;
-		border: 2px solid transparent;
-		padding: rem(7);
-		border-radius: 10px;
 		font-weight: 500;
+		border: 2px solid transparent;
+		border-radius: 7px;
+		transition: transform .3s ease;
 		transition: border .2s;
 		@media (any-hover: hover){
 			&:hover{
 				border: 2px solid $border-color-major;
 				transition: border .2s;
-				//font-weight: 600;
 				@media (max-width:$tablet){
 					background-color: rgba($color: $background-color-other-1, $alpha: 1);
 					color: $text-color-secondary;
@@ -167,16 +160,6 @@
 				color: $text-color-secondary;
 			}
 		}
-		/*
-		&::after{
-			display: block; //устраняет скачек контента при смене fontsize на ховере
-			content: attr(title); //устраняет скачек контента при смене fontsize на ховере
-			font-weight: 600; //устраняет скачек контента при смене fontsize на ховере
-			height: 0; //устраняет скачек контента при смене fontsize на ховере
-			overflow: hidden; //устраняет скачек контента при смене fontsize на ховере
-			visibility: hidden; //устраняет скачек контента при смене fontsize на ховере
-		}
-		*/
 		@media (max-width: rem(1200)) {
 			font-size: rem(22);
 			color: $text-color-menu;

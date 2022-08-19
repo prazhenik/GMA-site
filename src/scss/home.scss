@@ -1,29 +1,15 @@
 .hero {
-	//background-color: rgba($color: $background-color-secondary, $alpha: 1);
 	// .hero__video
 	&__video {
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		//height: calc(100% - rem($header-height-pc));
-		&::after{
-			content:'';
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			filter: brightness(.6);
-			//background: url('@img/contentImgs/vid_preview.png') center right/ cover no-repeat;;
-			transition: opacity .5s;
-			z-index: -1;
-		}
 		& video {
 			width: 100%;
 			height: 100%;
-			max-height: rem(1000);
 			top: 0%;
 			left: 0%;
+			max-height: rem(1000);
 			object-fit: cover;
 			filter: brightness(.8);
 			@media (max-width:$mobile){
@@ -31,8 +17,7 @@
 			}
 		}
 	}
-	&__map{
-	}
+
 	// .hero__outerContainer
 	&__outerContainer {
 		position: relative;
@@ -42,68 +27,22 @@
 	}
 	// .hero__content
 	&__content {
-		@include adaptiveValue("padding-top",$header-height-pc ,$header-height-mob, 0, 1200);
+		display: flex;
+		align-items: center;
 		max-height: rem(1000);
 		height: 100vh;
 		min-height: -webkit-fill-available;
 		min-height: 550px;
-		display: flex;
-		align-items: center;
-		//justify-content: center;
+		@include adaptiveValue("padding-top",$header-height-pc ,$header-height-mob, 0, 1200);
 		@media (max-width:$mobile){
-			height: calc(100vh - rem($header-height-mob));
-			align-items: flex-end;  
+			align-items: flex-end; 
+			height: calc(100vh - rem($header-height-mob)); 
 		}
 	}
 	// .hero__offer
 	&__offer {
 	}
 }
-
-.hero._video_played{
-	// & .video video{
-
-	// }
-	// & .hero-map__box{
-	// 	transform: scale(2);
-	// 	opacity: 0;
-	// 	transition: transform .3s linear, opacity .25s linear;
-	// }
-	// & .offer__title, .offer__subtitle{
-	// 	transform: translateX(-200%);
-	// 	transition: transform .3s ease;
-	// }
-}
-
-// .hero-map{
-// 	position: absolute;
-// 	width: 100%;
-// 	height: 100%;
-// 	top: 0;
-// 	left: 0;
-// 	&__box{
-// 		position: relative;
-// 		width: 100%;
-// 		height: 100%;
-// 		max-width: rem(800);
-// 		top: 0;
-// 		left: 0;
-// 		transform: translate(0, 0);
-// 		margin-left: auto;
-// 		background: url('@img/EU_map.png') center center/contain no-repeat;
-// 		transition: transform .3s, opacity .15s;
-// 		opacity: 1;
-// 		@media (max-width:$mobile){
-// 			background: url('@img/EU_map.png') center top/cover no-repeat; 
-// 		}
-// 		@media (any-hover: hover){
-// 			&:hover{
-// 				transform: scale(1.01);
-// 				transition: transform .3s;
-// 			}
-// 		}
-// 	}
-// }
 
 .video {
 	// .video__box
@@ -117,34 +56,23 @@
 .offer {
 	position: relative;
 	max-width: rem(920);
+	width: 100%; 
 	padding: rem(80) rem(0);
-	width: 100%;
-	//text-align: center; 
 	@media (max-width:$mobileSmall){
 		text-align: center; 
 	}
 	&__text {
-		//padding: rem(30) rem(0);
-		//@include adaptiveValue("padding-left", 60 , 10, 0, 1200);
-		//@include adaptiveValue("padding-right", 60 , 10, 0, 1200);
-		//background-color: rgba($color: #fff, $alpha: .1);
-		//backdrop-filter: blur(10px);
-		//border-radius: 7px;
-		//border: 1px solid;
-		//border-color: rgba($color: $border-color-major, $alpha: .3) ;
-		//box-shadow:inset 0px 0px 5px rgba($color: #fff, $alpha: .4), 1px 2px 6px rgba($color: #000, $alpha: .2);
 		&:not(:last-child) {
 			margin-bottom:  rem(60);
 			@media (max-width:$mobile){
-				margin-bottom:  rem(40);
 				font-weight: 500;  
+				margin-bottom:  rem(40);
 			}
 		}
 	}
 	// .offer__title
 	&__title,
 	&__subtitle {
-
 		text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
 		transition: transform .35s ease;
 	}
@@ -152,7 +80,6 @@
 	&__buttons {
 		display: flex;
 		flex-wrap: wrap;
-		//justify-content: center;
 		&:not(:last-child) {
 			margin-bottom: rem(40);
 		}
@@ -163,7 +90,6 @@
 
 	// .offer__button
 	&__button {
-		background-color:  transparent;
 		@media (max-width: $mobileSmall){
 			width: 100%;
 		}	
@@ -179,47 +105,24 @@
 	// .controls__box
 	&__box {
 		position: relative;
+		display: inline-block;
 		@include adaptiveValue("width", 75, 50, 0, 1200);
 		@include adaptiveValue("height", 75, 50, 0, 1200);
-		border: $border-color-button 1px solid;
-		display: inline-block;
-		cursor: pointer;
-		transition: transform .1s;
 		background-color: rgba($color: $background-color-major, $alpha: .2);
-		backdrop-filter: blur(10px);
 		text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
 		border: 1px solid  rgba($color: $border-color-other-3, $alpha: .2)  ;
 		border-radius: 7px;
+		cursor: pointer;
 		box-shadow: inset 3px 5px 8px rgba($color: #000, $alpha: .2), inset -3px -4px 5px rgba($color: #fff, $alpha: .3), 1px 3px 6px rgba($color: #000, $alpha: .4);
+		backdrop-filter: blur(10px);
+		transition: transform .1s;
 			&:hover{
 				transform: scale(1.05);
 				transition: transform .1s;
 			}
 	}
 // .controls__play
-	&__play {
-		display: none;
-		position: absolute;
-		width:100%;
-		height: 100%;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		opacity: .7;
-		& svg {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-			@include adaptiveValue("width", 80, 50, 0, 1200);
-			@include adaptiveValue("height", 80, 50, 0, 1200);
-			pointer-events: none;
-			& path {
-				fill: $background-color-major;
-				transition: fill .2s ease;
-			}
-		}
-	}
+	&__play,
 	&__pause {
 		position: absolute;
 		width:100%;
@@ -230,13 +133,28 @@
 		opacity: .7;
 		& svg {
 			position: absolute;
-			@include adaptiveValue("width", 50, 30, 0, 1200);
-			@include adaptiveValue("height", 50, 30, 0, 1200);
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -50%);
 			pointer-events: none;
-			& rect {
+		}
+	}
+	&__play {
+		display: none;
+		& svg {
+			@include adaptiveValue("width", 80, 50, 0, 1200);
+			@include adaptiveValue("height", 80, 50, 0, 1200);
+			& path {
+				fill: $background-color-major;
+				transition: fill .2s ease;
+			}
+		}
+	}
+	&__pause {
+		& svg {
+			@include adaptiveValue("width", 50, 30, 0, 1200);
+			@include adaptiveValue("height", 50, 30, 0, 1200);
+			& path {
 				fill: $background-color-major;
 				transition: fill .2s ease;
 			}
@@ -300,14 +218,14 @@
 	}
 	// .steps__item
 	&__item {
+		position: relative;
 		display: flex;
 		flex: 1 1 20%;
+		text-align: center;
+		justify-content: center;
 		height: rem(100%);
 		@include adaptiveValue("min-height",300 , 150, 0, 1200);
 		border-radius: 5px;
-		text-align: center;
-		justify-content: center;
-		position: relative;
 		counter-increment: steps;
 		overflow: hidden;
 		opacity: 0;
@@ -325,11 +243,11 @@
 	}
 	// .steps__card
 	&__card {
+		position: relative;
 		display: flex;
 		flex-direction: column;
-		position: relative;
-		color: $text-color-major;
 		padding: rem(50) rem(10);
+		color: $text-color-major;
 		@media (any-hover: hover){
 			&:hover{
 			animation: shake2 4s 0s both ease-in;
@@ -338,11 +256,11 @@
 	}
 	// .steps__name
 	&__name {
+		margin-bottom:  rem(30);
 		font-family: $font-family-other-1;
 		@include adaptiveValue("font-size", 24 , 16, 0, 1200);
 		line-height: math.div(40 ,26 );
 		text-transform: uppercase;
-		margin-bottom:  rem(30);
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 30, 15, 0, 1200);
 		}
@@ -359,8 +277,6 @@
 		letter-spacing: -0.5px;
 	}
 }
-
-
 //-------------------capability----------------------
 
 .capability {
@@ -376,12 +292,9 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		opacity: .8;
 		background-color: $background-color-secondary;
+		opacity: .8;
 		backdrop-filter: saturate(0);
-
-		//background: url('@img/contentImgs/cover_knowleges.jpg') center center / cover no-repeat;
-		
 	}
 		
 	// .capability__content
@@ -428,10 +341,10 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
 	grid-gap: rem(5);
-	overflow: hidden;
-	cursor: default;
 	margin: rem(0) rem(-5);
 	padding: rem(0) rem(5);
+	overflow: hidden;
+	cursor: default;
 	&:not(:last-child) {
 		@include adaptiveValue("margin-bottom",80 , 50, 0, 1200);
 	}
@@ -440,24 +353,23 @@
 	}
 	// .specialties__item
 	&__item {
-		border-radius: 5px;
-		background-color: rgba($color: $background-color-major, $alpha: .3);
-		backdrop-filter: blur(10px);
-		@include adaptiveValue("height", 60, 40, 0, 1200);
-		font-family: $font-family-other-1;
-		@include adaptiveValue("font-size", 18 , 12, 0, 1200);
-		line-height: math.div(26 ,20 );
-		text-transform: uppercase;
-		//color: $text-color-major;
-		color: $text-color-secondary;
-		padding: rem(5) rem(15);
-		text-align: center;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex: 1 1 25%;
+		@include adaptiveValue("height", 60, 40, 0, 1200);
+		padding: rem(5) rem(15);
+		background-color: rgba($color: $background-color-major, $alpha: .3);
+		font-family: $font-family-other-1;
+		@include adaptiveValue("font-size", 18 , 12, 0, 1200);
+		line-height: math.div(26 ,20 );
+		text-transform: uppercase;
+		color: $text-color-secondary;
+		text-align: center;
+		border-radius: 5px;
 		border: 1px solid;
 		border-color: rgba($color: $border-color-major, $alpha: .3) ;
+		backdrop-filter: blur(10px);
 		box-shadow:inset 0px 0px 5px rgba($color: #fff, $alpha: .4), 1px 2px 6px rgba($color: #000, $alpha: .2);
 		@media (any-hover: hover){
 			&:hover{
@@ -574,15 +486,15 @@
 		bottom: 0px;
 		left: 50%;
 		transform: translate(-50%);
-		text-align: center;
 		max-width: rem(600);
 		width: 100%;
 		padding: rem(20);
 		background-color: rgba($color: #fff, $alpha: .1);
-		backdrop-filter: blur(10px);
+		text-align: center;
 		border-radius: 7px;
 		border: 1px solid;
 		border-color: rgba($color: $border-color-major, $alpha: .8) ;
+		backdrop-filter: blur(10px);
 		@media (max-width:$mobile){
 			bottom: rem(0);  
 		}
@@ -593,9 +505,9 @@
 		display: block;
 		line-height: 1.1;
 		margin: 0 auto;
+		@include adaptiveValue("font-size", 32, 20, 0, 1200);
 		color: red;
 		font-weight: 700;
-		@include adaptiveValue("font-size", 32, 20, 0, 1200);
 		&:not(:last-child) {
 			margin-bottom:  rem(20);
 		}
@@ -780,10 +692,10 @@
 		display: flex;
 		flex-direction: column;
 		flex: 1 1 20%;
+		justify-content: center;
 		height: rem(100%);
 		@include adaptiveValue("min-height",200 , 100, 0, 1200);
 		text-align: center;
-		justify-content: center;
 		font-weight: 600;
 	}
 	// .counters__digits
@@ -805,10 +717,10 @@
 		flex: 1 0 auto;
 		justify-content: center;
 		align-self: center;
+		max-width: rem(300);
 		@include adaptiveValue("font-size", 22, 14, 0, 1200);
 		line-height: math.div(30,22 );
 		letter-spacing: -0.5px;
-		max-width: rem(300);
 	}
 }
 
@@ -827,8 +739,8 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		opacity: .8;
 		background-color: $background-color-secondary;
+		opacity: .8;
 		backdrop-filter: saturate(0);
 	}
 	// .contacts__outerContainer

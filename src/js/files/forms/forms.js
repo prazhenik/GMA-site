@@ -83,12 +83,6 @@ export function formFieldsInit(options = { viewPass: false }) {
 }
 
 
-// formRequiredItem.addEventListener("focusout", function (e) {
-// 	if(formRequiredItem.value == "") {
-// 		console.log(formRequiredItem.value);
-// 		removeError(formRequiredItem)
-// })
-
 // Валидация форм
 export let formValidate = {
 	getErrors(form) {
@@ -109,14 +103,6 @@ export let formValidate = {
 		let error = 0;
 		if (formRequiredItem.getAttribute("data-required") === "phone" || formRequiredItem.classList.contains("_phone")) {
 			console.log(formRequiredItem);
-			//formRequiredItem.value = formRequiredItem.value.replace(" ", "");
-			// if(this.phoneTest(formRequiredItem)) {
-			// 	if(formRequiredItem.value !== "") {
-			// 		this.removeError(formRequiredItem)
-			// 	}
-			// 	console.log(formRequiredItem.value);
-			// 	//;
-			//}
 			if (this.phoneTest(formRequiredItem)) {
 				this.addError(formRequiredItem);
 				error++;
@@ -204,7 +190,6 @@ export let formValidate = {
 		}, 0);
 	},
 	textTest(formRequiredItem) {
-		//return !/^[^\d][A-Za-zА-Яа-яІі'єЄ0-9]{1,}/.test(formRequiredItem.value); // буквы и цифры (логин)
 		return !/^[A-Za-zА-Яа-яІі'єЄ]{2,}/.test(formRequiredItem.value); // только буквы (имя)
 	},
 	phoneTest(formRequiredItem) {
@@ -376,14 +361,6 @@ export function formRating() {
 				// Отправика данных (value) на сервер
 				let response = await fetch('rating.json', {
 					method: 'GET',
-
-					//body: JSON.stringify({
-					//	userRating: value
-					//}),
-					//headers: {
-					//	'content-type': 'application/json'
-					//}
-
 				});
 				if (response.ok) {
 					const result = await response.json();
@@ -422,13 +399,6 @@ function inputs_init(inputs) {
 			// 	//input_focus_add(input);
 			// }
 			input.addEventListener('focusin', function (e) {
-				//input_placeholder_add(input)
-				if (input.value == input_g_value) {
-					//input_focus_add(input);
-					//input.value = '555555';
-
-				}
-
 				if (input.classList.contains('_phone') && input.value == !input_g_value && input.value == "") {
 					input.classList.add('_mask');
 					Inputmask("+9{12,13}", {
@@ -437,37 +407,10 @@ function inputs_init(inputs) {
 						clearComplete: false,
 						clearMaskOnLostFocus: true,
 						noremask: false,
-						onincomplete: function () {
-							//input_clear_mask(input, input_g_value);
-							//input_placeholderPhone_add(input);
-							//return originalPlaceholder;
-						},
-						oncomplete: function () {
-							//return originalPlaceholder;
-							//input_clear_mask(input, input_g_value);
-							//input_placeholderPhone_add(input);
-							//input_placeholder_add(input)
-						},
-						onUnMask: function () {
-							//input_clear_mask(input, input_g_value);
-							//input_placeholderPhone_add(input);
-						},
 					}).mask(input);
 				}
 
-				// if (input.classList.contains('_digital')) {
-				// 	input.classList.add('_mask');
-				// 	Inputmask("9{1,}", {
-				// 		//"placeholder": '',
-				// 		//clearIncomplete: true,
-				// 		//clearMaskOnLostFocus: true,
-				// 		onincomplete: function () {
-				// 			//input_clear_mask(input, input_g_value);
-				// 		}
-				// 	}).mask(input);
-				// }
 				input.classList.remove('_mask');
-				//form_remove_error(input);
 			});
 
 			// для работы календаря подключить вендор из libs/datepicker-full.min.js

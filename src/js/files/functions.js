@@ -478,24 +478,7 @@ document.addEventListener('keydown', function (e) {
 	}
 });
 
-// added 29/04/22
 
-// плавная рокрутка и закрытие меню по клику
-
-const onMenuClick = function (e) {
-
-	// if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
-	// 	const gotoBlock = document.querySelector(menuLink.dataset.goto);
-	// 	const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector('header').offsetHeight;
-	// 	console.log(gotoBlockValue);
-	// 	window.scrollTo({
-	// 		top: gotoBlockValue,
-	// 		behavior: "smooth"
-	// 	});
-	// 	e.preventDefault();
-	//}
-
-}
 
 
 

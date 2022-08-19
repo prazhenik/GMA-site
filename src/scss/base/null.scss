@@ -1,5 +1,5 @@
 //актуализирован 17/02/22 13.56
-//актуализирован 10/08/22 - общая ревизия
+//актуализирован 19/08/22 - общая ревизия
 
 
 * {
@@ -17,6 +17,14 @@
 :active {
 	// outline: none;
 }
+
+//focus for tabindex
+:focus-visible{
+	outline: 3px solid red;
+}
+
+	// outline: none;
+
 a:focus,
 a:active {
 	// outline: none;

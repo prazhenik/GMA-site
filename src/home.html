@@ -12,17 +12,12 @@
 				<section class="hero">
 					<div class="hero__video video">
 						<div class="video__box">
-							<video autoplay loop muted preload="metadata" poster=" files/video/vid_preview.jpg"
-								playsinline>
+							<video autoplay loop muted preload="metadata" poster=" files/video/vid_preview.jpg" playsinline>
 								<source src="files/video/GMA_v4.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 							</video>
 						</div>
 					</div>
 					<div class="hero__outerContainer">
-						<!-- <div class="hero__map hero-map">
-							<div class="hero-map__box">
-							</div>
-						</div> -->
 						<div class="hero__innerContainer">
 							<div class="hero__content _section-content">
 								<div class="hero__offer offer">
@@ -40,7 +35,7 @@
 											<button type="button" class="btn btn_hero"><span>Получить консультацию</span></button>
 										</div>
 										<div class="offer__button controls">
-											<div class="controls__box _video-play-btn">
+											<div class="controls__box _video-play-btn" tabindex="0">
 												<div class="controls__play">
 													<svg class="play" width="20" height="20" viewBox="0 0 100 100">
 														<g>
@@ -56,8 +51,8 @@
 												</div>
 												<div class="controls__pause">
 													<svg class="pause" width="20" height="20" viewBox="0 0 20 20">
-														<rect viewBox="0 0 20 20" width="6" height="16" x="3" y="2" rx="1" ry="1" />
-														<rect viewBox="0 0 20 20" width="6" height="16" x="11" y="2" rx="1" ry="1" />
+														<path d="M3,2h6v16h-6Z" viewBox="0 0 20 20" rx="1" ry="1" />
+														<path d="M11,2h6v16h-6Z" viewBox="0 0 20 20" rx="1" ry="1" />
 													</svg>
 												</div>
 											</div>
@@ -135,7 +130,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-bg="@img/contentImgs/cover_knowleges.jpg" class="capability">
+				<section data-bg="@img/cover_knowleges.jpg" class="capability">
 					<div class="capability__outerContainer">
 						<div class="capability__innerContainer">
 							<h2 data-aos="fade-right" data-aos-offset="200" class="capability__title _section-title">
@@ -249,15 +244,15 @@
 								<div class="consult__right" data-aos="fade-up">
 									<div class="consult__photo-block photo-block">
 										<div class="photo-block__photo photo-ibg">
-											<img data-src="@img/call_center.png" alt="call_center.png">
+											<img data-src="@img/call_center.png" src="#" alt="call_center.png">
 										</div>
 										<div class="photo-block__card">
 											<p class="photo-block__label">
 												Не хотите ждать? Звоните!
 											</p>
 											<div class="addresses__item tel-block tel-block_consult">
-												<a class="tel-block__tel" href="tel:+380662223344"> <small>+38 066</small>&nbsp222
-													33 44&nbsp<small>(ua)</small></a>
+												<a class="tel-block__tel" href="tel:+380662223344"> <small>+38 066</small>&nbsp;222
+													33 44&nbsp;<small>(ua)</small></a>
 												<ul class="tel-block__list">
 													<li class="tel-block__list-item">
 														<a class="tel-block__link" href="tel:+380662223344"> <img
@@ -290,7 +285,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-bg="@img/contentImgs/cover_partners.jpg" class="partners">
+				<section data-bg="@img/cover_partners.jpg" class="partners">
 					<div class="partners__outerContainer">
 						<div class="partners__innerContainer">
 							<h2 data-aos="fade-right" class="partners__title _section-title">
@@ -300,7 +295,8 @@
 								<div class="partners__text">
 									<p class="partners__paragraph" data-aos="fade-up">
 										Наши партнеры - это ведущие профильные клиники и реабилитационные центры из <span>Греции,
-											Испании, Германии, Франции, Турции, Израиля.</span>
+											Италии,
+											Испании, Германии, Швейцарии, Хорватии, Турции.</span>
 									</p>
 									<p class="partners__paragraph" data-aos="fade-up">
 										Каждый из них имеет безупречную репутацию, новейшее лечебно-диагностическое оборудование,
@@ -334,6 +330,7 @@
 								</div>
 							</div>
 						</div>
+					</div>
 				</section>
 				<section class="about">
 					<div class="about__outerContainer">
@@ -379,7 +376,7 @@
 						</div>
 					</div>
 				</section>
-				<section data-bg="@img/contentImgs/cover_inTouch2.jpg" class="contacts">
+				<section data-bg="@img/cover_inTouch2.jpg" class="contacts">
 					<div class="contacts__outerContainer">
 						<div class="contacts__innerContainer">
 							<h2 data-aos="fade-right" class="contacts__title _section-title">
@@ -410,14 +407,13 @@
 											</div>
 										</form>
 									</div>
-
 								</div>
 								<div class="contacts__subscribe contacts-subscribe">
 									<div class="contacts-subscribe__text" data-aos="fade-up">
 										<p><span>Подписывайтесь</span>, на наши странички в <span>Instagram и Facebook</span>,
 											задавайте вопросы и первыми узнавайте свежие новости <span>GMA - Global Medical
-												Assistance</span>.</p>
-										</в>
+												Assistance</span>.
+										</p>
 										<div class="contacts-subscribe__links socials" data-aos="fade-up">
 											<!--noindex-->
 											<a href="http://facebook.com" target="_blank" rel="nofollow noopener noreferrer"

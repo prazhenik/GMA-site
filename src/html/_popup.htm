@@ -1,7 +1,6 @@
-<!-- актуализиван 06/02/22 17.12 -->
-<!-- актуализиван 26/06/22 1850 - разметка дефолтного попапа -->
+<!-- v4 190822 revision -->
 
-<!---------------------------------simple popup-------------------------------->
+<!---------------------------------success-------------------------------->
 
 <div id="success" aria-hidden="false" class="popup popup_success">
 	<div class="popup__wrapper popup__wrapper_success">
@@ -14,20 +13,23 @@
 	</div>
 </div>
 
-<!---------------------------------cookies popup-------------------------------->
+<!---------------------------------cookies-------------------------------->
 
 <div id="cookies" class="panel panel_cookies">
 	<div class="panel__wrapper">
 		<div class="panel__content">
 			<p class="panel__text">Этот сайт использует cookie для хранения данных. Продолжая использовать сайт, Вы даете
-				свое согласие на работу с этими файлами, а также соглашаетесь с <a class="panel__link"
-					href="privacy.html">Политикой Конфиденциальности</a> </p>
+				свое согласие на работу с этими файлами, а также соглашаетесь с
+				<!--noindex--><a href="privacy.html" target="_blank" rel="nofollow noopener noreferrer"
+					class="panel__link">Политикой Конфиденциальности</a>
+				<!--/noindex-->
+			</p>
 			<button type="button" class="panel__btn btn"><span>Ok</span></button>
 		</div>
 	</div>
 </div>
 
-<!---------------------------------popup with forms-------------------------------->
+<!---------------------------------callback-------------------------------->
 <div id="callback" aria-hidden="true" class="popup popup_callback">
 	<div class="popup__wrapper">
 		<div data-watch data-watch-threshold="0.2" class="popup__content">
@@ -69,4 +71,4 @@
 		</div>
 	</div>
 </div>
-<!---------------------------------popup whis forms-------------------------------->
+

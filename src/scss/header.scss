@@ -1,12 +1,12 @@
-// актуализирован 05/07/22 
+// v2 190822
 
 .header {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 10;
 	background-color: transparent;
+	z-index: 10;
 	// .header__outerContainer
 	&__outerContainer {
 	}
@@ -16,19 +16,12 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		overflow: visible;
 		@include adaptiveValue("height",$header-height-pc ,$header-height-mob, 0, 768, 320 );
-		& > *:not(:first-child) {
-			@media (min-width: em(1201)){
-				//margin-left: rem(20);
-			}
-		}
+		overflow: visible;
 	}
 	
 	// .header__logo
 	& .header__logo .site-logo__item {
-		//width: 100%;
-		//max-width: rem(200);
 		background:  url("@img/logo_GMA_full_redwhite.png") 0% 50% / contain no-repeat;
 
 	}
@@ -56,12 +49,7 @@
 	// .header-links__list
 	&__list {
 		display: flex;
-		//@include adaptiveValue("grid-column-gap", 20 , 10, 0, 768);
-		@include adaptiveValue("height",40 ,25, 0, 1200 );
 		margin-left: rem(15);
-		
-		
-
 	}
 	// .header-links__item
 	&__item {
@@ -73,9 +61,9 @@
 	.socials__link {
 		@include adaptiveValue("width",40 ,25, 0, 1200,320 );
 		height: 100%;
-		transition: transform .2s ;
 		border-radius: 7px;
 		border: $background-color-major 2px solid;
+		transition: transform .2s;
 		@media (max-width:$mobile){
 			border-width: 1px;    
 		}
@@ -102,10 +90,10 @@
 
 .lang {
 	position: relative;
+	@include adaptiveValue("height",40 ,25, 0, 1200,320);
 	vertical-align: middle;
 	border: 2px solid $border-color-button;
 	border-radius: 7px;
-	@include adaptiveValue("height",40 ,25, 0, 1200,320);
 	@media (max-width:$mobileSmall){
 		border-width: 1px;
 	}
@@ -116,8 +104,8 @@
 		height: 50%;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
 		background-color: $background-color-major;
+		transform: translate(-50%, -50%);
 	}
 	// .lang__icon
 	&__icon {
@@ -126,21 +114,19 @@
 		justify-content: center;
 		@include adaptiveValue("width",40 ,23, 0, 1200,320);
 		height: 100%;
+		@include adaptiveValue("font-size", 20, 12, 0, 1200, 320 );
 		text-transform: uppercase;
 		color: $text-color-secondary;
-		//font-weight: 500;
 		cursor: pointer;
-		@include adaptiveValue("font-size", 20, 12, 0, 1200, 320 );
 		& a {
 			height: 100%;
 		}
 		& span {
 			display: flex;
-			height: 100%;
 			align-items: center;
 			justify-content: center;
+			height: 100%;
 			transition: transform .2s;
-			
 		}
 		&:hover {
 			span{
@@ -180,7 +166,6 @@
 	}
 
 	& .header__lang  {
-		
 		border-color: $background-color-secondary;
 		& span {
 			color: $text-color-major;
@@ -201,14 +186,7 @@
 			&.active {
 				background-color: rgba($color: $background-color-secondary, $alpha: 1);
 				color: $text-color-secondary;
-				//transition: color .2s, background-color .2s;
 				border: 2px solid transparent;
-			}
-			&._navigator-active {
-				background-color: rgba($color: $background-color-secondary, $alpha: 1);
-				border: 2px solid transparent;
-				color: $text-color-secondary;
-				transition: color .2s, background-color .2s;
 			}
 		}
 		&__icon {
