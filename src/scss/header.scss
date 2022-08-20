@@ -60,7 +60,7 @@
 	}
 	.socials__link {
 		@include adaptiveValue("width",40 ,25, 0, 1200,320 );
-		@include adaptiveValue("width",40 ,25, 0, 1200,320 );//отображение в ios
+		@include adaptiveValue("height",40 ,25, 0, 1200,320 );//отображение в ios
 		border-radius: 7px;
 		border: $background-color-major 2px solid;
 		transition: transform .2s;

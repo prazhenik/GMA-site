@@ -1505,7 +1505,7 @@ body {
   line-height: 1;
   font-family: "Montserrat", sans-serif;
   font-size: 1.375rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0em;
   font-style: normal;
   -ms-text-size-adjust: 100%;
@@ -3170,7 +3170,6 @@ body._preloader {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-weight: 500;
   line-height: 1.3636363636;
   letter-spacing: -0.5px;
 }
@@ -3337,7 +3336,7 @@ body._preloader {
   line-height: 1.1;
   margin: 0 auto;
   color: red;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .photo-block__label:not(:last-child) {
@@ -3366,7 +3365,7 @@ body._preloader {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -2px;
   -webkit-transition: color 0.2s;
   -o-transition: color 0.2s;
@@ -3385,7 +3384,6 @@ body._preloader {
 }
 
 .tel-block_consult .tel-block__tel small {
-  font-weight: 400;
   line-height: 1.15;
 }
 
@@ -3841,7 +3839,7 @@ body._preloader {
   }
 
   .header-links .socials__link {
-    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .lang {
@@ -4239,7 +4237,7 @@ body._preloader {
   }
 
   .header-links .socials__link {
-    width: 1.5625rem;
+    height: 1.5625rem;
   }
 
   .lang {
@@ -4611,7 +4609,6 @@ body._preloader {
   }
 
   .offer__text:not(:last-child) {
-    font-weight: 500;
     margin-bottom: 2.5rem;
   }
 
@@ -5160,15 +5157,15 @@ body._preloader {
     }
 }
 
-@supports (width: clamp( 1.5625rem , 1.2215909091rem  +  1.7045454545vw , 2.5rem )) {
+@supports (height: clamp( 1.5625rem , 1.2215909091rem  +  1.7045454545vw , 2.5rem )) {
     .header-links .socials__link {
-      width: clamp( 1.5625rem , 1.2215909091rem  +  1.7045454545vw , 2.5rem );
+      height: clamp( 1.5625rem , 1.2215909091rem  +  1.7045454545vw , 2.5rem );
     }
 }
 
-@supports not (width: clamp( 1.5625rem , 1.2215909091rem  +  1.7045454545vw , 2.5rem )) {
+@supports not (height: clamp( 1.5625rem , 1.2215909091rem  +  1.7045454545vw , 2.5rem )) {
     .header-links .socials__link {
-      width: calc(1.5625rem + 0.9375 * (100vw - 20rem) / 55);
+      height: calc(1.5625rem + 0.9375 * (100vw - 20rem) / 55);
     }
 }
 
