@@ -112,7 +112,7 @@
 		display: flex;
 		flex: 0 1 1100px;
 		flex-wrap: wrap;
-		justify-content: space-evenly;
+		justify-content: space-around;
 		@media (max-width: rem(1200)) {
 			flex-direction: column;
 			flex-wrap: nowrap;
