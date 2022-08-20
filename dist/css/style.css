@@ -2739,9 +2739,8 @@ body._preloader {
   overflow: visible;
 }
 
-.header .header__logo .site-logo__item {
-  background: url("../img/logo_GMA_full_redwhite.png") 0% 50%/contain no-repeat;
-}
+.no-webp .header .header__logo .site-logo__item{
+  background: url("../img/logo_GMA_full_redwhite.png") 0% 50%/contain no-repeat; }
 
 .header-links {
   -webkit-box-flex: 0;
@@ -2866,9 +2865,8 @@ body._preloader {
   border-bottom: 1px solid rgb(30, 60, 120);
 }
 
-._header-scroll .header__logo .site-logo__item {
-  background: url("../img/logo_GMA_full.png") 0% 50%/contain no-repeat;
-}
+.no-webp ._header-scroll .header__logo .site-logo__item{
+  background: url("../img/logo_GMA_full.png") 0% 50%/contain no-repeat; }
 
 ._header-scroll .socials__link {
   border: rgb(30, 60, 120) 2px solid;
@@ -3621,9 +3619,8 @@ body._preloader {
           flex: 0 0 auto;
 }
 
-.footer .footer__logo .site-logo__item {
-  background: url("../img/logo_GMA_full.png") 0% 50%/contain no-repeat;
-}
+.no-webp .footer .footer__logo .site-logo__item{
+  background: url("../img/logo_GMA_full.png") 0% 50%/contain no-repeat; }
 
 .footer__policy {
   text-decoration: underline;
@@ -6170,3 +6167,9 @@ body._preloader {
     color: rgb(255, 255, 255);
   }
 }
+
+.webp .header .header__logo .site-logo__item{ background: url(../img/logo_GMA_full_redwhite.webp) 0% 50%/contain no-repeat; }
+
+.webp ._header-scroll .header__logo .site-logo__item{ background: url(../img/logo_GMA_full.webp) 0% 50%/contain no-repeat; }
+
+.webp .footer .footer__logo .site-logo__item{ background: url(../img/logo_GMA_full.webp) 0% 50%/contain no-repeat; }
