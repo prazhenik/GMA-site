@@ -25,18 +25,16 @@
 
 html {
 	//height: calc(var(--vh, 1vh) * 100);
-	//	width: 100vw;
-	//position: fixed;
+	//--------------for fullscreen-----------------
+	height: -webkit-fill-available;
 }
 
 body {
-	height: calc(var(--vh, 1vh) * 100);
-	min-height: -webkit-fill-available;
+	//height: calc(var(--vh, 1vh) * 100);
 
 //--------------for fullscreen-----------------
-	//width: 100vw;
-	//position: fixed;
-	//min-height: 100vh;
+	min-height: 100vh;
+	min-height: -webkit-fill-available;
 
 //--------------universal overlay-----------------
 	&::after {
@@ -111,7 +109,7 @@ body {
 	[class*="__outerContainer"] {
 		@if ($maxWidthContainer>0) {
 			max-width: rem($maxWidthContainer);
-			box-sizing: border-box;
+			box-sizing: content-box;
 			margin: 0 auto;
 		}
 		@if ($containerPadding>0) {
@@ -131,7 +129,7 @@ body {
 		margin: 0 auto;
 		@if ($maxWidthContainer>0) {
 			max-width: rem($maxWidthContainer);
-			box-sizing: border-box;
+			box-sizing: content-box;
 		} @else {
 			@if ($containerPadding>0) {
 				padding: 0 rem(math.div($containerPadding, 2));

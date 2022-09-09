@@ -147,7 +147,7 @@ section{
 
 .site-logo {
 	flex: 0 0 auto;
-	@include adaptiveValue("width", 180 ,100, 0, 567);
+	@include adaptiveValue("width", 180 ,90, 0, 576, 320);
 	@include adaptiveValue("height",55 , 35, 0, 1200);
 	height: 100%;
 	border-radius: 10px;

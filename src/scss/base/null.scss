@@ -34,11 +34,10 @@ a:active {
 html,
 body {
 	position: relative;
+	width: 100%;
 	min-width: $minWidth + px;
 	-webkit-overflow-scrolling: touch;
-	height: 100%;
-	width: 100%;
-
+	//height: 100%;
 }
 body {
 	color: $text-color-major;

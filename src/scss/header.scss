@@ -39,8 +39,6 @@
 
 
 .header-links {
-	flex: 0 0 auto;
-	align-content: center;
 	&:not(:last-child) {
 	}
 	@media (max-width: 1200px){
@@ -53,23 +51,27 @@
 	}
 	// .header-links__item
 	&__item {
-		display: inline-block;
+		@include adaptiveValue("height",40 ,30, 0, 1200,320 );//отображение в ios
+		& > * {
+			height: 100%;
+		}
 		&:not(:last-child) {
 			@include adaptiveValue("margin-right",20 , 10, 0, 768);
 		}
 	}
 	.socials__link {
-		@include adaptiveValue("width",40 ,25, 0, 1200,320 );
-		@include adaptiveValue("height",40 ,25, 0, 1200,320 );//отображение в ios
+		@include adaptiveValue("width",40 ,30, 0, 1200,320 );
+		
+		//@include adaptiveValue("height",40 ,25, 0, 1200,320 );//отображение в ios
 		border-radius: 7px;
 		border: $background-color-major 2px solid;
-		transition: transform .2s;
+		transition: transform .1s;
 		@media (max-width:$mobile){
 			border-width: 1px;    
 		}
 		&:hover{
 			transform: scale(1.1);
-			transition: transform .2s ;
+			transition: transform .1s ;
 		}
 		& img {
 			&.icon_reg{
@@ -90,11 +92,10 @@
 
 .lang {
 	position: relative;
-	@include adaptiveValue("height",40 ,25, 0, 1200,320);
 	vertical-align: middle;
 	border: 2px solid $border-color-button;
 	border-radius: 7px;
-	@media (max-width:$mobileSmall){
+	@media (max-width:$mobile){
 		border-width: 1px;
 	}
 	&::before{
@@ -107,32 +108,29 @@
 		background-color: $background-color-major;
 		transform: translate(-50%, -50%);
 	}
+	&__box {
+		display: flex;
+
+	}
 	// .lang__icon
-	&__icon {
-		vertical-align: middle;
-		display: inline-flex;
+	&__link {
+		position: relative;
+		display: flex;
 		justify-content: center;
-		@include adaptiveValue("width",40 ,23, 0, 1200,320);
+		align-items: center;
+		line-height: 1;
+		@include adaptiveValue("width",40 ,28, 0, 1200,320);
 		height: 100%;
-		@include adaptiveValue("font-size", 20, 12, 0, 1200, 320 );
-		text-transform: uppercase;
-		color: $text-color-secondary;
 		cursor: pointer;
-		& a {
-			height: 100%;
-		}
 		& span {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			height: 100%;
-			transition: transform .2s;
+			@include adaptiveValue("font-size", 20, 12, 0, 1200, 320 );
+			line-height: 1.4;
+			text-transform: uppercase;
+			color: $text-color-secondary;
 		}
 		&:hover {
 			span{
 				transform: scale(1.1);
-				transition: transform .2s ;
-				
 			}
 		}
 		@media (max-width:$mobileSmall){
@@ -165,7 +163,7 @@
 		}
 	}
 
-	& .header__lang  {
+	& .lang  {
 		border-color: $background-color-secondary;
 		& span {
 			color: $text-color-major;

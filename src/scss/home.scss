@@ -12,9 +12,6 @@
 			max-height: rem(1000);
 			object-fit: cover;
 			filter: brightness(.8);
-			@media (max-width:$mobile){
-				height: calc(100vh - rem($header-height-mob));
-			}
 		}
 	}
 
@@ -31,12 +28,11 @@
 		align-items: center;
 		max-height: rem(1000);
 		height: 100vh;
-		min-height: -webkit-fill-available;
 		min-height: 550px;
 		@include adaptiveValue("padding-top",$header-height-pc ,$header-height-mob, 0, 1200);
-		@media (max-width:$mobile){
+		@include adaptiveValue("padding-bottom",$header-height-pc ,$header-height-mob, 0, 1200, 767.98);
+		@media (max-width:$mobileSmall){
 			align-items: flex-end; 
-			height: calc(100vh - rem($header-height-mob)); 
 		}
 	}
 	// .hero__offer
@@ -57,7 +53,7 @@
 	position: relative;
 	max-width: rem(920);
 	width: 100%; 
-	padding: rem(80) rem(0);
+	padding: rem(50) rem(0);
 	@media (max-width:$mobileSmall){
 		text-align: center; 
 	}
