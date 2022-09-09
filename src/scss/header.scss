@@ -67,7 +67,7 @@
 		border: $background-color-major 2px solid;
 		transition: transform .1s;
 		@media (max-width:$mobile){
-			border-width: 1px;    
+			//border-width: 1px;    
 		}
 		&:hover{
 			transform: scale(1.1);
@@ -96,12 +96,12 @@
 	border: 2px solid $border-color-button;
 	border-radius: 7px;
 	@media (max-width:$mobile){
-		border-width: 1px;
+		//border-width: 1px;
 	}
 	&::before{
 		content:'';
 		position: absolute;
-		width: 1px;
+		width: 2px;
 		height: 50%;
 		top: 50%;
 		left: 50%;
@@ -127,6 +127,7 @@
 			line-height: 1.4;
 			text-transform: uppercase;
 			color: $text-color-secondary;
+			font-weight: 500;
 		}
 		&:hover {
 			span{
@@ -134,7 +135,7 @@
 			}
 		}
 		@media (max-width:$mobileSmall){
-			border-width: 1px;
+			//border-width: 1px;
 			border-radius: 4px;
 		}
 	}
@@ -151,7 +152,7 @@
 	& .socials__link {
 		border: $background-color-secondary 2px solid;
 		@media (max-width:$mobile){
-			border-width: 1px;  
+			//border-width: 1px;  
 		}
 		& img {
 			&.icon_reg{
@@ -192,6 +193,12 @@
 			&::before,
 			&::after {
 				background: $background-color-other-1;
+				transition: top 0.4s, bottom 0.4s, right .2s ease, transform 0.4s;
+			}
+			&._active {
+				& span {
+					right: -150%;
+				}
 			}
 		}
 	}

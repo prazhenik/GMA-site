@@ -116,7 +116,7 @@
 .icon-menu {
 	display: none;
 	position: relative;
-	@include adaptiveValue("height",30 ,30, 0, 1200);
+	@include adaptiveValue("height",30 , 20, 0, 767.98);
 	@include adaptiveValue("width",50 , 40, 0, 1200);
 	cursor: pointer;
 	& span,
@@ -125,12 +125,15 @@
 		content: "";
 		position: absolute;
 		display: block;
-		left: 0;
+		right: 0;
 		width: 100%;
 		height: rem(2);
 		background: $text-color-secondary;
 		border-radius: 2px;
-		transition: top 0.4s, bottom 0.4s, transform 0.4s;
+		transition: top 0.4s, bottom 0.4s, right .2s ease, transform 0.4s;
+		@media (max-width:$mobile){
+			//height: rem(1); 
+		}
 	}
 	&::before {
 		top: 0;
@@ -140,8 +143,8 @@
 	}
 	& span {
 		opacity: 1;
-		top: 14px;
-		transition: opacity .2s .2s;
+		top: 50%;
+		transform: translate(0, -50%);
 	}
 	@media (max-width: rem(1200)) {
 		display: block;
@@ -149,8 +152,8 @@
 		z-index: 100;
 		&._active {
 			& span {
-				opacity: 0;
-				transition: opacity 0s 0s;
+				right: -150%;
+				//opacity: 0;
 				background: $background-color-other-1;
 			}
 			&::before {
