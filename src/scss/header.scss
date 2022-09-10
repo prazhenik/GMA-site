@@ -61,18 +61,13 @@
 	}
 	.socials__link {
 		@include adaptiveValue("width",40 ,30, 0, 1200,320 );
-		
 		//@include adaptiveValue("height",40 ,25, 0, 1200,320 );//отображение в ios
 		border-radius: 4px;
 		border: $background-color-major 1px solid;
-		transition: transform .1s;
-		@media (max-width:$mobile){
-			//border-width: 1px;    
-		}
-		&:hover{
-			background-color: rgba($color: $background-color-major, $alpha: .2);
-			//transform: scale(1.05);
-			transition: transform .1s ;
+		@media (any-hover: hover){
+			&:hover{
+				background-color: rgba($color: $background-color-major, $alpha: .2);
+			}
 		}
 		& img {
 			&.icon_reg{
@@ -94,11 +89,6 @@
 .lang {
 	position: relative;
 	vertical-align: middle;
-	//border: 2px solid $border-color-button;
-	//border-radius: 7px;
-	@media (max-width:$mobile){
-		//border-width: 1px;
-	}
 	&::before{
 		content:'';
 		position: absolute;
@@ -106,13 +96,11 @@
 		height: 50%;
 		top: 50%;
 		left: 50%;
-
 		background-color: $background-color-major;
 		transform: translate(-50%, -50%);
 	}
 	&__box {
 		display: flex;
-
 	}
 	// .lang__icon
 	&__link {
@@ -132,21 +120,11 @@
 			text-transform: uppercase;
 			color: $text-color-secondary;
 			font-weight: 500;
-		}
-		&:hover {
-			//background-color: rgba($color: $background-color-major, $alpha: .2);
-			//border: 1px solid $border-color-major;
-			//border-radius: 4px;
-			& span {
-				font-weight: 600;
+			@media (any-hover: hover){
+				&:hover{
+					font-weight: 600;
+				}
 			}
-			
-
-		}
-		@media (max-width:$mobileSmall){
-			//border-width: 1px;
-			//border-radius: 4px;
-			//font-weight: 600;
 		}
 	}
 }
@@ -154,8 +132,8 @@
 
 ._header-scroll {
 	background-color: rgba($color: $background-color-major, $alpha: .8);
-	backdrop-filter: blur(10px);
-	border-bottom: 2px solid $border-color-major;
+	backdrop-filter: blur(7px);
+	box-shadow: 0px 1px 6px rgba($color: #000, $alpha: .1);
 	& .header__logo .site-logo__item {
 		background:  url("@img/logo_GMA_full.png") 0% 50% / contain no-repeat;
 	}
@@ -173,9 +151,6 @@
 					}
 				}
 			}
-		}
-		@media (max-width:$mobile){
-		//	border-width: 1px;  
 		}
 		& img {
 			&.icon_reg{
