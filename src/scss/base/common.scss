@@ -235,9 +235,9 @@ section{
 	line-height: math.div(36 , 24);
 	text-align: justify;
 	padding-left: rem(15);
-	border-left: 2px solid $background-color-other-2;
+	border-left: 2px solid $border-color-other-2;
 	@media (max-width:$mobile){
-		border-left: 1px solid $border-color-other-2;  
+		//border-left: 1px solid $border-color-other-2;  
 	}
 	@include adaptiveValue("font-size", 24, 14,0, 1200);
 	&:not(:last-child) {

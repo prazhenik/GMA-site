@@ -63,14 +63,15 @@
 		@include adaptiveValue("width",40 ,30, 0, 1200,320 );
 		
 		//@include adaptiveValue("height",40 ,25, 0, 1200,320 );//отображение в ios
-		border-radius: 7px;
-		border: $background-color-major 2px solid;
+		border-radius: 4px;
+		border: $background-color-major 1px solid;
 		transition: transform .1s;
 		@media (max-width:$mobile){
 			//border-width: 1px;    
 		}
 		&:hover{
-			transform: scale(1.1);
+			background-color: rgba($color: $background-color-major, $alpha: .2);
+			//transform: scale(1.05);
 			transition: transform .1s ;
 		}
 		& img {
@@ -93,18 +94,19 @@
 .lang {
 	position: relative;
 	vertical-align: middle;
-	border: 2px solid $border-color-button;
-	border-radius: 7px;
+	//border: 2px solid $border-color-button;
+	//border-radius: 7px;
 	@media (max-width:$mobile){
 		//border-width: 1px;
 	}
 	&::before{
 		content:'';
 		position: absolute;
-		width: 2px;
+		width: 1px;
 		height: 50%;
 		top: 50%;
 		left: 50%;
+
 		background-color: $background-color-major;
 		transform: translate(-50%, -50%);
 	}
@@ -119,24 +121,32 @@
 		justify-content: center;
 		align-items: center;
 		line-height: 1;
+		padding: rem(5);
 		@include adaptiveValue("width",40 ,28, 0, 1200,320);
 		height: 100%;
 		cursor: pointer;
+		border: 1px solid transparent;
 		& span {
-			@include adaptiveValue("font-size", 20, 12, 0, 1200, 320 );
+			@include adaptiveValue("font-size", 20, 15, 0, 1200, 320 );
 			line-height: 1.4;
 			text-transform: uppercase;
 			color: $text-color-secondary;
 			font-weight: 500;
 		}
 		&:hover {
-			span{
-				transform: scale(1.1);
+			//background-color: rgba($color: $background-color-major, $alpha: .2);
+			//border: 1px solid $border-color-major;
+			//border-radius: 4px;
+			& span {
+				font-weight: 600;
 			}
+			
+
 		}
 		@media (max-width:$mobileSmall){
 			//border-width: 1px;
-			border-radius: 4px;
+			//border-radius: 4px;
+			//font-weight: 600;
 		}
 	}
 }
@@ -145,14 +155,27 @@
 ._header-scroll {
 	background-color: rgba($color: $background-color-major, $alpha: .8);
 	backdrop-filter: blur(10px);
-	border-bottom: 1px solid $background-color-secondary;
+	border-bottom: 2px solid $border-color-major;
 	& .header__logo .site-logo__item {
 		background:  url("@img/logo_GMA_full.png") 0% 50% / contain no-repeat;
 	}
 	& .socials__link {
-		border: $background-color-secondary 2px solid;
+		border: $background-color-secondary 1px solid;
+		@media (any-hover: hover){
+			&:hover{
+				background-color: rgba($color: $background-color-secondary, $alpha: 1);
+				& img {
+					&.icon_reg{
+						display: inline-block;
+					}
+					&.icon_scrl{
+						display: none;
+					}
+				}
+			}
+		}
 		@media (max-width:$mobile){
-			//border-width: 1px;  
+		//	border-width: 1px;  
 		}
 		& img {
 			&.icon_reg{
@@ -185,7 +208,7 @@
 			&.active {
 				background-color: rgba($color: $background-color-secondary, $alpha: 1);
 				color: $text-color-secondary;
-				border: 2px solid transparent;
+				border: 1px solid transparent;
 			}
 		}
 		&__icon {
