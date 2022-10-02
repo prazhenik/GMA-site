@@ -693,9 +693,7 @@
 	}
 	// .counters__digits
 	&__digits {
-		& span {
-			@include adaptiveValue("font-size", 72 , 56, 0, 1200);
-		}
+		@include adaptiveValue("font-size", 72 , 56, 0, 1200);
 		line-height: math.div(72 ,72);
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom",30, 10, 0, 1200);
